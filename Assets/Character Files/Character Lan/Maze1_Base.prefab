@@ -878,6 +878,7 @@ GameObject:
   - component: {fileID: 3291871005376776702}
   - component: {fileID: 3291871005376776673}
   - component: {fileID: 4856585750205086689}
+  - component: {fileID: 6751685681047497386}
   m_Layer: 0
   m_Name: CameraControls
   m_TagString: Untagged
@@ -929,7 +930,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3291871005376776677}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 176796dbe8980b1428333f1ad13d4a18, type: 3}
   m_Name: 
@@ -943,6 +944,20 @@ MonoBehaviour:
   controller: {fileID: 2067603378653130085}
   maximumMovementSpeed: 7
   cameraTurnSpeed: 120
+--- !u!114 &6751685681047497386
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3291871005376776677}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa0a560ec8c15dd44b5dbfe7d14a6f28, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  touchField: {fileID: 0}
+  cam: {fileID: 3291871005376776677}
 --- !u!1 &3291871005428696182
 GameObject:
   m_ObjectHideFlags: 0
@@ -3660,13 +3675,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e57423bf7b1a05549b0df2b85f69e7ab, type: 3}
---- !u!4 &8142224774345083521 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 400010, guid: e57423bf7b1a05549b0df2b85f69e7ab, type: 3}
-  m_PrefabInstance: {fileID: 8142224774345478155}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &8142224774345447073 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100010, guid: e57423bf7b1a05549b0df2b85f69e7ab, type: 3}
+  m_PrefabInstance: {fileID: 8142224774345478155}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &8142224774345083521 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 400010, guid: e57423bf7b1a05549b0df2b85f69e7ab, type: 3}
   m_PrefabInstance: {fileID: 8142224774345478155}
   m_PrefabAsset: {fileID: 0}
