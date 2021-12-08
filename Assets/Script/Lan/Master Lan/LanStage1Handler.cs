@@ -54,7 +54,10 @@ public class LanStage1Handler : NetworkBehaviour
     private void Start()
     {
         DontDestroyOnLoad(this);
-        Invoke(nameof(MasterStart), 8f);
+        if (GameObject.Find("PlayerPositionHandler") && isServer)
+        {
+            Invoke(nameof(MasterStart), 8f);
+        }
     }
 
     private void Update()

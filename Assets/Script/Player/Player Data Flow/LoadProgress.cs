@@ -14,7 +14,7 @@ public class LoadProgress : MonoBehaviour
 
     private void Start()
     {
-        if(instance == null)
+        if (instance == null)
         {
             instance = this;
         }
@@ -24,7 +24,7 @@ public class LoadProgress : MonoBehaviour
     {
         SaveData.LoadData();
         List<PlayerData> PlayerDataList = SaveData.GetPlayerDataList();
-        foreach(PlayerData player in PlayerDataList)
+        foreach (PlayerData player in PlayerDataList)
         {
             if (player.playerName.Equals(PlayerName))
             {
@@ -37,6 +37,8 @@ public class LoadProgress : MonoBehaviour
                 Database.instance.UsedCharacter = player.UsedCharacter;
                 Database.instance.UnlockCharacter = player.UnlockCharacter;
                 Database.instance.UnlockedStages = player.UnlockedStages;
+                Database.instance.tutorialCheckpoints = player.tutorialCheckpoints;
+                Database.instance.unlockedTutorials = player.unlockedTutorials;
                 break;
             }
         }
@@ -44,7 +46,7 @@ public class LoadProgress : MonoBehaviour
 
     public void SpawnExistingUser()
     {
-        foreach(Transform child in PlayerDataPrefabPanel.transform)
+        foreach (Transform child in PlayerDataPrefabPanel.transform)
         {
             Destroy(child.gameObject);
         }

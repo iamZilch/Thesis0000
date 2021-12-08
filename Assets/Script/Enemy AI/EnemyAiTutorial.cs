@@ -47,12 +47,12 @@ public class EnemyAiTutorial : MonoBehaviour
         if (!playerInSightRange && !playerInAttackRange) Patroling();
         if (playerInSightRange && !playerInAttackRange) ChasePlayer();
         if (playerInAttackRange && playerInSightRange) AttackPlayer();
-        
+
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == ("Zilch") || other.gameObject.tag == ("Maze") || other.gameObject.tag == ("Trix") )
+        if (other.gameObject.tag == ("Zilch") || other.gameObject.tag == ("Maze") || other.gameObject.tag == ("Trix"))
         {
             player = other.gameObject.transform;
         }
@@ -100,22 +100,23 @@ public class EnemyAiTutorial : MonoBehaviour
         {
             //polar.SetBool("Throwing", false);
             ///Attack code here
-            
-            
+
+
             //InvokeRepeating()
 
             //rb.AddForce(transform.up * f, ForceMode.Impulse);
             ///End of attack code
 
-          //  alreadyAttacked = true;
-          //  Invoke(nameof(ResetAttack), timeBetweenAttacks);
+            //  alreadyAttacked = true;
+            //  Invoke(nameof(ResetAttack), timeBetweenAttacks);
         }
     }
 
     IEnumerator attack() //return snowball to orig position of no player has been hit
     {
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(5f);
         projectile.SetActive(true);
+        StopCoroutine(attack());
     }
     private void ResetAttack()
     {

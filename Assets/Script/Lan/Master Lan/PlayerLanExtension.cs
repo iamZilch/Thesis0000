@@ -11,6 +11,7 @@ public class PlayerLanExtension : NetworkBehaviour
     [SerializeField] public GameObject cam;
     public List<GameObject> players;
     public bool isAlive = true;
+    public bool isReady = false;
 
     [SerializeField] public GameObject ballSpointPoint;
     Skills skillFX;
@@ -53,6 +54,8 @@ public class PlayerLanExtension : NetworkBehaviour
             particles = skillFX.particles;
             defaultRootCam = playerRootCam;
             defaultCam = cam;
+            GameObject.Find("NetworkManager").GetComponent<MasterLanScript>().player = gameObject;
+            GameObject.Find("NetworkStorage").GetComponent<NetworkStorage>().Player = gameObject;
         }
     }
 
@@ -132,6 +135,24 @@ public class PlayerLanExtension : NetworkBehaviour
     void CmdAddReadyPlayer()
     {
         GameObject.Find("NetworkStorage").GetComponent<NetworkStorage>().PlayerReady++;
+    }
+
+    [Command]
+    public void CmdDecReadyPlayer()
+    {
+        GameObject.Find("NetworkStorage").GetComponent<NetworkStorage>().PlayerReady--;
+    }
+
+    [Command]
+    public void CmdSetReadyLocal(bool status)
+    {
+        RpcSetReadyLocal(status);
+    }
+
+    [ClientRpc]
+    public void RpcSetReadyLocal(bool status)
+    {
+        isReady = status;
     }
 
 

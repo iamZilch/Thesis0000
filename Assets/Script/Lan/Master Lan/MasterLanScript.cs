@@ -4,6 +4,7 @@ using UnityEngine;
 using Mirror;
 using Mirror.Discovery;
 using UnityEngine.SceneManagement;
+using System;
 
 public class MasterLanScript : NetworkManager
 {
@@ -18,6 +19,8 @@ public class MasterLanScript : NetworkManager
     [SerializeField] GameObject PlayerClientGo;
     [SerializeField] GameObject UniversalUI;
 
+    [Header("Player")]
+    [SerializeField] public GameObject player;
 
     [Header("Scene List")]
     [Scene]
@@ -67,7 +70,6 @@ public class MasterLanScript : NetworkManager
         PlayerHostGo.SetActive(true);
         UniversalUI.SetActive(true);
         GameObject.Find("NetworkStorage").GetComponent<NetworkStorage>().PlayerController.SetActive(true);
-        PlayerHostGo.SetActive(true);
     }
 
     public void StartClientLan()
@@ -75,8 +77,11 @@ public class MasterLanScript : NetworkManager
         GetComponent<NetworkDiscoveryHUD>().JoinAsClient();
         PlayerClientGo.SetActive(true);
         UniversalUI.SetActive(true);
-        GameObject.Find("NetworkStorage").GetComponent<NetworkStorage>().PlayerController.SetActive(true);
-        PlayerClientGo.SetActive(true);
+        try
+        {
+            GameObject.Find("NetworkStorage").GetComponent<NetworkStorage>().PlayerController.SetActive(true);
+        }
+        catch (Exception e) { }
     }
 
     public override void OnClientConnect(NetworkConnection conn)
@@ -87,16 +92,20 @@ public class MasterLanScript : NetworkManager
     public override void OnServerDisconnect(NetworkConnection conn)
     {
         base.OnServerDisconnect(conn);
-        GameObject.Find("NetworkStorage").GetComponent<NetworkStorage>().CmdSubReady();
+        for(int i = 0; i < NetworkStorage.GetComponent<NetworkStorage>().playerLan.Count; i++)
+        {
+            if(NetworkStorage.GetComponent<NetworkStorage>().playerLan[i].GetComponent<NetworkIdentity>().connectionToClient == conn)
+            {
+                Debug.Log("isReady : " + NetworkStorage.GetComponent<NetworkStorage>().playerLan[i].GetComponent<PlayerLanExtension>().isReady);
+                if (NetworkStorage.GetComponent<NetworkStorage>().playerLan[i].GetComponent<PlayerLanExtension>().isReady)
+                {
+                    NetworkStorage.GetComponent<NetworkStorage>().CmdSubReady();
+                }
+                NetworkStorage.GetComponent<NetworkStorage>().CmdRemoveQuitPlayer(NetworkStorage.GetComponent<NetworkStorage>().playerLan[i]);
+                break;
+            }
+        }
         GameObject.Find("NetworkStorage").GetComponent<NetworkStorage>().CmdDecPlayerTotal();
-    }
-
-    public override void OnClientDisconnect(NetworkConnection conn)
-    {
-        base.OnClientDisconnect(conn);
-        //UI ABOUT DISCONNECTION
-        
-        SceneManager.LoadScene(MainMenu);
     }
 
     public override void OnClientChangeScene(string newSceneName, SceneOperation sceneOperation, bool customHandling)
@@ -113,7 +122,8 @@ public class MasterLanScript : NetworkManager
 
     public void ChangeServerScene()
     {
-        string sceneName = NetworkStorage.GetComponent<NetworkStorage>().MapName;
+        singleton.maxConnections = NetworkStorage.GetComponent<NetworkStorage>().PlayerTotal;
+        string sceneName = GameObject.Find("NetworkStorage").GetComponent<NetworkStorage>().MapName;
         switch (sceneName)
         {
             case "Stage1":
