@@ -319,6 +319,17 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -462981019419857548, guid: 0f6f06f4daf80c949ad64f8c424795db, type: 3}
+--- !u!114 &431256042 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3663670735357125311, guid: 115c74b33d69f084197524df223f9624, type: 3}
+  m_PrefabInstance: {fileID: 8734215136673219471}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1fc2a8f5ddc0e8a4cb34b1b7ea5a3b4e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &432290370
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -47583,7 +47594,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &3723922123388345712
 Transform:
   m_ObjectHideFlags: 0
@@ -52251,14 +52262,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 3723922123412021033}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fa0a560ec8c15dd44b5dbfe7d14a6f28, type: 3}
+  m_Script: {fileID: 11500000, guid: ac1cd9664255bc54195d0bd723e19af4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  touchField: {fileID: 0}
+  touchField: {fileID: 431256042}
   cam: {fileID: 3723922123412021033}
-  CameraAngle: 0
-  CameraAngleY: 0
-  CameraAngleSpeed: 0.2
 --- !u!114 &3723922123412021204
 MonoBehaviour:
   m_ObjectHideFlags: 0
