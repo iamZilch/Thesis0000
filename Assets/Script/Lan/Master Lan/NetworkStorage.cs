@@ -11,6 +11,7 @@ public class NetworkStorage : NetworkBehaviour
     [SerializeField] GameObject PlayerReadyTxt;
     [SerializeField] GameObject PlayerTotalTxt;
     [SerializeField] GameObject PlayerReadyButton;
+    [SerializeField] public GameObject Player;
 
     [Header("Prefabs")]
     [SerializeField] public GameObject PowerUpUlti;
@@ -77,18 +78,27 @@ public class NetworkStorage : NetworkBehaviour
         DontDestroyOnLoad(this);
     }
 
+
     public void RpcHandleReady()
     {
         if (PlayerReadyButton.GetComponent<TextMeshProUGUI>().text.Equals("Ready"))
         {
             PlayerReadyButton.GetComponent<TextMeshProUGUI>().text = "Unready";
+            Player.GetComponent<PlayerLanExtension>().CmdSetReadyLocal(true);
             CmdAddReady();
         }
         else if(PlayerReadyButton.GetComponent<TextMeshProUGUI>().text.Equals("Unready"))
         {
             PlayerReadyButton.GetComponent<TextMeshProUGUI>().text = "Ready";
+            Player.GetComponent<PlayerLanExtension>().CmdSetReadyLocal(false);
             CmdSubReady();
         }
+    }
+
+    [Command(requiresAuthority = false)]
+    public void CmdRemoveQuitPlayer(GameObject go)
+    {
+        playerLan.Remove(go);
     }
 
     [Command(requiresAuthority = false)]
