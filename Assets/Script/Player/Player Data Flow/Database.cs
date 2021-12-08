@@ -12,6 +12,8 @@ public class Database : MonoBehaviour
     public bool[] UnlockedStages = { true, false, false, false, false };
     public bool[] UnlockCharacter = { true, false, false, true, false, false, true, false, false };
     public int UsedCharacter = 1;
+    public int[] tutorialCheckpoints = { 0, 0, 0, 0, 0, 0 };
+    public bool[] unlockedTutorials = { false, false, false, false, false, false };
     public static Database instance;
 
     private void Start()

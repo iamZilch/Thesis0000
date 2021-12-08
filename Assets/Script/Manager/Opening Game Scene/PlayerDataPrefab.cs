@@ -17,6 +17,9 @@ public class PlayerDataPrefab : MonoBehaviour
     public void InitializePlayerPrefab()
     {
         LoadProgressObj.GetComponent<LoadProgress>().InstantiatePlayerData(PrefabPlayerName.GetComponent<TextMeshProUGUI>().text);
-        SceneManager.LoadScene("Main_Menu_Scene");
+        if (GameObject.Find("Opening_Game_Script").GetComponent<Database>().unlockedTutorials[0])
+            SceneManager.LoadScene("Main_Menu_Scene");
+        else
+            SceneManager.LoadScene("IntroToControls_Mechanics");
     }
 }

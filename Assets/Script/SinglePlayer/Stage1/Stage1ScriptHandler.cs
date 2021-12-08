@@ -41,7 +41,7 @@ public class Stage1ScriptHandler : MonoBehaviour
 
 
     //Question Info
-    int QuestionCount = 8;
+    int QuestionCount = 1;
     int ResetCoolDown = 4;
     string correctAnswer = "";
 
