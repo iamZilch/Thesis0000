@@ -9,6 +9,7 @@ public class PlayerLanExtension : NetworkBehaviour
     [Header("Player Cam")]
     [SerializeField] public GameObject playerRootCam;
     [SerializeField] public GameObject cam;
+    [SerializeField] public GameObject cameraControls;
     public List<GameObject> players;
     public bool isAlive = true;
     public bool isReady = false;
@@ -45,6 +46,7 @@ public class PlayerLanExtension : NetworkBehaviour
             GameObject buttonHandler = GameObject.Find("ButtonHandler");
             buttonHandler.GetComponent<ButtonsHandler>().player = gameObject;
             buttonHandler.GetComponent<ButtonsHandler>().cast = gameObject.GetComponent<SkillControls>();
+            cameraControls.GetComponent<TouchField>().touchField = buttonHandler.GetComponent<ButtonsHandler>().touchField.GetComponent<FixedTouchField>();
             playerRootCam.SetActive(true);
             anim = GetComponent<Animator>();
             mover = GetComponent<Mover>();

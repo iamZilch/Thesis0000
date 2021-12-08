@@ -95,6 +95,18 @@ public class NetworkStorage : NetworkBehaviour
         }
     }
 
+    [Command(requiresAuthority =false)]
+    public void CmdResetMasterLanDefaultUi()
+    {
+        RpcResetMasterLanDefaultUi();
+    }
+
+    [ClientRpc]
+    public void RpcResetMasterLanDefaultUi()
+    {
+        GameObject.Find("NetworkManager").GetComponent<MasterLanScript>().RunDefaultUi();
+    }
+
     [Command(requiresAuthority = false)]
     public void CmdRemoveQuitPlayer(GameObject go)
     {

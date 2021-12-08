@@ -8,6 +8,7 @@ public class ButtonsHandler : MonoBehaviour
     // Start is called before the first frame update
     public GameObject player;
     public SkillControls cast;
+    public GameObject touchField;
 
     public void setPlayer(GameObject ret)
     {
