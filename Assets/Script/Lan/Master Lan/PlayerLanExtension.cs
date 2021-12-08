@@ -27,6 +27,10 @@ public class PlayerLanExtension : NetworkBehaviour
     float animSpeed;
     float movementSpeed;
 
+    [Header("Player Skills")]
+    public bool canUlti = false;
+    public bool canFirst = true;
+
 
     private void Start()
     {
@@ -64,9 +68,9 @@ public class PlayerLanExtension : NetworkBehaviour
 
     private void Update()
     {
-        if(isLocalPlayer && Input.GetKeyDown(KeyCode.Alpha9))
+        if(isLocalPlayer && Input.GetKeyDown(KeyCode.Alpha9) && isServer)
         {
-            CmdSendImDead();
+            GameObject.Find("NetworkStorage").GetComponent<NetworkStorage>().RpcSpawnTestPowerUps();
         }
     }
 
@@ -263,6 +267,47 @@ public class PlayerLanExtension : NetworkBehaviour
     {
         gameObject.transform.position = pos.transform.position;
     }
+
+    #region ULTI AND FIRST SKILL
+    [Command]
+    public void CmdFirstStatus(bool status)
+    {
+        if (isServer)
+        {
+            RpcFirstStatus(status);
+        }
+    }
+
+    [TargetRpc]
+    public void RpcFirstStatus(bool status)
+    {
+        canFirst = status;
+        StopCoroutine(nameof(FirstSKillCd));
+        StartCoroutine(FirstSKillCd());
+    }
+
+    IEnumerator FirstSKillCd()
+    {
+        yield return new WaitForSeconds(10f);
+        CmdFirstStatus(true);
+    }
+
+    [Command]
+    public void CmdUltiStatus(bool status)
+    {
+        if (isServer)
+        {
+            RpcUltiStatus(status);
+        }
+    }
+
+    [TargetRpc]
+    public void RpcUltiStatus(bool status)
+    {
+        canUlti = status;
+    }
+
+    #endregion
 
     [Command]
     public void CmdSpeedUp()
@@ -464,6 +509,57 @@ public class PlayerLanExtension : NetworkBehaviour
         anim.speed = .2f;
 
         StartCoroutine(skillTime(3f, gameObject, 3, normSpeed));
+    }
+
+    public void LanCastUltimate()
+    {
+        if (!canUlti)
+        {
+            return;
+        }
+        AdvancedWalkerController simp;
+        Rigidbody rb;
+        //MAZE-3 ZILCH-4 TRIX-0
+        string myTag = gameObject.tag;
+        switch (myTag)
+        {
+            case "Maze":
+                simp = GetComponent<AdvancedWalkerController>();
+                if (simp.IsGrounded())
+                {
+                    simp.setJumpSpeed(15f);
+                    simp.jump();
+                    GetComponent<LanSkillAnimation>().SpawnEffect(3, true);
+                }
+                simp.setJumpSpeed(15);
+                simp.jumpNow();
+                break;
+            case "Zilch":
+                simp = GetComponent<AdvancedWalkerController>();
+                float normSpeed = anim.speed;
+                float speed = simp.getMovementSpeed();
+                simp.setMovementSpeed(25f);
+                anim.speed = 3.5f;
+                GetComponent<LanSkillAnimation>().SpawnEffect(4, true);
+                StartCoroutine(StopZilchUlti(normSpeed, speed));
+                break;
+            case "Trix":
+                simp = GetComponent<AdvancedWalkerController>();
+                rb = GetComponent<Rigidbody>();
+                Vector3 moveDirection = transform.InverseTransformDirection(rb.velocity);
+                float dashForce = 600f;
+                GetComponent<LanSkillAnimation>().SpawnEffect(0, true);
+                rb.AddForce(moveDirection * dashForce, ForceMode.Impulse);
+                break;
+        }
+        CmdUltiStatus(false);
+    }
+
+    IEnumerator StopZilchUlti(float animSpeed, float charSpeed)
+    {
+        yield return new WaitForSeconds(3f);
+        anim.speed = animSpeed;
+        GetComponent<AdvancedWalkerController>().setMovementSpeed(charSpeed);
     }
 
     #region Collider
