@@ -20,7 +20,7 @@ public class PowerUpScript : MonoBehaviour
                 anim = other.GetComponent<Animator>();
 
                 gameObject.transform.position = new Vector3(0, gameObject.transform.position.y - 100f, 0);
-
+                Debug.Log(anim.speed);
                 normSpeed = anim.speed;
                 speed = adv.getMovementSpeed();
                 adv.setMovementSpeed(10f);
@@ -46,9 +46,12 @@ public class PowerUpScript : MonoBehaviour
     IEnumerator timeLimit()
     {
         yield return new WaitForSeconds(3f);
+        Debug.Log(adv.movementSpeed);
+        Debug.Log(anim.speed);
         adv.setMovementSpeed(7f);
         adv.setJumpSpeed(6f);
-        anim.speed = normSpeed;
+        anim.speed = 1f;
+        StopAllCoroutines();
         gameObject.SetActive(false);
     }
 }

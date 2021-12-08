@@ -20,7 +20,7 @@ public class TutorialStage1Script : MonoBehaviour
 
     public string correctAnswer = "";
 
-    public string[] key = { "int", "float", "char", "str", "bool" };
+    public string[] key = { "int", "float", "char", "str", "bool" , "double"};
 
     public bool isGame = false;
 
@@ -121,7 +121,7 @@ public class TutorialStage1Script : MonoBehaviour
                 enableOnCorrect[3].SetActive(true);
                 break;
             case "float": ///enable quest trigger, conversation trigger
-                enableOnCorrect[1].SetActive(true);
+                enableOnCorrect[4].SetActive(true);
                 break;
             case "bool": ///enable quest trigger, conversation trigger
                 CongratulationDisplay.SetActive(true);
@@ -130,6 +130,9 @@ public class TutorialStage1Script : MonoBehaviour
                 break;
             case "char": ///enable quest trigger, conversation trigger
                 enableOnCorrect[2].SetActive(true);
+                break;
+            case "double":// enable quest trigger for double 
+                enableOnCorrect[1].SetActive(true);
                 break;
 
         }

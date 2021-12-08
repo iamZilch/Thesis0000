@@ -444,6 +444,7 @@ namespace PixelCrushers.DialogueSystem
         {
             if (!hasInstance) return;
             instance.StartConversation(title, actor, conversant, initialDialogueEntryID);
+            
         }
 
         /// <summary>
