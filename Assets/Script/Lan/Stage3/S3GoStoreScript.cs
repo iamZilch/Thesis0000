@@ -30,4 +30,16 @@ public class S3GoStoreScript : MonoBehaviour
     [SerializeField] public GameObject S4Bool2;
     [SerializeField] public GameObject S4Bool3;
     [SerializeField] public GameObject S4Bool4;
+
+    private void Start()
+    {
+        StartCoroutine(StartGameAfter());
+    }
+
+    IEnumerator StartGameAfter()
+    {
+        yield return new WaitForSeconds(5f);
+        GameObject.Find("Stage3Handler").GetComponent<LanStage3Handler>().MasterStart();
+        StopAllCoroutines();
+    }
 }

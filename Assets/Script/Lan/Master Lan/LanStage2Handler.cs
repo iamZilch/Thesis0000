@@ -112,6 +112,7 @@ public class LanStage2Handler : NetworkBehaviour
     {
         if (isServer)
         {
+            Debug.Log("I am called STAGE 2 LAN");
             InitDefault();
             CmdSetUi(true);
             CmdStartCoroutine();
@@ -134,7 +135,7 @@ public class LanStage2Handler : NetworkBehaviour
     [Command(requiresAuthority = false)]
     public void CmdSetWinner(bool status)
     {
-        GameObject.Find("SoundManager2").GetComponent<SoundManager>().PlayMusic(2);
+        GameObject.Find("SoundManager2").GetComponent<S2SoundManager>().PlayMusic(2);
         isWinner = status;
     }
 
@@ -259,17 +260,23 @@ public class LanStage2Handler : NetworkBehaviour
     {
         s2ReadyTimerInt--;
     }
+    
+    [ClientRpc]
+    public void RpcSetReadyTimerGoVis(bool status)
+    {
+        ReadyGivenTimerGo.SetActive(status);
+    }
 
     IEnumerator DecreaseTimer()
     {
         Debug.Log("IENumerator Decrease timer ----");
-        ReadyGivenTimerGo.SetActive(true);
+        RpcSetReadyTimerGoVis(true);
         while (s2ReadyTimerInt > 0)
         {
-            GameObject.Find("SoundManager2").GetComponent<SoundManager>().PlayMusic(3);
+            GameObject.Find("SoundManager2").GetComponent<S2SoundManager>().PlayMusic(3);
             if (s2ReadyTimerInt == 1)
             {
-                ReadyGivenTimerGo.SetActive(false);
+                RpcSetReadyTimerGoVis(false);
                 GenerateGiven();
                 StopAllCoroutines();
                 StartCoroutine(StartTimerGiven());

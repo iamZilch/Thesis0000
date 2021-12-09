@@ -19,6 +19,7 @@ public class Stage1S3Lan : NetworkBehaviour
             string textStr = Text.GetComponent<TextMeshPro>().text;
             if (textStr.Equals(handler.correctAnswer))
             {
+                handler.UpdatePlayerCorrect();
                 handler.CmdChangeGiven();
             }
             else

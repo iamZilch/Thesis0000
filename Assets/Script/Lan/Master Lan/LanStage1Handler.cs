@@ -54,20 +54,16 @@ public class LanStage1Handler : NetworkBehaviour
     private void Start()
     {
         DontDestroyOnLoad(this);
-        if (GameObject.Find("PlayerPositionHandler") && isServer)
-        {
-            Invoke(nameof(MasterStart), 8f);
-        }
     }
 
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.M))
         {
-            GamePreLoad();
-            StartGame();
-            CmdIsGameRunning(true);
-            
+            if (GameObject.Find("PlayerPositionHandler") && isServer)
+            {
+                MasterStart();
+            }
         }
         if (Input.GetKeyDown(KeyCode.N))
         {
@@ -77,9 +73,12 @@ public class LanStage1Handler : NetworkBehaviour
 
     public void MasterStart()
     {
-        GamePreLoad();
-        StartGame();
-        CmdIsGameRunning(true);
+        if (isServer)
+        {
+            GamePreLoad();
+            StartGame();
+            CmdIsGameRunning(true);
+        }
     }
 
     public void GamePreLoad()
@@ -234,7 +233,7 @@ public class LanStage1Handler : NetworkBehaviour
             RpcShowReadyTimerText(true);
             while (ReadyTimerInt > 0)
             {
-                GameObject.Find("SoundManager1").GetComponent<SoundManager>().PlayMusic(1);
+                GameObject.Find("SoundManager1").GetComponent<S1SoundManager>().PlayMusic(1);
                 if (ReadyTimerInt == 1)
                 {
                     StopAllCoroutines();
@@ -259,7 +258,7 @@ public class LanStage1Handler : NetworkBehaviour
         CmdChangeGiven();
         while(ToAnswerTimerInt > 0)
         {
-            GameObject.Find("SoundManager1").GetComponent<SoundManager>().PlayMusic(3);
+            GameObject.Find("SoundManager1").GetComponent<S1SoundManager>().PlayMusic(3);
             if (ToAnswerTimerInt == 1)
             {
                 StopAllCoroutines();
@@ -267,7 +266,7 @@ public class LanStage1Handler : NetworkBehaviour
                 RpcSetWrongAnswer();
                 CmdResetTimersDefault();
                 if(Player.GetComponent<PlayerLanExtension>().isAlive)
-                    GameObject.Find("SoundManager1").GetComponent<SoundManager>().PlayMusic(0);
+                    GameObject.Find("SoundManager1").GetComponent<S1SoundManager>().PlayMusic(0);
                 //Cooldown for StartReadyTimer
                 StartCoroutine(StartCooldownTimer());
             }
@@ -280,7 +279,7 @@ public class LanStage1Handler : NetworkBehaviour
     {
         while (ResetCooldownInt > 0)
         {
-            GameObject.Find("SoundManager1").GetComponent<SoundManager>().PlayMusic(1);
+            GameObject.Find("SoundManager1").GetComponent<S1SoundManager>().PlayMusic(1);
             if (ResetCooldownInt == 1)
             {
                 StopAllCoroutines();

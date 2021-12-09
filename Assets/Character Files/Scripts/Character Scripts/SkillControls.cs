@@ -91,29 +91,30 @@ public class SkillControls : MonoBehaviour
 
     public void castUltimate()
     {
-        if (isUltiPoint == true)
+        if (penguinType == "Trix")
         {
-            if (penguinType == "Trix")
-            {
-                skill.GetComponent<Skills>().dash(gameObject);
-            }
+            skill.GetComponent<Skills>().dash(gameObject);
+        }
 
-            else if (penguinType == "Maze")
-            {
-                skill.GetComponent<Skills>().flyPlayer(gameObject);
-            }
+        else if (penguinType == "Maze")
+        {
+            skill.GetComponent<Skills>().flyPlayer(gameObject);
+        }
 
-            else if (penguinType == "Zilch")
-            {
-                skill.GetComponent<Skills>().flash(gameObject);
-            }
+        else if (penguinType == "Zilch")
+        {
+            skill.GetComponent<Skills>().flash(gameObject);
+        }
 
-            ultiSkillButton.interactable = false;
-            setUltiPoint(false);
+        ultiSkillButton.interactable = false;
+        setUltiPoint(false);
+        /*if (isUltiPoint == true)
+        {
+            
         }
 
         else
-            Debug.Log("Collect UltiPoint to Cast Ultimate Skill!");
+            Debug.Log("Collect UltiPoint to Cast Ultimate Skill!");*/
 
     }
 

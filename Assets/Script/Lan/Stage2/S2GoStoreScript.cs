@@ -22,6 +22,18 @@ public class S2GoStoreScript : MonoBehaviour
     {
         GameObject.Find("Stage2Handler").GetComponent<LanStage2Handler>().canPick = true;
         GameObject.Find("Stage2Handler").GetComponent<LanStage2Handler>().PickUpButton.SetActive(false);
-        GameObject.Find("SoundManager2").GetComponent<SoundManager>().PlayMusic(0);
+        GameObject.Find("SoundManager2").GetComponent<S2SoundManager>().PlayMusic(0);
+    }
+
+    private void Start()
+    {
+        StartCoroutine(StartGameAfter());
+    }
+
+    IEnumerator StartGameAfter()
+    {
+        yield return new WaitForSeconds(5f);
+        GameObject.Find("Stage2Handler").GetComponent<LanStage2Handler>().StartGame();
+        StopAllCoroutines();
     }
 }
