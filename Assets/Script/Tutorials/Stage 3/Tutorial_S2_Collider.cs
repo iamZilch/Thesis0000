@@ -1,9 +1,8 @@
-    using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
-using TMPro;
 using UnityEngine;
 
-public class s2ColliderScript : MonoBehaviour
+public class Tutorial_S2_Collider : MonoBehaviour
 {
     [Header("Text Holder Game Object")]
     [SerializeField] GameObject TextHolderGameObject;
@@ -19,8 +18,8 @@ public class s2ColliderScript : MonoBehaviour
     {
         if (collision.gameObject.tag.Equals("Trix") || collision.gameObject.tag.Equals("Player") || collision.gameObject.tag.Equals("Maze") || collision.gameObject.tag.Equals("Zilch"))
         {
-            GameObject Stage3Main = GameObject.Find("Stage3MainHandler");
-            if (!Stage3Main.GetComponent<Stage3ScriptHandler>().correctAnswer.Equals(TextHolderGameObject.GetComponent<TextHolderScript>().startValue))
+            GameObject Stage3Main = GameObject.Find("TutorialStage3MainHandler");
+            if (!Stage3Main.GetComponent<Tutorial_Stage3_MainHandler>().correctAnswer.Equals(TextHolderGameObject.GetComponent<TextHolderScript>().startValue))
             {
                 SkillControls sc = collision.gameObject.GetComponent<SkillControls>();
                 Skills skill = sc.GetSkills();
@@ -31,8 +30,10 @@ public class s2ColliderScript : MonoBehaviour
             else
             {
                 //If correct
-                Main.GetComponent<Stage3ScriptHandler>().GenerateGiven();
-                GameObject.Find("SoundManager").GetComponent<S3SoundManager>().PlayMusic(0);
+                Main.GetComponent<Tutorial_Stage3_MainHandler>().GenerateGiven();
+                Main.GetComponent<Tutorial_Stage3_MainHandler>().cool.SetActive(true);
+                // GameObject.Find("SoundManager").GetComponent<S3SoundManager>().PlayMusic(0);
+
                 GetComponent<BoxCollider>().isTrigger = true;
                 Invoke(nameof(resetDefault), 1f);
             }

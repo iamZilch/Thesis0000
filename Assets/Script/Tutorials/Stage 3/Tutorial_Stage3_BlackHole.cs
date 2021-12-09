@@ -4,15 +4,14 @@ using UnityEngine;
 
 public class Tutorial_Stage3_BlackHole : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [Header("Stage 3 Main")]
+    [SerializeField] GameObject main;
 
-    // Update is called once per frame
-    void Update()
+    private void OnTriggerEnter(Collider collision)
     {
-        
+        if (collision.gameObject.tag.Equals("Trix") || collision.gameObject.tag.Equals("Player") || collision.gameObject.tag.Equals("Maze") || collision.gameObject.tag.Equals("Zilch"))
+        {
+            collision.gameObject.transform.position = main.GetComponent<Tutorial_Stage3_MainHandler>().CheckPointGO.transform.position;
+        }
     }
 }

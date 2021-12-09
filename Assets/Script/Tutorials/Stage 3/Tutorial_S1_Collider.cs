@@ -28,10 +28,12 @@ public class Tutorial_S1_Collider : MonoBehaviour
                 }
                 else
                 {
+                    
                     //If correct
                     Main.GetComponent<Tutorial_Stage3_MainHandler>().GenerateGiven();
-                    //GameObject.Find("SoundManager").GetComponent<S3SoundManager>().PlayMusic(0);
-                }
+                    Main.GetComponent<Tutorial_Stage3_MainHandler>().thatsRight.SetActive(true);
+                //GameObject.Find("SoundManager").GetComponent<S3SoundManager>().PlayMusic(0);
+            }
             }
         }
 

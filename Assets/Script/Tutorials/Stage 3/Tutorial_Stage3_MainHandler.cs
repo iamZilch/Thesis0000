@@ -31,6 +31,13 @@ public class Tutorial_Stage3_MainHandler : MonoBehaviour
     int timeConsumed;
 
 
+    [Header("Conversation Trigger")]
+    [SerializeField] public GameObject thatsRight;
+    [SerializeField] public GameObject cool;
+    [SerializeField] public GameObject Congrats;
+
+
+
     // Start is called before the first frame update
     void Start()
     {
