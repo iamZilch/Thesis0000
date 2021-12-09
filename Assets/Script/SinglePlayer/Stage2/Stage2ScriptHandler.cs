@@ -220,7 +220,7 @@ public class Stage2ScriptHandler : MonoBehaviour
                 if (ran == 1 && !ranGen)
                 {
                     correctOperator.Add(givenToChar[i].ToString());
-                    givenString += "_";
+                    givenString += "☐";
                     ranGen = true;
                 }
 
@@ -239,6 +239,7 @@ public class Stage2ScriptHandler : MonoBehaviour
 
 
         DisplayGivenText.GetComponent<TextMeshProUGUI>().text = givenString;
+
         PlayerUI(false);
         Invoke(nameof(setUi), 0.01f);
 

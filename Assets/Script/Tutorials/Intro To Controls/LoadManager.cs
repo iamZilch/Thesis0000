@@ -8,19 +8,21 @@ public class LoadManager : MonoBehaviour
     // Start is called before the first frame update
     [SerializeField] GameObject player;
     [SerializeField] GameObject startTrigger;
+    [SerializeField] GameObject ctrlTrigger;
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.P))
-            loadConversation(0);
-        else if (Input.GetKeyDown(KeyCode.Alpha9))
-            loadConversation(1);
-        else if (Input.GetKeyDown(KeyCode.Alpha8))
-            loadConversation(2);
+        {
+            // startTrigger.SetActive(true);
+            loadConversation(9);
+        }
+
     }
 
     private void Start()
     {
-        if (GameObject.Find("Opening_Game_Script").GetComponent<Database>().tutorialCheckpoints[0] != 0)
+        Debug.Log(GameObject.Find("Opening_Game_Script").GetComponent<Database>().tutorialCheckpoints[0]);
+        if (GameObject.Find("Opening_Game_Script").GetComponent<Database>().tutorialCheckpoints[0] > 0)
             loadConversation(GameObject.Find("Opening_Game_Script").GetComponent<Database>().tutorialCheckpoints[0]);
 
         else
@@ -31,6 +33,7 @@ public class LoadManager : MonoBehaviour
     public void loadConversation(int choice)
     {
         player.SetActive(true);
+        ctrlTrigger.SetActive(true);
         switch (choice)
         {
             case 0: DialogueManager.StartConversation("Movement Tutorials", null, null, 0); break; // start

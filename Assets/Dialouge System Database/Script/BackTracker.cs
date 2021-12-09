@@ -36,14 +36,14 @@ namespace PixelCrushers.DialogueSystem
 
         public void OnConversationStart(Transform actor)
         {
-            if (!isBacktracking)
-            {
-                // If we're really starting a new conversation (not just backtracking), initialize:
-                stack.Clear();
-                conversationActor = DialogueManager.CurrentActor;
-                conversationConversant = DialogueManager.CurrentConversant;
-                if (debug) Debug.Log("Backtracker: Starting a new conversation. Clearing stack.");
-            }
+            // if (!isBacktracking)
+            // {
+            //     // If we're really starting a new conversation (not just backtracking), initialize:
+            //     stack.Clear();
+            //     conversationActor = DialogueManager.CurrentActor;
+            //     conversationConversant = DialogueManager.CurrentConversant;
+            //     if (debug) Debug.Log("Backtracker: Starting a new conversation. Clearing stack.");
+            // }
         }
 
         public void OnConversationLine(Subtitle subtitle)
