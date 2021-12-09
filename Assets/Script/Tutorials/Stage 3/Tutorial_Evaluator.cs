@@ -67,6 +67,7 @@ public class Tutorial_Evaluator : MonoBehaviour
             case 4:
                 GameObject go3 = toModify.GetComponent<TextHolderScript>().GetStageGameObject();
                 go3.GetComponent<Tutorial_S4_Collider>().resetDefault();
+
                 break;
         }
     }
