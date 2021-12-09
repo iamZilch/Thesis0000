@@ -12,6 +12,8 @@ public class Stage1GivenHandler : MonoBehaviour
     List<string> BoolGiven = new List<string>();
     List<string> CharGiven = new List<string>();
 
+    List<string> DoubGiven = new List<string>();
+
     private void Start()
     {
         // StringGiven.Add("Hello");
@@ -50,6 +52,10 @@ public class Stage1GivenHandler : MonoBehaviour
     {
         return IntGiven[Random.Range(0, IntGiven.Count)];
     }
+    public string GenerateDouble()
+    {
+        return DoubGiven[Random.Range(0, DoubGiven.Count)];
+    }
 
     public string GenerateFloat()
     {
@@ -78,5 +84,6 @@ public class Stage1GivenHandler : MonoBehaviour
         StringGiven.Add("Name of a city");
         CharGiven.Add("Your middle initial");
         CharGiven.Add("String is composed of what data type of array?");
+        DoubGiven.Add("This is Double");
     }
 }

@@ -1464,14 +1464,13 @@ MonoBehaviour:
       conditionsString: 
       userScript: 'SetQuestState("Move to red platform", "active");
 
-        Variable["isGreenPlatform"]
-        = true'
+'
       onExecute:
         m_PersistentCalls:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 200.16266
+        x: 203.38846
         y: 131.00546
         width: 160
         height: 30
@@ -2209,7 +2208,7 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 574.05096
+        x: 574.0509
         y: 274.17206
         width: 160
         height: 30

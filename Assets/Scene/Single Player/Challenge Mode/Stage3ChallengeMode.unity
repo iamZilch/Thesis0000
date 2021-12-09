@@ -2378,6 +2378,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &349784736 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5097467154019911858, guid: 35899d27cb33f304b87691bae50ab6fa, type: 3}
+  m_PrefabInstance: {fileID: 1890997325}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1fc2a8f5ddc0e8a4cb34b1b7ea5a3b4e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &399249040
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8560,7 +8571,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 200, y: 1, z: 700}
-  m_Center: {x: 0, y: 93.56, z: 0}
+  m_Center: {x: 0, y: 117.1, z: 0}
 --- !u!1 &1386012074
 GameObject:
   m_ObjectHideFlags: 0
@@ -9952,6 +9963,7 @@ MonoBehaviour:
   ButtonHandler: {fileID: 1496429899}
   firstSkillBtnText: {fileID: 1931009278}
   firstSkillButton: {fileID: 483299162}
+  touch: {fileID: 349784736}
   ultiSkillBtnText: {fileID: 330657343}
   ultiSkillButton: {fileID: 1778539498}
   correctAnswer: T
@@ -12024,18 +12036,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 3.159027, y: 0.5184979, z: 3.190954}
   m_Center: {x: -0.0362339, y: -0.240751, z: 0.004166603}
---- !u!114 &2027104942
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2027104937}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1b43548e17c28f440874c6f1a1188290, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &2038481065 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 99d451e401b03e848a72097732d4095d, type: 3}

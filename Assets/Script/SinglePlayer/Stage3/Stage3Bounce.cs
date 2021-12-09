@@ -13,8 +13,8 @@ public class Stage3Bounce : MonoBehaviour
             AdvancedWalkerController simp = collision.gameObject.GetComponent<AdvancedWalkerController>();
             //Skills skillFX = collision.gameObject.GetComponentInChildren<Skills>();
             // skillFX.flyPlayer(collision.gameObject);
-            simp.jump();
-            //collision.gameObject.GetComponent<SkillControls>().fly(collision.gameObject);
+            //simp.jump();
+            collision.gameObject.GetComponent<SkillControls>().fly(collision.gameObject);
         }
     }
 }

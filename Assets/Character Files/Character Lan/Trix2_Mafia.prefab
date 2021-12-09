@@ -14512,6 +14512,7 @@ GameObject:
   - component: {fileID: 6034977897286221831}
   - component: {fileID: 5234001772094506620}
   - component: {fileID: 8399360364499200208}
+  - component: {fileID: 7862621190804797817}
   m_Layer: 0
   m_Name: CameraControls
   m_TagString: Untagged
@@ -14563,7 +14564,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2419933941776384858}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 176796dbe8980b1428333f1ad13d4a18, type: 3}
   m_Name: 
@@ -14577,6 +14578,20 @@ MonoBehaviour:
   controller: {fileID: 7408485803079312010}
   maximumMovementSpeed: 7
   cameraTurnSpeed: 120
+--- !u!114 &7862621190804797817
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2419933941776384858}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac1cd9664255bc54195d0bd723e19af4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  touchField: {fileID: 0}
+  cam: {fileID: 2419933941776384858}
 --- !u!1 &3007349466920607989
 GameObject:
   m_ObjectHideFlags: 0
@@ -19765,8 +19780,10 @@ MonoBehaviour:
   syncInterval: 0.1
   playerRootCam: {fileID: 932424888120744114}
   cam: {fileID: 3257984874839833332}
+  cameraControls: {fileID: 0}
   players: []
   isAlive: 1
+  isReady: 0
   ballSpointPoint: {fileID: 0}
   particles:
   - {fileID: 0}
@@ -19776,6 +19793,8 @@ MonoBehaviour:
   - {fileID: 0}
   defaultRootCam: {fileID: 0}
   defaultCam: {fileID: 0}
+  canUlti: 0
+  canFirst: 1
 --- !u!114 &1388973418827381435
 MonoBehaviour:
   m_ObjectHideFlags: 0

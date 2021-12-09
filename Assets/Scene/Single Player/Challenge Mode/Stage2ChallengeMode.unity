@@ -1313,7 +1313,7 @@ GameObject:
   m_Layer: 0
   m_Name: CheckPoint2
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 6519382022992737161, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -1325,7 +1325,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 94492002}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.23, y: -1.69, z: -29.91}
+  m_LocalPosition: {x: 1.23, y: -0.14, z: -29.91}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1522801555}
@@ -1878,7 +1878,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stage2Main: {fileID: 2015444485}
-  checkpoint: {fileID: 273600236}
+  checkpoint: {fileID: 1823890575}
 --- !u!1 &144124987
 GameObject:
   m_ObjectHideFlags: 0
@@ -2321,7 +2321,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stage2Main: {fileID: 2015444485}
-  checkpoint: {fileID: 1816278135}
+  checkpoint: {fileID: 94492002}
 --- !u!4 &174480370 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4690834868779900494, guid: d6fd3b32e7c37dc42a00db935121a711, type: 3}
@@ -3277,7 +3277,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stage2Main: {fileID: 2015444485}
-  checkpoint: {fileID: 94492002}
+  checkpoint: {fileID: 273600236}
 --- !u!1 &249161971
 GameObject:
   m_ObjectHideFlags: 0
@@ -3565,7 +3565,7 @@ GameObject:
   m_Layer: 0
   m_Name: CheckPoint3
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 6519382022992737161, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -3577,7 +3577,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 273600236}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 6.49, y: 1.63, z: -62.49}
+  m_LocalPosition: {x: 6.49, y: 2.75, z: -62.49}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1522801555}
@@ -4130,7 +4130,7 @@ GameObject:
   m_Layer: 0
   m_Name: CheckPoint
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 6519382022992737161, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -14699,7 +14699,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9025486687718024456, guid: 05397d4dc250b5a40bfa85e350e0302a, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.000015258789
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 9025486687718024456, guid: 05397d4dc250b5a40bfa85e350e0302a, type: 3}
       propertyPath: m_LocalRotation.w
@@ -17107,6 +17107,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1247370510}
   m_CullTransparentMesh: 1
+--- !u!114 &1256218081 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1221506029538434423, guid: 41805616e668711479b647d02d0b1d4f, type: 3}
+  m_PrefabInstance: {fileID: 1841663088}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1fc2a8f5ddc0e8a4cb34b1b7ea5a3b4e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1264015829
 GameObject:
   m_ObjectHideFlags: 0
@@ -19179,7 +19190,7 @@ GameObject:
   m_Layer: 0
   m_Name: CheckPoint5
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 6519382022992737161, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -19191,7 +19202,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1382630887}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.29, y: 11.938, z: -138.528}
+  m_LocalPosition: {x: 0.29, y: 13.04, z: -138.528}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1522801555}
@@ -19343,7 +19354,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9025486687718024456, guid: 05397d4dc250b5a40bfa85e350e0302a, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.000015258789
+      value: 4.0000267
       objectReference: {fileID: 0}
     - target: {fileID: 9025486687718024456, guid: 05397d4dc250b5a40bfa85e350e0302a, type: 3}
       propertyPath: m_LocalRotation.w
@@ -19995,7 +20006,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9025486687718024456, guid: 05397d4dc250b5a40bfa85e350e0302a, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.000015258789
+      value: 4.0000267
       objectReference: {fileID: 0}
     - target: {fileID: 9025486687718024456, guid: 05397d4dc250b5a40bfa85e350e0302a, type: 3}
       propertyPath: m_LocalRotation.w
@@ -26859,7 +26870,7 @@ GameObject:
   m_Layer: 0
   m_Name: CheckPoint1
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 6519382022992737161, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -26871,7 +26882,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1816278135}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 1.16, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1522801555}
@@ -27000,7 +27011,7 @@ GameObject:
   m_Layer: 0
   m_Name: CheckPoint4
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 6519382022992737161, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -27012,7 +27023,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1823890575}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.29, y: 10.72, z: -112.82}
+  m_LocalPosition: {x: 0.29, y: 4.1, z: -90.17}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1522801555}
@@ -27705,7 +27716,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4752243074252169988, guid: 41805616e668711479b647d02d0b1d4f, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4752243074252169988, guid: 41805616e668711479b647d02d0b1d4f, type: 3}
       propertyPath: m_AnchorMax.x
@@ -29060,7 +29071,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9025486687718024456, guid: 05397d4dc250b5a40bfa85e350e0302a, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.000015258789
+      value: 4.0000267
       objectReference: {fileID: 0}
     - target: {fileID: 9025486687718024456, guid: 05397d4dc250b5a40bfa85e350e0302a, type: 3}
       propertyPath: m_LocalRotation.w
@@ -29524,7 +29535,7 @@ MonoBehaviour:
   - {fileID: 273600236}
   - {fileID: 1823890575}
   - {fileID: 1382630887}
-  CheckPointGo: {fileID: 307918951}
+  CheckPointGo: {fileID: 1816278135}
   pickupPointsParent: {fileID: 1840474876}
   pickupPoints:
   - {fileID: 69673487}
@@ -29567,6 +29578,7 @@ MonoBehaviour:
   ReadyTimerText: {fileID: 1766090484}
   CurrentQuestionNumberText: {fileID: 1800599656}
   playerUIDisplay: {fileID: 1066949374}
+  touch: {fileID: 1256218081}
   correctAnswers: {fileID: 1824253937}
   finishText: {fileID: 1176204242815495533}
   Given_timer_AnswerCtr: {fileID: 2083385601002592446}
@@ -31052,7 +31064,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9025486687718024456, guid: 05397d4dc250b5a40bfa85e350e0302a, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.000015258789
+      value: 4.0000267
       objectReference: {fileID: 0}
     - target: {fileID: 9025486687718024456, guid: 05397d4dc250b5a40bfa85e350e0302a, type: 3}
       propertyPath: m_LocalRotation.w
@@ -41792,8 +41804,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 844.5, y: 0}
-  m_SizeDelta: {x: 1629, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &5519002482777237271
 MonoBehaviour:
