@@ -59,10 +59,57 @@ public class LanStage3Handler : NetworkBehaviour
     {
         if(isServer && Input.GetKeyDown(KeyCode.Alpha7))
         {
+            CmdChangeGiven();
+        }
+    }
+
+    public void MasterStart()
+    {
+        if (isServer)
+        {
+            ResetDefault();
+            StartCoroutine(ReadTimerCoroutine());
+        }
+    }
+
+
+    public void ResetDefault()
+    {
+        Debug.Log("RESET STAGE3 LAN MASTER START!");
+        ReadyTimerGo.SetActive(false);
+        PlayerCorrectAnswer.SetActive(false);
+        GivenGo.SetActive(false);
+        ReadyCountDown = 4;
+        correctAnswer = "";
+        Given = "";
+    }
+
+    IEnumerator ReadTimerCoroutine()
+    {
+        Debug.Log("Coroutine STAGE3 LAN MASTER START!");
+        ReadyTimerGo.SetActive(true);
+        yield return new WaitForSeconds(1f);
+        if(ReadyCountDown == 0)
+        {
+            StopAllCoroutines();
+            PlayerCorrectAnswer.SetActive(true);
+            GivenGo.SetActive(true);
+            ReadyTimerGo.SetActive(false);
             StartCoroutine(CmdChangeBoolNumerator());
             CmdChangeGiven();
-            
+            Debug.Log("Executed stage 3 coroutine!");
         }
+        else
+        {
+            CmdDecTimer();
+            StartCoroutine(ReadTimerCoroutine());
+        }
+    }
+
+    [Command(requiresAuthority = false)]
+    public void CmdDecTimer()
+    {
+        ReadyCountDown--;
     }
 
     [Command(requiresAuthority = false)]
@@ -101,6 +148,9 @@ public class LanStage3Handler : NetworkBehaviour
         S4Bool4 = Lan3SceneStore.S4Bool4;
 
         ReadyTimerGo = Lan3SceneStore.ReadyTimerGo;
+        PlayerCorrectAnswer = Lan3SceneStore.PlayerCorrectAnswer;
+        GivenGo = Lan3SceneStore.GivenGo;
+
     }
 
     IEnumerator CmdChangeBoolNumerator()
@@ -336,7 +386,8 @@ public class LanStage3Handler : NetworkBehaviour
             "\n\t print(!True)"
         };
 
-        int questionNum = Random.Range(0, 1);
+        int questionNum = Random.Range(0, 2);
+        Debug.Log($"Question Num : {questionNum}");
         if(questionNum == 1)
         {
             Given = TrueGiven[Random.Range(0, TrueGiven.Count)];

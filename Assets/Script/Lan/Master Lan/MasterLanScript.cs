@@ -119,7 +119,6 @@ public class MasterLanScript : NetworkManager
         NetworkStorage.GetComponent<NetworkStorage>().PositionPos = 0;
     }
 
-
     public void ChangeServerScene()
     {
         singleton.maxConnections = NetworkStorage.GetComponent<NetworkStorage>().PlayerTotal;
@@ -142,7 +141,7 @@ public class MasterLanScript : NetworkManager
                 Debug.Log("Map does not exist");
                 break;
         }
-        RunDefaultUi();
+        NetworkStorage.GetComponent<NetworkStorage>().CmdResetMasterLanDefaultUi();
         ServerChangeScene(sceneName);
     }
 

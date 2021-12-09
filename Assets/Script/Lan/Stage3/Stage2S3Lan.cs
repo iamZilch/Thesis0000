@@ -17,6 +17,7 @@ public class Stage2S3Lan : NetworkBehaviour
             string strText = Text.GetComponent<TextMeshPro>().text;
             if (strText.Equals(handler.correctAnswer))
             {
+                handler.UpdatePlayerCorrect();
                 CmdSetTrigger(false);
                 handler.CmdChangeGiven();
             }
@@ -25,6 +26,12 @@ public class Stage2S3Lan : NetworkBehaviour
 
     private void OnTriggerExit(Collider other)
     {
+        StartCoroutine(CoolDown());
+    }
+
+    IEnumerator CoolDown()
+    {
+        yield return new WaitForSeconds(1.6f);
         CmdSetTrigger(true);
     }
 

@@ -16,7 +16,12 @@ public class LanThrower : NetworkBehaviour
 
     public void Fire()
     {
-        CmdFire();
+        if (isLocalPlayer && player.GetComponent<PlayerLanExtension>().canFirst)
+        {
+            CmdFire();
+            player.GetComponent<PlayerLanExtension>().CmdFirstStatus(false);
+        }
+        
     }
 
     private void Update()

@@ -26,6 +26,9 @@ public class NetworkStorage : NetworkBehaviour
 
     [Header("Variables")]
     private string[] mapNames = {"Stage1", "Stage2", "Stage3"};
+
+    [Header("Enviroment Testing")]
+    [SerializeField] public GameObject[] powerUpsSpawnPoint;
     
     [SyncVar]
     public int mapNameInt = 0;
@@ -93,6 +96,35 @@ public class NetworkStorage : NetworkBehaviour
             Player.GetComponent<PlayerLanExtension>().CmdSetReadyLocal(false);
             CmdSubReady();
         }
+    }
+
+   [ClientRpc]
+   public void RpcSpawnTestPowerUps()
+    {
+        if (isServer)
+        {
+            GameObject ult = Instantiate(PowerUpUlti);
+            ult.transform.position = powerUpsSpawnPoint[0].transform.position;
+            GameObject speedUp = Instantiate(PowerUpSpeed);
+            speedUp.transform.position = powerUpsSpawnPoint[2].transform.position;
+            GameObject resetCd = Instantiate(PowerUpResetCd);
+            resetCd.transform.position = powerUpsSpawnPoint[1].transform.position;
+            NetworkServer.Spawn(ult, Player.GetComponent<NetworkIdentity>().connectionToClient);
+            NetworkServer.Spawn(speedUp, Player.GetComponent<NetworkIdentity>().connectionToClient);
+            NetworkServer.Spawn(resetCd, Player.GetComponent<NetworkIdentity>().connectionToClient);
+        }
+    }
+
+    [Command(requiresAuthority =false)]
+    public void CmdResetMasterLanDefaultUi()
+    {
+        RpcResetMasterLanDefaultUi();
+    }
+
+    [ClientRpc]
+    public void RpcResetMasterLanDefaultUi()
+    {
+        GameObject.Find("NetworkManager").GetComponent<MasterLanScript>().RunDefaultUi();
     }
 
     [Command(requiresAuthority = false)]
