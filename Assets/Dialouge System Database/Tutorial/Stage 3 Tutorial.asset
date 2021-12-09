@@ -234,6 +234,10 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: 
+      - title: EventGuid
+        value: c020e0be-be5d-4ffb-90c9-5475cec88f0a
+        type: 0
+        typeString: 
       conversationID: 1
       isRoot: 0
       isGroup: 0
@@ -255,7 +259,7 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 28.96907
+        x: 30.910828
         y: 70
         width: 160
         height: 30
@@ -431,11 +435,11 @@ MonoBehaviour:
       - title: Title
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Description
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Actor
         value: 2
         type: 5
@@ -447,16 +451,16 @@ MonoBehaviour:
       - title: Menu Text
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Dialogue Text
         value: These statements are mostly used as triggers or switch in executing
           other syntax in the program.
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Sequence
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       conversationID: 1
       isRoot: 0
       isGroup: 0
@@ -484,7 +488,7 @@ MonoBehaviour:
         height: 30
     entryGroups: []
     canvasScrollPosition: {x: 0, y: 0}
-    canvasZoom: 0.85000014
+    canvasZoom: 1.03
   - id: 2
     fields:
     - title: Title
@@ -534,11 +538,11 @@ MonoBehaviour:
       - title: Title
         value: START
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Description
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Actor
         value: 1
         type: 5
@@ -550,15 +554,15 @@ MonoBehaviour:
       - title: Menu Text
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Dialogue Text
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Sequence
         value: None()
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       conversationID: 2
       isRoot: 0
       isGroup: 0
@@ -607,8 +611,8 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: But, before we continue, you have to learn about logical operators
-          first.
+        value: But, before we continue, you have to learn about LOGICAL OPERATORS
+          and RELATIONAL OPERATORS  first.
         type: 0
         typeString: 
       - title: Sequence
@@ -637,7 +641,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 33.823532
-        y: 143
+        y: 141.86365
         width: 160
         height: 30
     - id: 2
@@ -811,11 +815,11 @@ MonoBehaviour:
       - title: Title
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Description
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Actor
         value: 2
         type: 5
@@ -827,16 +831,16 @@ MonoBehaviour:
       - title: Menu Text
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Dialogue Text
         value: As you can see, in order to have TRUE as a result, both values must
           be TRUE.
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Sequence
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       conversationID: 2
       isRoot: 0
       isGroup: 0
@@ -867,11 +871,11 @@ MonoBehaviour:
       - title: Title
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Description
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Actor
         value: 2
         type: 5
@@ -883,19 +887,19 @@ MonoBehaviour:
       - title: Menu Text
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Dialogue Text
         value: Here's the table for OR(II)
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Sequence
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: EventGuid
         value: ed26106b-d84c-416d-9f1b-59a8afaf2d62
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       conversationID: 2
       isRoot: 0
       isGroup: 0
@@ -982,11 +986,11 @@ MonoBehaviour:
       - title: Title
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Description
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Actor
         value: 2
         type: 5
@@ -998,19 +1002,19 @@ MonoBehaviour:
       - title: Menu Text
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Dialogue Text
         value: 'Finally, here''s the table for NOT(!): '
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Sequence
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: EventGuid
         value: 6cdb2d7f-8072-40f4-bb53-ca40276901c7
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       conversationID: 2
       isRoot: 0
       isGroup: 0
@@ -1041,11 +1045,11 @@ MonoBehaviour:
       - title: Title
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Description
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Actor
         value: 2
         type: 5
@@ -1057,20 +1061,20 @@ MonoBehaviour:
       - title: Menu Text
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Dialogue Text
         value: This one is the easiest to understand, right? NOT(!) will only reciprocate
           the boolean value
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Sequence
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: EventGuid
         value: 3a1516be-1abd-4358-8691-14ee52178ad7
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       conversationID: 2
       isRoot: 0
       isGroup: 0
@@ -1081,7 +1085,7 @@ MonoBehaviour:
       outgoingLinks:
       - originConversationID: 2
         originDialogueID: 9
-        destinationConversationID: 3
+        destinationConversationID: 8
         destinationDialogueID: 1
         isConnector: 0
         priority: 2
@@ -1092,7 +1096,7 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 10
+        x: 9.107147
         y: 704
         width: 160
         height: 30
@@ -1151,13 +1155,13 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 94.79385
+        x: 96.01337
         y: 367.5012
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 0, y: 372.88712}
-    canvasZoom: 0.8800001
+    canvasScrollPosition: {x: 6.329117, y: 336.7088}
+    canvasZoom: 0.7900002
   - id: 3
     fields:
     - title: Title
@@ -1262,11 +1266,11 @@ MonoBehaviour:
       - title: Title
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Description
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Actor
         value: 2
         type: 5
@@ -1278,19 +1282,19 @@ MonoBehaviour:
       - title: Menu Text
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Dialogue Text
         value: Now, let's continue to decision statements.
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Sequence
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: EventGuid
         value: 9b561bea-b6db-4acc-bec8-c83049304089
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       conversationID: 3
       isRoot: 0
       isGroup: 0
@@ -1312,8 +1316,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 28
-        y: 93
+        x: 23.522385
+        y: 79.56717
         width: 160
         height: 30
     - id: 2
@@ -2047,8 +2051,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 114.8208, y: 434.8443}
-    canvasZoom: 0.8200002
+    canvasScrollPosition: {x: 0, y: 0}
+    canvasZoom: 0.64000034
   - id: 4
     fields:
     - title: Title
@@ -2699,7 +2703,7 @@ MonoBehaviour:
         height: 30
     entryGroups: []
     canvasScrollPosition: {x: 0, y: 0}
-    canvasZoom: 0.8800001
+    canvasZoom: 0.7000003
   - id: 6
     fields:
     - title: Title
@@ -2790,12 +2794,6 @@ MonoBehaviour:
         destinationDialogueID: 1
         isConnector: 0
         priority: 2
-      - originConversationID: 6
-        originDialogueID: 0
-        destinationConversationID: 6
-        destinationDialogueID: 14
-        isConnector: 0
-        priority: 2
       conditionsString: 
       userScript: 
       onExecute:
@@ -2812,11 +2810,11 @@ MonoBehaviour:
       - title: Title
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Description
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Actor
         value: 2
         type: 5
@@ -2828,15 +2826,19 @@ MonoBehaviour:
       - title: Menu Text
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Dialogue Text
         value: Let's proceed to the game mechanics!
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Sequence
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
+      - title: EventGuid
+        value: 42fa3713-2fd3-4cd7-81d8-9b346f942ec6
+        type: 0
+        typeString: CustomFieldType_Text
       conversationID: 6
       isRoot: 0
       isGroup: 0
@@ -2858,8 +2860,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 26.14891
-        y: 60.693207
+        x: 92.84932
+        y: 59.984726
         width: 160
         height: 30
     - id: 2
@@ -2979,11 +2981,11 @@ MonoBehaviour:
       - title: Title
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Description
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Actor
         value: 2
         type: 5
@@ -2995,14 +2997,18 @@ MonoBehaviour:
       - title: Menu Text
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Dialogue Text
         value: The game will show you problems, answerable by true or false. What
           you will need to do is choose which door to enter.
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Sequence
         value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: EventGuid
+        value: 3001af0b-5a72-447d-9905-62e119b51578
         type: 0
         typeString: 
       conversationID: 6
@@ -3026,8 +3032,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 40
-        y: 257
+        x: 38.630135
+        y: 258.36984
         width: 160
         height: 30
     - id: 5
@@ -3035,11 +3041,11 @@ MonoBehaviour:
       - title: Title
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Description
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Actor
         value: 2
         type: 5
@@ -3051,16 +3057,16 @@ MonoBehaviour:
       - title: Menu Text
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Dialogue Text
         value: For example, if the question is (True && True), then the answer will
           be TRUE. Right?"
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Sequence
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       conversationID: 6
       isRoot: 0
       isGroup: 0
@@ -3091,11 +3097,11 @@ MonoBehaviour:
       - title: Title
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Description
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Actor
         value: 2
         type: 5
@@ -3107,15 +3113,15 @@ MonoBehaviour:
       - title: Menu Text
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Dialogue Text
         value: That means you have to enter in the gates that has TRUE value.
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Sequence
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       conversationID: 6
       isRoot: 0
       isGroup: 0
@@ -3137,7 +3143,7 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 34
+        x: 30.052628
         y: 376
         width: 160
         height: 30
@@ -3172,6 +3178,10 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: 
+      - title: EventGuid
+        value: 2fc816e4-b89c-49b3-ae49-6c0e80aebb60
+        type: 0
+        typeString: 
       conversationID: 6
       isRoot: 0
       isGroup: 0
@@ -3193,8 +3203,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 33
-        y: 427.42856
+        x: 31.360657
+        y: 428.8571
         width: 160
         height: 30
     - id: 8
@@ -3250,7 +3260,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 34.352943
-        y: 476.42853
+        y: 480.06488
         width: 160
         height: 30
     - id: 9
@@ -3258,11 +3268,11 @@ MonoBehaviour:
       - title: Title
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Description
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Actor
         value: 2
         type: 5
@@ -3274,14 +3284,18 @@ MonoBehaviour:
       - title: Menu Text
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Dialogue Text
         value: You also need to have skills and strategy, so as you can see, there
           are still a lot of obstacles that can slow you down
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Sequence
         value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: EventGuid
+        value: b7561652-6c10-4f77-bffe-9a5cd750ef53
         type: 0
         typeString: 
       conversationID: 6
@@ -3314,11 +3328,11 @@ MonoBehaviour:
       - title: Title
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Description
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Actor
         value: 2
         type: 5
@@ -3330,17 +3344,17 @@ MonoBehaviour:
       - title: Menu Text
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Dialogue Text
         value: 'Pendelum, Rotating Hammer, and Cannon
 
 '
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Sequence
         value: Camera(Obs1,,1);
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       conversationID: 6
       isRoot: 0
       isGroup: 0
@@ -3362,7 +3376,7 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 41.42856
+        x: 42.744347
         y: 623.71436
         width: 160
         height: 30
@@ -3371,11 +3385,11 @@ MonoBehaviour:
       - title: Title
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Description
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Actor
         value: 2
         type: 5
@@ -3387,15 +3401,15 @@ MonoBehaviour:
       - title: Menu Text
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Dialogue Text
         value: Axe Pendelum
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Sequence
         value: Camera(Obs2,,1);
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       conversationID: 6
       isRoot: 0
       isGroup: 0
@@ -3483,11 +3497,11 @@ MonoBehaviour:
       - title: Title
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Description
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Actor
         value: 2
         type: 5
@@ -3499,17 +3513,17 @@ MonoBehaviour:
       - title: Menu Text
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Dialogue Text
         value: 'Wall of Tux
 
 '
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Sequence
         value: Camera(Obs4,,1);
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       conversationID: 6
       isRoot: 0
       isGroup: 0
@@ -3532,56 +3546,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 44.285706
-        y: 765.1429
-        width: 160
-        height: 30
-    - id: 14
-      fields:
-      - title: Title
-        value: 
-        type: 0
-        typeString: 
-      - title: Description
-        value: 
-        type: 0
-        typeString: 
-      - title: Actor
-        value: 2
-        type: 5
-        typeString: CustomFieldType_Actor
-      - title: Conversant
-        value: 1
-        type: 5
-        typeString: CustomFieldType_Actor
-      - title: Menu Text
-        value: 
-        type: 0
-        typeString: 
-      - title: Dialogue Text
-        value: 
-        type: 0
-        typeString: 
-      - title: Sequence
-        value: 
-        type: 0
-        typeString: 
-      conversationID: 6
-      isRoot: 0
-      isGroup: 0
-      nodeColor: 
-      delaySimStatus: 0
-      falseConditionAction: Block
-      conditionPriority: 2
-      outgoingLinks: []
-      conditionsString: 
-      userScript: 
-      onExecute:
-        m_PersistentCalls:
-          m_Calls: []
-      canvasRect:
-        serializedVersion: 2
-        x: 30
-        y: 70
+        y: 761.7863
         width: 160
         height: 30
     - id: 15
@@ -3589,11 +3554,11 @@ MonoBehaviour:
       - title: Title
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Description
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Actor
         value: 2
         type: 5
@@ -3605,17 +3570,17 @@ MonoBehaviour:
       - title: Menu Text
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Dialogue Text
         value: 'Trampolin and Pipes
 
 '
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Sequence
         value: Camera(Obs5,,1);
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       conversationID: 6
       isRoot: 0
       isGroup: 0
@@ -3642,8 +3607,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 0, y: 345.26926}
-    canvasZoom: 0.6100004
+    canvasScrollPosition: {x: 0, y: 0}
+    canvasZoom: 0.49000046
   - id: 7
     fields:
     - title: Title
@@ -3758,7 +3723,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 29
-        y: 20
+        y: 18.507462
         width: 160
         height: 30
     - id: 1
@@ -3766,11 +3731,11 @@ MonoBehaviour:
       - title: Title
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Description
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Actor
         value: 2
         type: 5
@@ -3782,15 +3747,17 @@ MonoBehaviour:
       - title: Menu Text
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Dialogue Text
         value: Now, let's proceed!
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Sequence
-        value: 
+        value: 'Camera(StartPos,,2);
+
+'
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       conversationID: 7
       isRoot: 0
       isGroup: 0
@@ -3812,8 +3779,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 7.0975647
-        y: 113.51619
+        x: 69.5714
+        y: 122.0876
         width: 160
         height: 30
     - id: 2
@@ -3821,11 +3788,11 @@ MonoBehaviour:
       - title: Title
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Description
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Actor
         value: 2
         type: 5
@@ -3837,17 +3804,17 @@ MonoBehaviour:
       - title: Menu Text
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Dialogue Text
         value: 'The game will ask question in your UI
 
 '
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Sequence
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       conversationID: 7
       isRoot: 0
       isGroup: 0
@@ -3869,8 +3836,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 18.721512
-        y: 241.02528
+        x: 95.56877
+        y: 205.31102
         width: 160
         height: 30
     - id: 3
@@ -3878,11 +3845,11 @@ MonoBehaviour:
       - title: Title
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Description
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Actor
         value: 2
         type: 5
@@ -3894,16 +3861,16 @@ MonoBehaviour:
       - title: Menu Text
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Dialogue Text
         value: While moving up to the gates and dodging obstacles, you need to think
           what will be the answer in this statement.
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Sequence
-        value: 
+        value: Camera(1,,2);
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       conversationID: 7
       isRoot: 0
       isGroup: 0
@@ -3925,8 +3892,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 76.510345
-        y: 331.86646
+        x: 73.6532
+        y: 349.0093
         width: 160
         height: 30
     - id: 4
@@ -3934,11 +3901,11 @@ MonoBehaviour:
       - title: Title
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Description
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Actor
         value: 2
         type: 5
@@ -3950,13 +3917,17 @@ MonoBehaviour:
       - title: Menu Text
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Dialogue Text
         value: So, you can quickly decide on which gate to enter.
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Sequence
-        value: 
+        value: SetActive(Continue Button,false);
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: EventGuid
+        value: 7106a1a2-5f90-4a6d-add1-28aa60a494d9
         type: 0
         typeString: 
       conversationID: 7
@@ -3974,8 +3945,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 80.2504
-        y: 430.27582
+        x: 93.522255
+        y: 430.5714
         width: 160
         height: 30
     - id: 5
@@ -4008,6 +3979,10 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: 
+      - title: EventGuid
+        value: 06a81e57-f2be-43e7-a2b4-a2d50ef25692
+        type: 0
+        typeString: 
       conversationID: 7
       isRoot: 0
       isGroup: 0
@@ -4029,8 +4004,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 348.2329
-        y: 113.39725
+        x: 317.19846
+        y: 165.12134
         width: 160
         height: 30
     - id: 6
@@ -4078,8 +4053,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 352.75342
-        y: 239.78079
+        x: 311.37415
+        y: 251.84973
         width: 160
         height: 30
     - id: 7
@@ -4346,8 +4321,404 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 0, y: 4.493366}
-    canvasZoom: 0.6100004
+    canvasScrollPosition: {x: 0, y: 0}
+    canvasZoom: 0.7600003
+  - id: 8
+    fields:
+    - title: Title
+      value: Relational Operators
+      type: 0
+      typeString: CustomFieldType_Text
+    - title: Description
+      value: 
+      type: 0
+      typeString: CustomFieldType_Text
+    - title: Actor
+      value: 1
+      type: 5
+      typeString: CustomFieldType_Actor
+    - title: Conversant
+      value: 2
+      type: 5
+      typeString: CustomFieldType_Actor
+    overrideSettings:
+      useOverrides: 0
+      overrideSubtitleSettings: 0
+      showNPCSubtitlesDuringLine: 1
+      showNPCSubtitlesWithResponses: 1
+      showPCSubtitlesDuringLine: 0
+      skipPCSubtitleAfterResponseMenu: 0
+      subtitleCharsPerSecond: 30
+      minSubtitleSeconds: 2
+      continueButton: 0
+      overrideSequenceSettings: 0
+      defaultSequence: 
+      defaultPlayerSequence: 
+      defaultResponseMenuSequence: 
+      overrideInputSettings: 0
+      alwaysForceResponseMenu: 1
+      includeInvalidEntries: 0
+      responseTimeout: 0
+      cancelSubtitle:
+        key: 27
+        buttonName: 
+      cancelConversation:
+        key: 27
+        buttonName: 
+    nodeColor: 
+    dialogueEntries:
+    - id: 0
+      fields:
+      - title: Title
+        value: START
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Description
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Actor
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 2
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Dialogue Text
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Sequence
+        value: None()
+        type: 0
+        typeString: CustomFieldType_Text
+      conversationID: 8
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 8
+        originDialogueID: 0
+        destinationConversationID: 8
+        destinationDialogueID: 1
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 30
+        y: 19
+        width: 160
+        height: 30
+    - id: 1
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Description
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Actor
+        value: 2
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Dialogue Text
+        value: Now, let's learn about RELATIONAL Operators.
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Sequence
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: EventGuid
+        value: b87194c5-290b-43ec-8fd6-a3c7fdbaa9a1
+        type: 0
+        typeString: CustomFieldType_Text
+      conversationID: 8
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 8
+        originDialogueID: 1
+        destinationConversationID: 8
+        destinationDialogueID: 2
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 35
+        y: 106
+        width: 160
+        height: 30
+    - id: 2
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Description
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Actor
+        value: 2
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Dialogue Text
+        value: Relational or Comparison Operators is a programming construct that
+          tests or defines relations between two entities or variables.
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Sequence
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      conversationID: 8
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 8
+        originDialogueID: 2
+        destinationConversationID: 8
+        destinationDialogueID: 3
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 23
+        y: 195
+        width: 160
+        height: 30
+    - id: 3
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Description
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Actor
+        value: 2
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Dialogue Text
+        value: We are comparing them by using these operators.
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Sequence
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: EventGuid
+        value: 3ea95c21-a85f-40af-b777-0892516818be
+        type: 0
+        typeString: CustomFieldType_Text
+      conversationID: 8
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 8
+        originDialogueID: 3
+        destinationConversationID: 8
+        destinationDialogueID: 4
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 27
+        y: 288.13635
+        width: 160
+        height: 30
+    - id: 4
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Description
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Actor
+        value: 2
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Dialogue Text
+        value: Six common relational operators give a Boolean value by comparing
+          (showing the relationship) between two variables.
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Sequence
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: EventGuid
+        value: 9fc5ca2a-a26a-46ad-a0e8-49eb1422989a
+        type: 0
+        typeString: CustomFieldType_Text
+      conversationID: 8
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 8
+        originDialogueID: 4
+        destinationConversationID: 8
+        destinationDialogueID: 5
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 34.25316
+        y: 379.88348
+        width: 160
+        height: 30
+    - id: 5
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Description
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Actor
+        value: 2
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Dialogue Text
+        value: Each operator results in a boolean value (True or False) in some programming
+          languages it returns 1 or 0.
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Sequence
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: EventGuid
+        value: 389a786c-b66d-4b93-9823-6dee80a56563
+        type: 0
+        typeString: CustomFieldType_Text
+      conversationID: 8
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 8
+        originDialogueID: 5
+        destinationConversationID: 6
+        destinationDialogueID: 1
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 58.01158
+        y: 542.4276
+        width: 160
+        height: 30
+    entryGroups: []
+    canvasScrollPosition: {x: 0, y: 0}
+    canvasZoom: 0.43000045
   syncInfo:
     syncActors: 0
     syncItems: 0

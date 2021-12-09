@@ -9,6 +9,11 @@ public class ButtonsHandler : MonoBehaviour
     public GameObject player;
     public SkillControls cast;
 
+    private void Start()
+    {
+        cast = player.GetComponent<SkillControls>();
+    }
+
     public void setPlayer(GameObject ret)
     {
         player = ret;
