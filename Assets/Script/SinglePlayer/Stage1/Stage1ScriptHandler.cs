@@ -30,6 +30,9 @@ public class Stage1ScriptHandler : MonoBehaviour
     [SerializeField] GameObject currentQuestion;
     [SerializeField] public GameObject playerJoystick;
     [SerializeField] public GameObject buttons;
+    [SerializeField] public FixedTouchField touch;
+
+
 
     [SerializeField] TextMeshProUGUI firstSkillBtnText;
     [SerializeField] Button firstSkillButton;
@@ -86,6 +89,7 @@ public class Stage1ScriptHandler : MonoBehaviour
         if (QuestionCount <= 10)
         {
             PlayerUi.SetActive(true);
+            Player.GetComponentInChildren<TouchField>().touchField = touch;
             playerJoystick.SetActive(false);
             buttons.SetActive(false);
             StopAllCoroutines();
@@ -98,8 +102,8 @@ public class Stage1ScriptHandler : MonoBehaviour
     public void SetGiven()
     {
         Stage1GivenHandler Given = GetComponent<Stage1GivenHandler>().ReturnInstance();
-        string[] possibleAnswer = { "bool", "char", "float", "str", "int" };
-        correctAnswer = possibleAnswer[Random.Range(0, 5)];
+        string[] possibleAnswer = { "bool", "char", "float", "str", "int", "doub" };
+        correctAnswer = possibleAnswer[Random.Range(0, 6)];
         Debug.Log($"Correct Answer : {correctAnswer}");
         //Add question
         QuestionCount++;
@@ -120,6 +124,12 @@ public class Stage1ScriptHandler : MonoBehaviour
             case "int":
                 SetGiven(Given.GenerateInt());
                 break;
+            case "doub":
+                SetGiven(Given.GenerateDouble());
+                break;
+                // default:
+                //     SetGiven(Given.GenerateString());
+                //     break;
         }
     }
 

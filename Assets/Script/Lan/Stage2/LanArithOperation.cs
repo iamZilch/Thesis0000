@@ -6,7 +6,7 @@ public class LanArithOperation : MonoBehaviour
 {
     [SerializeField] public GameObject parent;
 
-    
+
 
     private void OnTriggerStay(Collider other)
     {
@@ -39,7 +39,7 @@ public class LanArithOperation : MonoBehaviour
             }
             //parent.GetComponent<LanArithmetic>().CmdDestroy();
         }
-        
+
     }
 
 

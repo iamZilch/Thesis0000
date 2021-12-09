@@ -824,7 +824,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 227.38388
-        y: 55.13527
+        y: 53.93045
         width: 160
         height: 30
     - id: 10
@@ -883,7 +883,7 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 402.77112
+        x: 404.55682
         y: 116.70749
         width: 160
         height: 30
@@ -1040,6 +1040,10 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: CustomFieldType_Text
+      - title: EventGuid
+        value: 1adb9ac8-40c8-4bb2-8476-3b5076c59f9c
+        type: 0
+        typeString: CustomFieldType_Text
       conversationID: 1
       isRoot: 0
       isGroup: 0
@@ -1095,6 +1099,10 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: CustomFieldType_Text
+      - title: EventGuid
+        value: a0d8a55b-7d76-4a95-a523-c668b07d603e
+        type: 0
+        typeString: 
       conversationID: 1
       isRoot: 0
       isGroup: 0
@@ -1401,7 +1409,7 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 1008.77527
+        x: 1010.5609
         y: 246.1612
         width: 160
         height: 30
@@ -1456,14 +1464,13 @@ MonoBehaviour:
       conditionsString: 
       userScript: 'SetQuestState("Move to red platform", "active");
 
-        Variable["isGreenPlatform"]
-        = true'
+'
       onExecute:
         m_PersistentCalls:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 202.48822
+        x: 203.38846
         y: 131.00546
         width: 160
         height: 30
@@ -1800,7 +1807,7 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 763.7662
+        x: 766.3977
         y: 585.1432
         width: 160
         height: 30
@@ -1982,11 +1989,11 @@ MonoBehaviour:
       - title: Title
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Description
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Actor
         value: 2
         type: 5
@@ -1998,19 +2005,19 @@ MonoBehaviour:
       - title: Menu Text
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Dialogue Text
         value: In order to have Ultimate skill you may need to collect this powerup.
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Sequence
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: EventGuid
         value: dc61b399-ed71-4833-9df0-5bbc3ebfd087
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       conversationID: 1
       isRoot: 0
       isGroup: 0
@@ -2041,11 +2048,11 @@ MonoBehaviour:
       - title: Title
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Description
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Actor
         value: 2
         type: 5
@@ -2057,19 +2064,19 @@ MonoBehaviour:
       - title: Menu Text
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Dialogue Text
         value: Collect it to use your second skill.
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Sequence
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: EventGuid
         value: ddda1623-68c5-4fe4-a816-f3bb638eeb84
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       conversationID: 1
       isRoot: 0
       isGroup: 0
@@ -2094,11 +2101,11 @@ MonoBehaviour:
       - title: Title
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Description
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Actor
         value: 2
         type: 5
@@ -2110,16 +2117,16 @@ MonoBehaviour:
       - title: Menu Text
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Dialogue Text
         value: Good job! I guess you are now ready to conquer and learn in Northern
           Lights.
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Sequence
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       conversationID: 1
       isRoot: 0
       isGroup: 0
@@ -2201,7 +2208,7 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 574.05096
+        x: 574.0509
         y: 274.17206
         width: 160
         height: 30
@@ -2260,7 +2267,7 @@ MonoBehaviour:
         height: 30
     entryGroups: []
     canvasScrollPosition: {x: 0, y: 0}
-    canvasZoom: 0.38000083
+    canvasZoom: 0.620001
   - id: 2
     fields:
     - title: Title

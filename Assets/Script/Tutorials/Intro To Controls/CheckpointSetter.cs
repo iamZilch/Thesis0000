@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class CheckpointSetter : MonoBehaviour
 {
@@ -9,23 +10,37 @@ public class CheckpointSetter : MonoBehaviour
     bool hasCollided;
     [SerializeField] int checkpointNumber;
 
-    private void Start()
+    // private void Start()
+    // {
+    //     hasCollided = false;
+    // }
+    // private void OnTriggerEnter(Collider other)
+    // {
+    //     if (other.gameObject.tag.Equals("Zilch"))
+    //     {
+    //         if (hasCollided.Equals(false))
+    //         {
+    //             GameObject.Find("Opening_Game_Script").GetComponent<Database>().tutorialCheckpoints[0] = checkpointNumber;
+    //             SaveData.SaveDataProgress(Database.instance);
+    //         }
+
+    //         hasCollided = true;
+
+    //         Debug.Log("Its Colliding!");
+    //     }
+    // }
+
+    public void setCheckpoint(int checkpoint)
     {
-        hasCollided = false;
+        Debug.Log("Checkpoint : " + checkpoint);
+        GameObject.Find("Opening_Game_Script").GetComponent<Database>().tutorialCheckpoints[0] = checkpoint;
+        SaveData.SaveDataProgress(Database.instance);
     }
-    private void OnTriggerEnter(Collider other)
+
+    public void endPhase(int stageNumber)
     {
-        if (other.gameObject.tag.Equals("Zilch"))
-        {
-            if (hasCollided.Equals(false))
-            {
-                GameObject.Find("Opening_Game_Script").GetComponent<Database>().tutorialCheckpoints[0] = checkpointNumber;
-                SaveData.SaveDataProgress(Database.instance);
-            }
-
-            hasCollided = true;
-
-            Debug.Log("Its Colliding!");
-        }
+        GameObject.Find("Opening_Game_Script").GetComponent<Database>().unlockedTutorials[stageNumber] = true;
+        SceneManager.LoadScene("Main_Menu_Scene");
+        SaveData.SaveDataProgress(Database.instance);
     }
 }

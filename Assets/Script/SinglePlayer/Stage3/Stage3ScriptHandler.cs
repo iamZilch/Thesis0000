@@ -18,6 +18,7 @@ public class Stage3ScriptHandler : MonoBehaviour
     [SerializeField] GameObject ButtonHandler;
     [SerializeField] TextMeshProUGUI firstSkillBtnText;
     [SerializeField] Button firstSkillButton;
+    [SerializeField] FixedTouchField touch;
 
     [SerializeField] TextMeshProUGUI ultiSkillBtnText;
     [SerializeField] Button ultiSkillButton;
@@ -36,6 +37,7 @@ public class Stage3ScriptHandler : MonoBehaviour
     void Start()
     {
         Player = Instantiate(Player);
+        Player.GetComponentInChildren<TouchField>().touchField = touch;
         ButtonsHandler but = ButtonHandler.GetComponent<ButtonsHandler>();
         but.setPlayer(Player);
         Player.transform.position = SpawnPoint.transform.position;

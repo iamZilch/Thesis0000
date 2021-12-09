@@ -29,6 +29,7 @@ public class Stage2ScriptHandler : MonoBehaviour
     [SerializeField] GameObject ReadyTimerText;
     [SerializeField] GameObject CurrentQuestionNumberText;
     [SerializeField] GameObject playerUIDisplay;
+    [SerializeField] FixedTouchField touch;
 
     [Header("Game UI")]
     [SerializeField] GameObject correctAnswers;
@@ -59,6 +60,7 @@ public class Stage2ScriptHandler : MonoBehaviour
     {
         //For testing
         Player = Instantiate(Player, CheckPoints[0].transform);
+        Player.GetComponentInChildren<TouchField>().touchField = touch;
         Player.GetComponent<Arithmetic_Character_Script>().setPickup(pickupButton);
         PlayerBtnHandler.GetComponent<ButtonsHandler>().setPlayer(Player);
         StartGame();
@@ -220,7 +222,7 @@ public class Stage2ScriptHandler : MonoBehaviour
                 if (ran == 1 && !ranGen)
                 {
                     correctOperator.Add(givenToChar[i].ToString());
-                    givenString += "_";
+                    givenString += "☐";
                     ranGen = true;
                 }
 
@@ -239,6 +241,7 @@ public class Stage2ScriptHandler : MonoBehaviour
 
 
         DisplayGivenText.GetComponent<TextMeshProUGUI>().text = givenString;
+
         PlayerUI(false);
         Invoke(nameof(setUi), 0.01f);
 
