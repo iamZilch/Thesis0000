@@ -35252,6 +35252,7 @@ MonoBehaviour:
   slideGravity: 5
   slopeLimit: 80
   useLocalMomentum: 0
+  joystick: {fileID: 0}
   cameraTransform: {fileID: 3179844099764230045}
 --- !u!114 &3179844099105669470
 MonoBehaviour:
@@ -50167,6 +50168,7 @@ GameObject:
   - component: {fileID: 3179844099764230045}
   - component: {fileID: 3179844099764230043}
   - component: {fileID: 3179844099764230044}
+  - component: {fileID: 4235368484730315740}
   m_Layer: 0
   m_Name: CameraControls
   m_TagString: Untagged
@@ -50218,7 +50220,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3179844099764230046}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 176796dbe8980b1428333f1ad13d4a18, type: 3}
   m_Name: 
@@ -50232,6 +50234,20 @@ MonoBehaviour:
   controller: {fileID: 3179844099105669469}
   maximumMovementSpeed: 7
   cameraTurnSpeed: 200
+--- !u!114 &4235368484730315740
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3179844099764230046}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac1cd9664255bc54195d0bd723e19af4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  touchField: {fileID: 0}
+  cam: {fileID: 3179844099764230046}
 --- !u!1 &3179844099831138009
 GameObject:
   m_ObjectHideFlags: 0

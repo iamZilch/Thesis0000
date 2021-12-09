@@ -29,6 +29,7 @@ public class Stage2ScriptHandler : MonoBehaviour
     [SerializeField] GameObject ReadyTimerText;
     [SerializeField] GameObject CurrentQuestionNumberText;
     [SerializeField] GameObject playerUIDisplay;
+    [SerializeField] FixedTouchField touch;
 
     [Header("Game UI")]
     [SerializeField] GameObject correctAnswers;
@@ -59,6 +60,7 @@ public class Stage2ScriptHandler : MonoBehaviour
     {
         //For testing
         Player = Instantiate(Player, CheckPoints[0].transform);
+        Player.GetComponentInChildren<TouchField>().touchField = touch;
         Player.GetComponent<Arithmetic_Character_Script>().setPickup(pickupButton);
         PlayerBtnHandler.GetComponent<ButtonsHandler>().setPlayer(Player);
         StartGame();

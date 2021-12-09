@@ -39,7 +39,7 @@ public class LoadManager : MonoBehaviour
             case 0: DialogueManager.StartConversation("Movement Tutorials", null, null, 0); break; // start
             case 1: DialogueManager.StartConversation("Movement Tutorials", null, null, 9); break; // after green platform
             case 2: DialogueManager.StartConversation("Movement Tutorials", null, null, 10); break; // after red platform
-            case 3: DialogueManager.StartConversation("Movement Tutorials", null, null, 13); break; // after collecting speed up
+            case 3: DialogueManager.StartConversation("Movement Tutorials", null, null, 12); break; // after collecting speed up
             case 4: DialogueManager.StartConversation("Movement Tutorials", null, null, 15); break; // after pink platform
             case 5: DialogueManager.StartConversation("Movement Tutorials", null, null, 18); break; // after pressing 1st skill
             case 6: DialogueManager.StartConversation("Movement Tutorials", null, null, 28); break; // after collecting coool!
