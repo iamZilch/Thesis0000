@@ -3715,6 +3715,12 @@ MonoBehaviour:
         destinationDialogueID: 10
         isConnector: 0
         priority: 2
+      - originConversationID: 7
+        originDialogueID: 0
+        destinationConversationID: 7
+        destinationDialogueID: 18
+        isConnector: 0
+        priority: 2
       conditionsString: 
       userScript: 
       onExecute:
@@ -4260,66 +4266,17 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: Cooool! You got the right answer, FALSE
+        value: 'Road to your last question lets go!
+
+'
         type: 0
         typeString: 
       - title: Sequence
         value: 
         type: 0
         typeString: 
-      conversationID: 7
-      isRoot: 0
-      isGroup: 0
-      nodeColor: 
-      delaySimStatus: 0
-      falseConditionAction: Block
-      conditionPriority: 2
-      outgoingLinks:
-      - originConversationID: 7
-        originDialogueID: 10
-        destinationConversationID: 7
-        destinationDialogueID: 11
-        isConnector: 0
-        priority: 2
-      conditionsString: 
-      userScript: 
-      onExecute:
-        m_PersistentCalls:
-          m_Calls: []
-      canvasRect:
-        serializedVersion: 2
-        x: 685.0439
-        y: 87.58241
-        width: 160
-        height: 30
-    - id: 11
-      fields:
-      - title: Title
-        value: 
-        type: 0
-        typeString: 
-      - title: Description
-        value: 
-        type: 0
-        typeString: 
-      - title: Actor
-        value: 2
-        type: 5
-        typeString: CustomFieldType_Actor
-      - title: Conversant
-        value: 1
-        type: 5
-        typeString: CustomFieldType_Actor
-      - title: Menu Text
-        value: 
-        type: 0
-        typeString: 
-      - title: Dialogue Text
-        value: You can now proceed to the next stage!
-        type: 0
-        typeString: 
-      - title: Sequence
-        value: 
+      - title: EventGuid
+        value: 52a00720-b0d4-4c06-9bb2-791c4c2eedd0
         type: 0
         typeString: 
       conversationID: 7
@@ -4337,8 +4294,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 685.0439
-        y: 137.58241
+        x: 942.92737
+        y: 111.901474
         width: 160
         height: 30
     - id: 12
@@ -4678,13 +4635,71 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 597.0404
+        x: 593.7437
         y: 363.21442
         width: 160
         height: 30
+    - id: 18
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: 
+      - title: Description
+        value: 
+        type: 0
+        typeString: 
+      - title: Actor
+        value: 2
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: 
+      - title: Dialogue Text
+        value: Cool! You got the right answer! Answer the last 2 Questions to finish
+          the game!
+        type: 0
+        typeString: 
+      - title: Sequence
+        value: SetActive(Continue Button,false);
+        type: 0
+        typeString: 
+      - title: EventGuid
+        value: c34c8270-5730-48b4-a86b-23f36e49065d
+        type: 0
+        typeString: 
+      - title: Response Menu Sequence
+        value: 
+        type: 0
+        typeString: 
+      conversationID: 7
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks: []
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 776.1426
+        y: 192.7931
+        width: 160
+        height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 0, y: 0}
-    canvasZoom: 0.5800004
+    canvasScrollPosition: {x: 0, y: 13.432831}
+    canvasZoom: 0.6700003
   - id: 8
     fields:
     - title: Title
