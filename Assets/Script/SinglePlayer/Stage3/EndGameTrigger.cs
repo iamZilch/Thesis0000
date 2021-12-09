@@ -22,8 +22,7 @@ public class EndGameTrigger : MonoBehaviour
             Debug.Log($"Game is finished : {TimerFinishText.GetComponent<TextMeshProUGUI>().text}");
             buttonHandler.SetActive(false);
             timerPanel.SetActive(false);
-            finishCanvas.SetActive(true);
-            main.GetComponent<Stage3ScriptHandler>().addPlayerExp();
+            // main.GetComponent<Stage3ScriptHandler>().addPlayerExp();
             main.GetComponent<Stage3ScriptHandler>().StopAllCoroutines();
             //LAHAT NG DATA NA GUSTO MONG IPASOK DITO MO ILAGAY!
             main.GetComponent<Stage3ScriptHandler>().endgame();
