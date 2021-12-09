@@ -58,15 +58,15 @@ public class Tutorial_Evaluator : MonoBehaviour
                 break;
             case 2:
                 GameObject go1 = toModify.GetComponent<TextHolderScript>().GetStageGameObject();
-                go1.GetComponent<s2ColliderScript>().resetDefault();
+                go1.GetComponent<Tutorial_S2_Collider>().resetDefault();
                 break;
             case 3:
                 GameObject go2 = toModify.GetComponent<TextHolderScript>().GetStageGameObject();
-                go2.GetComponent<s2ColliderScript>().resetDefault();
+                go2.GetComponent<Tutorial_S3_Collider>().resetDefault();
                 break;
             case 4:
                 GameObject go3 = toModify.GetComponent<TextHolderScript>().GetStageGameObject();
-                go3.GetComponent<s4ColliderScript>().resetDefault();
+                go3.GetComponent<Tutorial_S4_Collider>().resetDefault();
                 break;
         }
     }

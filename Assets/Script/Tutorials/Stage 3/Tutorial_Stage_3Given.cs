@@ -13,10 +13,9 @@ public class Tutorial_Stage_3Given : MonoBehaviour
     {
         TrueGiven = new List<string>
         {
-            "if(True && False)" +
-            "\n\t print((False || True) &&  False)" +
-            "\nelse" + //this
-            "\n\t print(True || (False && False))",
+            "if(3 > 1 && || 1 != 2)" +
+            "\n  Answer = ?"
+            ,
 
             "if(False || True)" + //this
             "\n\t print(True && True)" +
@@ -51,10 +50,8 @@ public class Tutorial_Stage_3Given : MonoBehaviour
 
         FalseGiven = new List<string>
         {
-            "if(False && False)" +
-            "\n\t print(True && True)" +
-            "\n else" + //this
-            "\n\t print(!True)",
+             "if(6 == 6 && || !(1 == 1))" +
+            "\n  Answer = ?",
 
             "if(False || !False)" + //this
             "\n\t print(False && (True || False))" +
