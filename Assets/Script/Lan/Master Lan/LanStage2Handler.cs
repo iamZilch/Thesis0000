@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using Mirror;
+using UnityEngine.UI;
+using System;
 
 public class LanStage2Handler : NetworkBehaviour
 {
@@ -30,6 +32,10 @@ public class LanStage2Handler : NetworkBehaviour
     public bool canPick = false;
     public Dictionary<int, string> given;
 
+    public GameObject buttonHandler;
+    public Transform handlerPos;
+    public bool pickupButtonFind = false;
+
     [SyncVar(hook = nameof(s2ReadyTimerIntHook))]
     public int s2ReadyTimerInt = 4;
     [SyncVar(hook = nameof(s2GivenTextStrHook))]
@@ -44,8 +50,8 @@ public class LanStage2Handler : NetworkBehaviour
     private void Start()
     {
         DontDestroyOnLoad(this);
-
     }
+
 
     private void Update()
     {
@@ -212,12 +218,12 @@ public class LanStage2Handler : NetworkBehaviour
             { 5, "(9/3) * 3 + 1 - 5" }
         };
         int[] keys = { 7, 8, 20, 16, 9, 2, 5 };
-        int randomRef = Random.Range(0, keys.Length);
+        int randomRef = UnityEngine.Random.Range(0, keys.Length);
         // int randomRef = 0;
         // KeyTotalAnswer = keys[0];
         string tempGiven = given[keys[randomRef]];
         string toPassGiven = "";
-        int del = Random.Range(0, 4);
+        int del = UnityEngine.Random.Range(0, 4);
         int arithFunc = 0;
         for (int i = 0; i < tempGiven.Length; i++)
         {
@@ -265,6 +271,12 @@ public class LanStage2Handler : NetworkBehaviour
     public void RpcSetReadyTimerGoVis(bool status)
     {
         ReadyGivenTimerGo.SetActive(status);
+        if(status == false)
+        {
+            //Pos for handler x:960 -- y:540 -- z:0
+            Debug.Log("Executed");
+            buttonHandler.transform.position = new Vector3(960f, 540f, 0);
+        }
     }
 
     IEnumerator DecreaseTimer()
@@ -302,7 +314,7 @@ public class LanStage2Handler : NetworkBehaviour
         {
             for (int i = 0; i < 17; i++)
             {
-                GameObject pos = PickupPointsGo[Random.Range(0, PickupPointsGo.Count)];
+                GameObject pos = PickupPointsGo[UnityEngine.Random.Range(0, PickupPointsGo.Count)];
                 PickupPointsGo.Remove(pos);
                 GameObject arit = Instantiate(arithPrefab, pos.transform.position, Quaternion.identity);
                 NetworkServer.Spawn(arit);

@@ -1489,7 +1489,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 107990056}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 50, y: 12.962763, z: 171.00003}
+  m_LocalPosition: {x: 50, y: 12.962763, z: 162.9}
   m_LocalScale: {x: 1.2500001, y: 1, z: 2}
   m_Children:
   - {fileID: 1761624185}
@@ -14736,7 +14736,7 @@ PrefabInstance:
     - target: {fileID: 9025486687718024462, guid: 05397d4dc250b5a40bfa85e350e0302a, type: 3}
       propertyPath: m_Material
       value: 
-      objectReference: {fileID: 13400000, guid: 4f9b3b62200b5134bb2c30750747a446, type: 2}
+      objectReference: {fileID: 13400000, guid: dd82dbbd2169192419d0655b60ed3437, type: 2}
     - target: {fileID: 9025486687718024463, guid: 05397d4dc250b5a40bfa85e350e0302a, type: 3}
       propertyPath: speed
       value: 8
@@ -19388,6 +19388,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: MovableWallObsFromBlender (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 9025486687718024462, guid: 05397d4dc250b5a40bfa85e350e0302a, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: dd82dbbd2169192419d0655b60ed3437, type: 2}
     - target: {fileID: 9025486687718024463, guid: 05397d4dc250b5a40bfa85e350e0302a, type: 3}
       propertyPath: speed
       value: 8
@@ -20040,6 +20044,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: MovableWallObsFromBlender (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 9025486687718024462, guid: 05397d4dc250b5a40bfa85e350e0302a, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: dd82dbbd2169192419d0655b60ed3437, type: 2}
     - target: {fileID: 9025486687718024463, guid: 05397d4dc250b5a40bfa85e350e0302a, type: 3}
       propertyPath: speed
       value: 8
@@ -29105,6 +29113,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: MovableWallObsFromBlender (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 9025486687718024462, guid: 05397d4dc250b5a40bfa85e350e0302a, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: dd82dbbd2169192419d0655b60ed3437, type: 2}
     - target: {fileID: 9025486687718024463, guid: 05397d4dc250b5a40bfa85e350e0302a, type: 3}
       propertyPath: speed
       value: 8
@@ -31098,6 +31110,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: MovableWallObsFromBlender (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 9025486687718024462, guid: 05397d4dc250b5a40bfa85e350e0302a, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: dd82dbbd2169192419d0655b60ed3437, type: 2}
     - target: {fileID: 9025486687718024463, guid: 05397d4dc250b5a40bfa85e350e0302a, type: 3}
       propertyPath: speed
       value: 8
@@ -41804,8 +41820,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 844.5, y: 0}
+  m_SizeDelta: {x: 1629, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &5519002482777237271
 MonoBehaviour:

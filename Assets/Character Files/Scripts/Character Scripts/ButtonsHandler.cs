@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using CMF;
+using System;
 
 public class ButtonsHandler : MonoBehaviour
 {
@@ -13,12 +14,16 @@ public class ButtonsHandler : MonoBehaviour
 
     public void LanCastFirstSkill()
     {
-        if (canThrow)
+        try
         {
-            canThrow = false;
-            player.GetComponent<LanThrower>().Fire();
-            StartCoroutine(LanCastFirstSkilLCd());
+            if (canThrow)
+            {
+                canThrow = false;
+                player.GetComponent<LanThrower>().Fire();
+                StartCoroutine(LanCastFirstSkilLCd());
+            }
         }
+        catch (Exception e) { }
     }
 
     IEnumerator LanCastFirstSkilLCd()
@@ -34,7 +39,7 @@ public class ButtonsHandler : MonoBehaviour
 
     private void Start()
     {
-        cast = player.GetComponent<SkillControls>();
+        //cast = player.GetComponent<SkillControls>();
     }
 
     public void setPlayer(GameObject ret)

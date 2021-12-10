@@ -34,6 +34,8 @@ public class LanStage3Handler : NetworkBehaviour
     [SerializeField] public GameObject S4Bool3;
     [SerializeField] public GameObject S4Bool4;
 
+    GameObject buttonHandler;
+
     public int playerCorrectAnswerInt = 0;
     public bool flag = false;
 
@@ -67,6 +69,8 @@ public class LanStage3Handler : NetworkBehaviour
     {
         if (isServer)
         {
+            buttonHandler = GameObject.Find("ButtonHandler");
+            buttonHandler.SetActive(false);
             ResetDefault();
             StartCoroutine(ReadTimerCoroutine());
         }
@@ -97,6 +101,7 @@ public class LanStage3Handler : NetworkBehaviour
             ReadyTimerGo.SetActive(false);
             StartCoroutine(CmdChangeBoolNumerator());
             CmdChangeGiven();
+            buttonHandler.SetActive(true);
             Debug.Log("Executed stage 3 coroutine!");
         }
         else
