@@ -186,6 +186,36 @@ MonoBehaviour:
       value: True
       type: 2
       typeString: CustomFieldType_Boolean
+  - id: 6
+    fields:
+    - title: Name
+      value: Double Question
+      type: 0
+      typeString: CustomFieldType_Text
+    - title: Pictures
+      value: '[]'
+      type: 3
+      typeString: CustomFieldType_Files
+    - title: Description
+      value: 
+      type: 0
+      typeString: CustomFieldType_Text
+    - title: Success Description
+      value: 
+      type: 0
+      typeString: CustomFieldType_Text
+    - title: Failure Description
+      value: 
+      type: 0
+      typeString: CustomFieldType_Text
+    - title: State
+      value: unassigned
+      type: 0
+      typeString: CustomFieldType_QuestState
+    - title: Is Item
+      value: False
+      type: 2
+      typeString: CustomFieldType_Boolean
   - id: 3
     fields:
     - title: Name
@@ -284,11 +314,11 @@ MonoBehaviour:
     - title: Title
       value: What is a Data Type?
       type: 0
-      typeString: 
+      typeString: CustomFieldType_Text
     - title: Description
       value: 
       type: 0
-      typeString: 
+      typeString: CustomFieldType_Text
     - title: Actor
       value: 1
       type: 5
@@ -409,13 +439,17 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: 'Camera(StartPos,,2);
+        value: 'Camera(StartPos,MyCamera,2);
 
-          {{default}}'
+          SetActive(Back,false);'
         type: 0
         typeString: CustomFieldType_Text
       - title: EventGuid
-        value: f0a6ad22-e3e2-4c23-8dde-6a4f9f374946
+        value: 1419411f-55ec-49df-a3b7-1e1a3991a0b5
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Response Menu Sequence
+        value: 
         type: 0
         typeString: CustomFieldType_Text
       conversationID: 1
@@ -471,11 +505,13 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: 
+        value: 'Camera(StartPos,MyCamera,2);
+
+          SetActive(Back, true);'
         type: 0
         typeString: CustomFieldType_Text
       - title: EventGuid
-        value: 69233039-b67d-4d7e-9b59-71ac2c4a6044
+        value: 7c234c33-562f-4d1b-a50a-2fa622cdcbb9
         type: 0
         typeString: CustomFieldType_Text
       conversationID: 1
@@ -500,7 +536,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 21.568512
-        y: 147.34633
+        y: 148.77025
         width: 160
         height: 30
     - id: 3
@@ -531,11 +567,15 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: 
+        value: Camera(StartPos,MyCamera,2);
         type: 0
         typeString: CustomFieldType_Text
       - title: EventGuid
-        value: ea02279f-f27e-44ea-9f68-79835995ab95
+        value: c1aa6fb7-228c-4952-96e9-ea095cb52055
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Response Menu Sequence
+        value: 
         type: 0
         typeString: CustomFieldType_Text
       conversationID: 1
@@ -559,8 +599,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 35.18197
-        y: 206.95508
+        x: 33.81211
+        y: 204.21533
         width: 160
         height: 30
     - id: 4
@@ -621,7 +661,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 37.185364
-        y: 266.35342
+        y: 267.91592
         width: 160
         height: 30
     - id: 5
@@ -680,8 +720,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 15.120895
-        y: 354.55893
+        x: 44.068268
+        y: 370.34842
         width: 160
         height: 30
     - id: 6
@@ -740,7 +780,7 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 26.780571
+        x: 26.959991
         y: 421.69928
         width: 160
         height: 30
@@ -800,7 +840,7 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 41.47931
+        x: 41.479317
         y: 498.6147
         width: 160
         height: 30
@@ -857,8 +897,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 38.16861
-        y: 582.51904
+        x: 38.114532
+        y: 587.6028
         width: 160
         height: 30
     - id: 10
@@ -892,6 +932,10 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: CustomFieldType_Text
+      - title: EventGuid
+        value: 7f1ff464-5596-4e01-b663-b5a65bf525fe
+        type: 0
+        typeString: CustomFieldType_Text
       conversationID: 1
       isRoot: 0
       isGroup: 0
@@ -907,7 +951,7 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: SetQuestState("Integer Question", "active")
+      userScript: 
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -947,6 +991,10 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: CustomFieldType_Text
+      - title: EventGuid
+        value: b6530277-1120-427e-b8ac-426b81b868ca
+        type: 0
+        typeString: CustomFieldType_Text
       conversationID: 1
       isRoot: 0
       isGroup: 0
@@ -965,6 +1013,12 @@ MonoBehaviour:
         originDialogueID: 11
         destinationConversationID: 1
         destinationDialogueID: 14
+        isConnector: 0
+        priority: 2
+      - originConversationID: 1
+        originDialogueID: 11
+        destinationConversationID: 1
+        destinationDialogueID: 19
         isConnector: 0
         priority: 2
       conditionsString: 
@@ -1008,6 +1062,10 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: 
+      - title: EventGuid
+        value: 0157a965-2c18-438f-acd1-a58c5790624e
+        type: 0
+        typeString: 
       conversationID: 1
       isRoot: 0
       isGroup: 0
@@ -1029,8 +1087,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 460.43277
-        y: 680.6079
+        x: 552.538
+        y: 658.2395
         width: 160
         height: 30
     - id: 14
@@ -1063,6 +1121,10 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: CustomFieldType_Text
+      - title: EventGuid
+        value: 9a009e86-f282-492b-92c5-56260614ff52
+        type: 0
+        typeString: 
       conversationID: 1
       isRoot: 0
       isGroup: 0
@@ -1118,6 +1180,10 @@ MonoBehaviour:
         typeString: 
       - title: Sequence
         value: 
+        type: 0
+        typeString: 
+      - title: EventGuid
+        value: d3ae061e-d20a-4a66-ae41-0b3026016e09
         type: 0
         typeString: 
       conversationID: 1
@@ -1230,6 +1296,10 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: CustomFieldType_Text
+      - title: EventGuid
+        value: f2146f8c-988c-4e2b-8594-bae89004bd2f
+        type: 0
+        typeString: CustomFieldType_Text
       conversationID: 1
       isRoot: 0
       isGroup: 0
@@ -1251,13 +1321,68 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 529.28516
+        x: 526.16016
         y: 919.1323
         width: 160
         height: 30
+    - id: 19
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: 
+      - title: Description
+        value: 
+        type: 0
+        typeString: 
+      - title: Actor
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 2
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: 
+      - title: Dialogue Text
+        value: Data type, stores a variable
+        type: 0
+        typeString: 
+      - title: Sequence
+        value: 
+        type: 0
+        typeString: 
+      conversationID: 1
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 1
+        originDialogueID: 19
+        destinationConversationID: 1
+        destinationDialogueID: 17
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 381.8449
+        y: 763.8034
+        width: 160
+        height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 69.751305, y: 530.13904}
-    canvasZoom: 0.9699999
+    canvasScrollPosition: {x: 0, y: 0}
+    canvasZoom: 0.6400002
   - id: 2
     fields:
     - title: Title
@@ -1385,7 +1510,9 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: 
+        value: 'SetActive(Back, false);
+
+          Camera(StartPos,MyCamera,2);'
         type: 0
         typeString: CustomFieldType_Text
       conversationID: 2
@@ -1409,7 +1536,7 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 70
+        x: 64.28572
         y: 114
         width: 160
         height: 30
@@ -1440,13 +1567,17 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: 'Camera(Camera Tv,,2);
+        value: 'Camera(Camera Tv,MyCamera,2);
 
-          {{default}}'
+          SetActive(Back, true);'
         type: 0
         typeString: CustomFieldType_Text
       - title: Response Menu Sequence
         value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: EventGuid
+        value: d5764a46-386d-4794-b18c-c2f9baacca21
         type: 0
         typeString: CustomFieldType_Text
       conversationID: 2
@@ -1470,7 +1601,7 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 86.10855
+        x: 87.537125
         y: 185.44263
         width: 160
         height: 30
@@ -1501,7 +1632,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: 
+        value: Camera(Camera Tv,MyCamera,2);
         type: 0
         typeString: CustomFieldType_Text
       conversationID: 2
@@ -1525,7 +1656,7 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 84.32283
+        x: 81.46568
         y: 260.44263
         width: 160
         height: 30
@@ -1559,9 +1690,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: 'Camera(CameraPlatforms,,2);
-
-          {{default}}'
+        value: Camera(CameraPlatforms,MyCamera,2);
         type: 0
         typeString: CustomFieldType_Text
       conversationID: 2
@@ -1586,7 +1715,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 92.35855
-        y: 328.29974
+        y: 329.72833
         width: 160
         height: 30
     - id: 5
@@ -1616,9 +1745,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: 'Camera(I-Platform,,1);
-
-          {{default}}'
+        value: Camera(I-Platform,MyCamera,1);
         type: 0
         typeString: CustomFieldType_Text
       - title: Response Menu Sequence
@@ -1646,8 +1773,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 89.67999
-        y: 420.2965
+        x: 101.4447
+        y: 373.8794
         width: 160
         height: 30
     - id: 6
@@ -1678,7 +1805,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: 'Camera(StartPos,,2);
+        value: 'Camera(StartPos,MyCamera,2);
 
           {{default}}'
         type: 0
@@ -1705,7 +1832,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 96.60324
-        y: 710.84735
+        y: 712.33984
         width: 160
         height: 30
     - id: 7
@@ -1739,6 +1866,10 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: CustomFieldType_Text
+      - title: EventGuid
+        value: 8abb5967-a6a1-44fa-9ff2-56899f77141f
+        type: 0
+        typeString: CustomFieldType_Text
       conversationID: 2
       isRoot: 0
       isGroup: 0
@@ -1759,6 +1890,12 @@ MonoBehaviour:
         destinationDialogueID: 9
         isConnector: 0
         priority: 2
+      - originConversationID: 2
+        originDialogueID: 7
+        destinationConversationID: 2
+        destinationDialogueID: 17
+        isConnector: 0
+        priority: 2
       conditionsString: 
       userScript: 
       onExecute:
@@ -1766,7 +1903,7 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 368.11523
+        x: 363.6376
         y: 677.09454
         width: 160
         height: 30
@@ -1775,11 +1912,11 @@ MonoBehaviour:
       - title: Title
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Description
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Actor
         value: 1
         type: 5
@@ -1791,15 +1928,19 @@ MonoBehaviour:
       - title: Menu Text
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Dialogue Text
         value: Stand on the correct platform that answers the questions on TV.
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Sequence
-        value: 
+        value: SetActive(Back, true);
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
+      - title: EventGuid
+        value: 11d5263d-56f8-4269-9d92-1a2cfdbf782c
+        type: 0
+        typeString: CustomFieldType_Text
       conversationID: 2
       isRoot: 0
       isGroup: 0
@@ -1830,11 +1971,11 @@ MonoBehaviour:
       - title: Title
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Description
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Actor
         value: 1
         type: 5
@@ -1846,15 +1987,19 @@ MonoBehaviour:
       - title: Menu Text
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Dialogue Text
         value: Wait for the alloted time to answer without knowing what to do.
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Sequence
-        value: 
+        value: SetActive(Back, true);
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
+      - title: EventGuid
+        value: 55e3ede7-dcf2-460c-976c-aeed7d2b2f37
+        type: 0
+        typeString: CustomFieldType_Text
       conversationID: 2
       isRoot: 0
       isGroup: 0
@@ -1876,7 +2021,7 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 222.68066
+        x: 221.18811
         y: 815.7544
         width: 160
         height: 30
@@ -1913,7 +2058,7 @@ MonoBehaviour:
       - title: EventGuid
         value: 2c9ca5ae-cb7d-4a93-9501-ab5065714829
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       conversationID: 2
       isRoot: 0
       isGroup: 0
@@ -1935,8 +2080,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 518.35785
-        y: 931.71747
+        x: 520.27594
+        y: 936.70325
         width: 160
         height: 30
     - id: 11
@@ -1944,11 +2089,11 @@ MonoBehaviour:
       - title: Title
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Description
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Actor
         value: 2
         type: 5
@@ -1960,15 +2105,15 @@ MonoBehaviour:
       - title: Menu Text
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Dialogue Text
         value: Please try to read carefully again.
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Sequence
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       conversationID: 2
       isRoot: 0
       isGroup: 0
@@ -2021,9 +2166,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: 'Camera(F-Platform,,1);
-
-          {{default}}'
+        value: Camera(F-Platform,MyCamera,1);
         type: 0
         typeString: CustomFieldType_Text
       conversationID: 2
@@ -2037,7 +2180,7 @@ MonoBehaviour:
       - originConversationID: 2
         originDialogueID: 12
         destinationConversationID: 2
-        destinationDialogueID: 13
+        destinationDialogueID: 16
         isConnector: 0
         priority: 2
       conditionsString: 
@@ -2047,8 +2190,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 89.67999
-        y: 470.2965
+        x: 108.503555
+        y: 420.88474
         width: 160
         height: 30
     - id: 13
@@ -2078,9 +2221,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: 'Camera(C-Platform,,1);
-
-          {{default}}'
+        value: Camera(C-Platform,MyCamera,1);
         type: 0
         typeString: CustomFieldType_Text
       conversationID: 2
@@ -2135,9 +2276,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: 'Camera(S-Platform,,1);
-
-          {{default}}'
+        value: Camera(S-Platform,MyCamera,1);
         type: 0
         typeString: CustomFieldType_Text
       conversationID: 2
@@ -2192,9 +2331,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: 'Camera(B-Platform,,1);
-
-          {{default}}'
+        value: Camera(B-Platform,MyCamera,1);
         type: 0
         typeString: CustomFieldType_Text
       conversationID: 2
@@ -2222,9 +2359,123 @@ MonoBehaviour:
         y: 619.16016
         width: 160
         height: 30
+    - id: 16
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Description
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Actor
+        value: 2
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Dialogue Text
+        value: '"D" for Double'
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Sequence
+        value: Camera(D-Platform,MyCamera,1);
+        type: 0
+        typeString: CustomFieldType_Text
+      conversationID: 2
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 2
+        originDialogueID: 16
+        destinationConversationID: 2
+        destinationDialogueID: 13
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 130.85648
+        y: 460.29657
+        width: 160
+        height: 30
+    - id: 17
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Description
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Actor
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 2
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Dialogue Text
+        value: Platforms and Displays on tv are nothing.
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Sequence
+        value: SetActive(Back, true);
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: EventGuid
+        value: e4e41296-44ff-4164-bfaa-fe795e981e5a
+        type: 0
+        typeString: CustomFieldType_Text
+      conversationID: 2
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 2
+        originDialogueID: 17
+        destinationConversationID: 2
+        destinationDialogueID: 11
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 309.17587
+        y: 915.3924
+        width: 160
+        height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 11.475403, y: 304.80603}
-    canvasZoom: 0.61000025
+    canvasScrollPosition: {x: 114.05724, y: 611.76404}
+    canvasZoom: 0.7900001
   - id: 3
     fields:
     - title: Title
@@ -2358,7 +2609,16 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: 
+        value: 'SetActive(Back,false);
+
+          SetActive(HighlightPanel, false);
+
+          Camera(StartPos,
+          MyCamera,1);'
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: EventGuid
+        value: 001a85fc-c246-4056-8418-056f6d15a4cd
         type: 0
         typeString: CustomFieldType_Text
       conversationID: 3
@@ -2383,7 +2643,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 31.912628
-        y: 72.601944
+        y: 72.65602
         width: 160
         height: 30
     - id: 2
@@ -2413,7 +2673,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: 
+        value: SetActive(Back, true);
         type: 0
         typeString: CustomFieldType_Text
       - title: EventGuid
@@ -2476,6 +2736,10 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: CustomFieldType_Text
+      - title: EventGuid
+        value: 985670e5-d1b5-4a22-bc86-d30b484ccd61
+        type: 0
+        typeString: CustomFieldType_Text
       conversationID: 3
       isRoot: 0
       isGroup: 0
@@ -2532,6 +2796,10 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: CustomFieldType_Text
+      - title: EventGuid
+        value: a772a8fb-4de7-4b01-a341-137792bd7b2c
+        type: 0
+        typeString: CustomFieldType_Text
       conversationID: 3
       isRoot: 0
       isGroup: 0
@@ -2553,7 +2821,7 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 39.679626
+        x: 38.363846
         y: 236.19415
         width: 160
         height: 30
@@ -2613,7 +2881,7 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 43.239136
+        x: 39.534286
         y: 340.04282
         width: 160
         height: 30
@@ -2669,7 +2937,7 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 46.971176
+        x: 45.751663
         y: 402.501
         width: 160
         height: 30
@@ -2781,7 +3049,7 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 363.27158
+        x: 364.4911
         y: 416.58463
         width: 160
         height: 30
@@ -2835,6 +3103,12 @@ MonoBehaviour:
         destinationDialogueID: 11
         isConnector: 0
         priority: 2
+      - originConversationID: 3
+        originDialogueID: 9
+        destinationConversationID: 3
+        destinationDialogueID: 18
+        isConnector: 0
+        priority: 2
       conditionsString: 
       userScript: 
       onExecute:
@@ -2873,7 +3147,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: 
+        value: SetActive(Back, false);
         type: 0
         typeString: CustomFieldType_Text
       conversationID: 3
@@ -2897,8 +3171,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 199.68411
-        y: 691.84143
+        x: 71.589066
+        y: 695.49994
         width: 160
         height: 30
     - id: 11
@@ -2929,7 +3203,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: 
+        value: SetActive(Back, false);
         type: 0
         typeString: CustomFieldType_Text
       conversationID: 3
@@ -2953,8 +3227,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 398.38702
-        y: 672.4522
+        x: 521.55774
+        y: 671.2327
         width: 160
         height: 30
     - id: 12
@@ -2962,11 +3236,11 @@ MonoBehaviour:
       - title: Title
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Description
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Actor
         value: 2
         type: 5
@@ -2978,15 +3252,15 @@ MonoBehaviour:
       - title: Menu Text
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Dialogue Text
         value: Please read carefully to understand the concept of integer.
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Sequence
-        value: 
+        value: SetActive(Back, false);
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       conversationID: 3
       isRoot: 0
       isGroup: 0
@@ -3009,7 +3283,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 1
-        y: 599.5635
+        y: 600.8293
         width: 160
         height: 30
     - id: 13
@@ -3095,7 +3369,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: 'Camera(Camera Tv,,2);
+        value: 'Camera(Camera Tv,MyCamera,2);
 
           {{default}}'
         type: 0
@@ -3125,8 +3399,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 407.83795
-        y: 866.3677
+        x: 404.30853
+        y: 874.60297
         width: 160
         height: 30
     - id: 15
@@ -3206,7 +3480,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: 
+        value: SetActive(HighlightPanel,true);
         type: 0
         typeString: CustomFieldType_Text
       - title: EventGuid
@@ -3234,7 +3508,7 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 50.63851
+        x: 49.37269
         y: 279.34482
         width: 160
         height: 30
@@ -3265,11 +3539,14 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: 
+        value: 'SetActive(Continue Button, false);
+
+          SetActive(ProceedInt,
+          true);'
         type: 0
         typeString: CustomFieldType_Text
       - title: EventGuid
-        value: dcdbb865-ada3-4d9e-8f5e-a0c519327cc5
+        value: 5c0f4e6b-1e52-4de6-b304-93c3a3301d14
         type: 0
         typeString: CustomFieldType_Text
       conversationID: 3
@@ -3287,13 +3564,68 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 423.8272
-        y: 998.1664
+        x: 423.0542
+        y: 997.10254
+        width: 160
+        height: 30
+    - id: 18
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Description
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Actor
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 2
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Dialogue Text
+        value: Its purely fractional numbers.
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Sequence
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      conversationID: 3
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 3
+        originDialogueID: 18
+        destinationConversationID: 3
+        destinationDialogueID: 12
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 276.81552
+        y: 701.83984
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 202.58635, y: 610.42206}
-    canvasZoom: 0.6700003
+    canvasScrollPosition: {x: 218.49411, y: 648.6654}
+    canvasZoom: 0.7600002
   - id: 4
     fields:
     - title: Title
@@ -3398,11 +3730,11 @@ MonoBehaviour:
       - title: Title
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Description
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Actor
         value: 2
         type: 5
@@ -3414,16 +3746,16 @@ MonoBehaviour:
       - title: Menu Text
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Dialogue Text
         value: 'Floating numbers. The price of my favorite game ''Tux: Coding Penguin'',
           which is $5.25.'
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Sequence
-        value: 
+        value: SetActive(Back,true);
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       conversationID: 4
       isRoot: 0
       isGroup: 0
@@ -3454,11 +3786,11 @@ MonoBehaviour:
       - title: Title
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Description
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Actor
         value: 2
         type: 5
@@ -3470,16 +3802,16 @@ MonoBehaviour:
       - title: Menu Text
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Dialogue Text
         value: Whole numbers are stored in integers, but, how about the numbers with
           decimals?
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Sequence
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       conversationID: 4
       isRoot: 0
       isGroup: 0
@@ -3510,11 +3842,11 @@ MonoBehaviour:
       - title: Title
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Description
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Actor
         value: 2
         type: 5
@@ -3526,15 +3858,15 @@ MonoBehaviour:
       - title: Menu Text
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Dialogue Text
         value: The data type, Float, will save the day!
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Sequence
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       conversationID: 4
       isRoot: 0
       isGroup: 0
@@ -3556,7 +3888,7 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 192.36844
+        x: 194.18661
         y: 222
         width: 160
         height: 30
@@ -3565,11 +3897,11 @@ MonoBehaviour:
       - title: Title
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Description
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Actor
         value: 2
         type: 5
@@ -3581,15 +3913,15 @@ MonoBehaviour:
       - title: Menu Text
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Dialogue Text
         value: Decimal numbers are stored as Float.
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Sequence
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       conversationID: 4
       isRoot: 0
       isGroup: 0
@@ -3620,11 +3952,11 @@ MonoBehaviour:
       - title: Title
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Description
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Actor
         value: 2
         type: 5
@@ -3636,17 +3968,17 @@ MonoBehaviour:
       - title: Menu Text
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Dialogue Text
         value: "Such as prices, temperatures, exact measurements, and any other numbers
           that will include decimal points\r to have a precise amount is stored in
           Float."
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Sequence
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       conversationID: 4
       isRoot: 0
       isGroup: 0
@@ -3677,11 +4009,11 @@ MonoBehaviour:
       - title: Title
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Description
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Actor
         value: 2
         type: 5
@@ -3693,16 +4025,16 @@ MonoBehaviour:
       - title: Menu Text
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Dialogue Text
         value: FLOAT DATA type is used in computer programming when more precision
           is needed than what integers can provide
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Sequence
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       conversationID: 4
       isRoot: 0
       isGroup: 0
@@ -3733,11 +4065,11 @@ MonoBehaviour:
       - title: Title
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Description
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Actor
         value: 2
         type: 5
@@ -3749,16 +4081,16 @@ MonoBehaviour:
       - title: Menu Text
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Dialogue Text
         value: To assess if you really understand the integer and float. What is
           the difference between them?
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Sequence
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       conversationID: 4
       isRoot: 0
       isGroup: 0
@@ -3779,6 +4111,12 @@ MonoBehaviour:
         destinationDialogueID: 9
         isConnector: 0
         priority: 2
+      - originConversationID: 4
+        originDialogueID: 7
+        destinationConversationID: 4
+        destinationDialogueID: 15
+        isConnector: 0
+        priority: 2
       conditionsString: 
       userScript: 
       onExecute:
@@ -3786,7 +4124,7 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 313.5668
+        x: 318.5668
         y: 486.26715
         width: 160
         height: 30
@@ -3795,11 +4133,11 @@ MonoBehaviour:
       - title: Title
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Description
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Actor
         value: 1
         type: 5
@@ -3811,15 +4149,15 @@ MonoBehaviour:
       - title: Menu Text
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Dialogue Text
         value: Float and integer represents the same.
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Sequence
-        value: 
+        value: SetActive(Back,false);
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       conversationID: 4
       isRoot: 0
       isGroup: 0
@@ -3841,8 +4179,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 187.20567
-        y: 569.5589
+        x: 232.41115
+        y: 566.81915
         width: 160
         height: 30
     - id: 9
@@ -3850,11 +4188,11 @@ MonoBehaviour:
       - title: Title
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Description
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Actor
         value: 1
         type: 5
@@ -3866,15 +4204,15 @@ MonoBehaviour:
       - title: Menu Text
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Dialogue Text
         value: "Float includes decimal fraction, where integer does not.\t"
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Sequence
-        value: 
+        value: SetActive(Back,false);
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       conversationID: 4
       isRoot: 0
       isGroup: 0
@@ -3905,11 +4243,11 @@ MonoBehaviour:
       - title: Title
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Description
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Actor
         value: 2
         type: 5
@@ -3921,15 +4259,15 @@ MonoBehaviour:
       - title: Menu Text
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Dialogue Text
         value: Be careful, FLOAT DATA type Includes decimal fractions. Try again.
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Sequence
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       conversationID: 4
       isRoot: 0
       isGroup: 0
@@ -3960,11 +4298,11 @@ MonoBehaviour:
       - title: Title
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Description
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Actor
         value: 2
         type: 5
@@ -3976,15 +4314,15 @@ MonoBehaviour:
       - title: Menu Text
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Dialogue Text
         value: Great! Let's proceed to your mini quest.
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Sequence
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       conversationID: 4
       isRoot: 0
       isGroup: 0
@@ -4015,11 +4353,11 @@ MonoBehaviour:
       - title: Title
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Description
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Actor
         value: 2
         type: 5
@@ -4031,16 +4369,16 @@ MonoBehaviour:
       - title: Menu Text
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Dialogue Text
         value: Displayed on the screen, answer the question by standing on the right
           platform with correct data type.
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Sequence
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       conversationID: 4
       isRoot: 0
       isGroup: 0
@@ -4063,7 +4401,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 532.1627
-        y: 754.24805
+        y: 756.74805
         width: 160
         height: 30
     - id: 13
@@ -4071,11 +4409,11 @@ MonoBehaviour:
       - title: Title
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Description
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Actor
         value: 2
         type: 5
@@ -4087,19 +4425,22 @@ MonoBehaviour:
       - title: Menu Text
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Dialogue Text
         value: Proceed.
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Sequence
-        value: 
+        value: 'SetActive(ProceedFloat,true);
+
+          SetActive(Continue Button,
+          false);'
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: EventGuid
         value: d9336043-ccb0-416b-adea-270ff62bce61
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       conversationID: 4
       isRoot: 0
       isGroup: 0
@@ -4115,7 +4456,7 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 531.7978
+        x: 529.2978
         y: 842.2227
         width: 160
         height: 30
@@ -4124,11 +4465,11 @@ MonoBehaviour:
       - title: Title
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Description
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Actor
         value: 2
         type: 5
@@ -4140,21 +4481,25 @@ MonoBehaviour:
       - title: Menu Text
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Dialogue Text
         value: Great! Now, The Float data type.
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Sequence
-        value: 'Camera(StartPos,,2);
+        value: 'Camera(StartPos,MyCamera,2);
+
+          SetActive(ProceedInt,false);
+
+          SetActive(Back,false);
 
           {{default}}'
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: EventGuid
         value: b6b82e6e-d332-41ac-8651-4f547de05559
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       conversationID: 4
       isRoot: 0
       isGroup: 0
@@ -4180,9 +4525,64 @@ MonoBehaviour:
         y: 43.469406
         width: 160
         height: 30
+    - id: 15
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Description
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Actor
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 2
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Dialogue Text
+        value: Integer is fractional, float is whole numbers only.
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Sequence
+        value: SetActive(Back,false);
+        type: 0
+        typeString: CustomFieldType_Text
+      conversationID: 4
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 4
+        originDialogueID: 15
+        destinationConversationID: 4
+        destinationDialogueID: 10
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 288.90924
+        y: 699.2808
+        width: 160
+        height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 28.125, y: 366.19305}
-    canvasZoom: 0.6400002
+    canvasScrollPosition: {x: 352.2178, y: 490.65024}
+    canvasZoom: 0.7900001
   - id: 5
     fields:
     - title: Title
@@ -4287,11 +4687,11 @@ MonoBehaviour:
       - title: Title
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Description
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Actor
         value: 2
         type: 5
@@ -4303,22 +4703,30 @@ MonoBehaviour:
       - title: Menu Text
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Dialogue Text
         value: Displayed on the screen, answer the question by standing on the right
           platform with correct data type.
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Sequence
-        value: 'Camera(Camera Tv,,2);
+        value: 'Camera(Camera Tv,MyCamera,2);
+
+          SetActive(ProceedDouble,
+          false);
+
+          SetActive(Continue Button, true);
+
+          SetActive(Back,
+          false);
 
           {{default}}'
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: EventGuid
         value: da5bfb5e-ed35-41cb-91f3-ef53a8d5dbae
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       conversationID: 5
       isRoot: 0
       isGroup: 0
@@ -4340,8 +4748,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 49.827072
-        y: 141
+        x: 51.046585
+        y: 139.18182
         width: 160
         height: 30
     - id: 2
@@ -4349,11 +4757,11 @@ MonoBehaviour:
       - title: Title
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Description
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Actor
         value: 2
         type: 5
@@ -4365,16 +4773,20 @@ MonoBehaviour:
       - title: Menu Text
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Dialogue Text
         value: Look at the big screen. It is asking on which data type to store your
           middle initial.
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Sequence
+        value: SetActive(Back, true)
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Response Menu Sequence
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       conversationID: 5
       isRoot: 0
       isGroup: 0
@@ -4405,11 +4817,11 @@ MonoBehaviour:
       - title: Title
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Description
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Actor
         value: 2
         type: 5
@@ -4421,16 +4833,16 @@ MonoBehaviour:
       - title: Menu Text
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Dialogue Text
         value: It is a single letter, a single character, that means it will be stored
           in Character Data Type.
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Sequence
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       conversationID: 5
       isRoot: 0
       isGroup: 0
@@ -4461,11 +4873,11 @@ MonoBehaviour:
       - title: Title
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Description
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Actor
         value: 2
         type: 5
@@ -4477,16 +4889,16 @@ MonoBehaviour:
       - title: Menu Text
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Dialogue Text
         value: Character or char is used to store a single letter, number, punctuation,
           or any SINGLE character.
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Sequence
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       conversationID: 5
       isRoot: 0
       isGroup: 0
@@ -4517,11 +4929,11 @@ MonoBehaviour:
       - title: Title
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Description
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Actor
         value: 2
         type: 5
@@ -4533,15 +4945,15 @@ MonoBehaviour:
       - title: Menu Text
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Dialogue Text
         value: Again, Character Data Type only stores any SINGLE character.
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Sequence
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       conversationID: 5
       isRoot: 0
       isGroup: 0
@@ -4572,11 +4984,11 @@ MonoBehaviour:
       - title: Title
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Description
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Actor
         value: 2
         type: 5
@@ -4588,16 +5000,16 @@ MonoBehaviour:
       - title: Menu Text
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Dialogue Text
         value: "In programming syntax, one way to identify a character, single quotation
           is usually used to define its value.\r"
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Sequence
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       conversationID: 5
       isRoot: 0
       isGroup: 0
@@ -4628,11 +5040,11 @@ MonoBehaviour:
       - title: Title
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Description
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Actor
         value: 2
         type: 5
@@ -4644,16 +5056,16 @@ MonoBehaviour:
       - title: Menu Text
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Dialogue Text
         value: For example, the letter "A" is a single character. With a computer,
           one character is equal to one byte, which is 8 bits.
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Sequence
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       conversationID: 5
       isRoot: 0
       isGroup: 0
@@ -4684,11 +5096,11 @@ MonoBehaviour:
       - title: Title
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Description
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Actor
         value: 2
         type: 5
@@ -4700,16 +5112,16 @@ MonoBehaviour:
       - title: Menu Text
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Dialogue Text
         value: 'A computer can understand a character with ASCII, which defines each
           character as a number that is translated to binary. '
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Sequence
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       conversationID: 5
       isRoot: 0
       isGroup: 0
@@ -4740,11 +5152,11 @@ MonoBehaviour:
       - title: Title
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Description
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Actor
         value: 2
         type: 5
@@ -4756,19 +5168,22 @@ MonoBehaviour:
       - title: Menu Text
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Dialogue Text
         value: You know what to do, please proceed to the correct platform
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Sequence
-        value: 
+        value: 'SetActive(ProceedChar, true);
+
+          SetActive(Continue Button,
+          false);'
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: EventGuid
         value: 29ac5e84-0008-4080-8917-8c1b35d39f6b
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       conversationID: 5
       isRoot: 0
       isGroup: 0
@@ -4784,13 +5199,13 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 102.215836
-        y: 579.40594
+        x: 100.491684
+        y: 582.8542
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 1.8181763, y: 289.09067}
-    canvasZoom: 0.5500004
+    canvasScrollPosition: {x: 0, y: 0}
+    canvasZoom: 0.8200002
   - id: 6
     fields:
     - title: Title
@@ -4895,11 +5310,11 @@ MonoBehaviour:
       - title: Title
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Description
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Actor
         value: 2
         type: 5
@@ -4911,26 +5326,33 @@ MonoBehaviour:
       - title: Menu Text
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Dialogue Text
         value: Now, Character Data Type stores any SINGLE character. What about words,
           or phrase?
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Sequence
-        value: 'Camera(StartPos,,2);
+        value: 'Camera(StartPos,MyCamera,2);
+
+          SetActive(ProceedChar, false);
+
+          SetActive(Continue
+          Button, true);
+
+          SetActive(Back, false);
 
           {{default}}'
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: EventGuid
         value: 324cbaa5-9dd5-438a-ac7d-f5b3561a619b
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Response Menu Sequence
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       conversationID: 6
       isRoot: 0
       isGroup: 0
@@ -4961,11 +5383,11 @@ MonoBehaviour:
       - title: Title
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Description
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Actor
         value: 2
         type: 5
@@ -4977,17 +5399,17 @@ MonoBehaviour:
       - title: Menu Text
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Dialogue Text
         value: 'Well, there is that very useful data type called String
 
 '
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Sequence
-        value: 
+        value: SetActive(Back, true);
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       conversationID: 6
       isRoot: 0
       isGroup: 0
@@ -5018,11 +5440,11 @@ MonoBehaviour:
       - title: Title
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Description
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Actor
         value: 2
         type: 5
@@ -5034,16 +5456,16 @@ MonoBehaviour:
       - title: Menu Text
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Dialogue Text
         value: ' STRING which is used for data values that are made up of ordered
           sequences of characters, such as "hello world".'
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Sequence
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       conversationID: 6
       isRoot: 0
       isGroup: 0
@@ -5074,11 +5496,11 @@ MonoBehaviour:
       - title: Title
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Description
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Actor
         value: 2
         type: 5
@@ -5090,16 +5512,16 @@ MonoBehaviour:
       - title: Menu Text
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Dialogue Text
         value: So, whether your store letters, punctuations, or numbers inside it.
           String will accept it.
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Sequence
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       conversationID: 6
       isRoot: 0
       isGroup: 0
@@ -5130,11 +5552,11 @@ MonoBehaviour:
       - title: Title
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Description
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Actor
         value: 2
         type: 5
@@ -5146,16 +5568,16 @@ MonoBehaviour:
       - title: Menu Text
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Dialogue Text
         value: "But, be careful, if you store numbers inside it. It will not act
           as a normal \rnumber, you can not add it like 1 + 1 = 2."
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Sequence
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       conversationID: 6
       isRoot: 0
       isGroup: 0
@@ -5186,11 +5608,11 @@ MonoBehaviour:
       - title: Title
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Description
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Actor
         value: 2
         type: 5
@@ -5202,16 +5624,16 @@ MonoBehaviour:
       - title: Menu Text
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Dialogue Text
-        value: It is more like, 1 + 1 = 11, because the computer will take it as
-          an addition of Characters.
+        value: It is more like, "1" + "1" = 11, because the computer will take it
+          as an addition of Characters.
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Sequence
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       conversationID: 6
       isRoot: 0
       isGroup: 0
@@ -5242,11 +5664,11 @@ MonoBehaviour:
       - title: Title
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Description
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Actor
         value: 2
         type: 5
@@ -5258,16 +5680,16 @@ MonoBehaviour:
       - title: Menu Text
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Dialogue Text
         value: If you want numbers to act like normal numbers, you better store it
           in Integer or Float.
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Sequence
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       conversationID: 6
       isRoot: 0
       isGroup: 0
@@ -5298,11 +5720,11 @@ MonoBehaviour:
       - title: Title
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Description
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Actor
         value: 2
         type: 5
@@ -5314,17 +5736,17 @@ MonoBehaviour:
       - title: Menu Text
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Dialogue Text
         value: "In programming syntax, one way to identify a string, unlike Characters
           which usually use single quotation,\r Strings use double quotations in
           defining its value.\n"
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Sequence
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       conversationID: 6
       isRoot: 0
       isGroup: 0
@@ -5355,11 +5777,11 @@ MonoBehaviour:
       - title: Title
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Description
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Actor
         value: 2
         type: 5
@@ -5371,15 +5793,15 @@ MonoBehaviour:
       - title: Menu Text
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Dialogue Text
         value: For example, "abcde", "12345", or "!?@$#".
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Sequence
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       conversationID: 6
       isRoot: 0
       isGroup: 0
@@ -5410,11 +5832,11 @@ MonoBehaviour:
       - title: Title
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Description
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Actor
         value: 2
         type: 5
@@ -5426,16 +5848,16 @@ MonoBehaviour:
       - title: Menu Text
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Dialogue Text
         value: String and character is just the same. You can compare values of String
           to a Character.
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Sequence
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       conversationID: 6
       isRoot: 0
       isGroup: 0
@@ -5456,6 +5878,12 @@ MonoBehaviour:
         destinationDialogueID: 12
         isConnector: 0
         priority: 2
+      - originConversationID: 6
+        originDialogueID: 10
+        destinationConversationID: 6
+        destinationDialogueID: 15
+        isConnector: 0
+        priority: 2
       conditionsString: 
       userScript: 
       onExecute:
@@ -5472,11 +5900,11 @@ MonoBehaviour:
       - title: Title
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Description
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Actor
         value: 1
         type: 5
@@ -5488,15 +5916,15 @@ MonoBehaviour:
       - title: Menu Text
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Dialogue Text
         value: Both statements are correct.
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Sequence
-        value: 
+        value: SetActive(Back, false);
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       conversationID: 6
       isRoot: 0
       isGroup: 0
@@ -5518,8 +5946,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 301.2248
-        y: 857.927
+        x: 303.9645
+        y: 830.5298
         width: 160
         height: 30
     - id: 12
@@ -5527,11 +5955,11 @@ MonoBehaviour:
       - title: Title
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Description
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Actor
         value: 1
         type: 5
@@ -5543,15 +5971,15 @@ MonoBehaviour:
       - title: Menu Text
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Dialogue Text
         value: First statement is incorrect while the second statement is correct.
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Sequence
-        value: 
+        value: SetActive(Back, false);
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       conversationID: 6
       isRoot: 0
       isGroup: 0
@@ -5573,8 +6001,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 493.77798
-        y: 772.8207
+        x: 612.9561
+        y: 787.88916
         width: 160
         height: 30
     - id: 13
@@ -5582,11 +6010,11 @@ MonoBehaviour:
       - title: Title
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Description
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Actor
         value: 2
         type: 5
@@ -5598,16 +6026,16 @@ MonoBehaviour:
       - title: Menu Text
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Dialogue Text
         value: String and Character is different. String is a collection of a single
           Character. Please read carefully and try again.
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Sequence
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       conversationID: 6
       isRoot: 0
       isGroup: 0
@@ -5638,11 +6066,11 @@ MonoBehaviour:
       - title: Title
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Description
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Actor
         value: 2
         type: 5
@@ -5654,19 +6082,22 @@ MonoBehaviour:
       - title: Menu Text
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Dialogue Text
         value: Great! You know what to do!
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Sequence
-        value: 
+        value: 'SetActive(ProceedString, true);
+
+          SetActive(Continue Button,
+          false);'
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: EventGuid
         value: b8e4959c-2d36-4cd9-8431-c1f9141cc2de
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       conversationID: 6
       isRoot: 0
       isGroup: 0
@@ -5682,13 +6113,68 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 537.395
-        y: 869.6292
+        x: 622.3264
+        y: 1009.35516
+        width: 160
+        height: 30
+    - id: 15
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Description
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Actor
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 2
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Dialogue Text
+        value: First statement is correct while second statement is wrong.
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Sequence
+        value: SetActive(Back, false);
+        type: 0
+        typeString: CustomFieldType_Text
+      conversationID: 6
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 6
+        originDialogueID: 15
+        destinationConversationID: 6
+        destinationDialogueID: 13
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 442.9474
+        y: 952.8994
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 27.49997, y: 242.49973}
-    canvasZoom: 0.4000005
+    canvasScrollPosition: {x: 4.6875, y: 407.08276}
+    canvasZoom: 0.6400004
   - id: 7
     fields:
     - title: Title
@@ -5815,7 +6301,11 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Sequence
-        value: 
+        value: 'Camera(StartPos,,2);
+
+          {{default}}
+
+'
         type: 0
         typeString: 
       - title: EventGuid
@@ -6071,7 +6561,7 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 0, y: 0}
+    canvasScrollPosition: {x: 69.45451, y: 29.944351}
     canvasZoom: 0.6100004
   - id: 8
     fields:
@@ -6177,11 +6667,11 @@ MonoBehaviour:
       - title: Title
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Description
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Actor
         value: 2
         type: 5
@@ -6193,18 +6683,25 @@ MonoBehaviour:
       - title: Menu Text
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Dialogue Text
         value: 'The Double Data type.
 
 
 '
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Sequence
-        value: 
+        value: 'Camera(StartPos,MyCamera,2);
+
+          SetActive(ProceedFloat, false);
+
+          SetActive(Back,
+          false);
+
+          {{default}}'
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       conversationID: 8
       isRoot: 0
       isGroup: 0
@@ -6226,7 +6723,7 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 67
+        x: 63.363632
         y: 69
         width: 160
         height: 30
@@ -6235,11 +6732,11 @@ MonoBehaviour:
       - title: Title
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Description
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Actor
         value: 2
         type: 5
@@ -6251,15 +6748,15 @@ MonoBehaviour:
       - title: Menu Text
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Dialogue Text
         value: Frequently asked question is the difference between DOUBLE and FLOAT.
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Sequence
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       conversationID: 8
       isRoot: 0
       isGroup: 0
@@ -6281,7 +6778,7 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 84.603775
+        x: 88.24014
         y: 143.98114
         width: 160
         height: 30
@@ -6290,11 +6787,11 @@ MonoBehaviour:
       - title: Title
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Description
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Actor
         value: 2
         type: 5
@@ -6306,16 +6803,16 @@ MonoBehaviour:
       - title: Menu Text
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Dialogue Text
         value: According to W3schools, FLOAT has single precision whilst DOUBLE has
           double precision.
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Sequence
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       conversationID: 8
       isRoot: 0
       isGroup: 0
@@ -6346,11 +6843,11 @@ MonoBehaviour:
       - title: Title
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Description
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Actor
         value: 2
         type: 5
@@ -6362,15 +6859,15 @@ MonoBehaviour:
       - title: Menu Text
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Dialogue Text
         value: According to IEEE, FLOAT DATA TYPE has a 32-bit floating point precision.
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Sequence
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       conversationID: 8
       isRoot: 0
       isGroup: 0
@@ -6401,11 +6898,11 @@ MonoBehaviour:
       - title: Title
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Description
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Actor
         value: 2
         type: 5
@@ -6417,15 +6914,15 @@ MonoBehaviour:
       - title: Menu Text
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Dialogue Text
         value: While DOUBLE Data type has a 64-bit floating point precision.
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Sequence
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       conversationID: 8
       isRoot: 0
       isGroup: 0
@@ -6447,7 +6944,7 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 75.89313
+        x: 72.04698
         y: 343.90646
         width: 160
         height: 30
@@ -6456,11 +6953,11 @@ MonoBehaviour:
       - title: Title
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Description
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Actor
         value: 2
         type: 5
@@ -6472,15 +6969,15 @@ MonoBehaviour:
       - title: Menu Text
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Dialogue Text
         value: Which is more precise in terms of storing decimal number?
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Sequence
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       conversationID: 8
       isRoot: 0
       isGroup: 0
@@ -6523,11 +7020,11 @@ MonoBehaviour:
       - title: Title
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Description
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Actor
         value: 2
         type: 5
@@ -6539,17 +7036,17 @@ MonoBehaviour:
       - title: Menu Text
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Dialogue Text
         value: According to W3Schools, it is the most commonly used data type in
           programming languages for assigning values having a real or decimal based
           number within, such as 3.14 for pi.
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Sequence
-        value: 
+        value: SetActive(Back, true);
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       conversationID: 8
       isRoot: 0
       isGroup: 0
@@ -6571,8 +7068,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 58.50943
-        y: 106.73584
+        x: 80.79733
+        y: 105.920975
         width: 160
         height: 30
     - id: 8
@@ -6580,11 +7077,11 @@ MonoBehaviour:
       - title: Title
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Description
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Actor
         value: 1
         type: 5
@@ -6596,15 +7093,15 @@ MonoBehaviour:
       - title: Menu Text
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Dialogue Text
         value: Integer Type
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Sequence
-        value: 
+        value: SetActive(Back, false);
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       conversationID: 8
       isRoot: 0
       isGroup: 0
@@ -6635,11 +7132,11 @@ MonoBehaviour:
       - title: Title
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Description
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Actor
         value: 1
         type: 5
@@ -6651,15 +7148,15 @@ MonoBehaviour:
       - title: Menu Text
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Dialogue Text
         value: Float Data Type
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Sequence
-        value: 
+        value: SetActive(Back, false);
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       conversationID: 8
       isRoot: 0
       isGroup: 0
@@ -6681,8 +7178,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 426.04202
-        y: 501.4295
+        x: 512.9985
+        y: 527.5164
         width: 160
         height: 30
     - id: 10
@@ -6690,11 +7187,11 @@ MonoBehaviour:
       - title: Title
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Description
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Actor
         value: 1
         type: 5
@@ -6706,17 +7203,15 @@ MonoBehaviour:
       - title: Menu Text
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Dialogue Text
-        value: 'Double Type
-
-'
+        value: Double Type
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Sequence
-        value: 
+        value: SetActive(Back, false);
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       conversationID: 8
       isRoot: 0
       isGroup: 0
@@ -6738,8 +7233,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 245.82227
-        y: 517.9131
+        x: 357.3845
+        y: 601.0563
         width: 160
         height: 30
     - id: 11
@@ -6747,11 +7242,11 @@ MonoBehaviour:
       - title: Title
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Description
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Actor
         value: 2
         type: 5
@@ -6763,15 +7258,15 @@ MonoBehaviour:
       - title: Menu Text
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Dialogue Text
         value: Integer data type, do not store floating numbers.
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Sequence
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       conversationID: 8
       isRoot: 0
       isGroup: 0
@@ -6793,7 +7288,7 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 75.492645
+        x: 72.21396
         y: 564.61633
         width: 160
         height: 30
@@ -6802,11 +7297,11 @@ MonoBehaviour:
       - title: Title
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Description
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Actor
         value: 2
         type: 5
@@ -6818,15 +7313,15 @@ MonoBehaviour:
       - title: Menu Text
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Dialogue Text
         value: 'Let''s try it again. '
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Sequence
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       conversationID: 8
       isRoot: 0
       isGroup: 0
@@ -6834,7 +7329,13 @@ MonoBehaviour:
       delaySimStatus: 0
       falseConditionAction: Block
       conditionPriority: 2
-      outgoingLinks: []
+      outgoingLinks:
+      - originConversationID: 8
+        originDialogueID: 12
+        destinationConversationID: 8
+        destinationDialogueID: 6
+        isConnector: 0
+        priority: 2
       conditionsString: 
       userScript: 
       onExecute:
@@ -6842,8 +7343,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 145.30376
-        y: 652.6605
+        x: 164.97588
+        y: 636.2671
         width: 160
         height: 30
     - id: 13
@@ -6851,11 +7352,11 @@ MonoBehaviour:
       - title: Title
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Description
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Actor
         value: 2
         type: 5
@@ -6867,15 +7368,15 @@ MonoBehaviour:
       - title: Menu Text
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Dialogue Text
         value: Great! Double is more precised because it has double precision!
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Sequence
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       conversationID: 8
       isRoot: 0
       isGroup: 0
@@ -6897,8 +7398,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 329.3666
-        y: 689.432
+        x: 415.1466
+        y: 661.17114
         width: 160
         height: 30
     - id: 14
@@ -6906,11 +7407,11 @@ MonoBehaviour:
       - title: Title
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Description
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Actor
         value: 2
         type: 5
@@ -6922,15 +7423,15 @@ MonoBehaviour:
       - title: Menu Text
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Dialogue Text
         value: As discussed, Float data type has single precision.
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Sequence
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       conversationID: 8
       isRoot: 0
       isGroup: 0
@@ -6938,7 +7439,13 @@ MonoBehaviour:
       delaySimStatus: 0
       falseConditionAction: Block
       conditionPriority: 2
-      outgoingLinks: []
+      outgoingLinks:
+      - originConversationID: 8
+        originDialogueID: 14
+        destinationConversationID: 8
+        destinationDialogueID: 6
+        isConnector: 0
+        priority: 2
       conditionsString: 
       userScript: 
       onExecute:
@@ -6946,8 +7453,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 433.63693
-        y: 585.6067
+        x: 589.2485
+        y: 424.6988
         width: 160
         height: 30
     - id: 15
@@ -6955,31 +7462,38 @@ MonoBehaviour:
       - title: Title
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Description
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Actor
-        value: 1
+        value: 2
         type: 5
         typeString: CustomFieldType_Actor
       - title: Conversant
-        value: 2
+        value: 1
         type: 5
         typeString: CustomFieldType_Actor
       - title: Menu Text
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Dialogue Text
-        value: Yo
+        value: You know what to do! Answer the question on TV!
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Sequence
+        value: 'SetActive(Continue Button, false);
+
+          SetActive(ProceedDouble,
+          true);'
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Response Menu Sequence
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       conversationID: 8
       isRoot: 0
       isGroup: 0
@@ -6995,13 +7509,13 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 413.98193
-        y: 793.2782
+        x: 434.02264
+        y: 751.02277
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 15.3845825, y: 333.3384}
-    canvasZoom: 0.52000046
+    canvasScrollPosition: {x: 180.08768, y: 361.3222}
+    canvasZoom: 0.58000034
   syncInfo:
     syncActors: 0
     syncItems: 0
