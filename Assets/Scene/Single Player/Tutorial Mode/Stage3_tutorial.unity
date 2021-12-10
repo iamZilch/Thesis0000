@@ -11777,7 +11777,7 @@ MonoBehaviour:
   allowBarksDuringConversations: 0
   skipBarkIfNoValidEntries: 0
   cacheBarkLines: 0
-  conversation: Game Interactive Quest
+  conversation: Welcome to deslide
   conversationConversant: {fileID: 0}
   conversationActor: {fileID: 0}
   startConversationEntryID: -1
@@ -31116,8 +31116,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 844.5, y: 0}
+  m_SizeDelta: {x: 1629, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2055445884811319651
 MonoBehaviour:

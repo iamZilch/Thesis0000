@@ -1270,6 +1270,9 @@ MonoBehaviour:
   playerCurrentAnswer: 
   playerCorrectAnswer: 0
   canPick: 0
+  buttonHandler: {fileID: 0}
+  handlerPos: {fileID: 0}
+  pickupButtonFind: 0
   s2ReadyTimerInt: 4
   s2GivenTextStr: 
   s2CorrectAnswerStr: 

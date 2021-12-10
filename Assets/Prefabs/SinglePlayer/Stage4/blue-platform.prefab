@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 9110052476924437410}
   - component: {fileID: 7614740158533290922}
   - component: {fileID: 6755172830049065904}
+  - component: {fileID: 9102587572294432689}
   m_Layer: 0
   m_Name: blue-platform
   m_TagString: Untagged
@@ -92,7 +93,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7308660523154801271}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1.9999999, y: 2, z: 1.9999999}
@@ -110,6 +111,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Value: {fileID: 7397962912928999723}
+  colorValue: 
+  someone: 0
+--- !u!65 &9102587572294432689
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7308660523154801271}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.9999999, y: 2, z: 1.9999999}
+  m_Center: {x: 0.00000023841858, y: 4.2351647e-22, z: 0.0000003594905}
 --- !u!1 &7397962912928999723
 GameObject:
   m_ObjectHideFlags: 0
@@ -135,13 +151,13 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7397962912928999723}
-  m_LocalRotation: {x: 0.5, y: -0.5, z: 0.5, w: 0.5}
-  m_LocalPosition: {x: 0, y: 0, z: 0.662}
+  m_LocalRotation: {x: 0.5, y: 0.5, z: -0.5, w: 0.5}
+  m_LocalPosition: {x: 0, y: 0, z: -0.6979998}
   m_LocalScale: {x: 0.17778073, y: 0.17778073, z: 2.4274495}
   m_Children: []
   m_Father: {fileID: 7937106887003101389}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 90, y: 90, z: 0}
+  m_LocalEulerAnglesHint: {x: 90, y: 180, z: 90}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -0.05, y: 1.03}
