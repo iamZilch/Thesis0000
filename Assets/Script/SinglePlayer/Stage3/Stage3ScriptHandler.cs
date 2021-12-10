@@ -180,7 +180,7 @@ public class Stage3ScriptHandler : MonoBehaviour
     [SerializeField] GameObject endText;
     public void endgame()
     {
-        endText.SetActive(true); SetUiActive(false);
-        endText.GetComponent<Text>().text = "Congratulations! \nYou earned : " + generateScore() * 2 + "Exp. Points" + "\n\t" + generateScore() * 5 + "coins.";
+        End.SetActive(true); endText.SetActive(true); SetUiActive(false);
+        endText.GetComponent<Text>().text = "Congratulations! \nYou earned : " + generateScore() * 2 + "Exp. Points" + "\n and " + generateScore() * 5 + " coins.";
     }
 }

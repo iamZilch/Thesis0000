@@ -38,4 +38,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scene/Single Player/Challenge Mode/Stage3ChallengeMode.unity
     guid: 258e805160bff7740ad1baa7b4a15491
+  - enabled: 1
+    path: Assets/Scene/Single Player/Tutorial Mode/Stage1_tutorial.unity
+    guid: d885de348bf7f0243886e1c02bcb4950
+  - enabled: 1
+    path: Assets/Scene/Single Player/Tutorial Mode/Stage2_Tutorial 1.unity
+    guid: 173ecefe45a403f4ab7383e88f6ec5b8
+  - enabled: 1
+    path: Assets/Scene/Single Player/Tutorial Mode/Stage3_tutorial.unity
+    guid: 0bcb96ac0122caa4aba5afc8fafcf709
   m_configObjects: {}

@@ -9,15 +9,6 @@ public class LoadManager : MonoBehaviour
     [SerializeField] GameObject player;
     [SerializeField] GameObject startTrigger;
     [SerializeField] GameObject ctrlTrigger;
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.P))
-        {
-            // startTrigger.SetActive(true);
-            loadConversation(9);
-        }
-
-    }
 
     private void Start()
     {
