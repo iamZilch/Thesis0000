@@ -20,7 +20,7 @@ public class TutorialStage1Script : MonoBehaviour
 
     public string correctAnswer = "";
 
-    public string[] key = { "int", "float", "char", "str", "bool" , "double"};
+    public string[] key = { "int", "float", "char", "str", "bool", "double" };
 
     public bool isGame = false;
 
@@ -114,7 +114,7 @@ public class TutorialStage1Script : MonoBehaviour
         switch (answer)
         {
             case "int":
-               enableOnCorrect[0].SetActive(true);
+                enableOnCorrect[0].SetActive(true);
                 ///enable quest trigger, conversation trigger
                 break;
             case "str": ///enable quest trigger, conversation trigger
@@ -124,6 +124,7 @@ public class TutorialStage1Script : MonoBehaviour
                 enableOnCorrect[4].SetActive(true);
                 break;
             case "bool": ///enable quest trigger, conversation trigger
+                GameObject.Find("AutoSave Manager").GetComponent<AutoSave>().endTextTrigger();
                 CongratulationDisplay.SetActive(true);
                 controls.SetActive(false);
                 myCamera.SetActive(false);

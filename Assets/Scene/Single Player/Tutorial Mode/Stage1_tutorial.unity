@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.5893605, g: 0.8547964, b: 0.945579, a: 1}
+  m_IndirectSpecularColor: {r: 0.5909571, g: 0.85614705, b: 0.9438744, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1627,17 +1627,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c043e946d613f374787da1ccc3bb2103, type: 3}
---- !u!114 &142587999 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4359645989276847373, guid: c043e946d613f374787da1ccc3bb2103, type: 3}
-  m_PrefabInstance: {fileID: 142587998}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 73f2096419cf65044aa1b28fa3e19524, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &156086988
 GameObject:
   m_ObjectHideFlags: 0
@@ -7737,6 +7726,18 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+        - m_Target: {fileID: 1195961708}
+          m_TargetAssemblyTypeName: AutoSave, Assembly-CSharp
+          m_MethodName: setCheckpoint
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 4
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
   - guid: 29ac5e84-0008-4080-8917-8c1b35d39f6b
     onExecute:
       m_PersistentCalls:
@@ -7757,11 +7758,19 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+        - m_Target: {fileID: 1195961708}
+          m_TargetAssemblyTypeName: AutoSave, Assembly-CSharp
+          m_MethodName: setCheckpoint
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 5
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
   - guid: b8e4959c-2d36-4cd9-8431-c1f9141cc2de
-    onExecute:
-      m_PersistentCalls:
-        m_Calls: []
-  - guid: 65c5b54b-2de6-40d0-9dce-12744f11d06c
     onExecute:
       m_PersistentCalls:
         m_Calls: []
@@ -7969,6 +7978,126 @@ MonoBehaviour:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
             m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - guid: 48da6112-309d-43f8-8ae6-f73e4e4e95e4
+    onExecute:
+      m_PersistentCalls:
+        m_Calls: []
+  - guid: 44186d82-979d-4aad-bda0-6cf80d202c75
+    onExecute:
+      m_PersistentCalls:
+        m_Calls: []
+  - guid: bd019660-39b0-40d0-af19-0786ec593d4b
+    onExecute:
+      m_PersistentCalls:
+        m_Calls: []
+  - guid: 26f66214-be1d-4386-ac61-b2f11861e7d8
+    onExecute:
+      m_PersistentCalls:
+        m_Calls: []
+  - guid: 74a9f720-2e93-4cb3-9890-c61dc735b38c
+    onExecute:
+      m_PersistentCalls:
+        m_Calls: []
+  - guid: 48e83ebc-779a-42c6-b7ca-90f8d0aa6dd9
+    onExecute:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1195961708}
+          m_TargetAssemblyTypeName: AutoSave, Assembly-CSharp
+          m_MethodName: setCheckpoint
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 6
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - guid: c5e4f300-3a00-485a-b1da-9b9f613847ee
+    onExecute:
+      m_PersistentCalls:
+        m_Calls: []
+  - guid: 62e28b7c-6493-472c-be71-d522314a1ab8
+    onExecute:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1195961708}
+          m_TargetAssemblyTypeName: AutoSave, Assembly-CSharp
+          m_MethodName: setCheckpoint
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 1
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - guid: 54bfaaab-c637-4821-a89f-244d8f82b4b8
+    onExecute:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1195961708}
+          m_TargetAssemblyTypeName: AutoSave, Assembly-CSharp
+          m_MethodName: setCheckpoint
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 2
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - guid: 120d59b2-dc6f-4b66-bf89-af3c80857d6b
+    onExecute:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1195961708}
+          m_TargetAssemblyTypeName: AutoSave, Assembly-CSharp
+          m_MethodName: setCheckpoint
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 3
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - guid: 8882f9fd-0da3-4b8b-85db-e465a7047684
+    onExecute:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1195961708}
+          m_TargetAssemblyTypeName: AutoSave, Assembly-CSharp
+          m_MethodName: setCheckpoint
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 6
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - guid: 682db8ad-d232-448e-b246-d4d2a3e46e0a
+    onExecute:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1195961708}
+          m_TargetAssemblyTypeName: AutoSave, Assembly-CSharp
+          m_MethodName: setCheckpoint
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 7
             m_FloatArgument: 0
             m_StringArgument: 
             m_BoolArgument: 0
@@ -8489,7 +8618,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'YOU HAVE SUCCESSFULLY FINISHED THE TUTORIAL!
+  m_Text: 'STAGE 1 TUTORIAL COMPLETE!
+
+    You earned 30 exp and 40 coins!
 
 '
 --- !u!114 &865531949
@@ -8551,7 +8682,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &873726480
 Transform:
   m_ObjectHideFlags: 0
@@ -8578,7 +8709,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c593457cd8105e148906690e1707c592, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  trigger: 16
+  trigger: 64
   condition:
     luaConditions: []
     questConditions: []
@@ -11939,6 +12070,69 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1192600915}
   m_CullTransparentMesh: 1
+--- !u!1 &1195961706
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1195961709}
+  - component: {fileID: 1195961708}
+  - component: {fileID: 1195961707}
+  m_Layer: 0
+  m_Name: AutoSave Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1195961707
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1195961706}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f51b5fcf4189a348b9d2d6453d21385, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 3003926861479078953}
+  startTrigger: {fileID: 873726479}
+--- !u!114 &1195961708
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1195961706}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b81b2e4756947e4983caac3577b55dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  checkpointNumber: 0
+  stageNumber: 1
+  exp: 30
+  coins: 40
+  endText: {fileID: 865531946}
+--- !u!4 &1195961709
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1195961706}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 52.84769, y: -39.51493, z: 58.27728}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 18
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1202250164
 GameObject:
   m_ObjectHideFlags: 0
@@ -19464,14 +19658,26 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 142587999}
-        m_TargetAssemblyTypeName: AddingPlayerXP, Assembly-CSharp
-        m_MethodName: addPlayerExp
-        m_Mode: 1
+      - m_Target: {fileID: 1195961708}
+        m_TargetAssemblyTypeName: AutoSave, Assembly-CSharp
+        m_MethodName: setCheckpoint
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1195961708}
+        m_TargetAssemblyTypeName: AutoSave, Assembly-CSharp
+        m_MethodName: endPhase
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -93243,7 +93449,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 1779.8717, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5519002482094213874
@@ -93937,8 +94143,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 908.78796, y: 0}
-  m_SizeDelta: {x: 1473.911, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5519002482308430074
 CanvasRenderer:
