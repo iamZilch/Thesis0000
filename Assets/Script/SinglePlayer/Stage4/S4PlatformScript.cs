@@ -19,7 +19,7 @@ public class S4PlatformScript : MonoBehaviour
 
     private void OnTriggerStay(Collider collision)
     {
-        if (collision.gameObject.tag.Equals("Maze") || collision.gameObject.tag.Equals("Zilch") || collision.gameObject.tag.Equals("Trix"))
+        if ((collision.gameObject.tag.Equals("Maze") || collision.gameObject.tag.Equals("Zilch") || collision.gameObject.tag.Equals("Trix")))
         {
             someone = true;
         }
@@ -34,7 +34,7 @@ public class S4PlatformScript : MonoBehaviour
         }
     }
 
-
+    
     IEnumerator changeColor()
     {
         while (!someone)
