@@ -32,7 +32,7 @@ public class AutoSave : MonoBehaviour
     public void endTextTrigger()
     {
         if (GameObject.Find("Opening_Game_Script").GetComponent<Database>().unlockedTutorials[stageNumber])
-            endText.GetComponent<Text>().text = "Thank you for retaking the tutorial!";
+            endText.GetComponent<Text>().text = "Thank you for retaking the tutorial!\n ";
         endText.SetActive(true);
     }
 
