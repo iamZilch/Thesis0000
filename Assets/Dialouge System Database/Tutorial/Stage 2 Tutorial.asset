@@ -477,7 +477,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 29.916985
-        y: 271.91528
+        y: 273.1811
         width: 160
         height: 30
     - id: 6
@@ -507,7 +507,13 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Sequence
-        value: 
+        value: 'Camera(StartArcCam,MyCamera,2);
+
+          SetActive(Back, true);'
+        type: 0
+        typeString: 
+      - title: EventGuid
+        value: c8a03ff5-ceff-4d95-9a19-f2d6bbe27f30
         type: 0
         typeString: 
       conversationID: 1
@@ -587,7 +593,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 38
-        y: 374
+        y: 376.53165
         width: 160
         height: 30
     - id: 8
@@ -822,8 +828,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 54.46193
-        y: 593.1566
+        x: 51.722214
+        y: 598.6361
         width: 160
         height: 30
     - id: 12
@@ -877,8 +883,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 82.1544
-        y: 686.5482
+        x: 56.127014
+        y: 694.76746
         width: 160
         height: 30
     - id: 13
@@ -932,8 +938,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 61.94165
-        y: 638.9013
+        x: 52.986435
+        y: 641.88635
         width: 160
         height: 30
     - id: 14
@@ -1222,8 +1228,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 20.452372, y: 0}
-    canvasZoom: 0.67000055
+    canvasScrollPosition: {x: 7.8765793, y: 2.5394535}
+    canvasZoom: 0.8200004
   - id: 2
     fields:
     - title: Title
@@ -1320,7 +1326,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 30
-        y: 20
+        y: 18.07692
         width: 160
         height: 30
     - id: 1
@@ -1353,6 +1359,10 @@ MonoBehaviour:
         typeString: 
       - title: Sequence
         value: SetActive(Back, false);
+        type: 0
+        typeString: 
+      - title: EventGuid
+        value: 4f6f9f6a-c538-4a62-b4cc-e7346edc6ebc
         type: 0
         typeString: 
       conversationID: 2
@@ -2132,7 +2142,7 @@ MonoBehaviour:
         height: 30
     entryGroups: []
     canvasScrollPosition: {x: 0, y: 0}
-    canvasZoom: 0.3400004
+    canvasZoom: 0.4300004
   - id: 3
     fields:
     - title: Title
@@ -2261,6 +2271,10 @@ MonoBehaviour:
         typeString: 
       - title: Sequence
         value: SetActive(Back, false);
+        type: 0
+        typeString: 
+      - title: EventGuid
+        value: ab20f7ea-a08d-49cd-b692-b65f5aa410df
         type: 0
         typeString: 
       conversationID: 3
@@ -2567,7 +2581,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 25.867767
-        y: 360.49585
+        y: 358.57275
         width: 160
         height: 30
     - id: 7
@@ -2656,6 +2670,10 @@ MonoBehaviour:
         value: SetActive(Back, true);
         type: 0
         typeString: 
+      - title: EventGuid
+        value: 76d1ac1a-30db-4de2-8a5f-d7cd085afb9f
+        type: 0
+        typeString: 
       conversationID: 3
       isRoot: 0
       isGroup: 0
@@ -2690,7 +2708,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 322.38956
-        y: 443.10455
+        y: 441.18146
         width: 160
         height: 30
     - id: 9
@@ -3425,6 +3443,10 @@ MonoBehaviour:
         value: 'Camera(StartArcCam,MyCamera,1.5);
 
           SetActive(Back, false);'
+        type: 0
+        typeString: 
+      - title: EventGuid
+        value: 86f58dfc-2516-4aaf-a7c9-d0840262deff
         type: 0
         typeString: 
       conversationID: 4
@@ -4621,7 +4643,7 @@ MonoBehaviour:
         height: 30
     entryGroups: []
     canvasScrollPosition: {x: 0, y: 0}
-    canvasZoom: 0.5200006
+    canvasZoom: 0.3100005
   syncInfo:
     syncActors: 0
     syncItems: 0
