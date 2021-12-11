@@ -4,6 +4,7 @@ using System.Text;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Stage2ScriptHandler : MonoBehaviour
 {
@@ -30,6 +31,10 @@ public class Stage2ScriptHandler : MonoBehaviour
     [SerializeField] GameObject CurrentQuestionNumberText;
     [SerializeField] GameObject playerUIDisplay;
     [SerializeField] FixedTouchField touch;
+    [SerializeField] Button ulti;
+    [SerializeField] Button fs;
+    [SerializeField] TextMeshProUGUI ultitxt;
+    [SerializeField] TextMeshProUGUI fstxt;
 
     [Header("Game UI")]
     [SerializeField] GameObject correctAnswers;
@@ -62,6 +67,7 @@ public class Stage2ScriptHandler : MonoBehaviour
         Player = Instantiate(Player, CheckPoints[0].transform);
         Player.GetComponentInChildren<TouchField>().touchField = touch;
         Player.GetComponent<Arithmetic_Character_Script>().setPickup(pickupButton);
+        Player.GetComponent<SkillControls>().loadButtons(fs, ulti, fstxt, ultitxt);
         PlayerBtnHandler.GetComponent<ButtonsHandler>().setPlayer(Player);
         StartGame();
     }
@@ -182,7 +188,6 @@ public class Stage2ScriptHandler : MonoBehaviour
             { 8, "1 - 2 * (2 * 2) + 1" },
             { 20, "5 + 5 - (5 * 5) + 5" },
             { 16, "1 * 2 * 3 + (1 * 10)" },
-            { 6, "8 + 1 - (10 + 5)" },
             { 9, "((10 / 2) * (8 / 4) + 5" },
             { 2, "1 - 6 + 5 / (2 + 3)" },
             { 5, "(9/3) * 3 + 1 - 5" },
@@ -199,6 +204,7 @@ public class Stage2ScriptHandler : MonoBehaviour
     public void RemoveArithmetic()
     {
         int mercy = 0;
+        string ans = "";
         givenString = "";
         correctOperator = new List<string>();
         char[] givenToChar = given[KeyTotalAnswer].ToCharArray();
@@ -222,6 +228,7 @@ public class Stage2ScriptHandler : MonoBehaviour
                 if (ran == 1 && !ranGen)
                 {
                     correctOperator.Add(givenToChar[i].ToString());
+                    ans = givenToChar[i].ToString();
                     givenString += "☐";
                     ranGen = true;
                 }
@@ -245,31 +252,13 @@ public class Stage2ScriptHandler : MonoBehaviour
         PlayerUI(false);
         Invoke(nameof(setUi), 0.01f);
 
-        Debug.Log($"Given : {givenString}");
+        Debug.Log($"Given : {ans}");
     }
 
     void setUi()
     {
         PlayerUI(true);
     }
-
-    /*public void spawnArithmetic()
-    {
-        List<GameObject> arithmeticSpawnPointList = new List<GameObject>();
-        //Add all the spawn point
-        for(int i = 0; i < pickupPoints.Length; i++)
-        {
-            arithmeticSpawnPointList.Add(pickupPoints[i]);
-        }
-
-        for(int i = 0; i < 12; i++)
-        {
-            int ran = Random.Range(0, arithmeticSpawnPointList.Count);
-            GameObject pref = Instantiate(arithmeticPrefab, pickupPointsParent.transform);
-            pref.transform.position = arithmeticSpawnPointList[ran].transform.position;
-            arithmeticSpawnPointList.Remove(arithmeticSpawnPointList[ran]);
-        }
-    }*/
 
     public void spawnArithmetic()
     {
@@ -282,10 +271,6 @@ public class Stage2ScriptHandler : MonoBehaviour
 
         for (int i = 0; i < 12; i++)
         {
-            //int ran = Random.Range(0, arithmeticSpawnPointList.Count);
-
-            // int arithmeticRan = Random.Range(0, arithmeticPrefab.Length - 1);
-            // GameObject pref = Instantiate(arithmeticPrefab[arithmeticRan], pickupPointsParent.transform);
             GameObject pref = Instantiate(symbol, pickupPointsParent.transform);
             pref.transform.position = arithmeticSpawnPointList[i].transform.position;
             arithmeticSpawnPointList.Remove(arithmeticSpawnPointList[i]);
@@ -388,16 +373,22 @@ public class Stage2ScriptHandler : MonoBehaviour
     {
         int ppoints = 0;
         int ccoins = 0;
-        if (calculatePoints() <= 0)
-            ppoints = 0;
-        if ((calculatePoints() * 5) <= 0)
-            ccoins = 0;
-        else
+
+        if (!(calculatePoints() <= 0))
+            ppoints = calculatePoints();
+
+        if (!((calculatePoints() * 5) <= 0))
             ccoins = (calculatePoints() * 5);
+
         playerUIDisplay.SetActive(false);
         Given_timer_AnswerCtr.SetActive(false);
         finishText.text = "Time Consumed: " + timeConsumed.ToString() +
                           "\nExp. Gained: " + ppoints.ToString() +
                           "\nCoins Earned: " + ccoins.ToString();
+    }
+
+    public void mainmenu()
+    {
+        SceneManager.LoadScene("Main_Menu_Scene");
     }
 }
