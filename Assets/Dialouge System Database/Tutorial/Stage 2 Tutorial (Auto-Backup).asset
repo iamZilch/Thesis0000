@@ -282,7 +282,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Sequence
-        value: 'Camera(original,MyCamera,2);
+        value: 'Camera(StartArcCam,MyCamera,2);
 
           SetActive(Back, true);'
         type: 0
@@ -1222,8 +1222,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 0, y: 792.2689}
-    canvasZoom: 1.1800002
+    canvasScrollPosition: {x: 20.452372, y: 0}
+    canvasZoom: 0.67000055
   - id: 2
     fields:
     - title: Title
@@ -2131,8 +2131,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 20.930237, y: 206.97656}
-    canvasZoom: 0.4300004
+    canvasScrollPosition: {x: 0, y: 0}
+    canvasZoom: 0.3400004
   - id: 3
     fields:
     - title: Title
@@ -2803,8 +2803,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 158.75754
-        y: 551.49963
+        x: 264.52664
+        y: 564.9612
         width: 160
         height: 30
     - id: 11
@@ -3274,8 +3274,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 0, y: 471.6011}
-    canvasZoom: 0.61000043
+    canvasScrollPosition: {x: 0, y: 0}
+    canvasZoom: 0.5200005
   - id: 4
     fields:
     - title: Title
@@ -3586,7 +3586,7 @@ MonoBehaviour:
         typeString: 
       - title: Dialogue Text
         value: Then, while dodging these obstacles, the game will display a mathematical
-          equation.
+          expression.
         type: 0
         typeString: 
       - title: Sequence
@@ -3670,8 +3670,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 87.24124
-        y: 695.0532
+        x: 84.52452
+        y: 696.11707
         width: 160
         height: 30
     - id: 6
@@ -3697,7 +3697,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: Your goal is to complete the equation by collecting the right operator
+        value: Your goal is to complete the expression by collecting the right operator
           symbols in the correct right order.
         type: 0
         typeString: 
@@ -3781,7 +3781,7 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 101.0909
+        x: 100.02707
         y: 795.18475
         width: 160
         height: 30
@@ -3812,11 +3812,20 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Sequence
-        value: 
+        value: 'SetActive(Continue Button, false);
+
+          SetActive(ProceedTask1,
+          true);
+
+          SetActive(Back, false);'
         type: 0
         typeString: 
       - title: EventGuid
         value: b0cd16c2-a784-4aa1-8a45-2dcb491251f2
+        type: 0
+        typeString: 
+      - title: Response Menu Sequence
+        value: 
         type: 0
         typeString: 
       conversationID: 4
@@ -3834,7 +3843,7 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 129.80682
+        x: 127.45389
         y: 1164.9629
         width: 160
         height: 30
@@ -3865,7 +3874,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Sequence
-        value: 
+        value: SetActive(ProceedTask1, false);
         type: 0
         typeString: 
       conversationID: 4
@@ -3914,7 +3923,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Sequence
-        value: 
+        value: SetActive(ProceedTask1, false);
         type: 0
         typeString: 
       conversationID: 4
@@ -3938,7 +3947,7 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 757.8652
+        x: 755.9421
         y: 326.9616
         width: 160
         height: 30
@@ -4251,7 +4260,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: 'Cannons and movaeble walls
+        value: 'Moveable walls
 
 '
         type: 0
@@ -4339,7 +4348,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 105.22763
-        y: 553.814
+        y: 556.179
         width: 160
         height: 30
     - id: 24
@@ -4450,7 +4459,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 141.38942
-        y: 944.3946
+        y: 943.6071
         width: 160
         height: 30
     - id: 26
@@ -4588,7 +4597,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Sequence
-        value: 
+        value: SetActive(ProceedTask1, false);
         type: 0
         typeString: 
       conversationID: 4
@@ -4611,8 +4620,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 0, y: 123.49533}
-    canvasZoom: 0.9400001
+    canvasScrollPosition: {x: 0, y: 0}
+    canvasZoom: 0.5200006
   syncInfo:
     syncActors: 0
     syncItems: 0
