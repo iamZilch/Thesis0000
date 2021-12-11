@@ -9,7 +9,7 @@ public class TutorialBlackHole : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag.Equals("Player"))
+        if (other.gameObject.tag.Equals("Player") || other.gameObject.tag.Equals("Maze") || other.gameObject.tag.Equals("Trix") || other.gameObject.tag.Equals("Zilch"))
         {
             other.gameObject.transform.position = spawnPoint.transform.position;
         }

@@ -223,7 +223,9 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Sequence
-        value: 'Camera(StagePreview,,2);
+        value: 'Camera(StagePreview,MyCamera,2);
+
+          SetActive(Back, false);
 
           {{default}}'
         type: 0
@@ -280,7 +282,9 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Sequence
-        value: Camera(original,,2);
+        value: 'Camera(StartArcCam,MyCamera,2);
+
+          SetActive(Back, true);'
         type: 0
         typeString: 
       conversationID: 1
@@ -416,8 +420,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 29
-        y: 220
+        x: 26.720978
+        y: 218.4252
         width: 160
         height: 30
     - id: 5
@@ -472,8 +476,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 27.21428
-        y: 270
+        x: 29.916985
+        y: 271.91528
         width: 160
         height: 30
     - id: 6
@@ -499,7 +503,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: For starters, we will teach you only about the Arithemtic Operators.
+        value: For starters, we will teach you only about the Arithmetic Operators.
         type: 0
         typeString: 
       - title: Sequence
@@ -527,7 +531,7 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 30.20253
+        x: 31.777328
         y: 324.2658
         width: 160
         height: 30
@@ -609,11 +613,11 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: +, -, /, *, and % are the symbols used in arthimetic operations.
+        value: +, -, /, *, and % are the symbols used in Arithmetic Operations.
         type: 0
         typeString: 
       - title: Sequence
-        value: 'Camera(AllSymbols,,1);
+        value: 'Camera(AllSymbols,MyCamera,1);
 
           {{default}}'
         type: 0
@@ -639,7 +643,7 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 35.03737
+        x: 34.268143
         y: 439
         width: 160
         height: 30
@@ -672,7 +676,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Sequence
-        value: Camera(Add,,1);
+        value: Camera(Add,MyCamera,1);
         type: 0
         typeString: 
       - title: EventGuid
@@ -731,7 +735,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Sequence
-        value: Camera(Sub,,1);
+        value: Camera(Sub,MyCamera,1);
         type: 0
         typeString: 
       - title: Response Menu Sequence
@@ -760,7 +764,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 44.47091
-        y: 545.6642
+        y: 546.45154
         width: 160
         height: 30
     - id: 11
@@ -790,7 +794,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Sequence
-        value: Camera(Div,,1);
+        value: Camera(Div,MyCamera,1);
         type: 0
         typeString: 
       - title: Response Menu Sequence
@@ -849,7 +853,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Sequence
-        value: Camera(Mul,,1);
+        value: Camera(Mul,MyCamera,1);
         type: 0
         typeString: 
       conversationID: 1
@@ -904,7 +908,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Sequence
-        value: Camera(Mod,,1);
+        value: Camera(Mod,MyCamera,1);
         type: 0
         typeString: 
       conversationID: 1
@@ -960,7 +964,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Sequence
-        value: Camera(AllSymbols,,1);
+        value: Camera(AllSymbols,MyCamera,1);
         type: 0
         typeString: 
       - title: EventGuid
@@ -1153,8 +1157,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 48.8786
-        y: 894.6162
+        x: 49.72606
+        y: 893.7688
         width: 160
         height: 30
     - id: 18
@@ -1218,8 +1222,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 0, y: 438.6555}
-    canvasZoom: 0.58000076
+    canvasScrollPosition: {x: 20.452372, y: 0}
+    canvasZoom: 0.67000055
   - id: 2
     fields:
     - title: Title
@@ -1348,7 +1352,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Sequence
-        value: 
+        value: SetActive(Back, false);
         type: 0
         typeString: 
       conversationID: 2
@@ -1404,7 +1408,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Sequence
-        value: 
+        value: SetActive(Back, true);
         type: 0
         typeString: 
       conversationID: 2
@@ -1512,9 +1516,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: ' "Now, try to answer this expression: 5 / 3 = ?"
-
-'
+        value: ' Now, try to answer this expression: 5 / 3 = ?'
         type: 0
         typeString: 
       - title: Sequence
@@ -1539,6 +1541,12 @@ MonoBehaviour:
         originDialogueID: 4
         destinationConversationID: 2
         destinationDialogueID: 7
+        isConnector: 0
+        priority: 2
+      - originConversationID: 2
+        originDialogueID: 4
+        destinationConversationID: 2
+        destinationDialogueID: 14
         isConnector: 0
         priority: 2
       conditionsString: 
@@ -1603,8 +1611,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 265.63016
-        y: 353.01367
+        x: 237.05872
+        y: 333.23343
         width: 160
         height: 30
     - id: 7
@@ -1659,8 +1667,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 480.75262
-        y: 332.5198
+        x: 695.0383
+        y: 313.83847
         width: 160
         height: 30
     - id: 8
@@ -1715,8 +1723,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 18.808228
-        y: 379.72595
+        x: 69.62787
+        y: 417.43082
         width: 160
         height: 30
     - id: 9
@@ -1773,8 +1781,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 406.80984
-        y: 655.73804
+        x: 623.2032
+        y: 860.3865
         width: 160
         height: 30
     - id: 10
@@ -1827,6 +1835,12 @@ MonoBehaviour:
         destinationDialogueID: 12
         isConnector: 0
         priority: 2
+      - originConversationID: 2
+        originDialogueID: 10
+        destinationConversationID: 2
+        destinationDialogueID: 15
+        isConnector: 0
+        priority: 2
       conditionsString: 
       userScript: 
       onExecute:
@@ -1834,8 +1848,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 348.64697
-        y: 416.6723
+        x: 565.0403
+        y: 619.95087
         width: 160
         height: 30
     - id: 11
@@ -1889,8 +1903,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 284.7398
-        y: 588.48944
+        x: 475.10583
+        y: 719.1653
         width: 160
         height: 30
     - id: 12
@@ -1945,8 +1959,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 521.42804
-        y: 591.0543
+        x: 852.88983
+        y: 760.08636
         width: 160
         height: 30
     - id: 13
@@ -2000,13 +2014,125 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 45.37024
-        y: 564.6462
+        x: 261.76355
+        y: 767.92474
+        width: 160
+        height: 30
+    - id: 14
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: 
+      - title: Description
+        value: 
+        type: 0
+        typeString: 
+      - title: Actor
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 2
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: 
+      - title: Dialogue Text
+        value: 5 is not divisible by 3.
+        type: 0
+        typeString: 
+      - title: Sequence
+        value: 
+        type: 0
+        typeString: 
+      conversationID: 2
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 2
+        originDialogueID: 14
+        destinationConversationID: 2
+        destinationDialogueID: 8
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 425.93414
+        y: 375.1573
+        width: 160
+        height: 30
+    - id: 15
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: 
+      - title: Description
+        value: 
+        type: 0
+        typeString: 
+      - title: Actor
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 2
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: 
+      - title: Dialogue Text
+        value: '5.5 is not divisible by 2.
+
+'
+        type: 0
+        typeString: 
+      - title: Sequence
+        value: 
+        type: 0
+        typeString: 
+      conversationID: 2
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 2
+        originDialogueID: 15
+        destinationConversationID: 2
+        destinationDialogueID: 13
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 637.643
+        y: 778.17004
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 0, y: 55.226868}
-    canvasZoom: 0.6100004
+    canvasScrollPosition: {x: 0, y: 0}
+    canvasZoom: 0.3400004
   - id: 3
     fields:
     - title: Title
@@ -2129,11 +2255,12 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: The symbol of Modulo in programming is like a percentage symbol (%)
+        value: The symbol of Modulo in most programming languages is like a percentage
+          symbol (%)
         type: 0
         typeString: 
       - title: Sequence
-        value: 
+        value: SetActive(Back, false);
         type: 0
         typeString: 
       conversationID: 3
@@ -2188,6 +2315,10 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Sequence
+        value: SetActive(Back, true);
+        type: 0
+        typeString: 
+      - title: Response Menu Sequence
         value: 
         type: 0
         typeString: 
@@ -2462,8 +2593,8 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: "\"Unlike when you use it in Data Types that has decimal values like
-          Float, \rthe answer will have decimal value\""
+        value: "Unlike when you use it in Data Types that has decimal values like
+          Float, \rthe answer will have decimal value"
         type: 0
         typeString: 
       - title: Sequence
@@ -2522,7 +2653,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Sequence
-        value: 
+        value: SetActive(Back, true);
         type: 0
         typeString: 
       conversationID: 3
@@ -2543,6 +2674,12 @@ MonoBehaviour:
         originDialogueID: 8
         destinationConversationID: 3
         destinationDialogueID: 10
+        isConnector: 0
+        priority: 2
+      - originConversationID: 3
+        originDialogueID: 8
+        destinationConversationID: 3
+        destinationDialogueID: 16
         isConnector: 0
         priority: 2
       conditionsString: 
@@ -2584,7 +2721,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Sequence
-        value: 
+        value: SetActive(Back, false);
         type: 0
         typeString: 
       conversationID: 3
@@ -2608,8 +2745,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 505.08047
-        y: 558.2536
+        x: 593.7168
+        y: 546.88995
         width: 160
         height: 30
     - id: 10
@@ -2642,7 +2779,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Sequence
-        value: 
+        value: SetActive(Back, false);
         type: 0
         typeString: 
       conversationID: 3
@@ -2666,8 +2803,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 270.38004
-        y: 558.20935
+        x: 264.52664
+        y: 564.9612
         width: 160
         height: 30
     - id: 11
@@ -2723,8 +2860,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 51.25508
-        y: 549.29193
+        x: 30.078613
+        y: 522.2331
         width: 160
         height: 30
     - id: 12
@@ -2778,6 +2915,12 @@ MonoBehaviour:
         destinationDialogueID: 14
         isConnector: 0
         priority: 2
+      - originConversationID: 3
+        originDialogueID: 12
+        destinationConversationID: 3
+        destinationDialogueID: 17
+        isConnector: 0
+        priority: 2
       conditionsString: 
       userScript: 
       onExecute:
@@ -2812,7 +2955,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: 5 dividied by 2 is 2.
+        value: 5 divided by 2 is 2.
         type: 0
         typeString: 
       - title: Sequence
@@ -2826,7 +2969,13 @@ MonoBehaviour:
       delaySimStatus: 0
       falseConditionAction: Block
       conditionPriority: 2
-      outgoingLinks: []
+      outgoingLinks:
+      - originConversationID: 3
+        originDialogueID: 13
+        destinationConversationID: 3
+        destinationDialogueID: 18
+        isConnector: 0
+        priority: 2
       conditionsString: 
       userScript: 
       onExecute:
@@ -2834,8 +2983,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 301.15903
-        y: 754.52325
+        x: 231.84088
+        y: 753.3869
         width: 160
         height: 30
     - id: 14
@@ -2890,8 +3039,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 514.8065
-        y: 762.6486
+        x: 648.8974
+        y: 742.19403
         width: 160
         height: 30
     - id: 15
@@ -2949,13 +3098,184 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 553.6125
-        y: 888.76794
+        x: 745.71765
+        y: 909.82056
+        width: 160
+        height: 30
+    - id: 16
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: 
+      - title: Description
+        value: 
+        type: 0
+        typeString: 
+      - title: Actor
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 2
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: 
+      - title: Dialogue Text
+        value: 5.5 is not divisible by 2.
+        type: 0
+        typeString: 
+      - title: Sequence
+        value: SetActive(Back, false);
+        type: 0
+        typeString: 
+      - title: Response Menu Sequence
+        value: 
+        type: 0
+        typeString: 
+      conversationID: 3
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 3
+        originDialogueID: 16
+        destinationConversationID: 3
+        destinationDialogueID: 11
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 162.33615
+        y: 667.22217
+        width: 160
+        height: 30
+    - id: 17
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: 
+      - title: Description
+        value: 
+        type: 0
+        typeString: 
+      - title: Actor
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 2
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: 
+      - title: Dialogue Text
+        value: 5 % 2 is not a valid operation
+        type: 0
+        typeString: 
+      - title: Sequence
+        value: 
+        type: 0
+        typeString: 
+      conversationID: 3
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 3
+        originDialogueID: 17
+        destinationConversationID: 3
+        destinationDialogueID: 18
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 479.8239
+        y: 802.6434
+        width: 160
+        height: 30
+    - id: 18
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: 
+      - title: Description
+        value: 
+        type: 0
+        typeString: 
+      - title: Actor
+        value: 2
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: 
+      - title: Dialogue Text
+        value: 'Try again.
+
+'
+        type: 0
+        typeString: 
+      - title: Sequence
+        value: 
+        type: 0
+        typeString: 
+      conversationID: 3
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 3
+        originDialogueID: 18
+        destinationConversationID: 3
+        destinationDialogueID: 12
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 287.1982
+        y: 916.46643
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 0, y: 381.6034}
-    canvasZoom: 0.4000005
+    canvasScrollPosition: {x: 0, y: 0}
+    canvasZoom: 0.5200005
   - id: 4
     fields:
     - title: Title
@@ -3102,7 +3422,9 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Sequence
-        value: Camera(StartArcCam,,1.5);
+        value: 'Camera(StartArcCam,MyCamera,1.5);
+
+          SetActive(Back, false);'
         type: 0
         typeString: 
       conversationID: 4
@@ -3157,7 +3479,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Sequence
-        value: 
+        value: SetActive(Back, true);
         type: 0
         typeString: 
       conversationID: 4
@@ -3264,11 +3586,11 @@ MonoBehaviour:
         typeString: 
       - title: Dialogue Text
         value: Then, while dodging these obstacles, the game will display a mathematical
-          equation.
+          expression.
         type: 0
         typeString: 
       - title: Sequence
-        value: Camera(StartArcCam,,1);
+        value: Camera(StartArcCam,MyCamera,1);
         type: 0
         typeString: 
       conversationID: 4
@@ -3348,8 +3670,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 87.24124
-        y: 695.0532
+        x: 84.52452
+        y: 696.11707
         width: 160
         height: 30
     - id: 6
@@ -3375,7 +3697,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: Your goal is to complete the equation by collecting the right operator
+        value: Your goal is to complete the expression by collecting the right operator
           symbols in the correct right order.
         type: 0
         typeString: 
@@ -3459,7 +3781,7 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 101.0909
+        x: 100.02707
         y: 795.18475
         width: 160
         height: 30
@@ -3490,11 +3812,20 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Sequence
-        value: 
+        value: 'SetActive(Continue Button, false);
+
+          SetActive(ProceedTask1,
+          true);
+
+          SetActive(Back, false);'
         type: 0
         typeString: 
       - title: EventGuid
         value: b0cd16c2-a784-4aa1-8a45-2dcb491251f2
+        type: 0
+        typeString: 
+      - title: Response Menu Sequence
+        value: 
         type: 0
         typeString: 
       conversationID: 4
@@ -3512,7 +3843,7 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 129.80682
+        x: 127.45389
         y: 1164.9629
         width: 160
         height: 30
@@ -3543,7 +3874,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Sequence
-        value: 
+        value: SetActive(ProceedTask1, false);
         type: 0
         typeString: 
       conversationID: 4
@@ -3592,7 +3923,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Sequence
-        value: 
+        value: SetActive(ProceedTask1, false);
         type: 0
         typeString: 
       conversationID: 4
@@ -3616,7 +3947,7 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 757.8652
+        x: 755.9421
         y: 326.9616
         width: 160
         height: 30
@@ -3760,7 +4091,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Sequence
-        value: Camera(SpinningPlatformAngle,,1);
+        value: Camera(SpinningPlatformAngle,MyCamera,1);
         type: 0
         typeString: 
       conversationID: 4
@@ -3784,7 +4115,7 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 102.40427
+        x: 103.67009
         y: 323.8937
         width: 160
         height: 30
@@ -3817,7 +4148,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Sequence
-        value: Camera(PendelumAngle,,1);
+        value: Camera(PendelumAngle,MyCamera,1);
         type: 0
         typeString: 
       - title: Response Menu Sequence
@@ -3878,7 +4209,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Sequence
-        value: Camera(MazeObsAngle,,1);
+        value: Camera(MazeObsAngle,MyCamera,1);
         type: 0
         typeString: 
       conversationID: 4
@@ -3929,13 +4260,13 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: 'Cannons and movaeble walls
+        value: 'Moveable walls
 
 '
         type: 0
         typeString: 
       - title: Sequence
-        value: Camera(CannonMoveableWallAngle,,1);
+        value: Camera(CannonMoveableWallAngle,MyCamera,1);
         type: 0
         typeString: 
       conversationID: 4
@@ -3992,7 +4323,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Sequence
-        value: Camera(SpinningObsAngle,,1);
+        value: Camera(SpinningObsAngle,MyCamera,1);
         type: 0
         typeString: 
       conversationID: 4
@@ -4017,7 +4348,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 105.22763
-        y: 553.814
+        y: 556.179
         width: 160
         height: 30
     - id: 24
@@ -4128,7 +4459,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 141.38942
-        y: 944.3946
+        y: 943.6071
         width: 160
         height: 30
     - id: 26
@@ -4266,7 +4597,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Sequence
-        value: 
+        value: SetActive(ProceedTask1, false);
         type: 0
         typeString: 
       conversationID: 4
@@ -4289,8 +4620,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 0, y: 140.8162}
-    canvasZoom: 0.49000046
+    canvasScrollPosition: {x: 0, y: 0}
+    canvasZoom: 0.5200006
   syncInfo:
     syncActors: 0
     syncItems: 0
