@@ -64,12 +64,10 @@ public class Tutorial_S4GameEngine : MonoBehaviour
     {
         Dictionary<int, string> given = new Dictionary<int, string>
         {
-            { 10, "If n = 0\n\tand you repeat n = n + 2, 5 times" },
-            { 16, "If n = 2\n\tand you repeat n = n * 2, 4 times." },
-            { 8, "If n = 1\n\tand you repeat n = n + n, 3 times. " }
+            { 10, "If n = 0\n\tand you repeat n = n + 2, 5 times" }
         };
 
-        int[] keys = { 10, 16, 8 };
+        int[] keys = { 10 };
         int givenRan = Random.Range(0, keys.Length);
         correctAnswer = keys[givenRan];
         GivenGo.GetComponent<TextMeshProUGUI>().text = given[keys[givenRan]];
