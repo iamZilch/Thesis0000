@@ -10,6 +10,8 @@ public class S4GameEngine : MonoBehaviour
     [SerializeField] GameObject PathGo;
     [SerializeField] GameObject Timer;
     [SerializeField] GameObject[] Answers;
+    [SerializeField] GameObject TVText;
+    [SerializeField] GameObject Player;
 
     public bool isOver = false;
     public int correctAnswer = 0;
@@ -35,7 +37,7 @@ public class S4GameEngine : MonoBehaviour
         DefaultUi(false);
         while (true)
         {
-            if(int.Parse(ReadyTimerGo.GetComponent<TextMeshProUGUI>().text) == 1)
+            if (int.Parse(ReadyTimerGo.GetComponent<TextMeshProUGUI>().text) == 1)
             {
                 StopAllCoroutines();
                 GenerateGivenForLoop();
@@ -64,19 +66,21 @@ public class S4GameEngine : MonoBehaviour
     {
         Dictionary<int, string> given = new Dictionary<int, string>
         {
-            { 10, "If n = 0\n\tand you repeat n = n + 2, 5 times" },
-            { 16, "If n = 2\n\tand you repeat n = n * 2, 4 times." },
-            { 8, "If n = 1\n\tand you repeat n = n + n, 3 times. " }
+            { 10, "If n = 0\nand you repeat \nn = n + 2, 5 times" },
+            { 16, "If n = 2\nand you repeat \nn = n * 2, 4 times." },
+            { 8, "If n = 1\nand you repeat \nn = n + n, 3 times. " }
         };
 
-        int[] keys = {10, 16, 8 };
+        int[] keys = { 10, 16, 8 };
         int givenRan = Random.Range(0, keys.Length);
         correctAnswer = keys[givenRan];
         GivenGo.GetComponent<TextMeshProUGUI>().text = given[keys[givenRan]];
+        Debug.Log(given[keys[givenRan]]);
+        string tv = given[keys[givenRan]];
         int randCor = Random.Range(0, Answers.Length);
-        for(int i = 0; i < Answers.Length; i++)
+        for (int i = 0; i < Answers.Length; i++)
         {
-            if(i == randCor)
+            if (i == randCor)
             {
                 Answers[i].GetComponent<TextMeshPro>().text = correctAnswer.ToString();
             }
@@ -86,10 +90,11 @@ public class S4GameEngine : MonoBehaviour
                 Answers[i].GetComponent<TextMeshPro>().text = (correctAnswer + toAdd).ToString();
             }
         }
+        TVText.GetComponent<TextMeshPro>().text = tv;
     }
 
     void Update()
     {
-        
+
     }
 }
