@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Mirror;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class LanStage4Handler : NetworkBehaviour
 {
@@ -23,6 +24,8 @@ public class LanStage4Handler : NetworkBehaviour
 
     [SyncVar(hook = nameof(isWinnerHook))]
     public bool isWinnerBool = false;
+
+    public bool iAmWinner = false;
 
     private void Start()
     {
@@ -64,7 +67,6 @@ public class LanStage4Handler : NetworkBehaviour
         CmdDefaultUi(false);
         while (!isWinnerBool)
         {
-            Debug.Log("Executed");
             if (ReadyTimerInt <= 1)
             {
                 StopAllCoroutines();
@@ -140,6 +142,8 @@ public class LanStage4Handler : NetworkBehaviour
     }
 
 
+
+
     [ClientRpc]
     public void RpcDefaultUI(bool status)
     {
@@ -163,9 +167,28 @@ public class LanStage4Handler : NetworkBehaviour
         TVText = Lan4SceneStore.TVText;
     }
 
+    [Command(requiresAuthority = false)]
+    public void CmdSetWinner(bool status)
+    {
+        Debug.Log("Executed winner!");
+        isWinnerBool = status;
+    }
+
     public void isWinnerHook(bool oldValue, bool newValue)
     {
-
+        if (isWinnerBool)
+        {
+            Debug.Log("Putangina");
+            if (iAmWinner)
+            {
+                Debug.Log("I AM WINNER ! SHOW CONGRATS HERE!");
+            }
+            else
+            {
+                Debug.Log("I AM LOSER ! SHOW SHIT MSG HERE!");
+            }
+            SceneManager.LoadScene("Main_Menu_Scene");
+        }
     }
 
     public void ReadyTimerIntHook(int oldValue, int newValue)

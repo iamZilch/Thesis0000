@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -17,6 +18,21 @@ public class MainMenuScriptHandler : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        try
+        {
+            Destroy(GameObject.Find("NetworkManager"));
+            //Destroy(GameObject.Find("UI Canvas"));
+            //Destroy(GameObject.Find("~LeanTween"));
+            Destroy(GameObject.Find("Stage1Handler"));
+            Destroy(GameObject.Find("Stage2Handler"));
+            Destroy(GameObject.Find("Stage3Handler"));
+            Destroy(GameObject.Find("Stage4Handler"));
+            Destroy(GameObject.Find("NetworkStorage"));
+        }
+        catch(Exception e)
+        {
+
+        }
         PlayerNameText.GetComponent<TextMeshProUGUI>().text = Database.instance.playerName;
         playerText.GetComponent<TextMeshProUGUI>().text = Database.instance.playerName;
         PlayerMoneyText.GetComponent<TextMeshProUGUI>().text = Database.instance.playerMoney.ToString();

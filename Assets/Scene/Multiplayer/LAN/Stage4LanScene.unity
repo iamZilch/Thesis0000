@@ -652,6 +652,7 @@ GameObject:
   - component: {fileID: 221942630}
   - component: {fileID: 221942629}
   - component: {fileID: 221942628}
+  - component: {fileID: 221942632}
   m_Layer: 0
   m_Name: Anwer (1)
   m_TagString: Untagged
@@ -690,7 +691,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab29ba312af79cb419dfffb9f6e6133d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  syncMode: 0
+  syncInterval: 0.1
   s4: {fileID: 1342532302}
+  defaultPos: {fileID: 782891264}
 --- !u!65 &221942629
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -837,6 +841,23 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &221942632
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 221942626}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b91ecbcc199f4492b9a91e820070131, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneId: 2152484373
+  serverOnly: 0
+  visible: 0
+  m_AssetId: 
+  hasSpawned: 0
 --- !u!1001 &227162037
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2022,6 +2043,7 @@ GameObject:
   - component: {fileID: 616711715}
   - component: {fileID: 616711714}
   - component: {fileID: 616711713}
+  - component: {fileID: 616711717}
   m_Layer: 0
   m_Name: Anwer
   m_TagString: Untagged
@@ -2060,7 +2082,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab29ba312af79cb419dfffb9f6e6133d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  syncMode: 0
+  syncInterval: 0.1
   s4: {fileID: 1342532302}
+  defaultPos: {fileID: 782891264}
 --- !u!65 &616711714
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2207,6 +2232,23 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &616711717
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 616711711}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b91ecbcc199f4492b9a91e820070131, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneId: 1896812548
+  serverOnly: 0
+  visible: 0
+  m_AssetId: 
+  hasSpawned: 0
 --- !u!1001 &632730778
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5454,6 +5496,7 @@ GameObject:
   - component: {fileID: 1680008515}
   - component: {fileID: 1680008514}
   - component: {fileID: 1680008513}
+  - component: {fileID: 1680008517}
   m_Layer: 0
   m_Name: Anwer (2)
   m_TagString: Untagged
@@ -5492,7 +5535,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab29ba312af79cb419dfffb9f6e6133d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  syncMode: 0
+  syncInterval: 0.1
   s4: {fileID: 1342532302}
+  defaultPos: {fileID: 782891264}
 --- !u!65 &1680008514
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5639,6 +5685,23 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &1680008517
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1680008511}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b91ecbcc199f4492b9a91e820070131, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneId: 124539603
+  serverOnly: 0
+  visible: 0
+  m_AssetId: 
+  hasSpawned: 0
 --- !u!1001 &1689093094
 PrefabInstance:
   m_ObjectHideFlags: 0
