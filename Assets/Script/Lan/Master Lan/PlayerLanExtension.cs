@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Mirror;
 using CMF;
+using System;
 
 public class PlayerLanExtension : NetworkBehaviour
 {
@@ -31,6 +32,7 @@ public class PlayerLanExtension : NetworkBehaviour
     public bool canUlti = false;
     public bool canFirst = true;
 
+    public S4PlayerData S4LanPlayerData;
 
     private void Start()
     {
@@ -103,6 +105,11 @@ public class PlayerLanExtension : NetworkBehaviour
             GameObject.Find("PlayerPositionHandler3").GetComponent<PositionHandler>().myPlayer = gameObject;
             GameObject.Find("Stage3Handler").GetComponent<LanStage3Handler>().Player = gameObject;
             GameObject.Find("Stage3Handler").GetComponent<LanStage3Handler>().GetAllGui();
+        }
+        else if (GameObject.Find("PlayerPositionHandler4"))
+        {
+            GameObject.Find("PlayerPositionHandler4").GetComponent<PositionHandler>().myPlayer = gameObject;
+            S4LanPlayerData = GameObject.Find("PlayerData").GetComponent<S4PlayerData>();
         }
     }
 
@@ -563,7 +570,6 @@ public class PlayerLanExtension : NetworkBehaviour
     }
 
     #region Collider
-
     private void OnCollisionEnter(Collision other)
     {
         if (other.gameObject.tag.Equals("sbTrix"))
@@ -585,7 +591,7 @@ public class PlayerLanExtension : NetworkBehaviour
            
         }
     }
-
-
     #endregion
+
+
 }

@@ -7,7 +7,7 @@ public class S4PlayerData : MonoBehaviour
 {
     [SerializeField] GameObject PathGo;
 
-    string[] colorsStr = { "green", "red", "blue" };
+    string[] colorsStr = { "green", "red", "blue"};
 
     public int countToStep = 0;
     public string colorToStep = "";

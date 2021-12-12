@@ -25,7 +25,7 @@ public class NetworkStorage : NetworkBehaviour
     [SerializeField] public GameObject DisconnectedGo;
 
     [Header("Variables")]
-    private string[] mapNames = {"Stage1", "Stage2", "Stage3"};
+    private string[] mapNames = {"Stage1", "Stage2", "Stage3", "Stage4"};
 
     [Header("Enviroment Testing")]
     [SerializeField] public GameObject[] powerUpsSpawnPoint;
@@ -161,7 +161,7 @@ public class NetworkStorage : NetworkBehaviour
     {
         MapName = mapNames[mapNameInt];
         mapNameInt++;
-        if(mapNameInt >= 3)
+        if(mapNameInt >= mapNames.Length)
         {
             mapNameInt = 0;
         }

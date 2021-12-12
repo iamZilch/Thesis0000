@@ -134,6 +134,9 @@ public class MasterLanScript : NetworkManager
             case "Stage3":
                 sceneName = "Stage3LanScene";
                 break;
+            case "Stage4":
+                sceneName = "Stage4LanScene";
+                break;
             case "Lobby":
                 sceneName = "MasterLanLobby";
                 break;
