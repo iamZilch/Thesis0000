@@ -11,6 +11,10 @@ public class Tutorial_S4GameEngine : MonoBehaviour
     [SerializeField] GameObject Timer;
     [SerializeField] GameObject[] Answers;
 
+    [Header("CheckPoints")]
+    [SerializeField] GameObject[] CheckPoints;
+    [SerializeField] public GameObject CheckPointGo;
+
     public bool isOver = false;
     public int correctAnswer = 0;
 
