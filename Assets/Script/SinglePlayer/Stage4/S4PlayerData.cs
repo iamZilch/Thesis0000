@@ -7,7 +7,7 @@ public class S4PlayerData : MonoBehaviour
 {
     [SerializeField] GameObject PathGo;
 
-    string[] colorsStr = { "green", "red", "blue"};
+    string[] colorsStr = { "green", "red", "blue" };
 
     public int countToStep = 0;
     public string colorToStep = "";
@@ -24,7 +24,7 @@ public class S4PlayerData : MonoBehaviour
     {
         countToStep = Random.Range(1, 4);
         colorToStep = colorsStr[Random.Range(0, colorsStr.Length)];
-        PathGo.GetComponent<TextMeshProUGUI>().text = $"Color: {colorToStep} - {countToStep}x";
+        PathGo.GetComponent<TextMeshProUGUI>().text = $"Hint: \nColor: {colorToStep} - {countToStep} times.";
     }
 
     public void GetCurrentPlatform(GameObject platform)
@@ -36,7 +36,7 @@ public class S4PlayerData : MonoBehaviour
     {
         return ReferenceEquals(currentPlatform, platform);
     }
-    
+
     public void MasterPlayerData(GameObject platform)
     {
         if (!isCurrentPlatform(platform))

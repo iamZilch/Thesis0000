@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class S4GameEngine : MonoBehaviour
 {
@@ -11,7 +13,13 @@ public class S4GameEngine : MonoBehaviour
     [SerializeField] GameObject Timer;
     [SerializeField] GameObject[] Answers;
     [SerializeField] GameObject TVText;
+    [SerializeField] GameObject buttonHandlers;
+    [SerializeField] GameObject Hint;
+    [SerializeField] GameObject currQuestion;
+    [SerializeField] GameObject timer;
     [SerializeField] GameObject Player;
+    [SerializeField] Transform[] checkpoints;
+    [SerializeField] int checkpointNumber;
 
     public bool isOver = false;
     public int correctAnswer = 0;
@@ -19,6 +27,7 @@ public class S4GameEngine : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        checkpointNumber = 0;
         Timer.GetComponent<TextMeshProUGUI>().text = "0";
         DefaultUi(false);
         StartCoroutine(ReadyTimerNumerator());
@@ -30,6 +39,10 @@ public class S4GameEngine : MonoBehaviour
         GivenGo.SetActive(status);
         PathGo.SetActive(status);
         Timer.SetActive(status);
+        buttonHandlers.SetActive(status);
+        Hint.SetActive(status);
+        currQuestion.SetActive(status);
+        timer.SetActive(status);
     }
 
     IEnumerator ReadyTimerNumerator()
@@ -67,11 +80,11 @@ public class S4GameEngine : MonoBehaviour
         Dictionary<int, string> given = new Dictionary<int, string>
         {
             { 10, "If n = 0\nand you repeat \nn = n + 2, 5 times" },
-            { 16, "If n = 2\nand you repeat \nn = n * 2, 4 times." },
+            { 32, "If n = 2\nand you repeat \nn = n * 2, 4 times." },
             { 8, "If n = 1\nand you repeat \nn = n + n, 3 times. " }
         };
 
-        int[] keys = { 10, 16, 8 };
+        int[] keys = { 10, 32, 8 };
         int givenRan = Random.Range(0, keys.Length);
         correctAnswer = keys[givenRan];
         GivenGo.GetComponent<TextMeshProUGUI>().text = given[keys[givenRan]];
@@ -93,8 +106,60 @@ public class S4GameEngine : MonoBehaviour
         TVText.GetComponent<TextMeshPro>().text = tv;
     }
 
-    void Update()
+    public void spawnCheckpoint()
     {
-
+        Player.transform.position = checkpoints[checkpointNumber].position;
     }
+
+    public void setCheckpoint(int x)
+    {
+        checkpointNumber = x;
+    }
+
+    int expGained;
+    int timeConsumed;
+    public int calculatePoints()
+    {
+        expGained = timeConsumed / 7;
+        return 40 - expGained;
+    }
+
+    public void addPlayerExp()
+    {
+        if (calculatePoints() >= 0)
+            GameObject.Find("Opening_Game_Script").GetComponent<Database>().playerCurrentExp += calculatePoints();
+        GameObject.Find("Opening_Game_Script").GetComponent<PlayerExpCalculator>().UpdatePlayerLevel();
+        // int points = int.Parse(calculatePoints().ToString());
+        if ((calculatePoints() * 5) >= 0)
+            GameObject.Find("Opening_Game_Script").GetComponent<Database>().playerMoney += calculatePoints() * 5;
+        SaveData.SaveDataProgress(Database.instance);
+    }
+
+    [SerializeField] GameObject endUI;
+    [SerializeField] GameObject finishText;
+    public void hideUI()
+    {
+        endUI.SetActive(true);
+        int ppoints = 0;
+        int ccoins = 0;
+
+        if (!(calculatePoints() <= 0))
+            ppoints = calculatePoints();
+
+        if (!((calculatePoints() * 5) <= 0))
+            ccoins = (calculatePoints() * 5);
+
+        DefaultUi(false);
+        ReadyTimerGo.SetActive(false);
+
+        finishText.GetComponent<Text>().text = "Time Consumed: " + timeConsumed.ToString() +
+                          "\nExp. Gained: " + ppoints.ToString() +
+                          "\nCoins Earned: " + ccoins.ToString();
+    }
+
+    public void mainmenu()
+    {
+        SceneManager.LoadScene("Main_Menu_Scene");
+    }
+
 }

@@ -20818,8 +20818,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 960, y: -623.48004}
-  m_SizeDelta: {x: 1820, y: 813.04004}
+  m_AnchoredPosition: {x: 960.00006, y: -623.48004}
+  m_SizeDelta: {x: 1820.0001, y: 813.04004}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!225 &3146841324253859456
 CanvasGroup:
@@ -26109,7 +26109,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 910, y: -489.40002}
+  m_AnchoredPosition: {x: 910.00006, y: -489.40002}
   m_SizeDelta: {x: 700, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &3146841325249994053
@@ -26340,7 +26340,31 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 3146841325328508802}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1724360903}
+        m_TargetAssemblyTypeName: ManageScene, Assembly-CSharp
+        m_MethodName: ChallengeModeStageFour
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 870576542}
+        m_TargetAssemblyTypeName: MainMenuScriptHandler, Assembly-CSharp
+        m_MethodName: stopMusic
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!222 &3146841325328508925
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -26861,7 +26885,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 910, y: -323.64}
+  m_AnchoredPosition: {x: 910.00006, y: -323.64}
   m_SizeDelta: {x: 1753.98, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &3146841325368713393
@@ -27019,7 +27043,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 910, y: -655.16003}
+  m_AnchoredPosition: {x: 910.00006, y: -655.16003}
   m_SizeDelta: {x: 1794.28, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &3146841325380717059
@@ -29068,7 +29092,31 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 3146841325886757000}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 870576542}
+        m_TargetAssemblyTypeName: MainMenuScriptHandler, Assembly-CSharp
+        m_MethodName: stopMusic
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1724360903}
+        m_TargetAssemblyTypeName: ManageScene, Assembly-CSharp
+        m_MethodName: ChallengeModeStageThree
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!222 &3146841325886757003
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -30454,7 +30502,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 910, y: -157.88}
+  m_AnchoredPosition: {x: 910.00006, y: -157.88}
   m_SizeDelta: {x: 700, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &3146841326162434801
@@ -30935,8 +30983,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 960, y: -139.88}
-  m_SizeDelta: {x: 1820, y: 179.76001}
+  m_AnchoredPosition: {x: 960.00006, y: -139.88}
+  m_SizeDelta: {x: 1820.0001, y: 179.76001}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &3146841326268504080
 MonoBehaviour:

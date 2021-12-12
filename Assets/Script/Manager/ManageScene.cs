@@ -18,6 +18,10 @@ public class ManageScene : MonoBehaviour
     {
         SceneManager.LoadScene("Stage3ChallengeMode");
     }
+    public void ChallengeModeStageFour()
+    {
+        SceneManager.LoadScene("Stage4ChallengeMode");
+    }
 
     public void TutorialModeStageOne()
     {

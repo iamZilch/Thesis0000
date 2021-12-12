@@ -8,10 +8,10 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Character Files/Demo Scene/Character Demo.unity
     guid: 7d1bca068c75e0541878c71e4ff435cc
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scene/Manager/Opening_Game_Scene.unity
     guid: d3f6511e882f0d343ae2942a763e8fd3
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scene/Manager/Main_Menu_Scene.unity
     guid: aaa843a9c7b52204380a3afa7a39ee4c
   - enabled: 1
@@ -41,6 +41,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scene/Single Player/Challenge Mode/Stage3ChallengeMode.unity
     guid: 258e805160bff7740ad1baa7b4a15491
+  - enabled: 1
+    path: Assets/Scene/Single Player/Challenge Mode/Stage4ChallengeMode.unity
+    guid: 98116b1f14461564dbbca61cc60e24f9
   - enabled: 1
     path: Assets/Scene/Single Player/Tutorial Mode/Stage1_tutorial.unity
     guid: d885de348bf7f0243886e1c02bcb4950
