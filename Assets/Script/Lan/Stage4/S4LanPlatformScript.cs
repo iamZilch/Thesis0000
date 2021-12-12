@@ -10,12 +10,11 @@ public class S4LanPlatformScript : NetworkBehaviour
 
     public string colorValue = "";
     public bool someone = false;
-    public GameObject temp;
+    public Vector3 originalPos;
 
     private void Start()
     {
-        temp = gameObject;
-        
+        originalPos = new Vector3(gameObject.transform.position.x, gameObject.transform.position.y, gameObject.transform.position.z);
         if (isServer)
         {
             Value.GetComponent<TextMeshPro>().text = "4";
@@ -52,11 +51,6 @@ public class S4LanPlatformScript : NetworkBehaviour
     private void OnTriggerExit(Collider collision)
     {
         if (!collision.gameObject.GetComponent<PlayerLanExtension>().isLocalPlayer)
-        {
-            return;
-        }
-
-        if(someone)
         {
             return;
         }
@@ -118,7 +112,6 @@ public class S4LanPlatformScript : NetworkBehaviour
     [ClientRpc(includeOwner = false)]
     public void RpcSetActivePlatform(bool staus)
     {
-        Debug.Log($"Temp platform pos - x:{temp.transform.position.x} y:{temp.transform.position.y} z:{temp.transform.position.z}");
         gameObject.transform.position = new Vector3(999f, 9999f, 9999f);
         if(staus == false)
         {
@@ -128,8 +121,9 @@ public class S4LanPlatformScript : NetworkBehaviour
         if (staus == true)
         {
             Debug.Log("RESETTING POS");
-            Debug.Log($"Temp platform pos - x:{temp.transform.position.x} y:{temp.transform.position.y} z:{temp.transform.position.z}");
-            gameObject.transform.position = new Vector3(temp.transform.position.x, temp.transform.position.y, temp.transform.position.z);
+            gameObject.transform.position = originalPos;
+            StopAllCoroutines();
+            Start();
         }
     }
 
