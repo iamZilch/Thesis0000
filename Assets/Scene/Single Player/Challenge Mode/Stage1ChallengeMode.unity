@@ -7253,6 +7253,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: EnemyAI 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1937696468794152686, guid: 70b4cc018a7c4da418e53f7dff1a3ced, type: 3}
+      propertyPath: playerInAttackRange
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 70b4cc018a7c4da418e53f7dff1a3ced, type: 3}
 --- !u!1 &1327976156

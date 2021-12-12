@@ -94,7 +94,8 @@ public class EnemyAiTutorial : MonoBehaviour
         //agent.SetDestination(transform.position);
 
         transform.LookAt(player);
-        StartCoroutine(attack());
+        if (!alreadyAttacked)
+            StartCoroutine(attack());
 
         if (!alreadyAttacked)
         {
@@ -116,7 +117,16 @@ public class EnemyAiTutorial : MonoBehaviour
     {
         yield return new WaitForSeconds(5f);
         projectile.SetActive(true);
-        StopCoroutine(attack());
+        alreadyAttacked = true;
+        StartCoroutine(resetPos());
+    }
+
+    IEnumerator resetPos()
+    {
+        yield return new WaitForSeconds(4f);
+        projectile.SetActive(false);
+        alreadyAttacked = false;
+        StopAllCoroutines();
     }
     private void ResetAttack()
     {
