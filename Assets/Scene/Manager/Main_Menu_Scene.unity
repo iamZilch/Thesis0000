@@ -7109,6 +7109,61 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 638341830}
   m_CullTransparentMesh: 1
+--- !u!1 &651223257
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 651223259}
+  - component: {fileID: 651223258}
+  m_Layer: 0
+  m_Name: UI Buttons Handler
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &651223258
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 651223257}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9dd14a23a3ce4f44ebe84d342fd9c1c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tutorialButtons:
+  - {fileID: 3146841324288792000}
+  - {fileID: 3146841326001725660}
+  - {fileID: 3146841325886757007}
+  - {fileID: 3146841325328508801}
+  - {fileID: 3146841325852614018}
+  challengeButtons:
+  - {fileID: 3146841326299892998}
+  - {fileID: 3146841325358682376}
+  - {fileID: 3146841325717151447}
+  - {fileID: 3146841324969238605}
+  - {fileID: 3146841325602502999}
+--- !u!4 &651223259
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 651223257}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -10.228893, y: -1.8512487, z: 812.1659}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &656187206
 GameObject:
   m_ObjectHideFlags: 0
@@ -25222,7 +25277,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 0
+  m_Interactable: 1
   m_TargetGraphic: {fileID: 3146841324969238606}
   m_OnClick:
     m_PersistentCalls:
@@ -26281,7 +26336,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 0
+  m_Interactable: 1
   m_TargetGraphic: {fileID: 3146841325328508802}
   m_OnClick:
     m_PersistentCalls:
@@ -27821,7 +27876,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 0
+  m_Interactable: 1
   m_TargetGraphic: {fileID: 3146841325602502992}
   m_OnClick:
     m_PersistentCalls:
@@ -28687,7 +28742,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 0
+  m_Interactable: 1
   m_TargetGraphic: {fileID: 3146841325852614143}
   m_OnClick:
     m_PersistentCalls:
@@ -28809,6 +28864,30 @@ MonoBehaviour:
       - m_Target: {fileID: 3146841324272236881}
         m_TargetAssemblyTypeName: UITweener, Assembly-CSharp
         m_MethodName: Disable
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 651223258}
+        m_TargetAssemblyTypeName: MainMenuButtonsHandler, Assembly-CSharp
+        m_MethodName: tutorialButtonsEnabler
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 651223258}
+        m_TargetAssemblyTypeName: MainMenuButtonsHandler, Assembly-CSharp
+        m_MethodName: challengeButtonsEnabler
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -28985,7 +29064,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 0
+  m_Interactable: 1
   m_TargetGraphic: {fileID: 3146841325886757000}
   m_OnClick:
     m_PersistentCalls:

@@ -7,6 +7,7 @@ public class Tutorial_FinishLine : MonoBehaviour
     public GameObject congrats;
     public GameObject buttonHandler;
     public GameObject given;
+    public AutoSave save;
 
 
     public void OnTriggerEnter(Collider other)
@@ -14,6 +15,7 @@ public class Tutorial_FinishLine : MonoBehaviour
         if (other.tag.Equals("Trix"))
         {
             congrats.SetActive(true);
+            save.endTextTrigger();
             buttonHandler.SetActive(false);
             given.SetActive(false);
         }

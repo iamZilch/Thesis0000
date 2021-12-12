@@ -12,9 +12,9 @@ public class PowerUpScript : MonoBehaviour
     // Start is called before the first frame update
     private void OnTriggerEnter(Collider other)
     {
-        if (gameObject.tag.Equals("SpeedUp"))
+        if (other.tag.Equals("Maze") || other.tag.Equals("Trix") || other.tag.Equals("Zilch"))
         {
-            if (other.tag.Equals("Maze") || other.tag.Equals("Trix") || other.tag.Equals("Zilch"))
+            if (gameObject.tag.Equals("SpeedUp"))
             {
                 adv = other.GetComponent<AdvancedWalkerController>();
                 anim = other.GetComponent<Animator>();
@@ -27,20 +27,19 @@ public class PowerUpScript : MonoBehaviour
                 anim.speed = 2.5f;
                 StartCoroutine(timeLimit());
             }
-        }
 
-        else if (gameObject.tag.Equals("CDReset"))
-        {
-            other.GetComponent<SkillControls>().resetCD();
-            gameObject.SetActive(false);
-        }
+            else if (gameObject.tag.Equals("CDReset"))
+            {
+                other.GetComponent<SkillControls>().resetCD();
+                gameObject.SetActive(false);
+            }
 
-        else if (gameObject.tag.Equals("UltiPoint"))
-        {
-            other.GetComponent<SkillControls>().setUltiPoint(true);
-            gameObject.SetActive(false);
+            else if (gameObject.tag.Equals("UltiPoint"))
+            {
+                other.GetComponent<SkillControls>().setUltiPoint(true);
+                gameObject.SetActive(false);
+            }
         }
-
     }
 
     IEnumerator timeLimit()

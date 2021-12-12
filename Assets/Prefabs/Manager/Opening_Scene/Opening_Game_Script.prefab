@@ -109,6 +109,8 @@ MonoBehaviour:
   UnlockedStages: 0100000000
   UnlockCharacter: 010000010000010000
   UsedCharacter: 1
+  tutorialCheckpoints: 000000000000000000000000000000000000000000000000
+  unlockedTutorials: 000000000000
 --- !u!82 &1844488454
 AudioSource:
   m_ObjectHideFlags: 0
@@ -120,10 +122,10 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: ee56b4b5a2f3e2d44961a6c5b210fa21, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 0.458
   m_Pitch: 1
-  Loop: 1
+  Loop: 0
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -232,7 +234,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
