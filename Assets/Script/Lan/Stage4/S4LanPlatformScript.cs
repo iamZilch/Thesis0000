@@ -10,13 +10,16 @@ public class S4LanPlatformScript : NetworkBehaviour
 
     public string colorValue = "";
     public bool someone = false;
+    public GameObject temp;
 
     private void Start()
     {
+        temp = gameObject;
+        
         if (isServer)
         {
             Value.GetComponent<TextMeshPro>().text = "4";
-            StartCoroutine(changeColor());
+            StartCoroutine(changeColor(int.Parse(Value.GetComponent<TextMeshPro>().text)));
         }
     }
 
@@ -25,6 +28,10 @@ public class S4LanPlatformScript : NetworkBehaviour
         //&& (collision.gameObject.GetComponent<S4PlayerData>().currentPlatform != gameObject)
         if ((collision.gameObject.tag.Equals("Maze") || collision.gameObject.tag.Equals("Zilch") || collision.gameObject.tag.Equals("Trix")))
         {
+            if (!collision.gameObject.GetComponent<PlayerLanExtension>().isLocalPlayer)
+            {
+                return;
+            }
             S4PlayerData playerData = collision.gameObject.GetComponent<PlayerLanExtension>().S4LanPlayerData;
             if ((playerData.colorToStep.Equals(colorValue)))
             {
@@ -44,20 +51,50 @@ public class S4LanPlatformScript : NetworkBehaviour
 
     private void OnTriggerExit(Collider collision)
     {
+        if (!collision.gameObject.GetComponent<PlayerLanExtension>().isLocalPlayer)
+        {
+            return;
+        }
+
+        if(someone)
+        {
+            return;
+        }
+
         S4PlayerData playerData = collision.gameObject.GetComponent<PlayerLanExtension>().S4LanPlayerData;
         if (collision.gameObject.tag.Equals("Maze") || collision.gameObject.tag.Equals("Zilch") || collision.gameObject.tag.Equals("Trix"))
         {
             CmdChangeSomeone(false);
             playerData.stepped = false;
-            StartCoroutine(changeColor());
+            CmdStartCor(int.Parse(Value.GetComponent<TextMeshPro>().text));
         }
     }
 
-    IEnumerator changeColor()
+    [Command(requiresAuthority = false)]
+    public void CmdStartCor(int curValue)
     {
+        if (isServer)
+        {
+            RpcStartCor(curValue);
+        }
+    }
+
+    [ClientRpc]
+    public void RpcStartCor(int curValue)
+    {
+        if (isServer)
+        {
+            StartCoroutine(changeColor(curValue));
+        }
+    }
+
+    IEnumerator changeColor(int curValue)
+    {
+        CmdChangeTimer(curValue.ToString());
         while (!someone)
         {
-            if (Value.GetComponent<TextMeshPro>().text.Equals("1"))
+            int ti = int.Parse(Value.GetComponent<TextMeshPro>().text);
+            if (ti <= 1)
             {
                 CmdChangeTimer("4");
                 CmdChangeColorValue();
@@ -81,7 +118,34 @@ public class S4LanPlatformScript : NetworkBehaviour
     [ClientRpc(includeOwner = false)]
     public void RpcSetActivePlatform(bool staus)
     {
-        gameObject.SetActive(staus);
+        Debug.Log($"Temp platform pos - x:{temp.transform.position.x} y:{temp.transform.position.y} z:{temp.transform.position.z}");
+        gameObject.transform.position = new Vector3(999f, 9999f, 9999f);
+        if(staus == false)
+        {
+            ResetPlatform();
+        }
+
+        if (staus == true)
+        {
+            Debug.Log("RESETTING POS");
+            Debug.Log($"Temp platform pos - x:{temp.transform.position.x} y:{temp.transform.position.y} z:{temp.transform.position.z}");
+            gameObject.transform.position = new Vector3(temp.transform.position.x, temp.transform.position.y, temp.transform.position.z);
+        }
+    }
+
+    public void ResetPlatform()
+    {
+        if (isServer)
+        {
+            StartCoroutine(ResetPlatformNumerator());
+        }
+    }
+
+    IEnumerator ResetPlatformNumerator()
+    {
+        Debug.Log("Executed!");
+        yield return new WaitForSeconds(Random.Range(5f, 11f));
+        CmdSetActivePlatform(true);
     }
 
     [Command(requiresAuthority = false)]

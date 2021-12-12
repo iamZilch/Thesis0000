@@ -110,6 +110,7 @@ public class PlayerLanExtension : NetworkBehaviour
         {
             GameObject.Find("PlayerPositionHandler4").GetComponent<PositionHandler>().myPlayer = gameObject;
             S4LanPlayerData = GameObject.Find("PlayerData").GetComponent<S4PlayerData>();
+            GameObject.Find("Stage4Handler").GetComponent<LanStage4Handler>().GetAllUi();
         }
     }
 

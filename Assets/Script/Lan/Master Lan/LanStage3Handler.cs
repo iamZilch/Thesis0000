@@ -90,7 +90,6 @@ public class LanStage3Handler : NetworkBehaviour
 
     IEnumerator ReadTimerCoroutine()
     {
-        Debug.Log("Coroutine STAGE3 LAN MASTER START!");
         ReadyTimerGo.SetActive(true);
         yield return new WaitForSeconds(1f);
         if(ReadyCountDown == 0)
@@ -102,7 +101,6 @@ public class LanStage3Handler : NetworkBehaviour
             StartCoroutine(CmdChangeBoolNumerator());
             CmdChangeGiven();
             buttonHandler.SetActive(true);
-            Debug.Log("Executed stage 3 coroutine!");
         }
         else
         {
