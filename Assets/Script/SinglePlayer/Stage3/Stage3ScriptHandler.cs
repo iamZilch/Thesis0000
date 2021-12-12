@@ -43,6 +43,7 @@ public class Stage3ScriptHandler : MonoBehaviour
         Player.transform.position = SpawnPoint.transform.position;
         Stage3GivenHandler.InitializeGiven();
         LoadDefault();
+        StartGame();
     }
 
     public GameObject getPlayer()
