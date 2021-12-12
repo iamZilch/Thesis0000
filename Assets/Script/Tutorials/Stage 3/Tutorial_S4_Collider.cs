@@ -21,6 +21,7 @@ public class Tutorial_S4_Collider : MonoBehaviour
             if (Stage3Main.GetComponent<Tutorial_Stage3_MainHandler>().correctAnswer.Equals(TextHolderGameObject.GetComponent<TextHolderScript>().startValue))
             {
                 Main.GetComponent<Tutorial_Stage3_MainHandler>().Congrats.SetActive(true);
+                Main.GetComponent<Tutorial_Stage3_MainHandler>().SetUiActive(false);
                 //GameObject.Find("SoundManager").GetComponent<S3SoundManager>().PlayMusic(0);
                 Platform.SetActive(false);
 

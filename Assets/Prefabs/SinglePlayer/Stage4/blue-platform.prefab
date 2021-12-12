@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 7614740158533290922}
   - component: {fileID: 6755172830049065904}
   - component: {fileID: 9102587572294432689}
+  - component: {fileID: 8630847897261674375}
   m_Layer: 0
   m_Name: blue-platform
   m_TagString: Untagged
@@ -117,6 +118,14 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.9999999, y: 2, z: 1.9999999}
   m_Center: {x: 0.00000023841858, y: 4.2351647e-22, z: 0.0000003594905}
+--- !u!33 &8630847897261674375
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7308660523154801271}
+  m_Mesh: {fileID: 855204513085124286, guid: d0d5dcfd487603d49aef9aecb126827c, type: 3}
 --- !u!1 &7397962912928999723
 GameObject:
   m_ObjectHideFlags: 0
