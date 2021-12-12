@@ -21,7 +21,7 @@ public class MainMenuScriptHandler : MonoBehaviour
         try
         {
             Destroy(GameObject.Find("NetworkManager"));
-            //Destroy(GameObject.Find("UI Canvas"));
+            Destroy(GameObject.Find("UI Canvas"));
             //Destroy(GameObject.Find("~LeanTween"));
             Destroy(GameObject.Find("Stage1Handler"));
             Destroy(GameObject.Find("Stage2Handler"));
@@ -29,7 +29,7 @@ public class MainMenuScriptHandler : MonoBehaviour
             Destroy(GameObject.Find("Stage4Handler"));
             Destroy(GameObject.Find("NetworkStorage"));
         }
-        catch(Exception e)
+        catch (Exception e)
         {
 
         }
