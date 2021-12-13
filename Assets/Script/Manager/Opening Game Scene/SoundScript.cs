@@ -16,8 +16,8 @@ public class SoundScript : MonoBehaviour
     private void Start()
     {
         instance = this;
-        if (!clickAS.isPlaying)
-            clickAS.PlayOneShot(valorant3);
+        // if (!clickAS.isPlaying)
+        // clickAS.PlayOneShot(valorant3);
     }
 
     public void playClickFx()

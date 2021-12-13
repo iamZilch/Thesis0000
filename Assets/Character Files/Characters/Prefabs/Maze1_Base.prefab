@@ -10450,7 +10450,8 @@ GameObject:
   - component: {fileID: 1386430800676457805}
   - component: {fileID: 1386430800676457807}
   - component: {fileID: 1386430800676457804}
-  m_Layer: 0
+  - component: {fileID: 9077058314980994680}
+  m_Layer: 7
   m_Name: ModelRoot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10507,6 +10508,20 @@ MonoBehaviour:
   controller: {fileID: 1386430801255881647}
   turnSpeed: 1500
   ignoreControllerMomentum: 0
+--- !u!136 &9077058314980994680
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1386430800676457794}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.5
+  m_Height: 1
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1386430800729325562
 GameObject:
   m_ObjectHideFlags: 0
