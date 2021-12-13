@@ -39,7 +39,7 @@ public class ButtonsHandler : MonoBehaviour
 
     private void Start()
     {
-        //cast = player.GetComponent<SkillControls>();
+        cast = player.GetComponent<SkillControls>();
     }
 
     public void setPlayer(GameObject ret)
