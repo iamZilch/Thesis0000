@@ -224,9 +224,18 @@ public class LanStage4Handler : NetworkBehaviour
     public void correctAnswerHook(int oldValue, int newValue)
     {
         int correct = UnityEngine.Random.Range(0, Answers.Length);
-        for(int i = 0; i < Answers.Length; i++)
+        if (isServer)
         {
-            if(correct == i)
+            RpcSetAnswers(correct);
+        }
+    }
+
+    [ClientRpc]
+    public void RpcSetAnswers(int cor)
+    {
+        for (int i = 0; i < Answers.Length; i++)
+        {
+            if (cor == i)
             {
                 Answers[i].GetComponent<TextMeshPro>().text = correctAnswer.ToString();
             }
