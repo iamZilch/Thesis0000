@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class ManageScene : MonoBehaviour
 {
-    // Start is called before the first frame update
+    //Challenge Modes
     public void ChallengeModeStageOne()
     {
         SceneManager.LoadScene("Stage1ChallengeMode");
@@ -23,6 +23,7 @@ public class ManageScene : MonoBehaviour
         SceneManager.LoadScene("Stage4ChallengeMode");
     }
 
+    //Tutorials
     public void TutorialModeStageOne()
     {
         SceneManager.LoadScene("Stage1_tutorial");
@@ -31,5 +32,13 @@ public class ManageScene : MonoBehaviour
     public void TutorialModeStageTwo()
     {
         SceneManager.LoadScene("Stage2_Tutorial 1");
+    }
+    public void TutorialModeStageThree()
+    {
+        SceneManager.LoadScene("Stage3_tutorial");
+    }
+    public void TutorialModeStageFour()
+    {
+        SceneManager.LoadScene("Stage4_Tutorial");
     }
 }

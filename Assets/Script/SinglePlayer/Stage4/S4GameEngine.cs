@@ -59,6 +59,7 @@ public class S4GameEngine : MonoBehaviour
             }
             int count = int.Parse(ReadyTimerGo.GetComponent<TextMeshProUGUI>().text);
             count--;
+            GameObject.Find("Audio").GetComponent<S1SoundManager>().PlayMusic(1);
             ReadyTimerGo.GetComponent<TextMeshProUGUI>().text = count.ToString();
             yield return new WaitForSeconds(1f);
         }
@@ -70,6 +71,7 @@ public class S4GameEngine : MonoBehaviour
         {
             int count = int.Parse(Timer.GetComponent<TextMeshProUGUI>().text);
             count++;
+            GameObject.Find("Audio").GetComponent<S1SoundManager>().PlayMusic(3);
             Timer.GetComponent<TextMeshProUGUI>().text = count.ToString();
             yield return new WaitForSeconds(1f);
         }
@@ -109,6 +111,7 @@ public class S4GameEngine : MonoBehaviour
     public void spawnCheckpoint()
     {
         Player.transform.position = checkpoints[checkpointNumber].position;
+        GameObject.Find("Audio").GetComponent<S1SoundManager>().PlayMusic(0);
     }
 
     public void setCheckpoint(int x)
@@ -152,6 +155,7 @@ public class S4GameEngine : MonoBehaviour
         DefaultUi(false);
         ReadyTimerGo.SetActive(false);
 
+        GameObject.Find("Audio").GetComponent<S1SoundManager>().PlayMusic(2);
         finishText.GetComponent<Text>().text = "Time Consumed: " + timeConsumed.ToString() +
                           "\nExp. Gained: " + ppoints.ToString() +
                           "\nCoins Earned: " + ccoins.ToString();

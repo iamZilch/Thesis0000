@@ -1162,7 +1162,7 @@ GameObject:
   - component: {fileID: 5111423338404570134}
   m_Layer: 0
   m_Name: Maze1_Base
-  m_TagString: Maze
+  m_TagString: Trix
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1542,6 +1542,9 @@ MonoBehaviour:
   - {fileID: 0}
   defaultRootCam: {fileID: 0}
   defaultCam: {fileID: 0}
+  canUlti: 0
+  canFirst: 1
+  S4LanPlayerData: {fileID: 0}
 --- !u!114 &2485149067172805708
 MonoBehaviour:
   m_ObjectHideFlags: 0
