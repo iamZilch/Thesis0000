@@ -34,9 +34,9 @@ public class SettingsMenu : MonoBehaviour
             }
         }
 
-        ResolutionDropdown.AddOptions(options);
-        ResolutionDropdown.value = CurrentResolutionIndex;
-        ResolutionDropdown.RefreshShownValue();
+        //ResolutionDropdown.AddOptions(options);
+        //ResolutionDropdown.value = CurrentResolutionIndex;
+        //ResolutionDropdown.RefreshShownValue();
     }
 
     public void SetResolution(int ResolutionIndex)

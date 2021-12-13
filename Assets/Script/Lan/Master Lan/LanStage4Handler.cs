@@ -4,6 +4,7 @@ using UnityEngine;
 using Mirror;
 using TMPro;
 using UnityEngine.SceneManagement;
+using System;
 
 public class LanStage4Handler : NetworkBehaviour
 {
@@ -119,7 +120,7 @@ public class LanStage4Handler : NetworkBehaviour
         };
 
         int[] keys = { 10, 16, 8 };
-        int givenRan = Random.Range(0, keys.Length);
+        int givenRan = UnityEngine.Random.Range(0, keys.Length);
         CmdSetGivenAndAnswer(keys[givenRan], given[keys[givenRan]]);
         string tv = given[keys[givenRan]];
         //RpcSetTv(tv);
@@ -187,6 +188,22 @@ public class LanStage4Handler : NetworkBehaviour
             {
                 Debug.Log("I AM LOSER ! SHOW SHIT MSG HERE!");
             }
+            try
+            {
+                Destroy(GameObject.Find("NetworkManager"));
+                Destroy(GameObject.Find("UI Canvas"));
+                //Destroy(GameObject.Find("~LeanTween"));
+                Destroy(GameObject.Find("Stage1Handler"));
+                Destroy(GameObject.Find("Stage2Handler"));
+                Destroy(GameObject.Find("Stage3Handler"));
+                Destroy(GameObject.Find("Stage4Handler"));
+                Destroy(GameObject.Find("NetworkStorage"));
+            }
+            catch (Exception e)
+            {
+
+            }
+            NetworkManager.singleton.StopHost();
             SceneManager.LoadScene("Main_Menu_Scene");
         }
     }
@@ -206,7 +223,7 @@ public class LanStage4Handler : NetworkBehaviour
 
     public void correctAnswerHook(int oldValue, int newValue)
     {
-        int correct = Random.Range(0, Answers.Length);
+        int correct = UnityEngine.Random.Range(0, Answers.Length);
         for(int i = 0; i < Answers.Length; i++)
         {
             if(correct == i)
@@ -215,7 +232,7 @@ public class LanStage4Handler : NetworkBehaviour
             }
             else
             {
-                Answers[i].GetComponent<TextMeshPro>().text = (correctAnswer + Random.Range(1, 15)).ToString();
+                Answers[i].GetComponent<TextMeshPro>().text = (correctAnswer + UnityEngine.Random.Range(1, 15)).ToString();
             }
         }
     }
