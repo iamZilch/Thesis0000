@@ -51,7 +51,7 @@ namespace CMF
 			cameraInput = GetComponent<CameraInput>();
 
 			if(cameraInput == null)
-				Debug.LogWarning("No camera input script has been attached to this gameobject", this.gameObject);
+				Debug.LogWarning("No camera input script has been attached to this gameobject", this.gameObject); 
 
 			//If no camera component has been attached to this gameobject, search the transform's children;
 			if(cam == null)

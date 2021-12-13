@@ -194,7 +194,7 @@ namespace Mirror
             //       to avoid Wrapper functions. a lot of people requested this.
             if (!NetworkClient.active)
             {
-                Debug.LogError($"Command Function {cmdName} called without an active client.");
+                Debug.LogError($"Command Function {cmdName} called without an active client.");  
                 return;
             }
 

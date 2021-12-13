@@ -22,7 +22,7 @@ public class Tutorial_S4_Collider : MonoBehaviour
             {
                 Main.GetComponent<Tutorial_Stage3_MainHandler>().Congrats.SetActive(true);
                 Main.GetComponent<Tutorial_Stage3_MainHandler>().SetUiActive(false);
-                //GameObject.Find("SoundManager").GetComponent<S3SoundManager>().PlayMusic(0);
+                //GameObject.Find("SoundManager").GetComponent<S3SoundManager>().PlayMusic(0); 
                 Platform.SetActive(false);
 
 
