@@ -35,7 +35,7 @@ public static class SaveData
     {
         LoadData();
         Debug.Log($"Saving progress of {localPlayer.playerName}");
-        for(int i = 0; i < PlayerDataList.Count; i++)
+        for (int i = 0; i < PlayerDataList.Count; i++)
         {
             Debug.Log($"For Loop Info {i} PlayerDataList: {PlayerDataList[i].playerName} -- Our name : {Database.instance.playerName}");
             if (PlayerDataList[i].playerName.Equals(Database.instance.playerName))
@@ -52,5 +52,49 @@ public static class SaveData
         }
     }
 
-    
+    public static void ChangeName(Database localPlayer, string newName)
+    {
+        LoadData();
+        Debug.Log($"Saving progress of {localPlayer.playerName}");
+        for (int i = 0; i < PlayerDataList.Count; i++)
+        {
+            Debug.Log($"For Loop Info {i} PlayerDataList: {PlayerDataList[i].playerName} -- Our name : {Database.instance.playerName}");
+            if (PlayerDataList[i].playerName.Equals(Database.instance.playerName))
+            {
+                Database.instance.playerName = newName;
+                PlayerDataList[i] = new PlayerData(Database.instance);
+                Debug.Log($"{newName}");
+                Debug.Log($"Data instance : {Database.instance.UsedCharacter} --- PlayerDataList :{PlayerDataList[i].UsedCharacter}");
+                BinaryFormatter formatter = new BinaryFormatter();
+                FileStream stream = new FileStream(path, FileMode.Create, FileAccess.ReadWrite);
+                formatter.Serialize(stream, PlayerDataList);
+                stream.Close();
+                LoadData();
+                break;
+            }
+        }
+    }
+
+    public static void DeleteAccount(Database localPlayer)
+    {
+        LoadData();
+        Debug.Log($"Saving progress of {localPlayer.playerName}");
+        for (int i = 0; i < PlayerDataList.Count; i++)
+        {
+            Debug.Log($"For Loop Info {i} PlayerDataList: {PlayerDataList[i].playerName} -- Our name : {Database.instance.playerName}");
+            if (PlayerDataList[i].playerName.Equals(Database.instance.playerName))
+            {
+                Debug.Log($"{i} : {PlayerDataList.Count}");
+                PlayerDataList.Remove(PlayerDataList[i]);
+                // Debug.Log($"Data instance : {Database.instance.UsedCharacter} --- PlayerDataList :{PlayerDataList[i].UsedCharacter}");
+                BinaryFormatter formatter = new BinaryFormatter();
+                FileStream stream = new FileStream(path, FileMode.Create, FileAccess.ReadWrite);
+                formatter.Serialize(stream, PlayerDataList);
+                stream.Close();
+                //LoadData();
+                break;
+            }
+        }
+    }
+
 }

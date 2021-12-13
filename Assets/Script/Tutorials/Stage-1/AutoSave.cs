@@ -39,6 +39,8 @@ public class AutoSave : MonoBehaviour
 
     public void endPhase(int stageNumber)
     {
+        Debug.Log("Game Ended.");
+
         if (!GameObject.Find("Opening_Game_Script").GetComponent<Database>().unlockedTutorials[stageNumber])
         {
             GameObject.Find("Opening_Game_Script").GetComponent<Database>().playerCurrentExp += exp;
