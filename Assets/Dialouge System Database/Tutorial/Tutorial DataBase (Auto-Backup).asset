@@ -665,7 +665,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: 
+        value: SetActive(Back, false);
         type: 0
         typeString: CustomFieldType_Text
       - title: EventGuid
@@ -725,7 +725,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: 
+        value: SetActive(Back, true);
         type: 0
         typeString: CustomFieldType_Text
       - title: Response Menu Sequence
@@ -788,7 +788,10 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: 
+        value: 'SetActive(ProceedMoveToGreen, false);
+
+          SetActive(Back,
+          false);'
         type: 0
         typeString: CustomFieldType_Text
       - title: EventGuid
@@ -855,13 +858,17 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: 
+        value: SetActive(Back, false);
         type: 0
         typeString: CustomFieldType_Text
       - title: EventGuid
         value: b015858a-8ba8-4a86-9f8a-a13d847c18a2
         type: 0
         typeString: CustomFieldType_Text
+      - title: Response Menu Sequence
+        value: 
+        type: 0
+        typeString: 
       conversationID: 1
       isRoot: 0
       isGroup: 0
@@ -914,13 +921,17 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: 
+        value: SetActive(Back, true);
         type: 0
         typeString: CustomFieldType_Text
       - title: EventGuid
         value: 15cfc540-9c56-46a1-a00e-adc949b38a85
         type: 0
         typeString: CustomFieldType_Text
+      - title: Response Menu Sequence
+        value: 
+        type: 0
+        typeString: 
       conversationID: 1
       isRoot: 0
       isGroup: 0
@@ -1033,7 +1044,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: 
+        value: SetActive(Back, false);
         type: 0
         typeString: CustomFieldType_Text
       - title: Response Menu Sequence
@@ -1096,7 +1107,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: 
+        value: SetActive(Back, true);
         type: 0
         typeString: CustomFieldType_Text
       - title: EventGuid
@@ -1155,7 +1166,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: 
+        value: SetActive(Back, false);
         type: 0
         typeString: CustomFieldType_Text
       - title: EventGuid
@@ -1328,7 +1339,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: 
+        value: SetActive(Back, false);
         type: 0
         typeString: CustomFieldType_Text
       - title: EventGuid
@@ -1440,7 +1451,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: 
+        value: SetActive(Back, true);
         type: 0
         typeString: CustomFieldType_Text
       - title: EventGuid
@@ -1486,11 +1497,11 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Actor
-        value: 1
+        value: 2
         type: 5
         typeString: CustomFieldType_Actor
       - title: Conversant
-        value: 2
+        value: 1
         type: 5
         typeString: CustomFieldType_Actor
       - title: Menu Text
@@ -1502,13 +1513,20 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: 
+        value: 'SetActive(Continue Button, false);
+
+          SetActive(ProceedMoveToGreen,
+          true);'
         type: 0
         typeString: CustomFieldType_Text
       - title: EventGuid
         value: 6699e7ec-e87c-4b79-8b86-e497ca61d227
         type: 0
         typeString: CustomFieldType_Text
+      - title: Response Menu Sequence
+        value: 
+        type: 0
+        typeString: 
       conversationID: 1
       isRoot: 0
       isGroup: 0
@@ -1525,7 +1543,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 1
-        y: 141.03488
+        y: 137.73962
         width: 160
         height: 30
     - id: 22
@@ -1539,11 +1557,11 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Actor
-        value: 1
+        value: 2
         type: 5
         typeString: CustomFieldType_Actor
       - title: Conversant
-        value: 2
+        value: 1
         type: 5
         typeString: CustomFieldType_Actor
       - title: Menu Text
@@ -1608,7 +1626,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: 
+        value: SetActive(Back, true);
         type: 0
         typeString: CustomFieldType_Text
       - title: Response Menu Sequence
@@ -1770,11 +1788,11 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Actor
-        value: 1
+        value: 2
         type: 5
         typeString: CustomFieldType_Actor
       - title: Conversant
-        value: 2
+        value: 1
         type: 5
         typeString: CustomFieldType_Actor
       - title: Menu Text
@@ -1839,7 +1857,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: 
+        value: SetActive(Back, true);
         type: 0
         typeString: CustomFieldType_Text
       - title: EventGuid
@@ -2171,11 +2189,11 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Actor
-        value: 1
+        value: 2
         type: 5
         typeString: CustomFieldType_Actor
       - title: Conversant
-        value: 2
+        value: 1
         type: 5
         typeString: CustomFieldType_Actor
       - title: Menu Text
@@ -2224,11 +2242,11 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Actor
-        value: 1
+        value: 2
         type: 5
         typeString: CustomFieldType_Actor
       - title: Conversant
-        value: 2
+        value: 1
         type: 5
         typeString: CustomFieldType_Actor
       - title: Menu Text
@@ -2267,8 +2285,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 3.2257996, y: 0}
-    canvasZoom: 0.620001
+    canvasScrollPosition: {x: 62.79663, y: 22.918846}
+    canvasZoom: 0.47000107
   - id: 2
     fields:
     - title: Title
@@ -2395,7 +2413,9 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: Camera(FirstPos,,4);
+        value: 'Camera(FirstPos,,4);
+
+'
         type: 0
         typeString: CustomFieldType_Text
       - title: Response Menu Sequence
@@ -2959,8 +2979,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 0, y: 192.40503}
-    canvasZoom: 0.79000014
+    canvasScrollPosition: {x: 0, y: 0}
+    canvasZoom: 0.91
   syncInfo:
     syncActors: 0
     syncItems: 0
