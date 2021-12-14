@@ -20,6 +20,7 @@ public class AutoSave : MonoBehaviour
         Debug.Log("Exp to gain : " + exp);
         Debug.Log("Coins to gain : " + coins);
         Debug.Log("Last Checkpoint : " + GameObject.Find("Opening_Game_Script").GetComponent<Database>().tutorialCheckpoints[stageNumber]);
+        endTextTrigger();
     }
 
     public void setCheckpoint(int checkpoint)
@@ -38,6 +39,8 @@ public class AutoSave : MonoBehaviour
 
     public void endPhase(int stageNumber)
     {
+        Debug.Log("Game Ended.");
+
         if (!GameObject.Find("Opening_Game_Script").GetComponent<Database>().unlockedTutorials[stageNumber])
         {
             GameObject.Find("Opening_Game_Script").GetComponent<Database>().playerCurrentExp += exp;

@@ -105,9 +105,9 @@ namespace CMF
 
         IEnumerator FindJoyStick()
         {
-            while(joystick == null)
+            while (joystick == null)
             {
-                if(joystick != null)
+                if (joystick != null)
                 {
                     StopAllCoroutines();
                 }

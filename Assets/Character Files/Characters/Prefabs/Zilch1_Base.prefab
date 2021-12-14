@@ -63923,7 +63923,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9819db9f56d8ad4c83e05807a209fc8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  handleRange: 1
+  handleRange: 1.01
   deadZone: 0
   axisOptions: 0
   snapX: 0

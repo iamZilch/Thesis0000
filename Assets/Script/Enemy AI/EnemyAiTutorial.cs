@@ -94,10 +94,11 @@ public class EnemyAiTutorial : MonoBehaviour
         //agent.SetDestination(transform.position);
 
         transform.LookAt(player);
-        StartCoroutine(attack());
+
 
         if (!alreadyAttacked)
         {
+            StartCoroutine(attack());
             //polar.SetBool("Throwing", false);
             ///Attack code here
 
@@ -114,10 +115,13 @@ public class EnemyAiTutorial : MonoBehaviour
 
     IEnumerator attack() //return snowball to orig position of no player has been hit
     {
-        yield return new WaitForSeconds(5f);
+        alreadyAttacked = true;
+        yield return new WaitForSeconds(6f);
         projectile.SetActive(true);
+        alreadyAttacked = false;
         StopCoroutine(attack());
     }
+
     private void ResetAttack()
     {
         alreadyAttacked = false;

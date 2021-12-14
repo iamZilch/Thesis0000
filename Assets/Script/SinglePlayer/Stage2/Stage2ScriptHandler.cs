@@ -190,10 +190,9 @@ public class Stage2ScriptHandler : MonoBehaviour
             { 16, "1 * 2 * 3 + (1 * 10)" },
             { 9, "((10 / 2) * (8 / 4) + 5" },
             { 2, "1 - 6 + 5 / (2 + 3)" },
-            { 5, "(9/3) * 3 + 1 - 5" },
-            { 14, "(21 / 3) + 7 * 1" }
+            { 5, "(9/3) * 3 + 1 - 5" }
         };
-        int[] keys = { 7, 8, 20, 16, 6, 9, 2, 5, 14 };
+        int[] keys = { 7, 8, 20, 16, 9, 2, 5 };
         int randomRef = Random.Range(0, keys.Length);
         // int randomRef = 0;
         KeyTotalAnswer = keys[randomRef];
@@ -211,7 +210,7 @@ public class Stage2ScriptHandler : MonoBehaviour
         bool ranGen = false;
         for (int i = 0; i < givenToChar.Length; i++)
         {
-            if (givenToChar[i].Equals('+') || givenToChar[i].Equals('-') || givenToChar[i].Equals('/') || givenToChar[i].Equals('*'))
+            if (givenToChar[i].Equals('+') || givenToChar[i].Equals('-') || givenToChar[i].Equals('/') || givenToChar[i].Equals('*') || givenToChar[i].Equals('%'))
             {
                 int ran = Random.Range(0, 2);
                 // if (ran == 1 && mercy < 3)

@@ -20,6 +20,10 @@ public class S4GameEngine : MonoBehaviour
     [SerializeField] GameObject Player;
     [SerializeField] Transform[] checkpoints;
     [SerializeField] int checkpointNumber;
+    [SerializeField] Button ulti;
+    [SerializeField] Button fs;
+    [SerializeField] TextMeshProUGUI ultitxt;
+    [SerializeField] TextMeshProUGUI fstxt;
 
     public bool isOver = false;
     public int correctAnswer = 0;
@@ -28,6 +32,8 @@ public class S4GameEngine : MonoBehaviour
     void Start()
     {
         checkpointNumber = 0;
+
+        Player.GetComponent<SkillControls>().loadButtons(fs, ulti, fstxt, ultitxt);
         Timer.GetComponent<TextMeshProUGUI>().text = "0";
         DefaultUi(false);
         StartCoroutine(ReadyTimerNumerator());
@@ -59,6 +65,7 @@ public class S4GameEngine : MonoBehaviour
             }
             int count = int.Parse(ReadyTimerGo.GetComponent<TextMeshProUGUI>().text);
             count--;
+            GameObject.Find("Audio").GetComponent<S1SoundManager>().PlayMusic(1);
             ReadyTimerGo.GetComponent<TextMeshProUGUI>().text = count.ToString();
             yield return new WaitForSeconds(1f);
         }
@@ -70,6 +77,7 @@ public class S4GameEngine : MonoBehaviour
         {
             int count = int.Parse(Timer.GetComponent<TextMeshProUGUI>().text);
             count++;
+            GameObject.Find("Audio").GetComponent<S1SoundManager>().PlayMusic(3);
             Timer.GetComponent<TextMeshProUGUI>().text = count.ToString();
             yield return new WaitForSeconds(1f);
         }
@@ -81,10 +89,12 @@ public class S4GameEngine : MonoBehaviour
         {
             { 10, "If n = 0\nand you repeat \nn = n + 2, 5 times" },
             { 32, "If n = 2\nand you repeat \nn = n * 2, 4 times." },
-            { 8, "If n = 1\nand you repeat \nn = n + n, 3 times. " }
+            { 8, "If n = 1\nand you repeat \nn = n + n, 3 times. " },
+            { 2, "If n = 10\nand you repeat \nn = n - 2, 4 times. " },
+            { 16, "If n = 1\nand you repeat \nn = (n + 2) * 2, 2 times. " }
         };
 
-        int[] keys = { 10, 32, 8 };
+        int[] keys = { 10, 32, 8, 2, 16 };
         int givenRan = Random.Range(0, keys.Length);
         correctAnswer = keys[givenRan];
         GivenGo.GetComponent<TextMeshProUGUI>().text = given[keys[givenRan]];
@@ -109,6 +119,7 @@ public class S4GameEngine : MonoBehaviour
     public void spawnCheckpoint()
     {
         Player.transform.position = checkpoints[checkpointNumber].position;
+        GameObject.Find("Audio").GetComponent<S1SoundManager>().PlayMusic(0);
     }
 
     public void setCheckpoint(int x)
@@ -152,6 +163,7 @@ public class S4GameEngine : MonoBehaviour
         DefaultUi(false);
         ReadyTimerGo.SetActive(false);
 
+        GameObject.Find("Audio").GetComponent<S1SoundManager>().PlayMusic(2);
         finishText.GetComponent<Text>().text = "Time Consumed: " + timeConsumed.ToString() +
                           "\nExp. Gained: " + ppoints.ToString() +
                           "\nCoins Earned: " + ccoins.ToString();

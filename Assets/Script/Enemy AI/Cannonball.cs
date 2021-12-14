@@ -8,7 +8,7 @@ public class Cannonball : MonoBehaviour
     [SerializeField] GameObject spawner;
     void OnEnable()
     {
-        gameObject.GetComponent<Rigidbody>().AddForce(transform.forward *= 3000f);
+        gameObject.GetComponent<Rigidbody>().AddForce(transform.forward * 3000f);
         StartCoroutine(returnPos());
     }
 
@@ -22,5 +22,6 @@ public class Cannonball : MonoBehaviour
     {
         yield return new WaitForSeconds(2.5f);
         gameObject.SetActive(false);
+        StopAllCoroutines();
     }
 }
