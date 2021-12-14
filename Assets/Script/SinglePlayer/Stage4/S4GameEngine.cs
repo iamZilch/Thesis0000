@@ -20,6 +20,10 @@ public class S4GameEngine : MonoBehaviour
     [SerializeField] GameObject Player;
     [SerializeField] Transform[] checkpoints;
     [SerializeField] int checkpointNumber;
+    [SerializeField] Button ulti;
+    [SerializeField] Button fs;
+    [SerializeField] TextMeshProUGUI ultitxt;
+    [SerializeField] TextMeshProUGUI fstxt;
 
     public bool isOver = false;
     public int correctAnswer = 0;
@@ -28,6 +32,8 @@ public class S4GameEngine : MonoBehaviour
     void Start()
     {
         checkpointNumber = 0;
+
+        Player.GetComponent<SkillControls>().loadButtons(fs, ulti, fstxt, ultitxt);
         Timer.GetComponent<TextMeshProUGUI>().text = "0";
         DefaultUi(false);
         StartCoroutine(ReadyTimerNumerator());
@@ -83,10 +89,12 @@ public class S4GameEngine : MonoBehaviour
         {
             { 10, "If n = 0\nand you repeat \nn = n + 2, 5 times" },
             { 32, "If n = 2\nand you repeat \nn = n * 2, 4 times." },
-            { 8, "If n = 1\nand you repeat \nn = n + n, 3 times. " }
+            { 8, "If n = 1\nand you repeat \nn = n + n, 3 times. " },
+            { 2, "If n = 10\nand you repeat \nn = n - 2, 4 times. " },
+            { 16, "If n = 1\nand you repeat \nn = (n + 2) * 2, 2 times. " }
         };
 
-        int[] keys = { 10, 32, 8 };
+        int[] keys = { 10, 32, 8, 2, 16 };
         int givenRan = Random.Range(0, keys.Length);
         correctAnswer = keys[givenRan];
         GivenGo.GetComponent<TextMeshProUGUI>().text = given[keys[givenRan]];

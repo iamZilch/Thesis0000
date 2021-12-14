@@ -232,6 +232,10 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: 
+      - title: EventGuid
+        value: bffa7427-0077-42d0-9d8c-68c8d5bad321
+        type: 0
+        typeString: 
       conversationID: 1
       isRoot: 0
       isGroup: 0
@@ -662,8 +666,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 0, y: 368.49323}
-    canvasZoom: 0.7299998
+    canvasScrollPosition: {x: 0, y: 0}
+    canvasZoom: 0.33999994
   - id: 2
     fields:
     - title: Title
@@ -796,6 +800,10 @@ MonoBehaviour:
           to wash 5 plates, false);
 
           SetActive(Robot will stop, false);'
+        type: 0
+        typeString: 
+      - title: EventGuid
+        value: abd7ae01-bb50-4ed2-b963-917023c763c5
         type: 0
         typeString: 
       conversationID: 2
@@ -1558,8 +1566,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 0, y: 757.81494}
-    canvasZoom: 1.0899999
+    canvasScrollPosition: {x: 0, y: 0}
+    canvasZoom: 0.2800004
   - id: 3
     fields:
     - title: Title
@@ -1698,6 +1706,10 @@ MonoBehaviour:
           of plates, true);
 
           SetActive(Unconditional Loops, false);'
+        type: 0
+        typeString: 
+      - title: EventGuid
+        value: 79e796bd-2451-462e-a31d-157320a338f7
         type: 0
         typeString: 
       conversationID: 3
@@ -1905,8 +1917,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 0, y: 36.607147}
-    canvasZoom: 1.1199999
+    canvasScrollPosition: {x: 0, y: 0}
+    canvasZoom: 0.9100001
   - id: 4
     fields:
     - title: Title
@@ -2034,6 +2046,10 @@ MonoBehaviour:
         typeString: 
       - title: Sequence
         value: SetActive(Back, false);
+        type: 0
+        typeString: 
+      - title: EventGuid
+        value: 4da1a8c6-92e6-4268-b896-1f1da20def39
         type: 0
         typeString: 
       conversationID: 4
@@ -2757,8 +2773,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 0, y: 504.97653}
-    canvasZoom: 0.7300002
+    canvasScrollPosition: {x: 0, y: 0}
+    canvasZoom: 0.31000036
   - id: 5
     fields:
     - title: Title
@@ -2900,6 +2916,10 @@ MonoBehaviour:
         typeString: 
       - title: Response Menu Sequence
         value: 
+        type: 0
+        typeString: 
+      - title: EventGuid
+        value: 2c406e83-d0c7-45ef-bd3f-f491b4aabaa8
         type: 0
         typeString: 
       conversationID: 5
@@ -3992,8 +4012,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 251.949, y: 943.6311}
-    canvasZoom: 0.9100001
+    canvasScrollPosition: {x: 0, y: 0}
+    canvasZoom: 0.25
   syncInfo:
     syncActors: 0
     syncItems: 0

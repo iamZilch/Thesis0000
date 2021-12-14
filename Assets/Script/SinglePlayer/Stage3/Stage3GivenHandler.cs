@@ -16,29 +16,25 @@ public static class Stage3GivenHandler
             "\nelse" + //this
             "\n\t print(True || (False && False))",
 
-            "if(False || True)" + //this
-            "\n\t print(True && True)" +
+            "if((3 < (6 + 2)) && True)" +
+            "\n\t print true" +
             "\nelse" +
-            "\n\t print(False && True)",
+            "\n\tprint false",
 
-            "if(True || (True && False))" + //this
-            "\n\t print((False && True) || (True || False))" +
+            "if(!False && False)" +
+            "\n\tprint false" +
             "\nelse" +
-            "\n\t print(False || True)",
+            "\n\tprint true",
 
-            "if(False && !True)" +
-            "\n\t print(!False && True)" +
-            "\nelse if(False || (True && False))" +
-            "\n\t print(True && True)" +
+            "if(5 != (2 + 5))" +
+            "\n\tprint true" +
             "\nelse" +
-            "\n\t print(!False || !True)",
+            "\n\tprint false",
 
-            "if(False && True)" +
-            "\n\t print(False && False)" +
-            "\nelse if((True && True) || False)" + //this
-            "\n\t print(!False)" +
-            "\n else" +
-            "\n\t print(!True && False)",
+            "if((2 + 5) < (2 * 2))" +
+            "\n\tprint false" +
+            "\nelse" +
+            "\n\tprint true",
 
             "if(True || !False)" + //this
             "\n\t print(False || (True && !False))" +
@@ -54,41 +50,25 @@ public static class Stage3GivenHandler
             "\n else" + //this
             "\n\t print(!True)",
 
-            "if(False || !False)" + //this
-            "\n\t print(False && (True || False))" +
-            "\n else" +
-            "\n\t print(True || (False || True))",
-
-            "if(True && (False || !True))" +
-            "\n\t print(False || False)" +
-            "\n else" + //this
-            "\n\t print(True && (True && !True))",
-
-            "if(True && !(True || False))" +
-            "\n\t print(True || False)" +
-            "\n else if(!True || (True && False))" +
-            "\n\t print(!False && False)" +
-            "\n else" + //this
-            "\n\t print(!True && !(True || !False))",
-
-            "if(False || False)" +
-            "\n\t print(True || !True)" +
-            "\n else if(False || True)" + //this
-            "\n\t print(!False && (True || !False))" +
-            "\n else" +
-            "\n\t print(!False)",
-
             "if(True && (!True || !False))" + //this
             "\n\t print(!True || (False && True))" +
             "\n else" +
             "\n\t print(!False || True)",
 
-            "if(False || !True)" +
-            "\n\t print(!False || True)" +
-            "\n else if(True && (!False || True))" + //this
-            "\n\t print(!True && !False)" +
-            "\n else" +
-            "\n\t print(!True)"
+            "if((10 % 5) == 0)" +
+            "\n\tprint true" +
+            "\nelse" +
+            "\n\tprint false",
+
+            "if((2 * 2) > (2 + 2))" +
+            "\n\tprint true" +
+            "\nelse" +
+            "\n\tprint false",
+
+            "if(5 > 2)" +
+            "\n\tprint false" +
+            "\nelse" +
+            "print true"
         };
     }
 }

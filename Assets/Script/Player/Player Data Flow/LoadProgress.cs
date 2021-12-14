@@ -44,6 +44,33 @@ public class LoadProgress : MonoBehaviour
         }
     }
 
+    public void ChangeName(string PlayerName, string newName) //change player name
+    {
+        List<PlayerData> PlayerDataList = SaveData.GetPlayerDataList();
+        foreach (PlayerData player in PlayerDataList)
+        {
+            if (player.playerName.Equals(PlayerName))
+            {
+                SaveData.ChangeName(Database.instance, newName);
+                break;
+            }
+        }
+    }
+
+    public void deletePlayer(string PlayerName) //change player name
+    {
+        List<PlayerData> PlayerDataList = SaveData.GetPlayerDataList();
+        foreach (PlayerData player in PlayerDataList)
+        {
+            if (player.playerName.Equals(PlayerName))
+            {
+                Debug.Log($"{PlayerDataList.Count}");
+                SaveData.DeleteAccount(Database.instance);
+                break;
+            }
+        }
+    }
+
     public void SpawnExistingUser()
     {
         foreach (Transform child in PlayerDataPrefabPanel.transform)

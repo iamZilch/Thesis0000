@@ -16,23 +16,6 @@ public class Stage1GivenHandler : MonoBehaviour
 
     private void Start()
     {
-        // StringGiven.Add("Hello");
-        // StringGiven.Add("Fernan");
-        // StringGiven.Add("I am a integer");
-        // StringGiven.Add("Float");
-        // StringGiven.Add("number variable");
-        // StringGiven.Add("Not a string");
-        // StringGiven.Add("Null");
-        // StringGiven.Add("Message");
-        // StringGiven.Add("Baguio");
-        // StringGiven.Add("PNC");
-        // StringGiven.Add("World of war");
-        // StringGiven.Add("Graudation");
-        // StringGiven.Add("character");
-        // StringGiven.Add("Programming Language");
-        // StringGiven.Add("PNC");
-        // StringGiven.Add("Ethics");
-        // StringGiven.Add("Nino");
         givenGenerator();
         instance = this;
     }
