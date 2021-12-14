@@ -30,6 +30,7 @@ TagManager:
   - sbMaze
   - sbZilch
   - CoolDownPowerUp
+  - s5Obs
   layers:
   - Default
   - TransparentFX
