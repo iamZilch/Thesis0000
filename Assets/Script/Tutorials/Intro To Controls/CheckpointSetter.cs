@@ -33,14 +33,14 @@ public class CheckpointSetter : MonoBehaviour
     public void setCheckpoint(int checkpoint)
     {
         Debug.Log("Checkpoint : " + checkpoint);
-        //GameObject.Find("Opening_Game_Script").GetComponent<Database>().tutorialCheckpoints[0] = checkpoint;
-        //SaveData.SaveDataProgress(Database.instance);
+        GameObject.Find("Opening_Game_Script").GetComponent<Database>().tutorialCheckpoints[0] = checkpoint;
+        SaveData.SaveDataProgress(Database.instance);
     }
 
     public void endPhase(int stageNumber)
     {
-        //GameObject.Find("Opening_Game_Script").GetComponent<Database>().unlockedTutorials[stageNumber] = true;
-        //SceneManager.LoadScene("Main_Menu_Scene");
-        //SaveData.SaveDataProgress(Database.instance);
+        GameObject.Find("Opening_Game_Script").GetComponent<Database>().unlockedTutorials[stageNumber] = true;
+        SceneManager.LoadScene("Main_Menu_Scene");
+        SaveData.SaveDataProgress(Database.instance);
     }
 }
