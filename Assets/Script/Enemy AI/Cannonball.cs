@@ -9,6 +9,7 @@ public class Cannonball : MonoBehaviour
     void OnEnable()
     {
         gameObject.GetComponent<Rigidbody>().AddForce(transform.forward * 3000f);
+        StartCoroutine(returnPos());
     }
 
     void OnDisable()
@@ -17,9 +18,10 @@ public class Cannonball : MonoBehaviour
         gameObject.transform.rotation = spawner.transform.rotation;
     }
 
-    // IEnumerator returnPos() //return snowball to orig position of no player has been hit
-    // {
-    //     yield return new WaitForSeconds(2.5f);
-    //     gameObject.SetActive(false);
-    // }
+    IEnumerator returnPos() //return snowball to orig position of no player has been hit
+    {
+        yield return new WaitForSeconds(2.5f);
+        gameObject.SetActive(false);
+        StopAllCoroutines();
+    }
 }

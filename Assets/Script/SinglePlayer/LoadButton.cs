@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class LoadButton : MonoBehaviour
 {
@@ -16,5 +17,11 @@ public class LoadButton : MonoBehaviour
     void Start()
     {
         player.GetComponent<SkillControls>().loadButtons(firstSkillButton, ultiSkillButton, firstSkillBtnText, ultiSkillBtnText);
+    }
+
+    public void QuitGame()
+    {
+        GameObject.Find("Opening_Game_Script").SetActive(false);
+        SceneManager.LoadScene("Opening_Game_Scene");
     }
 }
