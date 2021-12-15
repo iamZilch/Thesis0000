@@ -10,6 +10,8 @@ public class Stage2ScriptHandler : MonoBehaviour
 {
     [Header("Player")]
     [SerializeField] GameObject Player;
+
+    [SerializeField] GameObject[] ModelPrefab;
     [SerializeField] GameObject SpawnObject;
 
     [Header("CheckPoints")]
@@ -65,7 +67,8 @@ public class Stage2ScriptHandler : MonoBehaviour
     void Start()
     {
         //For testing
-        Player = Instantiate(Player, CheckPoints[0].transform);
+        // Player = Instantiate(Player, CheckPoints[0].transform);
+        Player = Instantiate(ModelPrefab[GameObject.Find("Opening_Game_Script").GetComponent<Database>().UsedCharacter], CheckPoints[0].transform);
         Player.GetComponentInChildren<TouchField>().touchField = touch;
         Player.GetComponent<Arithmetic_Character_Script>().setPickup(pickupButton);
         Player.GetComponent<SkillControls>().loadButtons(fs, ulti, fstxt, ultitxt);
@@ -311,7 +314,7 @@ public class Stage2ScriptHandler : MonoBehaviour
                 QuestionAnsweredCorrect++;
                 correctAnswers.GetComponent<TextMeshProUGUI>().text = "Correct Answers: " + QuestionAnsweredCorrect + "/3";
                 //IF CurrentQuestionNumber == 3 Congratulate the player
-                if (QuestionAnsweredCorrect == 5)
+                if (QuestionAnsweredCorrect == 3)
                 {
                     isDone = true;
                     givenPanel.SetActive(false);

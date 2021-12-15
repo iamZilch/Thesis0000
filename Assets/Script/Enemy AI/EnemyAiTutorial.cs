@@ -36,6 +36,7 @@ public class EnemyAiTutorial : MonoBehaviour
         agent = GetComponent<NavMeshAgent>();
         polar = GetComponentInChildren<Animator>();
         playerInSight = false;
+        alreadyAttacked = false;
     }
 
     private void Update()
@@ -99,6 +100,7 @@ public class EnemyAiTutorial : MonoBehaviour
         if (!alreadyAttacked)
         {
             StartCoroutine(attack());
+            // StartCoroutine(attack());
             //polar.SetBool("Throwing", false);
             ///Attack code here
 
@@ -117,9 +119,8 @@ public class EnemyAiTutorial : MonoBehaviour
     {
         alreadyAttacked = true;
         yield return new WaitForSeconds(6f);
-        projectile.SetActive(true);
+        GameObject snow = Instantiate(projectile, spawner.transform);
         alreadyAttacked = false;
-        StopCoroutine(attack());
     }
 
     private void ResetAttack()

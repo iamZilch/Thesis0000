@@ -1882,15 +1882,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Player: {fileID: 1386430801255881635, guid: edc8ae97a951b364699a3595459b6c44, type: 3}
   ModelPrefab:
-  - {fileID: 3312328016516527046, guid: 099de61eaa6062543ba01357216b4467, type: 3}
-  - {fileID: 8881870454328663745, guid: de0be76935a3c864393f00561a9d6bc8, type: 3}
-  - {fileID: 3828314283885882296, guid: 8e6df2e053a2d6f45b4c8946eb3afb38, type: 3}
-  - {fileID: 6601522392972544240, guid: da17d98a03c038346a643e1d33c19450, type: 3}
-  - {fileID: 3623350158225770832, guid: 29b87959dc1ee3c49ac8a7fa1460fbc6, type: 3}
-  - {fileID: 5824943341723416242, guid: af3f57ed90e888b4988b5700bbf95b2d, type: 3}
-  - {fileID: 3291871006535443292, guid: edc8ae97a951b364699a3595459b6c44, type: 3}
-  - {fileID: 1768392318256821962, guid: cd7daa19b130d85499e185dfac9b2cdd, type: 3}
-  - {fileID: 964931889689141193, guid: fc2dbdb3436ce2242a1a8a3561404c54, type: 3}
+  - {fileID: 8886504220315001773, guid: 3413ee5b06b21d24dbcda19fed8a7e93, type: 3}
+  - {fileID: 3937194821890257952, guid: badb1f362d1910845bcdf5a79430a042, type: 3}
+  - {fileID: 9101514232995066751, guid: f0e911b847af1714e9d69b907125db5a, type: 3}
+  - {fileID: 3723922123640413794, guid: 18346c831ba5c3441a37545530b747d2, type: 3}
+  - {fileID: 1088246610732596505, guid: 3eeb22f5a4cdf434fa88ddbe9c9bcad7, type: 3}
+  - {fileID: 1993299748529106743, guid: 7f6617192dca07b49987c0932abf84fb, type: 3}
+  - {fileID: 1386430801255881635, guid: edc8ae97a951b364699a3595459b6c44, type: 3}
+  - {fileID: 4244683883274491189, guid: b4a2011d6b72d3845a01ba815dbe186c, type: 3}
+  - {fileID: 3179844099105669457, guid: d3fe310d18fc6cc4b9bf91f3aa9981bc, type: 3}
   spawnPoint: {fileID: 121532229}
   isDead: 0
   Platforms:
@@ -7264,7 +7264,7 @@ PrefabInstance:
     - target: {fileID: 1937696468794152686, guid: 70b4cc018a7c4da418e53f7dff1a3ced, type: 3}
       propertyPath: projectile
       value: 
-      objectReference: {fileID: 2113705725}
+      objectReference: {fileID: 2094164125183708427, guid: 4746c8687e3df51448e2870b4e531cf5, type: 3}
     - target: {fileID: 1937696468794152686, guid: 70b4cc018a7c4da418e53f7dff1a3ced, type: 3}
       propertyPath: playerInAttackRange
       value: 1
@@ -9831,6 +9831,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: EnemyAI 1 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 1937696468794152686, guid: 70b4cc018a7c4da418e53f7dff1a3ced, type: 3}
+      propertyPath: projectile
+      value: 
+      objectReference: {fileID: 2094164125183708427, guid: 4746c8687e3df51448e2870b4e531cf5, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 70b4cc018a7c4da418e53f7dff1a3ced, type: 3}
 --- !u!4 &1945340925
@@ -10432,11 +10436,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &2113705725 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8246786981656951612, guid: 70b4cc018a7c4da418e53f7dff1a3ced, type: 3}
-  m_PrefabInstance: {fileID: 1326824337}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2114873539
 PrefabInstance:
   m_ObjectHideFlags: 0
