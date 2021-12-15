@@ -20,7 +20,7 @@ RenderSettings:
   m_FogDensity: 0.01
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
-  m_AmbientSkyColor: {r: 0.31217512, g: 0.4408212, b: 0.6981132, a: 1}
+  m_AmbientSkyColor: {r: 0.8579566, g: 0.88643646, b: 0.9433962, a: 1}
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
   m_AmbientIntensity: 0.39
@@ -1360,6 +1360,7 @@ MonoBehaviour:
   fs: {fileID: 2776074555749789634}
   ultitxt: {fileID: 3556668388995826131}
   fstxt: {fileID: 3556668389201337377}
+  onTutorial: 0
   correctKeyList: 
   index: 
   endUI: {fileID: 7596505052902985773}
@@ -24643,6 +24644,7 @@ MonoBehaviour:
   activeBtn: 0
   index: 0
   init: 0
+  onTutorial: 0
 --- !u!1 &9014776604313748731
 GameObject:
   m_ObjectHideFlags: 0

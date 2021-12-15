@@ -13,81 +13,59 @@ public class Tutorial_Stage_3Given : MonoBehaviour
     {
         TrueGiven = new List<string>
         {
-            "if(3 > 1 && || 1 != 2)" +
-            "\n  Answer = ?"
-            ,
+            "if(True && False)" +
+            "\n\t print((False || True) &&  False)",
 
-            "if(False || True)" + //this
-            "\n\t print(True && True)" +
+            "if((3 < (6 + 2)) && True)" +
+            "\n\t print true" +
             "\nelse" +
-            "\n\t print(False && True)",
+            "\n\tprint false",
 
-            "if(True || (True && False))" + //this
-            "\n\t print((False && True) || (True || False))" +
+            "if(!False && False)" +
+            "\n\tprint false" +
             "\nelse" +
-            "\n\t print(False || True)",
+            "\n\tprint true",
 
-            "if(False && !True)" +
-            "\n\t print(!False && True)" +
-            "\nelse if(False || (True && False))" +
-            "\n\t print(True && True)" +
+            "if(5 <= (2 + 5))",
+
+            "if((2 + 5) < (2 * 2))" +
+            "\n\tprint false" +
             "\nelse" +
-            "\n\t print(!False || !True)",
-
-            "if(False && True)" +
-            "\n\t print(False && False)" +
-            "\nelse if((True && True) || False)" + //this
-            "\n\t print(!False)" +
-            "\n else" +
-            "\n\t print(!True && False)",
+            "\n\tprint true",
 
             "if(True || !False)" + //this
-            "\n\t print(False || (True && !False))" +
+            "\n\t print true" +
             "\nelse" +
-            "\n\t print(True && True)"
+            "\n\t print false"
 
         };
 
         FalseGiven = new List<string>
         {
-             "if(6 == 6 && || !(1 == 1))" +
-            "\n  Answer = ?",
-
-            "if(False || !False)" + //this
-            "\n\t print(False && (True || False))" +
-            "\n else" +
-            "\n\t print(True || (False || True))",
-
-            "if(True && (False || !True))" +
-            "\n\t print(False || False)" +
+            "if(False && False)" +
+            "\n\t print(True && True)" +
             "\n else" + //this
-            "\n\t print(True && (True && !True))",
-
-            "if(True && !(True || False))" +
-            "\n\t print(True || False)" +
-            "\n else if(!True || (True && False))" +
-            "\n\t print(!False && False)" +
-            "\n else" + //this
-            "\n\t print(!True && !(True || !False))",
-
-            "if(False || False)" +
-            "\n\t print(True || !True)" +
-            "\n else if(False || True)" + //this
-            "\n\t print(!False && (True || !False))" +
-            "\n else" +
-            "\n\t print(!False)",
+            "\n\t print(!True)",
 
             "if(True && (!True || !False))" + //this
             "\n\t print(!True || (False && True))" +
             "\n else" +
             "\n\t print(!False || True)",
 
-            "if(False || !True)" +
-            "\n\t print(!False || True)" +
-            "\n else if(True && (!False || True))" + //this
-            "\n\t print(!True && !False)" +
-            "\n else" +
-            "\n\t print(!True)"
+            "if((10 % 5) == 0)" +
+            "\n\tprint true" +
+            "\nelse" +
+            "\n\tprint false",
+
+            "if((2 * 2) > (2 + 2))" +
+            "\n\tprint true" +
+            "\nelse" +
+            "\n\tprint false",
+
+            "if(5 > 2)" +
+            "\n\tprint false" +
+            "\nelse" +
+            "\n\tprint true"
         };
     }
 

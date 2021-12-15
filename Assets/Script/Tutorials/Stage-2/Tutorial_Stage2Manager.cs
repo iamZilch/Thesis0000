@@ -113,11 +113,7 @@ public class Tutorial_Stage2Manager : MonoBehaviour
         }
 
         givenString += "=" + KeyTotalAnswer;
-<<<<<<< HEAD
         DisplayGivenText.GetComponent<TextMeshProUGUI>().text = "Complete the Expression:" + givenString;
-=======
-        DisplayGivenText.GetComponent<TextMeshProUGUI>().text = "Complete the Expression: " + givenString;
->>>>>>> 2f00297ade511912388e64e6cc369d76e948d496
 
     }
 
