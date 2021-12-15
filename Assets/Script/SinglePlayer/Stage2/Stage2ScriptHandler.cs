@@ -309,7 +309,7 @@ public class Stage2ScriptHandler : MonoBehaviour
             {
                 sound.PlayMusic(4);
                 QuestionAnsweredCorrect++;
-                correctAnswers.GetComponent<TextMeshProUGUI>().text = "Correct Answers: " + QuestionAnsweredCorrect + "/5";
+                correctAnswers.GetComponent<TextMeshProUGUI>().text = "Correct Answers: " + QuestionAnsweredCorrect + "/3";
                 //IF CurrentQuestionNumber == 3 Congratulate the player
                 if (QuestionAnsweredCorrect == 5)
                 {

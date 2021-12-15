@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
@@ -65,7 +65,7 @@ public class Tutorial_Stage2Manager : MonoBehaviour
     public void GameDefault()
     {
         DisplayGivenText.GetComponent<TextMeshProUGUI>().text = "";
-        CurrentQuestionNumberText.GetComponent<TextMeshProUGUI>().text = "0";
+        CurrentQuestionNumberText.GetComponent<TextMeshProUGUI>().text = "Correct Answers: " + QuestionAnsweredCorrect + "/2";
     }
 
     public void GenerateGiven(int keyNumber)
@@ -102,7 +102,7 @@ public class Tutorial_Stage2Manager : MonoBehaviour
                 else
                 {
                     correctOperator.Add(givenToChar[i].ToString());
-                    givenString += "_";
+                    givenString += "☐";
                 }
 
             }
@@ -113,8 +113,8 @@ public class Tutorial_Stage2Manager : MonoBehaviour
         }
 
         givenString += "=" + KeyTotalAnswer;
-        DisplayGivenText.GetComponent<TextMeshProUGUI>().text = "Complete the Expression:" + givenString;
-  ====
+        DisplayGivenText.GetComponent<TextMeshProUGUI>().text = "Complete the Expression: " + givenString;
+
     }
 
     public void spawnArithmetic()
@@ -144,7 +144,7 @@ public class Tutorial_Stage2Manager : MonoBehaviour
         char[] given = givenString.ToCharArray();
         for (int i = 0; i < given.Length; i++)
         {
-            if (given[i].ToString().Equals("_") && isAdded == false)
+            if (given[i].ToString().Equals("☐") && isAdded == false)
             {
                 isAdded = true;
                 newGiven += arithmetic;
@@ -155,7 +155,7 @@ public class Tutorial_Stage2Manager : MonoBehaviour
             }
         }
         givenString = newGiven;
-        DisplayGivenText.GetComponent<TextMeshProUGUI>().text = "Given: " + givenString;
+        DisplayGivenText.GetComponent<TextMeshProUGUI>().text = "Complete the Expression: " + givenString;
         playerOperator.Add(arithmetic);
 
 
