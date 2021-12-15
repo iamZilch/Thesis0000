@@ -1924,7 +1924,7 @@ MonoBehaviour:
   - {fileID: 648876817}
   - {fileID: 1793770929}
   myPlayer: {fileID: 0}
-  CheckPointGo: {fileID: 0}
+  CheckPointGo: {fileID: 1068875333}
   NetworkStorage: {fileID: 0}
   pos: 0
 --- !u!114 &538442028
@@ -3858,6 +3858,83 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 179526995178274129, guid: 58bfbfd67db97934085286e55c9b9141, type: 3}
   m_PrefabInstance: {fileID: 1151401823}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1165066970
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 5541612512884121524, guid: fe60b765683dc544d809d5e4d39cb114, type: 3}
+      propertyPath: posHandler
+      value: 
+      objectReference: {fileID: 538442025}
+    - target: {fileID: 5541612512884121525, guid: fe60b765683dc544d809d5e4d39cb114, type: 3}
+      propertyPath: m_RootOrder
+      value: 21
+      objectReference: {fileID: 0}
+    - target: {fileID: 5541612512884121525, guid: fe60b765683dc544d809d5e4d39cb114, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 337
+      objectReference: {fileID: 0}
+    - target: {fileID: 5541612512884121525, guid: fe60b765683dc544d809d5e4d39cb114, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 63
+      objectReference: {fileID: 0}
+    - target: {fileID: 5541612512884121525, guid: fe60b765683dc544d809d5e4d39cb114, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5541612512884121525, guid: fe60b765683dc544d809d5e4d39cb114, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5541612512884121525, guid: fe60b765683dc544d809d5e4d39cb114, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5541612512884121525, guid: fe60b765683dc544d809d5e4d39cb114, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5541612512884121525, guid: fe60b765683dc544d809d5e4d39cb114, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5541612512884121525, guid: fe60b765683dc544d809d5e4d39cb114, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5541612512884121525, guid: fe60b765683dc544d809d5e4d39cb114, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5541612512884121525, guid: fe60b765683dc544d809d5e4d39cb114, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5541612512884121526, guid: fe60b765683dc544d809d5e4d39cb114, type: 3}
+      propertyPath: m_Size.x
+      value: 322.06854
+      objectReference: {fileID: 0}
+    - target: {fileID: 5541612512884121526, guid: fe60b765683dc544d809d5e4d39cb114, type: 3}
+      propertyPath: m_Size.z
+      value: 160.4064
+      objectReference: {fileID: 0}
+    - target: {fileID: 5541612512884121526, guid: fe60b765683dc544d809d5e4d39cb114, type: 3}
+      propertyPath: m_Center.x
+      value: 136.03427
+      objectReference: {fileID: 0}
+    - target: {fileID: 5541612512884121526, guid: fe60b765683dc544d809d5e4d39cb114, type: 3}
+      propertyPath: m_Center.z
+      value: 29.285353
+      objectReference: {fileID: 0}
+    - target: {fileID: 5541612512884121527, guid: fe60b765683dc544d809d5e4d39cb114, type: 3}
+      propertyPath: m_Name
+      value: Box
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: fe60b765683dc544d809d5e4d39cb114, type: 3}
 --- !u!1 &1169230355
 GameObject:
   m_ObjectHideFlags: 0
@@ -4765,6 +4842,8 @@ MonoBehaviour:
   - {fileID: 221942626}
   - {fileID: 1680008511}
   TVText: {fileID: 1797430847}
+  player: {fileID: 0}
+  findPlayer: 0
   isOver: 0
   correctAnswer: 0
 --- !u!1001 &1346182773
@@ -7282,6 +7361,18 @@ MonoBehaviour:
           m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
           m_MethodName: set_enabled
           m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 1342532304}
+          m_TargetAssemblyTypeName: S4GoStoreScript, Assembly-CSharp
+          m_MethodName: enableCam
+          m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine

@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -31,6 +32,12 @@ public class S3GoStoreScript : MonoBehaviour
     [SerializeField] public GameObject S4Bool3;
     [SerializeField] public GameObject S4Bool4;
 
+    [SerializeField] public GameObject player;
+
+    [SerializeField] public GameObject[] PowerUpsSpawnPoint;
+
+    public bool findPlayer = false;
+
     private void Start()
     {
         StartCoroutine(StartGameAfter());
@@ -43,4 +50,30 @@ public class S3GoStoreScript : MonoBehaviour
         StopAllCoroutines();
     }
 
+    public void enableCam()
+    {
+        StartCoroutine(findPlayerCor());
+    }
+
+    IEnumerator findPlayerCor()
+    {
+        while (!findPlayer)
+        {
+            try
+            {
+                if (player == null)
+                {
+                    player = GameObject.Find("Stage3Handler").GetComponent<LanStage3Handler>().Player;
+                }
+                if (player != null)
+                {
+                    player.GetComponent<PlayerLanExtension>().OnStageResetDefault();
+                    findPlayer = true;
+                }
+            }
+            catch (Exception e)
+            { }
+            yield return new WaitForSeconds(1f);
+        }
+    }
 }

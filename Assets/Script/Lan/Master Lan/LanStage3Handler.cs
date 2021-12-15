@@ -34,6 +34,9 @@ public class LanStage3Handler : NetworkBehaviour
     [SerializeField] public GameObject S4Bool3;
     [SerializeField] public GameObject S4Bool4;
 
+    [SerializeField] public List<GameObject> PowerUpsGo;
+    [SerializeField] public GameObject[] PowerUpsSpawnPoint;
+
     GameObject buttonHandler;
 
     public int playerCorrectAnswerInt = 0;
@@ -76,6 +79,13 @@ public class LanStage3Handler : NetworkBehaviour
         }
     }
 
+    public void GetAllPowerUps()
+    {
+        NetworkStorage NetworkStore = GameObject.Find("NetworkStorage").GetComponent<NetworkStorage>();
+        PowerUpsGo.Add(NetworkStore.PowerUpResetCd);
+        PowerUpsGo.Add(NetworkStore.PowerUpSpeed);
+        PowerUpsGo.Add(NetworkStore.PowerUpUlti);
+    }
 
     public void ResetDefault()
     {
@@ -86,6 +96,22 @@ public class LanStage3Handler : NetworkBehaviour
         ReadyCountDown = 4;
         correctAnswer = "";
         Given = "";
+    }
+
+    IEnumerator SpawnPowerUpsCor()
+    {
+        while (true)
+        {
+            if (isServer)
+            {
+                Debug.Log("Spawning PowerUps!");
+                int randPos = UnityEngine.Random.Range(0, PowerUpsSpawnPoint.Length);
+                int rand = UnityEngine.Random.Range(0, PowerUpsGo.Count);
+                GameObject Go = Instantiate(PowerUpsGo[rand], new Vector3(PowerUpsSpawnPoint[randPos].transform.position.x, PowerUpsSpawnPoint[randPos].transform.position.y, PowerUpsSpawnPoint[randPos].transform.position.z), Quaternion.identity);
+                NetworkServer.Spawn(Go, Player.GetComponent<PlayerLanExtension>().connectionToClient);
+            }
+            yield return new WaitForSeconds(UnityEngine.Random.Range(8, 15));
+        }
     }
 
     IEnumerator ReadTimerCoroutine()
@@ -100,6 +126,7 @@ public class LanStage3Handler : NetworkBehaviour
             ReadyTimerGo.SetActive(false);
             StartCoroutine(CmdChangeBoolNumerator());
             CmdChangeGiven();
+            StartCoroutine(SpawnPowerUpsCor());
             buttonHandler.SetActive(true);
         }
         else
@@ -153,6 +180,7 @@ public class LanStage3Handler : NetworkBehaviour
         ReadyTimerGo = Lan3SceneStore.ReadyTimerGo;
         PlayerCorrectAnswer = Lan3SceneStore.PlayerCorrectAnswer;
         GivenGo = Lan3SceneStore.GivenGo;
+        PowerUpsSpawnPoint = Lan3SceneStore.PowerUpsSpawnPoint;
 
     }
 
@@ -217,6 +245,24 @@ public class LanStage3Handler : NetworkBehaviour
             GameObject.Find("NetworkStorage").GetComponent<NetworkStorage>().ThankYouGo.SetActive(true);
             GameObject.Find("NetworkStorage").GetComponent<NetworkStorage>().DisableCoroutine();
         }
+        if (isServer && isLocalPlayer)
+        {
+            Invoke(nameof(DisconnectServer), 5f);
+        }
+        if (!isServer && isLocalPlayer)
+        {
+            Invoke(nameof(DisconnectPlayer), 3f);
+        }
+    }
+
+    public void DisconnectPlayer()
+    {
+        NetworkManager.singleton.StopClient();
+    }
+
+    public void DisconnectServer()
+    {
+        NetworkManager.singleton.StopHost();
     }
 
     public void isWinnerHook(bool oldValue, bool newValue)
