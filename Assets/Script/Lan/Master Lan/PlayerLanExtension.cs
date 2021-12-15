@@ -33,6 +33,7 @@ public class PlayerLanExtension : NetworkBehaviour
     public bool canFirst = true;
 
     public S4PlayerData S4LanPlayerData;
+    public GameObject Stage5Handler;
 
     private void Start()
     {
@@ -111,6 +112,11 @@ public class PlayerLanExtension : NetworkBehaviour
             GameObject.Find("PlayerPositionHandler4").GetComponent<PositionHandler>().myPlayer = gameObject;
             S4LanPlayerData = GameObject.Find("PlayerData").GetComponent<S4PlayerData>();
             GameObject.Find("Stage4Handler").GetComponent<LanStage4Handler>().GetAllUi();
+        }
+        else if (GameObject.Find("PlayerPositionHandler5"))
+        {
+            GameObject.Find("PlayerPositionHandler5").GetComponent<PositionHandler>().myPlayer = gameObject;
+            Stage5Handler = GameObject.Find("Stage5Handler");
         }
     }
 
@@ -594,5 +600,15 @@ public class PlayerLanExtension : NetworkBehaviour
     }
     #endregion
 
-
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.tag.Equals("s5Obs") && Stage5Handler.GetComponent<LanS5PickupHandler>().canPick)
+        {
+            Stage5Handler.GetComponent<LanS5PickupHandler>().CmdCanPick(false);
+            Stage5Handler.GetComponent<LanS5PickupHandler>().CmdButtonValue(other.GetComponent<LanS5Object>().value);
+            
+            //GameObject.Find("GameHandler").GetComponent<ObjectSpawner>().currentSpawn--;
+            Destroy(other.gameObject);
+        }
+    }
 }
