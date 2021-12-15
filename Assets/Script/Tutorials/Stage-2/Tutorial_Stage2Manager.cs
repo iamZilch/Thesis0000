@@ -13,7 +13,7 @@ public class Tutorial_Stage2Manager : MonoBehaviour
 
 
     [Header("Prefabs")]
-    [SerializeField] public GameObject []arithmeticPrefab;
+    [SerializeField] public GameObject[] arithmeticPrefab;
 
 
     [Header("Player UI")]
@@ -48,15 +48,15 @@ public class Tutorial_Stage2Manager : MonoBehaviour
     {
         onCollect = !onCollect;
     }
-    
-    
+
+
 
     public void StartGame(int given)
     {
         GameDefault();
         GenerateGiven(given);
         //spawnArithmetic();
-    
+
         //Initialize Ready timer -- Coroutine(ReadyTimer())
     }
 
@@ -76,7 +76,7 @@ public class Tutorial_Stage2Manager : MonoBehaviour
             { 0, "(2*3) / (2+1) % 4"}
         };
 
-        int[] keys = {8,0};
+        int[] keys = { 8, 0 };
         KeyTotalAnswer = keys[keyNumber];
         RemoveArithmetic();
 
@@ -85,7 +85,7 @@ public class Tutorial_Stage2Manager : MonoBehaviour
     public void RemoveArithmetic()
     {
         /// removing arithmetic
-        int mercy = 0; 
+        int mercy = 0;
         givenString = "";
         correctOperator = new List<string>();
         char[] givenToChar = given[KeyTotalAnswer].ToCharArray();
@@ -113,12 +113,8 @@ public class Tutorial_Stage2Manager : MonoBehaviour
         }
 
         givenString += "=" + KeyTotalAnswer;
-<<<<<<< HEAD
-        DisplayGivenText.GetComponent<TextMeshProUGUI>().text = "Complete the Expression:" + givenString;
-=======
         DisplayGivenText.GetComponent<TextMeshProUGUI>().text = "Complete the Expression: " + givenString;
 
->>>>>>> e9c120af93ef6be81c96779572905561ec07e09c
     }
 
     public void spawnArithmetic()
@@ -135,7 +131,7 @@ public class Tutorial_Stage2Manager : MonoBehaviour
             //int ran = Random.Range(0, arithmeticSpawnPointList.Count);
 
             int arithmeticRan = Random.Range(0, arithmeticPrefab.Length - 1);
-            GameObject pref = Instantiate( arithmeticPrefab[arithmeticRan], pickupPointsParent.transform);
+            GameObject pref = Instantiate(arithmeticPrefab[arithmeticRan], pickupPointsParent.transform);
             pref.transform.position = arithmeticSpawnPointList[i].transform.position;
             arithmeticSpawnPointList.Remove(arithmeticSpawnPointList[i]);
         }
@@ -212,21 +208,21 @@ public class Tutorial_Stage2Manager : MonoBehaviour
             {
                 //Generate another given (Dont forget to clear playerOperator)
                 playerOperator = new List<string>();
-     
 
-                if(QuestionAnsweredCorrect == 0)
+
+                if (QuestionAnsweredCorrect == 0)
                 {
                     wrongAnswerFirstGiven.SetActive(true);
                     tryAgainMessage(QuestionAnsweredCorrect);
 
                 }
-                else if(QuestionAnsweredCorrect == 1)
+                else if (QuestionAnsweredCorrect == 1)
                 {
                     wrongAnswer2ndGivenTryAgain.SetActive(true);
                     tryAgainMessage(QuestionAnsweredCorrect);
                 }
 
-              
+
             }
 
         }
