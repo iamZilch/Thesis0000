@@ -42,6 +42,7 @@ public class MasterLanScript : NetworkManager
     {
         base.Start();
         //Get the current player that is selected by the user. For now lez just do predefine value
+        //singleton.playerPrefab = DATABASE
         singleton.playerPrefab = SelectedPlayer;
         RunDefaultUi();
     }
