@@ -24,7 +24,7 @@ public class MainMenuScriptHandler : MonoBehaviour
         isClean = false;
         StartCoroutine(cleanScene());
         PlayerNameText.GetComponent<TextMeshProUGUI>().text = Database.instance.playerName;
-        playerText.GetComponent<TextMeshProUGUI>().text = Database.instance.playerName;
+        // playerText.GetComponent<TextMeshProUGUI>().text = Database.instance.playerName;
         PlayerMoneyText.GetComponent<TextMeshProUGUI>().text = Database.instance.playerMoney.ToString();
         PlayerLevelText.GetComponent<TextMeshProUGUI>().text = Database.instance.playerLevel.ToString();
         main = GameObject.Find("Opening_Game_Script");

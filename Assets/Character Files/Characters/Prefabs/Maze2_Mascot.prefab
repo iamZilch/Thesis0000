@@ -375,7 +375,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1253097606352355907}
   - component: {fileID: 5153183910422353977}
-  m_Layer: 0
+  - component: {fileID: 8603867817414891450}
+  m_Layer: 7
   m_Name: Maze2DIYEmp
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -429,6 +430,20 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!136 &8603867817414891450
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1884814781072152825}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.5
+  m_Height: 1
+  m_Direction: 1
+  m_Center: {x: 0, y: 3.84, z: 0}
 --- !u!1 &2631476370325297696
 GameObject:
   m_ObjectHideFlags: 0
@@ -66108,7 +66123,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7913722780945584861}
-  m_Layer: 0
+  - component: {fileID: 6392402682206995442}
+  m_Layer: 7
   m_Name: Armature
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -66130,3 +66146,17 @@ Transform:
   m_Father: {fileID: 1253097606352355907}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!136 &6392402682206995442
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8596521364320082071}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.5
+  m_Height: 1
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 2.57}

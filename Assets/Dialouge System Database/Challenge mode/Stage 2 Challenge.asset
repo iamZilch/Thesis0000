@@ -429,7 +429,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: Welcome to OperationDe-bug!
+        value: Welcome to Operation De-bug!
         type: 0
         typeString: 
       - title: Sequence
@@ -461,7 +461,7 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 46
+        x: 44
         y: 85
         width: 160
         height: 30

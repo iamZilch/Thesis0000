@@ -25,7 +25,7 @@ public class NetworkStorage : NetworkBehaviour
     [SerializeField] public GameObject DisconnectedGo;
 
     [Header("Variables")]
-    private string[] mapNames = {"Stage1", "Stage2", "Stage3", "Stage4"};
+    private string[] mapNames = {"HEXA-Types", "Operation: De-Bug!", "De-Slide!", "Disk-O!", "Collect Me If I'm Wrong"};
 
     [Header("Enviroment Testing")]
     [SerializeField] public GameObject[] powerUpsSpawnPoint;
@@ -36,7 +36,7 @@ public class NetworkStorage : NetworkBehaviour
     public SyncList<GameObject> playerLan = new SyncList<GameObject>();
 
     [SyncVar(hook =nameof(MapNameHook))]
-    public string MapName = "Stage1";
+    public string MapName = "HEXA-Types";
 
     [SyncVar(hook = nameof(PlayerReadyHook))]
     public int PlayerReady = 0;
@@ -78,6 +78,10 @@ public class NetworkStorage : NetworkBehaviour
     private void Start()
     {
         playerLan = new SyncList<GameObject>();
+        if (isServer)
+        {
+            CmdChangeMap();
+        }
         DontDestroyOnLoad(this);
     }
 
@@ -172,7 +176,7 @@ public class NetworkStorage : NetworkBehaviour
     {
         if (isServer)
         {
-            GameObject.Find("NetworkManager").GetComponent<MasterLanScript>().ChangeServerScene("Main_Menu_Scene");
+            NetworkManager.singleton.StopHost();
         }
     }
 

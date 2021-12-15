@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 0.467
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.40186876, g: 0.6067834, b: 0.67108446, a: 0.467}
+  m_IndirectSpecularColor: {r: 0.40083528, g: 0.6061432, b: 0.67198527, a: 0.467}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -8291,7 +8291,7 @@ Transform:
   - {fileID: 307918952}
   - {fileID: 1617776833}
   - {fileID: 740141477}
-  - {fileID: 1416109128}
+  - {fileID: 819015914}
   m_Father: {fileID: 0}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -11824,6 +11824,11 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 985472821302921024, guid: ab883dfd43052ba4baf767a49731a477, type: 3}
+--- !u!4 &819015914 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2980595380085530276, guid: e7b9745bccae42a4c91f830caefef2b4, type: 3}
+  m_PrefabInstance: {fileID: 1416109127}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &832200252
 GameObject:
   m_ObjectHideFlags: 0
@@ -20177,6 +20182,14 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2980595380085530283, guid: e7b9745bccae42a4c91f830caefef2b4, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3338640195267475862, guid: e7b9745bccae42a4c91f830caefef2b4, type: 3}
+      propertyPath: sceneId
+      value: 3237370036
+      objectReference: {fileID: 0}
     - target: {fileID: 3472242071424931786, guid: e7b9745bccae42a4c91f830caefef2b4, type: 3}
       propertyPath: sceneId
       value: 3992261465
@@ -20239,11 +20252,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e7b9745bccae42a4c91f830caefef2b4, type: 3}
---- !u!4 &1416109128 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 8030765050772403955, guid: e7b9745bccae42a4c91f830caefef2b4, type: 3}
-  m_PrefabInstance: {fileID: 1416109127}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1423478153
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -42294,8 +42302,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 844.5, y: 0}
-  m_SizeDelta: {x: 1629, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &5519002482777237271
 MonoBehaviour:

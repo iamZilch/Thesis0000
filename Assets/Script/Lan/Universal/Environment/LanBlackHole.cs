@@ -22,7 +22,7 @@ public class LanBlackHole : NetworkBehaviour
                 ple.CmdSendImDead();
                 //Display disconnection
                 ple.SpectatePlayer();
-                LanStage1.CmdDecAlivePlayer(ple.isAlive);
+                LanStage1.CmdSetAlivePlayers(ple.getAlivePlayers());
                 CmdCheckFall();
             }
             collision.gameObject.transform.position = deadSpawnPoint.transform.position;
