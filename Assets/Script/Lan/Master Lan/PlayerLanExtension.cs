@@ -23,6 +23,8 @@ public class PlayerLanExtension : NetworkBehaviour
     public GameObject defaultCam;
 
     int SpectateIndex = 0;
+    bool spectating = false;
+    int spectatingAlive = 0;
     Animator anim;
     Mover mover;
     float animSpeed;
@@ -134,13 +136,32 @@ public class PlayerLanExtension : NetworkBehaviour
             {
                 SpectateIndex++;
                 GameObject alivePlayer = players[i].gameObject;
+                spectatingAlive = i;
                 GetComponent<PlayerLanExtension>().playerRootCam.GetComponent<SmoothPosition>().target = alivePlayer.transform;
                 GetComponent<PlayerLanExtension>().playerRootCam.GetComponent<SmoothRotation>().target = alivePlayer.transform;
                 Debug.Log("Executed exchange camera");
                 break;
             }
         }
+        if (!spectating)
+        {
+            spectating = true;
+            StartCoroutine(SpectateCor());
+        }
     }
+
+    public IEnumerator SpectateCor()
+    {
+        while (!isAlive)
+        {
+            if (!players[spectatingAlive].GetComponent<PlayerLanExtension>().isAlive)
+            {
+                SpectatePlayer();
+            }
+            yield return new WaitForSeconds(1f);
+        }
+    }
+
     #endregion
 
 
