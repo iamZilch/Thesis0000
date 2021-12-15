@@ -19,6 +19,7 @@ public class GameHandler : MonoBehaviour
     [SerializeField] Button fs;
     [SerializeField] TextMeshProUGUI ultitxt;
     [SerializeField] TextMeshProUGUI fstxt;
+    [SerializeField] bool onTutorial;
 
     int timerInt = 1;
 
@@ -168,9 +169,10 @@ public class GameHandler : MonoBehaviour
         disableButtons(false);
 
         // GameObject.Find("Audio").GetComponent<S1SoundManager>().PlayMusic(2);
-        finishText.GetComponent<Text>().text = "Time Consumed: " + timeConsumed.ToString() +
-                          "\nExp. Gained: " + ppoints.ToString() +
-                          "\nCoins Earned: " + ccoins.ToString();
+        if (!onTutorial)
+            finishText.GetComponent<Text>().text = "Time Consumed: " + timeConsumed.ToString() +
+                              "\nExp. Gained: " + ppoints.ToString() +
+                              "\nCoins Earned: " + ccoins.ToString();
     }
 
     public void mainmenu()
