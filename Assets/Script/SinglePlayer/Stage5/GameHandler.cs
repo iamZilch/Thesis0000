@@ -30,6 +30,7 @@ public class GameHandler : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+
         Player.GetComponent<SkillControls>().loadButtons(fs, ulti, fstxt, ultitxt);
         DefaultVal();
         disableButtons(false);
