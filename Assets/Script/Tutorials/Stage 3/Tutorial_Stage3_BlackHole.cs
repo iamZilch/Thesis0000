@@ -14,4 +14,15 @@ public class Tutorial_Stage3_BlackHole : MonoBehaviour
             collision.gameObject.transform.position = main.GetComponent<Tutorial_Stage3_MainHandler>().CheckPointGO.transform.position;
         }
     }
+
+
+    private void OnTriggerExit(Collider collision)
+    {
+        if (collision.gameObject.tag.Equals("Trix") || collision.gameObject.tag.Equals("Player") || collision.gameObject.tag.Equals("Maze") || collision.gameObject.tag.Equals("Zilch"))
+        {
+            collision.gameObject.transform.position = main.GetComponent<Tutorial_Stage3_MainHandler>().CheckPointGO.transform.position;
+        }
+    }
+
+    
 }
