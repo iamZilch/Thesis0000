@@ -12,9 +12,7 @@ public static class Stage3GivenHandler
         TrueGiven = new List<string>
         {
             "if(True && False)" +
-            "\n\t print((False || True) &&  False)" +
-            "\nelse" + //this
-            "\n\t print(True || (False && False))",
+            "\n\t print((False || True) &&  False)",
 
             "if((3 < (6 + 2)) && True)" +
             "\n\t print true" +
@@ -26,10 +24,7 @@ public static class Stage3GivenHandler
             "\nelse" +
             "\n\tprint true",
 
-            "if(5 != (2 + 5))" +
-            "\n\tprint true" +
-            "\nelse" +
-            "\n\tprint false",
+            "if(5 <= (2 + 5))",
 
             "if((2 + 5) < (2 * 2))" +
             "\n\tprint false" +
@@ -37,9 +32,9 @@ public static class Stage3GivenHandler
             "\n\tprint true",
 
             "if(True || !False)" + //this
-            "\n\t print(False || (True && !False))" +
+            "\n\t print true" +
             "\nelse" +
-            "\n\t print(True && True)"
+            "\n\t print false"
 
         };
 
@@ -68,7 +63,7 @@ public static class Stage3GivenHandler
             "if(5 > 2)" +
             "\n\tprint false" +
             "\nelse" +
-            "print true"
+            "\n\tprint true"
         };
     }
 }

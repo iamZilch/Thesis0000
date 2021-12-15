@@ -22,6 +22,10 @@ public class ManageScene : MonoBehaviour
     {
         SceneManager.LoadScene("Stage4ChallengeMode");
     }
+    public void ChallengeModeStageFive()
+    {
+        SceneManager.LoadScene("Stage5ChallengeMode");
+    }
 
     //Tutorials
     public void TutorialModeStageOne()

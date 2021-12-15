@@ -32,7 +32,6 @@ public class S4GameEngine : MonoBehaviour
     void Start()
     {
         checkpointNumber = 0;
-
         Player.GetComponent<SkillControls>().loadButtons(fs, ulti, fstxt, ultitxt);
         Timer.GetComponent<TextMeshProUGUI>().text = "0";
         DefaultUi(false);

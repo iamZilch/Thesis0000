@@ -44,6 +44,7 @@ public class Stage2ScriptHandler : MonoBehaviour
     [SerializeField] public GameObject PlayerBtnHandler;
     [SerializeField] public GameObject joyStick;
     [SerializeField] public GameObject pickupButton;
+    [SerializeField] public GameObject givenPanel;
 
 
     Dictionary<int, string> given = new Dictionary<int, string>();
@@ -213,17 +214,6 @@ public class Stage2ScriptHandler : MonoBehaviour
             if (givenToChar[i].Equals('+') || givenToChar[i].Equals('-') || givenToChar[i].Equals('/') || givenToChar[i].Equals('*') || givenToChar[i].Equals('%'))
             {
                 int ran = Random.Range(0, 2);
-                // if (ran == 1 && mercy < 3)
-                // {
-                //     mercy++;
-                //     givenString += givenToChar[i].ToString();
-                // }
-                // else
-                // {
-                //     correctOperator.Add(givenToChar[i].ToString());
-                //     givenString += "_";
-                // }
-
                 if (ran == 1 && !ranGen)
                 {
                     correctOperator.Add(givenToChar[i].ToString());
@@ -246,7 +236,7 @@ public class Stage2ScriptHandler : MonoBehaviour
         givenString += "=" + KeyTotalAnswer;
 
 
-        DisplayGivenText.GetComponent<TextMeshProUGUI>().text = givenString;
+        DisplayGivenText.GetComponent<TextMeshProUGUI>().text = "Fill the box with the correct symbol\n" + givenString;
 
         PlayerUI(false);
         Invoke(nameof(setUi), 0.01f);
@@ -286,7 +276,7 @@ public class Stage2ScriptHandler : MonoBehaviour
         char[] given = givenString.ToCharArray();
         for (int i = 0; i < given.Length; i++)
         {
-            if (given[i].ToString().Equals("_") && isAdded == false)
+            if (given[i].ToString().Equals("☐") && isAdded == false)
             {
                 isAdded = true;
                 newGiven += arithmetic;
@@ -324,6 +314,8 @@ public class Stage2ScriptHandler : MonoBehaviour
                 if (QuestionAnsweredCorrect == 5)
                 {
                     isDone = true;
+                    givenPanel.SetActive(false);
+                    Destroy(pickupButton);
                     correctAnswers.GetComponent<TextMeshProUGUI>().text = "Run To The Finish Line!";
                 }
                 //ELSE Generate another given (Dont forget to clear playerOperator)
