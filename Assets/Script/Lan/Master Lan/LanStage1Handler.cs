@@ -184,7 +184,6 @@ public class LanStage1Handler : NetworkBehaviour
         }
         else if (AlivePlayer == 2)
         {
-            Debug.Log($"Base Int = {ToAnswerTimerBaseInt} :::: is equals to 3? - {ToAnswerTimerBaseInt == 3}");
             //Increase difficulty
             if (ToAnswerTimerBaseInt == 3)
             {
@@ -219,7 +218,7 @@ public class LanStage1Handler : NetworkBehaviour
             GameObject.Find("NetworkStorage").GetComponent<NetworkStorage>().CongratsGo.SetActive(true);
             GameObject.Find("NetworkStorage").GetComponent<NetworkStorage>().DisableCoroutine();
         }
-        else
+        else if(!Player.GetComponent<PlayerLanExtension>().isAlive)
         {
             GameObject.Find("NetworkStorage").GetComponent<NetworkStorage>().ThankYouGo.SetActive(true);
             GameObject.Find("NetworkStorage").GetComponent<NetworkStorage>().DisableCoroutine();

@@ -7,6 +7,7 @@ using CMF;
 public class LanBlackHole : NetworkBehaviour
 {
     [SerializeField] GameObject deadSpawnPoint;
+
     private void OnTriggerEnter(Collider collision)
     {
         LanStage1Handler LanStage1 = GameObject.Find("Stage1Handler").GetComponent<LanStage1Handler>();
@@ -18,10 +19,14 @@ public class LanBlackHole : NetworkBehaviour
             {
                 CmdCheckFall();
                 PlayerLanExtension ple = collision.gameObject.GetComponent<PlayerLanExtension>();
-                ple.CmdSendImDead();
-                //Display disconnection
-                ple.SpectatePlayer();
-                collision.gameObject.transform.position = deadSpawnPoint.transform.position;
+                if (ple.isAlive)
+                {
+                    ple.CmdSendImDead();
+                    //Display disconnection
+                    ple.SpectatePlayer();
+                    LanStage1.CmdDecAlivePlayer();
+                    collision.gameObject.transform.position = deadSpawnPoint.transform.position;
+                }
             }
         }
     }
