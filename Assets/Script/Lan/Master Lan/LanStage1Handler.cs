@@ -223,6 +223,24 @@ public class LanStage1Handler : NetworkBehaviour
             GameObject.Find("NetworkStorage").GetComponent<NetworkStorage>().ThankYouGo.SetActive(true);
             GameObject.Find("NetworkStorage").GetComponent<NetworkStorage>().DisableCoroutine();
         }
+        if (isServer && isLocalPlayer)
+        {
+            Invoke(nameof(DisconnectServer), 5f);
+        }
+        if (!isServer && isLocalPlayer)
+        {
+            Invoke(nameof(DisconnectPlayer), 3f);
+        }
+    }
+
+    public void DisconnectPlayer()
+    {
+        NetworkManager.singleton.StopClient();
+    }
+
+    public void DisconnectServer()
+    {
+        NetworkManager.singleton.StopHost();
     }
 
     IEnumerator StartReadyTimer()
@@ -292,6 +310,12 @@ public class LanStage1Handler : NetworkBehaviour
 
 
     #region CMD Functions
+    [Command(requiresAuthority =false)]
+    public void CmdSetAlivePlayers(int value)
+    {
+        AlivePlayer = value;
+    }
+
     [Command(requiresAuthority = false)]
     public void CmdIsGameRunning(bool status)
     {
@@ -434,7 +458,7 @@ public class LanStage1Handler : NetworkBehaviour
             int rand = Random.Range(0, PowerUpsGo.Count);
             float[] pos = GetRandomPowerUpSpawnPoint();
             GameObject Go = Instantiate(PowerUpsGo[rand], new Vector3(pos[0], pos[1], pos[2]), Quaternion.identity);
-            NetworkServer.Spawn(Go);
+            NetworkServer.Spawn(Go, Player.GetComponent<PlayerLanExtension>().connectionToClient);
         }
     }
 

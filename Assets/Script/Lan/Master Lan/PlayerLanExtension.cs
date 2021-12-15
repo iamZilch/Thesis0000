@@ -14,6 +14,8 @@ public class PlayerLanExtension : NetworkBehaviour
     public List<GameObject> players;
     public bool isAlive = true;
     public bool isReady = false;
+    public bool isWinner = false;
+    public bool foundButton = false;
 
     [SerializeField] public GameObject ballSpointPoint;
     Skills skillFX;
@@ -95,30 +97,79 @@ public class PlayerLanExtension : NetworkBehaviour
             GameObject.Find("Stage1Handler").GetComponent<LanStage1Handler>().GetAllPlatforms();
             GameObject.Find("Stage1Handler").GetComponent<LanStage1Handler>().CmdToAddAlivePlayer();
             GameObject.Find("Stage1Handler").GetComponent<LanStage1Handler>().GetAllPowerUps();
+            GameObject.Find("Stage5Handler").GetComponent<LanStage5Handler>().OffUi();
+            OnStageDefault();
         }
         else if (GameObject.Find("PlayerPositionHandler2"))
         {
             GameObject.Find("PlayerPositionHandler2").GetComponent<PositionHandler>().myPlayer = gameObject;
             GameObject.Find("Stage2Handler").GetComponent<LanStage2Handler>().Player = gameObject;
             GameObject.Find("Stage2Handler").GetComponent<LanStage2Handler>().GetAllUiGo();
+            GameObject.Find("Stage2Handler").GetComponent<LanStage2Handler>().GetAllPowerUps();
             GameObject.Find("Stage2Handler").GetComponent<LanStage2Handler>().GetAllArithmeticSpawn();
+            GameObject.Find("Stage5Handler").GetComponent<LanStage5Handler>().OffUi();
+            OnStageDefault();
         }
         else if (GameObject.Find("PlayerPositionHandler3"))
         {
             GameObject.Find("PlayerPositionHandler3").GetComponent<PositionHandler>().myPlayer = gameObject;
             GameObject.Find("Stage3Handler").GetComponent<LanStage3Handler>().Player = gameObject;
             GameObject.Find("Stage3Handler").GetComponent<LanStage3Handler>().GetAllGui();
+            
+            GameObject.Find("Stage3Handler").GetComponent<LanStage3Handler>().GetAllPowerUps();
+            OnStageDefault();
+            GameObject.Find("Stage5Handler").GetComponent<LanStage5Handler>().OffUi();
         }
         else if (GameObject.Find("PlayerPositionHandler4"))
         {
             GameObject.Find("PlayerPositionHandler4").GetComponent<PositionHandler>().myPlayer = gameObject;
+            GameObject.Find("Stage4Handler").GetComponent<LanStage4Handler>().Player = gameObject;
             S4LanPlayerData = GameObject.Find("PlayerData").GetComponent<S4PlayerData>();
             GameObject.Find("Stage4Handler").GetComponent<LanStage4Handler>().GetAllUi();
+            GameObject.Find("Stage5Handler").GetComponent<LanStage5Handler>().OffUi();
+            GameObject.Find("Stage4Handler").GetComponent<LanStage4Handler>().GetAllPowerUps();
+            OnStageDefault();
         }
         else if (GameObject.Find("PlayerPositionHandler5"))
         {
             GameObject.Find("PlayerPositionHandler5").GetComponent<PositionHandler>().myPlayer = gameObject;
+            GameObject.Find("Stage5Handler").GetComponent<LanStage5Handler>().player = gameObject;
+            GameObject.Find("Stage5Handler").GetComponent<LanStage5Handler>().GetAllUi();
+            GameObject.Find("Stage5Handler").GetComponent<LanStage5Handler>().GetAllPowerUps();
             Stage5Handler = GameObject.Find("Stage5Handler");
+            Stage5Handler.GetComponent<LanStage5Handler>().OffUi();
+            OnStageDefault();
+        }
+    }
+
+    public void OnStageDefault()
+    {
+        GameObject.Find("ButtonHandler").GetComponent<RectTransform>().localPosition = new Vector3(0, -99999f, 0);
+        cam.SetActive(false);
+    }
+
+    public void OnStageResetDefault()
+    {
+        Invoke(nameof(DelayController), 2f);
+        cam.SetActive(true);
+    }
+
+    public void DelayController()
+    {
+        StartCoroutine(findButtonHandlerCor());
+    }
+
+    IEnumerator findButtonHandlerCor()
+    {
+        while (!foundButton)
+        {
+            try
+            {
+                GameObject.Find("ButtonHandler").GetComponent<RectTransform>().localPosition = new Vector3(0, 0, 0);
+                foundButton = true;
+            }
+            catch (Exception e) { }
+            yield return new WaitForSeconds(1f);
         }
     }
 
@@ -148,6 +199,19 @@ public class PlayerLanExtension : NetworkBehaviour
             spectating = true;
             StartCoroutine(SpectateCor());
         }
+    }
+
+    public int getAlivePlayers()
+    {
+        int alivePlayers = 0;
+        for(int i = 0; i < players.Count; i++)
+        {
+            if (players[i].GetComponent<PlayerLanExtension>().isAlive)
+            {
+                alivePlayers++;
+            }
+        }
+        return alivePlayers;
     }
 
     public IEnumerator SpectateCor()
@@ -622,13 +686,28 @@ public class PlayerLanExtension : NetworkBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        if (other.tag.Equals("s5Obs") && Stage5Handler.GetComponent<LanS5PickupHandler>().canPick)
+        if (isLocalPlayer)
         {
-            Stage5Handler.GetComponent<LanS5PickupHandler>().CmdCanPick(false);
-            Stage5Handler.GetComponent<LanS5PickupHandler>().CmdButtonValue(other.GetComponent<LanS5Object>().value);
-            
-            //GameObject.Find("GameHandler").GetComponent<ObjectSpawner>().currentSpawn--;
-            Destroy(other.gameObject);
+            if (other.tag.Equals("s5Obs") && Stage5Handler.GetComponent<LanStage5Handler>().pickUP.GetComponent<LanS5PickupHandler>().canPick)
+            {
+                Stage5Handler.GetComponent<LanStage5Handler>().pickUP.GetComponent<LanS5PickupHandler>().CmdCanPick(false);
+                Stage5Handler.GetComponent<LanStage5Handler>().pickUP.GetComponent<LanS5PickupHandler>().CmdButtonValue(other.GetComponent<LanS5Object>().value);
+                GameObject.Find("Stage5Handler").GetComponent<LanStage5Handler>().CmdDecCurrentSpawn();
+                //GameObject.Find("GameHandler").GetComponent<ObjectSpawner>().currentSpawn--;
+                CmdDestroyOb(other.gameObject);
+            }
         }
     }
+
+    [Command]
+    public void CmdDestroyOb(GameObject obj)
+    {
+        if (isServer)
+        {
+            NetworkServer.Destroy(obj);
+        }
+    }
+
+    
+
 }

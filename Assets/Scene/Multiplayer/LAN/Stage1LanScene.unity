@@ -5040,6 +5040,8 @@ MonoBehaviour:
   - {fileID: 80168639}
   - {fileID: 354789800}
   - {fileID: 454601124}
+  player: {fileID: 0}
+  findPlayer: 0
 --- !u!4 &1517757495 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 683772937427997617, guid: f1c0a19abc2fa4d4f8893edbede6e77b, type: 3}
@@ -12148,6 +12150,18 @@ MonoBehaviour:
           m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_MethodName: SetActive
           m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
+        - m_Target: {fileID: 1511494089}
+          m_TargetAssemblyTypeName: S1GoStoreScript, Assembly-CSharp
+          m_MethodName: enableCam
+          m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine

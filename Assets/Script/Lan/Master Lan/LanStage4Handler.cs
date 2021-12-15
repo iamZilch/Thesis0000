@@ -14,6 +14,9 @@ public class LanStage4Handler : NetworkBehaviour
     [SerializeField] GameObject[] Answers;
     [SerializeField] GameObject TVText;
 
+    [SerializeField] public GameObject Player;
+    [SerializeField] public List<GameObject> PowerUpsGo;
+
     [SyncVar(hook = nameof(ReadyTimerIntHook))]
     public int ReadyTimerInt = 4;
 
@@ -51,6 +54,29 @@ public class LanStage4Handler : NetworkBehaviour
         }
     }
 
+    public void GetAllPowerUps()
+    {
+        NetworkStorage NetworkStore = GameObject.Find("NetworkStorage").GetComponent<NetworkStorage>();
+        PowerUpsGo.Add(NetworkStore.PowerUpResetCd);
+        PowerUpsGo.Add(NetworkStore.PowerUpSpeed);
+        PowerUpsGo.Add(NetworkStore.PowerUpUlti);
+    }
+
+    IEnumerator SpawnPowerUpsCor()
+    {
+        while (true)
+        {
+            if (isServer)
+            {
+                Debug.Log("Spawning PowerUps!");
+                int rand = UnityEngine.Random.Range(0, PowerUpsGo.Count);
+                GameObject Go = Instantiate(PowerUpsGo[rand], new Vector3(UnityEngine.Random.Range(385.1f, 516f), 1.62f, UnityEngine.Random.Range(-0.5f, 55.3f)), Quaternion.identity);
+                NetworkServer.Spawn(Go, Player.GetComponent<PlayerLanExtension>().connectionToClient);
+            }
+            yield return new WaitForSeconds(UnityEngine.Random.Range(8, 15));
+        }
+    }
+
     [Command(requiresAuthority = false)]
     public void CmdResetValue()
     {
@@ -73,6 +99,7 @@ public class LanStage4Handler : NetworkBehaviour
                 StopAllCoroutines();
                 CmdDefaultUi(true);
                 CmdGenerateGiven();
+                StartCoroutine(SpawnPowerUpsCor());
             }
             CmdDecTimer();
             yield return new WaitForSeconds(1f);
@@ -182,30 +209,33 @@ public class LanStage4Handler : NetworkBehaviour
             Debug.Log("Putangina");
             if (iAmWinner)
             {
-                Debug.Log("I AM WINNER ! SHOW CONGRATS HERE!");
+                GameObject.Find("NetworkStorage").GetComponent<NetworkStorage>().CongratsGo.SetActive(true);
+                GameObject.Find("NetworkStorage").GetComponent<NetworkStorage>().DisableCoroutine();
             }
             else
             {
-                Debug.Log("I AM LOSER ! SHOW SHIT MSG HERE!");
+                GameObject.Find("NetworkStorage").GetComponent<NetworkStorage>().ThankYouGo.SetActive(true);
+                GameObject.Find("NetworkStorage").GetComponent<NetworkStorage>().DisableCoroutine();
             }
-            try
+            if (isServer && isLocalPlayer)
             {
-                Destroy(GameObject.Find("NetworkManager"));
-                Destroy(GameObject.Find("UI Canvas"));
-                //Destroy(GameObject.Find("~LeanTween"));
-                Destroy(GameObject.Find("Stage1Handler"));
-                Destroy(GameObject.Find("Stage2Handler"));
-                Destroy(GameObject.Find("Stage3Handler"));
-                Destroy(GameObject.Find("Stage4Handler"));
-                Destroy(GameObject.Find("NetworkStorage"));
+                Invoke(nameof(DisconnectServer), 5f);
             }
-            catch (Exception e)
+            if (!isServer && isLocalPlayer)
             {
-
+                Invoke(nameof(DisconnectPlayer), 3f);
             }
-            NetworkManager.singleton.StopHost();
-            SceneManager.LoadScene("Main_Menu_Scene");
         }
+    }
+
+    public void DisconnectPlayer()
+    {
+        NetworkManager.singleton.StopClient();
+    }
+
+    public void DisconnectServer()
+    {
+        NetworkManager.singleton.StopHost();
     }
 
     public void ReadyTimerIntHook(int oldValue, int newValue)

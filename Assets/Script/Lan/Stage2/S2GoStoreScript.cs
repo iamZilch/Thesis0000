@@ -19,6 +19,10 @@ public class S2GoStoreScript : MonoBehaviour
     [SerializeField] public GameObject TimerPanelParent;
     [SerializeField] public GameObject CorrectAnswerPanelParent;
 
+    [SerializeField] public GameObject player;
+
+    public bool findPlayer = false;
+
     GameObject handler;
     Transform handlerPos;
     bool handlerFound = false;
@@ -32,11 +36,38 @@ public class S2GoStoreScript : MonoBehaviour
 
     private void Start()
     {
-        StartCoroutine(findHandler());
+        //StartCoroutine(findHandler());
         StartCoroutine(StartGameAfter());
     }
 
-    IEnumerator findHandler()
+    public void enableCam()
+    {
+        StartCoroutine(findPlayerCor());
+    }
+
+    IEnumerator findPlayerCor()
+    {
+        while (!findPlayer)
+        {
+            try
+            {
+                if (player == null)
+                {
+                    player = GameObject.Find("Stage2Handler").GetComponent<LanStage2Handler>().Player;
+                }
+                if (player != null)
+                {
+                    player.GetComponent<PlayerLanExtension>().OnStageResetDefault();
+                    findPlayer = true;
+                }
+            }
+            catch (Exception e)
+            { }
+            yield return new WaitForSeconds(1f);
+        }
+    }
+
+    /*IEnumerator findHandler()
     {
         while (!handlerFound)
         {
@@ -55,7 +86,7 @@ public class S2GoStoreScript : MonoBehaviour
             }
             yield return new WaitForSeconds(1f);
         }
-    }
+    }*/
 
     IEnumerator StartGameAfter()
     {

@@ -11,6 +11,9 @@ public class MasterLanScript : NetworkManager
     [Header("MASTER LAN SCRIPT")]
     [SerializeField] public GameObject SelectedPlayer;
 
+    [Header("To Be Destroy")]
+    [SerializeField] public GameObject[] tbdObj;
+
     [Header("Network Storage")]
     [SerializeField] GameObject NetworkStorage;
 
@@ -87,26 +90,57 @@ public class MasterLanScript : NetworkManager
     public override void OnClientConnect(NetworkConnection conn)
     {
         base.OnClientConnect(conn);
+
     }
 
     public override void OnServerDisconnect(NetworkConnection conn)
     {
         base.OnServerDisconnect(conn);
-        for(int i = 0; i < NetworkStorage.GetComponent<NetworkStorage>().playerLan.Count; i++)
+        /*if(player.GetComponent<PlayerLanExtension>().isServer && player.GetComponent<PlayerLanExtension>().isLocalPlayer)
         {
-            if(NetworkStorage.GetComponent<NetworkStorage>().playerLan[i].GetComponent<NetworkIdentity>().connectionToClient == conn)
+            for (int i = 0; i < NetworkStorage.GetComponent<NetworkStorage>().playerLan.Count; i++)
             {
-                Debug.Log("isReady : " + NetworkStorage.GetComponent<NetworkStorage>().playerLan[i].GetComponent<PlayerLanExtension>().isReady);
-                if (NetworkStorage.GetComponent<NetworkStorage>().playerLan[i].GetComponent<PlayerLanExtension>().isReady)
+                if (NetworkStorage.GetComponent<NetworkStorage>().playerLan[i].GetComponent<NetworkIdentity>().connectionToClient == conn)
                 {
-                    NetworkStorage.GetComponent<NetworkStorage>().CmdSubReady();
+                    Debug.Log("isReady : " + NetworkStorage.GetComponent<NetworkStorage>().playerLan[i].GetComponent<PlayerLanExtension>().isReady);
+                    if (NetworkStorage.GetComponent<NetworkStorage>().playerLan[i].GetComponent<PlayerLanExtension>().isReady)
+                    {
+                        NetworkStorage.GetComponent<NetworkStorage>().CmdSubReady();
+                    }
+                    NetworkStorage.GetComponent<NetworkStorage>().CmdRemoveQuitPlayer(NetworkStorage.GetComponent<NetworkStorage>().playerLan[i]);
+                    break;
                 }
-                NetworkStorage.GetComponent<NetworkStorage>().CmdRemoveQuitPlayer(NetworkStorage.GetComponent<NetworkStorage>().playerLan[i]);
-                break;
             }
-        }
-        GameObject.Find("NetworkStorage").GetComponent<NetworkStorage>().CmdDecPlayerTotal();
+            GameObject.Find("NetworkStorage").GetComponent<NetworkStorage>().CmdDecPlayerTotal();
+        }*/
     }
+
+    public override void OnStopHost()
+    {
+        base.OnStopHost();
+        if (player.GetComponent<PlayerLanExtension>().isLocalPlayer)
+        {
+            for (int i = 0; i < tbdObj.Length; i++)
+            {
+                Destroy(tbdObj[i], 1f);
+            }
+            SceneManager.LoadScene(MainMenu);
+        }
+    }
+
+    public override void OnStopClient()
+    {
+        base.OnStopClient();
+        if (player.GetComponent<PlayerLanExtension>().isLocalPlayer)
+        {
+            for (int i = 0; i < tbdObj.Length; i++)
+            {
+                Destroy(tbdObj[i], 1f);
+            }
+            SceneManager.LoadScene(MainMenu);
+        }
+    }
+
 
     public override void OnClientChangeScene(string newSceneName, SceneOperation sceneOperation, bool customHandling)
     {
@@ -125,17 +159,20 @@ public class MasterLanScript : NetworkManager
         string sceneName = GameObject.Find("NetworkStorage").GetComponent<NetworkStorage>().MapName;
         switch (sceneName)
         {
-            case "Stage1":
+            case "HEXA-Types":
                 sceneName = "Stage1LanScene";
                 break;
-            case "Stage2":
+            case "Operation: De-Bug!":
                 sceneName = "Stage2LanScene";
                 break;
-            case "Stage3":
+            case "De-Slide!":
                 sceneName = "Stage3LanScene";
                 break;
-            case "Stage4":
+            case "Disk-O!":
                 sceneName = "Stage4LanScene";
+                break;
+            case "Collect Me If I'm Wrong":
+                sceneName = "Stage5LanScene";
                 break;
             case "Lobby":
                 sceneName = "MasterLanLobby";

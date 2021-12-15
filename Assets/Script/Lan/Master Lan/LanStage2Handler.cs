@@ -20,6 +20,7 @@ public class LanStage2Handler : NetworkBehaviour
     [SerializeField] public List<GameObject> PowerUpsGo;
     [SerializeField] public GameObject PickUpButton;
 
+
     //Parent
     [SerializeField] public GameObject GivenPanelParent;
     [SerializeField] public GameObject TimerPanelParent;
@@ -205,6 +206,22 @@ public class LanStage2Handler : NetworkBehaviour
         }
     }
 
+    IEnumerator SpawnPowerUpsCor()
+    {
+        while (true)
+        {
+            if (isServer)
+            {
+                Debug.Log("Spawning PowerUps!");
+                int randPos = UnityEngine.Random.Range(0, PickupPointsGo.Count);
+                int rand = UnityEngine.Random.Range(0, PowerUpsGo.Count);
+                GameObject Go = Instantiate(PowerUpsGo[rand], new Vector3(PickupPointsGo[randPos].transform.position.x, PickupPointsGo[randPos].transform.position.y, PickupPointsGo[randPos].transform.position.z), Quaternion.identity);
+                NetworkServer.Spawn(Go, Player.GetComponent<PlayerLanExtension>().connectionToClient);
+            }
+            yield return new WaitForSeconds(UnityEngine.Random.Range(5, 15));
+        }
+    }
+
     public void GenerateGiven()
     {
         given = new Dictionary<int, string>
@@ -267,7 +284,7 @@ public class LanStage2Handler : NetworkBehaviour
         s2ReadyTimerInt--;
     }
     
-    [ClientRpc]
+ /*   [ClientRpc]
     public void RpcSetReadyTimerGoVis(bool status)
     {
         ReadyGivenTimerGo.SetActive(status);
@@ -277,21 +294,22 @@ public class LanStage2Handler : NetworkBehaviour
             Debug.Log("Executed");
             buttonHandler.transform.position = new Vector3(960f, 540f, 0);
         }
-    }
+    }*/
 
     IEnumerator DecreaseTimer()
     {
         Debug.Log("IENumerator Decrease timer ----");
-        RpcSetReadyTimerGoVis(true);
+        //RpcSetReadyTimerGoVis(true);
         while (s2ReadyTimerInt > 0)
         {
             GameObject.Find("SoundManager2").GetComponent<S2SoundManager>().PlayMusic(3);
             if (s2ReadyTimerInt == 1)
             {
-                RpcSetReadyTimerGoVis(false);
+                //RpcSetReadyTimerGoVis(false);
                 GenerateGiven();
                 StopAllCoroutines();
                 StartCoroutine(StartTimerGiven());
+                StartCoroutine(SpawnPowerUpsCor());
             }
             CmdDecReadyTimer();
             yield return new WaitForSeconds(1f);
@@ -374,6 +392,24 @@ public class LanStage2Handler : NetworkBehaviour
             GameObject.Find("NetworkStorage").GetComponent<NetworkStorage>().ThankYouGo.SetActive(true);
             GameObject.Find("NetworkStorage").GetComponent<NetworkStorage>().DisableCoroutine();
         }
+        if (isServer && isLocalPlayer)
+        {
+            Invoke(nameof(DisconnectServer), 5f);
+        }
+        if (!isServer && isLocalPlayer)
+        {
+            Invoke(nameof(DisconnectPlayer), 3f);
+        }
+    }
+
+    public void DisconnectPlayer()
+    {
+        NetworkManager.singleton.StopClient();
+    }
+
+    public void DisconnectServer()
+    {
+        NetworkManager.singleton.StopHost();
     }
     #endregion
 
