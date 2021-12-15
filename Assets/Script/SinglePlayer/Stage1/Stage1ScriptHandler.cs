@@ -51,11 +51,11 @@ public class Stage1ScriptHandler : MonoBehaviour
 
     public void Start()
     {
-        // Player = Instantiate(ModelPrefab[Database.instance.UsedCharacter], spawnPoint.transform);
+        Player = Instantiate(ModelPrefab[GameObject.Find("Opening_Game_Script").GetComponent<Database>().UsedCharacter], spawnPoint.transform);
         //Disable player movement script
 
         //FOR TESTING SCRIPT
-        Player = Instantiate(Player, spawnPoint.transform);
+        // Player = Instantiate(Player, spawnPoint.transform);
         // sound.PlayMusic(0);
 
 

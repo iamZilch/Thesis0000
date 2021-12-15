@@ -32,11 +32,13 @@ public class Stage3ScriptHandler : MonoBehaviour
     public bool isFinish = false;
     int timeConsumed;
 
+    [SerializeField] GameObject[] ModelPrefab;
+
 
     // Start is called before the first frame update
     void Start()
     {
-        Player = Instantiate(Player);
+        Player = Instantiate(ModelPrefab[GameObject.Find("Opening_Game_Script").GetComponent<Database>().UsedCharacter], SpawnPoint.transform);
         Player.GetComponentInChildren<TouchField>().touchField = touch;
         ButtonsHandler but = ButtonHandler.GetComponent<ButtonsHandler>();
         but.setPlayer(Player);

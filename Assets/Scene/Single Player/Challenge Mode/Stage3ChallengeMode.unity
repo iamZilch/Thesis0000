@@ -10475,6 +10475,16 @@ MonoBehaviour:
   correctAnswer: T
   CheckPointGO: {fileID: 0}
   isFinish: 0
+  ModelPrefab:
+  - {fileID: 8886504220315001773, guid: 3413ee5b06b21d24dbcda19fed8a7e93, type: 3}
+  - {fileID: 3937194821890257952, guid: badb1f362d1910845bcdf5a79430a042, type: 3}
+  - {fileID: 9101514232995066751, guid: f0e911b847af1714e9d69b907125db5a, type: 3}
+  - {fileID: 3723922123640413794, guid: 18346c831ba5c3441a37545530b747d2, type: 3}
+  - {fileID: 1088246610732596505, guid: 3eeb22f5a4cdf434fa88ddbe9c9bcad7, type: 3}
+  - {fileID: 1993299748529106743, guid: 7f6617192dca07b49987c0932abf84fb, type: 3}
+  - {fileID: 1386430801255881635, guid: edc8ae97a951b364699a3595459b6c44, type: 3}
+  - {fileID: 4244683883274491189, guid: b4a2011d6b72d3845a01ba815dbe186c, type: 3}
+  - {fileID: 3179844099105669457, guid: d3fe310d18fc6cc4b9bf91f3aa9981bc, type: 3}
   End: {fileID: 783153567}
   endText: {fileID: 783153566}
 --- !u!1001 &1687172147
