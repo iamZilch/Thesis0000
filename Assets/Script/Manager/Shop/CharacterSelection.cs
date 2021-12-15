@@ -87,8 +87,8 @@ public class CharacterSelection : MonoBehaviour
         PenguinName.Add(4, "Mafia Trix");
         PenguinName.Add(5, "Armored Trix");
         PenguinName.Add(6, "Maze");
-        PenguinName.Add(7, "Mascot Maze");
-        PenguinName.Add(8, "Emperor Maze");
+        PenguinName.Add(7, "Emperor Maze");
+        PenguinName.Add(8, "Mascot Maze");
     }
 
     public void InitPenguin(int _index)

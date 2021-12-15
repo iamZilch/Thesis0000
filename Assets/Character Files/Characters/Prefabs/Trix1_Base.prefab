@@ -60002,7 +60002,7 @@ GameObject:
   - component: {fileID: 3723922123640413797}
   m_Layer: 0
   m_Name: Trix1_Base
-  m_TagString: Maze
+  m_TagString: Trix
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -60311,7 +60311,7 @@ Animator:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3723922123640413794}
   m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: 310e6b9a54c21414d9d312266992035b, type: 3}
+  m_Avatar: {fileID: 9000000, guid: e7c4a4ae5bfe22543a7aa7a5ab1631d8, type: 3}
   m_Controller: {fileID: 9100000, guid: 0b605d3b04dee1a44a313159a5c54541, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0

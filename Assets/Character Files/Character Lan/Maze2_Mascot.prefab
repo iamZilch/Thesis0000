@@ -19874,7 +19874,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   snowball: {fileID: 0}
   cam: {fileID: 2980595379096843282}
-  spawner: {fileID: 0}
+  spawner: {fileID: 1117259472629834021}
   penguinType: 
 --- !u!114 &2980595380085530285
 MonoBehaviour:
@@ -20042,7 +20042,7 @@ MonoBehaviour:
   sceneId: 0
   serverOnly: 0
   visible: 0
-  m_AssetId: 6370e9594e76d38458da7cd25a0fd015
+  m_AssetId: e7b9745bccae42a4c91f830caefef2b4
   hasSpawned: 0
 --- !u!114 &7651450714876562095
 MonoBehaviour:
@@ -20095,7 +20095,7 @@ MonoBehaviour:
   isReady: 0
   isWinner: 0
   foundButton: 0
-  ballSpointPoint: {fileID: 0}
+  ballSpointPoint: {fileID: 1117259472629834021}
   particles:
   - {fileID: 0}
   - {fileID: 0}
@@ -20251,7 +20251,7 @@ MonoBehaviour:
   showGizmos: 0
   showOverlay: 0
   overlayColor: {r: 0, g: 0, b: 0, a: 0.5}
-  target: {fileID: 0}
+  target: {fileID: 1117259472629834020}
 --- !u!1 &2980595380470762630
 GameObject:
   m_ObjectHideFlags: 0
@@ -59356,8 +59356,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5814553128226345464, guid: ad6a3c3c10954fe43b5138efb9e6ca5f, type: 3}
+      propertyPath: cameraRot
+      value: 
+      objectReference: {fileID: 2980595379096843282}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ad6a3c3c10954fe43b5138efb9e6ca5f, type: 3}
+--- !u!4 &1117259472629834020 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2351558447865947836, guid: ad6a3c3c10954fe43b5138efb9e6ca5f, type: 3}
+  m_PrefabInstance: {fileID: 3396598543628421016}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1117259472629834021 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2351558447865947837, guid: ad6a3c3c10954fe43b5138efb9e6ca5f, type: 3}
+  m_PrefabInstance: {fileID: 3396598543628421016}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1324571347592563495 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4414362156791663807, guid: ad6a3c3c10954fe43b5138efb9e6ca5f, type: 3}

@@ -76,6 +76,7 @@ public class S4GameEngine : MonoBehaviour
         {
             int count = int.Parse(Timer.GetComponent<TextMeshProUGUI>().text);
             count++;
+            timeConsumed = count;
             GameObject.Find("Audio").GetComponent<S1SoundManager>().PlayMusic(3);
             Timer.GetComponent<TextMeshProUGUI>().text = count.ToString();
             yield return new WaitForSeconds(1f);
