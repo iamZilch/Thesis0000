@@ -11,7 +11,7 @@ public class PlayerData
     public float playerCurrentExp = 0;
     public float playerLevelCapacity = 10;
     public bool[] UnlockedStages = { true, false, false, false, false };
-    public bool[] UnlockCharacter = { true, false, false, true, false, false, true, false, false };
+    public bool[] UnlockCharacter = { true, false, false, true, false, false, true, false, false};
     public int[] tutorialCheckpoints = { 0, 0, 0, 0, 0, 0 };
     public bool[] unlockedTutorials = { false, false, false, false, false, false };
     public int UsedCharacter = 0;
