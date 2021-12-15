@@ -64238,6 +64238,20 @@ ParticleSystemRenderer:
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
   m_MaskInteraction: 0
+--- !u!136 &6494412460282223498
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5941610046341698736}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.5
+  m_Height: 1
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 3.18}
 --- !u!1001 &1993299748135252324
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -64293,10 +64307,19 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5322490960627426772, guid: 6309cd52a97f41544bb0a5c76c6311c5, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6309cd52a97f41544bb0a5c76c6311c5, type: 3}
 --- !u!4 &3772831055854849636 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3454918784998997760, guid: 6309cd52a97f41544bb0a5c76c6311c5, type: 3}
+  m_PrefabInstance: {fileID: 1993299748135252324}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &5941610046341698736 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5322490960627426772, guid: 6309cd52a97f41544bb0a5c76c6311c5, type: 3}
   m_PrefabInstance: {fileID: 1993299748135252324}
   m_PrefabAsset: {fileID: 0}
