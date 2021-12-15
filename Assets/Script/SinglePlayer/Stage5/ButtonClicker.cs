@@ -16,6 +16,7 @@ public class ButtonClicker : MonoBehaviour
     public int activeBtn = 0;
     public int index = 0;
     public bool init = false;
+    [SerializeField] public bool onTutorial;
 
     // Start is called before the first frame update
     void Start()
@@ -70,6 +71,9 @@ public class ButtonClicker : MonoBehaviour
             player.transform.position = winnerSpawn.transform.position;
             Debug.Log("I am winner!");
             gameHandlerGo.GetComponent<GameHandler>().hideUI();
+
+            if (onTutorial)
+                GameObject.Find("Auto Save").GetComponent<AutoSave>().endTextTrigger();
         }
     }
 

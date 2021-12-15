@@ -228,6 +228,10 @@ MonoBehaviour:
           Camera(StartPos,MyCamera,2); '
         type: 0
         typeString: 
+      - title: EventGuid
+        value: 9b6a19e4-aa9e-4af6-b7b5-fa8877c58c9e
+        type: 0
+        typeString: 
       conversationID: 1
       isRoot: 0
       isGroup: 0
@@ -827,7 +831,7 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 0, y: 449.05664}
+    canvasScrollPosition: {x: 0, y: 0}
     canvasZoom: 1.06
   - id: 2
     fields:
@@ -956,6 +960,10 @@ MonoBehaviour:
         typeString: 
       - title: Sequence
         value: SetActive(Back, false);
+        type: 0
+        typeString: 
+      - title: EventGuid
+        value: ac963f57-8be6-4bf9-bf6b-8eb97112cb72
         type: 0
         typeString: 
       conversationID: 2
@@ -1560,7 +1568,7 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 13.636368, y: 385.31467}
+    canvasScrollPosition: {x: 0, y: 0}
     canvasZoom: 0.88000005
   - id: 3
     fields:
@@ -1696,6 +1704,10 @@ MonoBehaviour:
           Sample, true);
 
           SetActive(Java Separated, false);'
+        type: 0
+        typeString: 
+      - title: EventGuid
+        value: 7eddb333-769b-4f62-9e6b-b20a23cda897
         type: 0
         typeString: 
       conversationID: 3
@@ -2035,6 +2047,10 @@ MonoBehaviour:
 
           SetActive(JavaScript
           Commas, false);'
+        type: 0
+        typeString: 
+      - title: EventGuid
+        value: 4c34122c-87ec-46ba-824a-7df103883303
         type: 0
         typeString: 
       conversationID: 4
@@ -2417,7 +2433,7 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 0, y: 300.54138}
+    canvasScrollPosition: {x: 0, y: 0}
     canvasZoom: 0.8200002
   - id: 5
     fields:
@@ -2546,6 +2562,10 @@ MonoBehaviour:
         typeString: 
       - title: Sequence
         value: SetActive(Back, false);
+        type: 0
+        typeString: 
+      - title: EventGuid
+        value: c975dbe0-400b-4c4e-81a1-771342a6fb09
         type: 0
         typeString: 
       conversationID: 5
@@ -3591,7 +3611,7 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 0, y: 1309.2067}
+    canvasScrollPosition: {x: 0, y: 0}
     canvasZoom: 1.1199995
   syncInfo:
     syncActors: 0
