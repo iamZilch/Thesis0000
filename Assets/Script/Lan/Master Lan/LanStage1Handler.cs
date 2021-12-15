@@ -170,7 +170,7 @@ public class LanStage1Handler : NetworkBehaviour
     public bool CanContinue()
     {
         bool status = true;
-        if (AlivePlayer == 0)
+        if (AlivePlayer <= 0)
         {
             CmdShowResult();
             status = false;
@@ -299,9 +299,12 @@ public class LanStage1Handler : NetworkBehaviour
     }
 
     [Command(requiresAuthority = false)]
-    public void CmdDecAlivePlayer()
+    public void CmdDecAlivePlayer(bool status)
     {
-        AlivePlayer--;
+        if (!status)
+        {
+            AlivePlayer--;
+        }
     }
 
     [Command(requiresAuthority = false)]

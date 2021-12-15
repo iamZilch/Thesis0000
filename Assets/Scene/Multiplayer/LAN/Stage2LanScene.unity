@@ -19515,6 +19515,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4752243074156304485, guid: 41805616e668711479b647d02d0b1d4f, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 982
+      objectReference: {fileID: 0}
     - target: {fileID: 4752243074252169988, guid: 41805616e668711479b647d02d0b1d4f, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -20816,6 +20820,7 @@ MonoBehaviour:
   PlayerBtnHandler: {fileID: 1940981257}
   joyStick: {fileID: 0}
   pickupButton: {fileID: 76898364}
+  givenPanel: {fileID: 0}
   onCollect: 0
   isDone: 0
   isFinished: 0
@@ -24916,7 +24921,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: 0
-  m_SortingOrder: -1
+  m_SortingOrder: 0
   m_TargetDisplay: 0
 --- !u!224 &4131906667964934199
 RectTransform:

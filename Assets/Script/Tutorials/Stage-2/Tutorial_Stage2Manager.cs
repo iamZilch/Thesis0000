@@ -113,12 +113,8 @@ public class Tutorial_Stage2Manager : MonoBehaviour
         }
 
         givenString += "=" + KeyTotalAnswer;
-<<<<<<< HEAD
         DisplayGivenText.GetComponent<TextMeshProUGUI>().text = "Complete the Expression:" + givenString;
-=======
-        DisplayGivenText.GetComponent<TextMeshProUGUI>().text = "Complete the Expression: " + givenString;
 
->>>>>>> e9c120af93ef6be81c96779572905561ec07e09c
     }
 
     public void spawnArithmetic()
