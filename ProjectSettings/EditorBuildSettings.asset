@@ -60,6 +60,9 @@ EditorBuildSettings:
     path: Assets/Scene/Single Player/Tutorial Mode/Stage4_Tutorial.unity
     guid: 18eab394556554f4ead7d8ebba984b5f
   - enabled: 1
+    path: Assets/Scene/Single Player/Tutorial Mode/Stage5_Tutorial.unity
+    guid: a3b2000e1cee63640bb911a0a47f0785
+  - enabled: 1
     path: Assets/Scene/Single Player/Tutorial Mode/Quiz Mode/QuizMode.unity
     guid: 18e8a5f0794f44c44819ee413a60217b
   m_configObjects: {}
