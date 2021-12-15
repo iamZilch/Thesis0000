@@ -20759,6 +20759,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Player: {fileID: 2143282363396489894, guid: 3413ee5b06b21d24dbcda19fed8a7e93, type: 3}
+  ModelPrefab: []
   SpawnObject: {fileID: 1522801554}
   CheckPoints:
   - {fileID: 1816278135}
