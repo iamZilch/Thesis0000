@@ -36,14 +36,14 @@ public class MasterLanScript : NetworkManager
     public string stage2Scene;
     [Scene]
     public string stage3Scene;
-    
-    
+
+
     public override void Start()
     {
         base.Start();
         //Get the current player that is selected by the user. For now lez just do predefine value
-        //singleton.playerPrefab = DATABASE
-        singleton.playerPrefab = SelectedPlayer;
+        singleton.playerPrefab = GameObject.Find("MyPlayerPrefabs").GetComponent<PlayerPrefab>().getPrefab(GameObject.Find("Opening_Game_Script").GetComponent<Database>().UsedCharacter);
+        // singleton.playerPrefab = SelectedPlayer;
         RunDefaultUi();
     }
 
@@ -58,7 +58,7 @@ public class MasterLanScript : NetworkManager
     {
         if (Input.GetKeyDown(KeyCode.P))
         {
-            
+
         }
         if (Input.GetKeyDown(KeyCode.J))
         {
