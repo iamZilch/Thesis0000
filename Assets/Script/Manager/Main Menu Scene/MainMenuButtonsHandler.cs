@@ -22,4 +22,6 @@ public class MainMenuButtonsHandler : MonoBehaviour
         // for (int x = 0; x < challengeButtons.Length; x++)
         //     challengeButtons[x].GetComponent<Button>().interactable = GameObject.Find("Opening_Game_Script").GetComponent<Database>().unlockedTutorials[x + 1];
     }
+
+
 }

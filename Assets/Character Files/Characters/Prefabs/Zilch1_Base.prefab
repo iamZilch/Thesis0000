@@ -63842,7 +63842,7 @@ GameObject:
   - component: {fileID: 8886504220315001772}
   m_Layer: 0
   m_Name: Zilch1_Base
-  m_TagString: Maze
+  m_TagString: Zilch
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -64151,7 +64151,7 @@ Animator:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8886504220315001773}
   m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: 310e6b9a54c21414d9d312266992035b, type: 3}
+  m_Avatar: {fileID: 9000000, guid: d1bdd4e7df48d4a47aac08862f1590e2, type: 3}
   m_Controller: {fileID: 9100000, guid: 0b605d3b04dee1a44a313159a5c54541, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0

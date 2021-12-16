@@ -38878,7 +38878,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   snowball: {fileID: 0}
   cam: {fileID: 7843169701942888376}
-  spawner: {fileID: 0}
+  spawner: {fileID: 5589128823463694496}
   penguinType: 
 --- !u!114 &974212841856378010
 MonoBehaviour:
@@ -39046,7 +39046,7 @@ MonoBehaviour:
   sceneId: 0
   serverOnly: 0
   visible: 0
-  m_AssetId: 
+  m_AssetId: 27160067e29ed6e45bd7e7aad332e4e4
   hasSpawned: 0
 --- !u!114 &3342884240903635719
 MonoBehaviour:
@@ -39099,7 +39099,7 @@ MonoBehaviour:
   isReady: 0
   isWinner: 0
   foundButton: 0
-  ballSpointPoint: {fileID: 0}
+  ballSpointPoint: {fileID: 5589128823463694496}
   particles:
   - {fileID: 0}
   - {fileID: 0}
@@ -39194,7 +39194,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   syncMode: 0
   syncInterval: 0.1
-  snowBall: {fileID: 5343176982676471703, guid: 37ca4231dcb5be54980826e1642a89ca, type: 3}
+  snowBall: {fileID: 5343176982676471703, guid: c8fea3a24fbdf984eb52c2c51f5a8cc9, type: 3}
   player: {fileID: 0}
 --- !u!114 &4526026953747619317
 MonoBehaviour:
@@ -39255,7 +39255,7 @@ MonoBehaviour:
   showGizmos: 0
   showOverlay: 0
   overlayColor: {r: 0, g: 0, b: 0, a: 0.5}
-  target: {fileID: 0}
+  target: {fileID: 5589128823463694497}
 --- !u!1 &4858799509649949576
 GameObject:
   m_ObjectHideFlags: 0
@@ -59356,10 +59356,24 @@ PrefabInstance:
       propertyPath: m_Name
       value: zilcharmor
       objectReference: {fileID: 0}
+    - target: {fileID: 4279793487177622179, guid: 0634db54b94ca624d97db8fa03627e2f, type: 3}
+      propertyPath: cameraRot
+      value: 
+      objectReference: {fileID: 7843169701942888376}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0634db54b94ca624d97db8fa03627e2f, type: 3}
 --- !u!4 &154209495842197937 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 343600155940246775, guid: 0634db54b94ca624d97db8fa03627e2f, type: 3}
+  m_PrefabInstance: {fileID: 497483095603987782}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &5589128823463694496 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5438089060521317862, guid: 0634db54b94ca624d97db8fa03627e2f, type: 3}
+  m_PrefabInstance: {fileID: 497483095603987782}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &5589128823463694497 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5438089060521317863, guid: 0634db54b94ca624d97db8fa03627e2f, type: 3}
   m_PrefabInstance: {fileID: 497483095603987782}
   m_PrefabAsset: {fileID: 0}

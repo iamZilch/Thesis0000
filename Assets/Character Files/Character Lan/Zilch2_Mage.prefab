@@ -54113,7 +54113,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   snowball: {fileID: 0}
   cam: {fileID: 1909370198250562487}
-  spawner: {fileID: 0}
+  spawner: {fileID: 4058063814133962848}
   penguinType: 
 --- !u!114 &8818130155679406718
 MonoBehaviour:
@@ -54281,7 +54281,7 @@ MonoBehaviour:
   sceneId: 0
   serverOnly: 0
   visible: 0
-  m_AssetId: 
+  m_AssetId: b415e24d41a66cf48b8580d1735fb2dc
   hasSpawned: 0
 --- !u!114 &856458882119906079
 MonoBehaviour:
@@ -54334,7 +54334,7 @@ MonoBehaviour:
   isReady: 0
   isWinner: 0
   foundButton: 0
-  ballSpointPoint: {fileID: 0}
+  ballSpointPoint: {fileID: 4058063814133962848}
   particles:
   - {fileID: 0}
   - {fileID: 0}
@@ -54429,7 +54429,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   syncMode: 0
   syncInterval: 0.1
-  snowBall: {fileID: 5343176982676471703, guid: 37ca4231dcb5be54980826e1642a89ca, type: 3}
+  snowBall: {fileID: 5343176982676471703, guid: c8fea3a24fbdf984eb52c2c51f5a8cc9, type: 3}
   player: {fileID: 0}
 --- !u!114 &6071711685656587246
 MonoBehaviour:
@@ -54490,7 +54490,7 @@ MonoBehaviour:
   showGizmos: 0
   showOverlay: 0
   overlayColor: {r: 0, g: 0, b: 0, a: 0.5}
-  target: {fileID: 0}
+  target: {fileID: 4058063814133962849}
 --- !u!1 &8157233369140603065
 GameObject:
   m_ObjectHideFlags: 0
@@ -59356,8 +59356,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1473024291277715379, guid: f5a6e233088a59440852ca507c6f8f79, type: 3}
+      propertyPath: cameraRot
+      value: 
+      objectReference: {fileID: 1909370198250562487}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f5a6e233088a59440852ca507c6f8f79, type: 3}
+--- !u!4 &4058063814133962849 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7233382957282361591, guid: f5a6e233088a59440852ca507c6f8f79, type: 3}
+  m_PrefabInstance: {fileID: 6643654907846744214}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &4058063814133962848 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7233382957282361590, guid: f5a6e233088a59440852ca507c6f8f79, type: 3}
+  m_PrefabInstance: {fileID: 6643654907846744214}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &5929871960696195481 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1042622694503534863, guid: f5a6e233088a59440852ca507c6f8f79, type: 3}
