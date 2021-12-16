@@ -11,14 +11,14 @@ public class CompletedArrayCol : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.tag.Equals("Zilch") || other.gameObject.tag.Equals("Trix") || other.gameObject.tag.Equals("Maze"))
+        if (other.gameObject.tag.Equals("Zilch") || other.gameObject.tag.Equals("Trix") || other.gameObject.tag.Equals("Maze"))
         {
             ButtonClicker bcOb = ButtonClickerGo.GetComponent<ButtonClicker>();
             GameHandler ghOb = GameHandlerGo.GetComponent<GameHandler>();
             bool correct = true;
-            for(int i = 0; i < bcOb.buttons.Length; i++)
+            for (int i = 0; i < bcOb.buttons.Length; i++)
             {
-                if(int.Parse(bcOb.buttons[i].GetComponent<BtnInfo>().value.GetComponent<TextMeshProUGUI>().text) != ghOb.correctArrangement[ghOb.correctKeyList[i]])
+                if (int.Parse(bcOb.buttons[i].GetComponent<BtnInfo>().value.GetComponent<TextMeshProUGUI>().text) != ghOb.correctArrangement[ghOb.correctKeyList[i]])
                 {
                     correct = false;
                     break;
@@ -27,6 +27,7 @@ public class CompletedArrayCol : MonoBehaviour
             if (correct)
             {
                 wrong.SetActive(false);
+                bcOb.buttonActivator();
             }
         }
     }

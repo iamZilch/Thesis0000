@@ -40,7 +40,7 @@ public class S4LoadTutorial : MonoBehaviour
     {
         switch (choice)
         {
-            case 1: DialogueManager.StartConversation("Starting Conversastion", null, null, 0); break; // start
+            case 1: DialogueManager.StartConversation("Starting Conversation", null, null, 0); break; // start
             case 2: DialogueManager.StartConversation("Conditional Loops", null, null, 0); break;
             case 3: DialogueManager.StartConversation("Unconditional Loops", null, null, 0); break;
             case 4: DialogueManager.StartConversation("Game Mechanics", null, null, 0); break;

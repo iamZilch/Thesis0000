@@ -39,6 +39,7 @@ public class Stage2ScriptHandler : MonoBehaviour
     [SerializeField] TextMeshProUGUI fstxt;
 
     [Header("Game UI")]
+    [SerializeField] GameObject[] instructions;
     [SerializeField] GameObject correctAnswers;
     [SerializeField] Text finishText;
 
@@ -47,6 +48,7 @@ public class Stage2ScriptHandler : MonoBehaviour
     [SerializeField] public GameObject joyStick;
     [SerializeField] public GameObject pickupButton;
     [SerializeField] public GameObject givenPanel;
+    [SerializeField] public GameObject[] givenText;
 
 
     Dictionary<int, string> given = new Dictionary<int, string>();
@@ -101,7 +103,7 @@ public class Stage2ScriptHandler : MonoBehaviour
                 //Initalize Game Timer -- Coroutine(GameTimer())
                 StartCoroutine(GameTimer());
                 //Generate Given -- GenerateGiven()
-                PlayerUI(false);
+                PlayerUI(true);
                 GenerateGiven();
                 //Spawn arithmetic -- spawnArithmetic()
                 spawnArithmetic();
@@ -149,10 +151,10 @@ public class Stage2ScriptHandler : MonoBehaviour
 
     public void GameDefault()
     {
-        //DisplayPlayerUi(false);
+        DisplayPlayerUi(true);
         ReadyTimerText.GetComponent<TextMeshProUGUI>().text = "4";
         GameTimerText.GetComponent<TextMeshProUGUI>().text = "5";
-        DisplayGivenText.GetComponent<TextMeshProUGUI>().text = "";
+        // DisplayGivenText.GetComponent<TextMeshProUGUI>().text = "";
         CurrentQuestionNumberText.GetComponent<TextMeshProUGUI>().text = "0";
 
         QuestionAnsweredCorrect = 0;
@@ -160,10 +162,10 @@ public class Stage2ScriptHandler : MonoBehaviour
 
     public void DisplayPlayerUi(bool status)
     {
-        DisplayGivenText.SetActive(status);
+        // DisplayGivenText.SetActive(status);
         GameTimerText.SetActive(status);
         ReadyTimerText.SetActive(status);
-        CurrentQuestionNumberText.SetActive(status);
+        // CurrentQuestionNumberText.SetActive(status);
     }
 
     public void PlayerUI(bool stat)
@@ -188,13 +190,13 @@ public class Stage2ScriptHandler : MonoBehaviour
     {
         given = new Dictionary<int, string>
         {
-            { 7, "6 + 6 - (2 * 5)  / 2" }, //"6 + 6 - (2 * 5)  / 2"
-            { 8, "1 - 2 * (2 * 2) + 1" },
-            { 20, "5 + 5 - (5 * 5) + 5" },
-            { 16, "1 * 2 * 3 + (1 * 10)" },
-            { 9, "((10 / 2) * (8 / 4) + 5" },
-            { 2, "1 - 6 + 5 / (2 + 3)" },
-            { 5, "(9/3) * 3 + 1 - 5" }
+            { 7, "6+6-(2*5)/2" }, //"6 + 6 - (2 * 5)  / 2"
+            { 8, "1-2*(2*2)+1" },
+            { 20, "5+5-(5*5)+5" },
+            { 16, "1*2*3+(1*10)" },
+            { 9, "((10/2)*(8/4)+5" },
+            { 2, "1-6+5/(2+3)" },
+            { 5, "(9/3)*3+1-5" }
         };
         int[] keys = { 7, 8, 20, 16, 9, 2, 5 };
         int randomRef = Random.Range(0, keys.Length);
@@ -206,12 +208,16 @@ public class Stage2ScriptHandler : MonoBehaviour
 
     public void RemoveArithmetic()
     {
+        for (int i = 0; i < givenText.Length; i++)
+            givenText[i].SetActive(false);
+
         int mercy = 0;
         string ans = "";
         givenString = "";
         correctOperator = new List<string>();
         char[] givenToChar = given[KeyTotalAnswer].ToCharArray();
         bool ranGen = false;
+        int x = 0;
         for (int i = 0; i < givenToChar.Length; i++)
         {
             if (givenToChar[i].Equals('+') || givenToChar[i].Equals('-') || givenToChar[i].Equals('/') || givenToChar[i].Equals('*') || givenToChar[i].Equals('%'))
@@ -221,25 +227,56 @@ public class Stage2ScriptHandler : MonoBehaviour
                 {
                     correctOperator.Add(givenToChar[i].ToString());
                     ans = givenToChar[i].ToString();
-                    givenString += "☐";
+                    givenString += "[]";
                     ranGen = true;
+                    givenText[x].SetActive(true);
+                    givenText[x].GetComponentInChildren<TextMeshProUGUI>().text = "[]";
+                    givenText[x].GetComponentInChildren<TextMeshProUGUI>().color = Color.red;
+
                 }
 
                 else if (mercy < 3)
                 {
                     mercy++;
                     givenString += givenToChar[i].ToString();
+                    givenText[x].SetActive(true);
+                    givenText[x].GetComponentInChildren<TextMeshProUGUI>().text = givenToChar[i].ToString();
+                    givenText[x].GetComponentInChildren<TextMeshProUGUI>().color = Color.white;
                 }
+
+                else
+                {
+                    correctOperator.Add(givenToChar[i].ToString());
+                    ans = givenToChar[i].ToString();
+                    givenString += "_";
+                    ranGen = true;
+                    givenText[x].SetActive(true);
+                    givenText[x].GetComponentInChildren<TextMeshProUGUI>().text = "[]";
+                    givenText[x].GetComponentInChildren<TextMeshProUGUI>().color = Color.red;
+                }
+
             }
+
             else
             {
                 givenString += givenToChar[i].ToString();
+                givenText[x].SetActive(true);
+                givenText[x].GetComponentInChildren<TextMeshProUGUI>().text = givenToChar[i].ToString();
+                givenText[x].GetComponentInChildren<TextMeshProUGUI>().color = Color.white;
             }
+
+            x++;
         }
         givenString += "=" + KeyTotalAnswer;
+        givenText[x].SetActive(true);
+        givenText[x].GetComponentInChildren<TextMeshProUGUI>().text = "=";
+        x++;
+        givenText[x].SetActive(true);
+        givenText[x].GetComponentInChildren<TextMeshProUGUI>().text = KeyTotalAnswer.ToString();
 
 
-        DisplayGivenText.GetComponent<TextMeshProUGUI>().text = "Fill the box with the correct symbol\n" + givenString;
+        // DisplayGivenText.GetComponent<TextMeshProUGUI>().text = "Fill the [ ] with the correct symbol\n" + givenString;
+        // DisplayGivenText.GetComponent<TextMeshProUGUI>().color = Color.red;
 
         PlayerUI(false);
         Invoke(nameof(setUi), 0.01f);
@@ -279,7 +316,7 @@ public class Stage2ScriptHandler : MonoBehaviour
         char[] given = givenString.ToCharArray();
         for (int i = 0; i < given.Length; i++)
         {
-            if (given[i].ToString().Equals("☐") && isAdded == false)
+            if (given[i].ToString().Equals("[]") && isAdded == false)
             {
                 isAdded = true;
                 newGiven += arithmetic;
@@ -290,7 +327,7 @@ public class Stage2ScriptHandler : MonoBehaviour
             }
         }
         givenString = newGiven;
-        DisplayGivenText.GetComponent<TextMeshProUGUI>().text = givenString;
+        // DisplayGivenText.GetComponent<TextMeshProUGUI>().text = givenString;
         playerOperator.Add(arithmetic);
 
         //check if the player collect all the operator
@@ -319,6 +356,8 @@ public class Stage2ScriptHandler : MonoBehaviour
                     isDone = true;
                     givenPanel.SetActive(false);
                     Destroy(pickupButton);
+                    instructions[0].SetActive(false);
+                    instructions[1].SetActive(false);
                     correctAnswers.GetComponent<TextMeshProUGUI>().text = "Run To The Finish Line!";
                 }
                 //ELSE Generate another given (Dont forget to clear playerOperator)

@@ -10,6 +10,8 @@ public class ButtonClicker : MonoBehaviour
     [SerializeField] public GameObject[] buttons;
     [SerializeField] public GameObject winnerSpawn;
     [SerializeField] public GameObject player;
+
+    [SerializeField] GameObject clear;
     public bool canPick = false;
     public bool submitting = false;
     public bool allCorrect = true;
@@ -103,5 +105,17 @@ public class ButtonClicker : MonoBehaviour
     {
         buttons[activeBtn].GetComponent<BtnInfo>().ClearValue();
         canPick = false;
+    }
+
+    public void buttonActivator()
+    {
+        for (int i = 0; i < buttons.Length; i++)
+        {
+            buttons[i].GetComponent<BtnInfo>().isComplete = true;
+            buttons[i].GetComponent<Button>().interactable = true;
+        }
+
+
+        clear.GetComponent<Button>().interactable = false;
     }
 }

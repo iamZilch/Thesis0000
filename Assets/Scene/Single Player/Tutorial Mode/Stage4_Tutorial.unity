@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 0.566
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.5605673, g: 0.612607, b: 0.7305314, a: 0.566}
+  m_IndirectSpecularColor: {r: 0.5634491, g: 0.61380756, b: 0.7338471, a: 0.566}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -9605,7 +9605,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c593457cd8105e148906690e1707c592, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  trigger: 16
+  trigger: 64
   condition:
     luaConditions: []
     questConditions: []
@@ -111238,8 +111238,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 952, y: 0}
-  m_SizeDelta: {x: 1457.2319, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &8904501208007266460
 GameObject:

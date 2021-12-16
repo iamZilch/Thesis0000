@@ -102,7 +102,7 @@ public class GameHandler : MonoBehaviour
         correctArrangement.Clear();
         for (int i = 0; i < 5; i++)
         {
-            correctArrangement.Add(i, Random.Range(1, 20));
+            correctArrangement.Add(i, Random.Range(1, 5));
         }
         List<int> keyList = new List<int>
         {
