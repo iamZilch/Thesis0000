@@ -1466,7 +1466,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 961dd461c6d361343b0143c9c638ddef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  force: 10
+  force: 2
 --- !u!114 &-6149916976256203679
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1533,6 +1533,8 @@ MonoBehaviour:
   players: []
   isAlive: 1
   isReady: 0
+  isWinner: 0
+  foundButton: 0
   ballSpointPoint: {fileID: 3291871005428696182}
   particles:
   - {fileID: 0}
@@ -1545,6 +1547,7 @@ MonoBehaviour:
   canUlti: 0
   canFirst: 1
   S4LanPlayerData: {fileID: 0}
+  Stage5Handler: {fileID: 0}
 --- !u!114 &2485149067172805708
 MonoBehaviour:
   m_ObjectHideFlags: 0
