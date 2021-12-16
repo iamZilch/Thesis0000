@@ -14,7 +14,6 @@ public class S4GameEngine : MonoBehaviour
     [SerializeField] GameObject[] Answers;
     [SerializeField] GameObject TVText;
     [SerializeField] GameObject buttonHandlers;
-    [SerializeField] GameObject Hint;
     [SerializeField] GameObject currQuestion;
     [SerializeField] GameObject timer;
     [SerializeField] GameObject Player;
@@ -24,6 +23,11 @@ public class S4GameEngine : MonoBehaviour
     [SerializeField] Button fs;
     [SerializeField] TextMeshProUGUI ultitxt;
     [SerializeField] TextMeshProUGUI fstxt;
+    [SerializeField] GameObject[] loopFirst;
+    [SerializeField] GameObject[] loopSecond;
+    [SerializeField] GameObject[] loopThird;
+    [SerializeField] GameObject[] loopFourth;
+    [SerializeField] GameObject[] loopFifth;
 
     public bool isOver = false;
     public int correctAnswer = 0;
@@ -45,7 +49,6 @@ public class S4GameEngine : MonoBehaviour
         PathGo.SetActive(status);
         Timer.SetActive(status);
         buttonHandlers.SetActive(status);
-        Hint.SetActive(status);
         currQuestion.SetActive(status);
         timer.SetActive(status);
     }
@@ -87,33 +90,49 @@ public class S4GameEngine : MonoBehaviour
     {
         Dictionary<int, string> given = new Dictionary<int, string>
         {
-            { 10, "If n = 0\nand you repeat \nn = n + 2, 5 times" },
-            { 32, "If n = 2\nand you repeat \nn = n * 2, 4 times." },
-            { 8, "If n = 1\nand you repeat \nn = n + n, 3 times. " },
-            { 2, "If n = 10\nand you repeat \nn = n - 2, 4 times. " },
-            { 16, "If n = 1\nand you repeat \nn = (n + 2) * 2, 2 times. " }
+            { 0, "If n = 0\n\tand you repeat \n\tn = n + 2, 5 times" },
+            { 1, "If n = 2\n\tand you repeat \n\tn = n * 2, 5 times." },
+            { 2, "If n = 1\n\tand you repeat \n\tn = n + n, 5 times. " },
+            { 3, "If n = 10\n\tand you repeat \n\tn = n - 2, 5 times. " },
+            { 4, "If n = 1\n\tand you repeat \n\tn = (n * 2) - n, 5 times. " }
         };
 
-        int[] keys = { 10, 32, 8, 2, 16 };
+        Dictionary<int, int[]> myDic = new Dictionary<int, int[]>();
+        myDic.Add(0, new int[] { 2, 4, 6, 8, 10 });
+        myDic.Add(1, new int[] { 4, 8, 16, 32, 64 });
+        myDic.Add(2, new int[] { 2, 4, 8, 16, 32 });
+        myDic.Add(3, new int[] { 8, 6, 4, 2, 0 });
+        myDic.Add(4, new int[] { 1, 1, 1, 1, 1 });
+
+        int[] keys = { 0, 1, 2, 3, 4 };
         int givenRan = Random.Range(0, keys.Length);
         correctAnswer = keys[givenRan];
+        Debug.Log($"Key : {correctAnswer}");
         GivenGo.GetComponent<TextMeshProUGUI>().text = given[keys[givenRan]];
-        Debug.Log(given[keys[givenRan]]);
         string tv = given[keys[givenRan]];
-        int randCor = Random.Range(0, Answers.Length);
-        for (int i = 0; i < Answers.Length; i++)
+        TVText.GetComponent<TextMeshPro>().text = tv;
+
+        GameObject[][] platforms = { loopFirst, loopSecond, loopThird, loopFourth, loopFifth };
+        for (int i = 0; i < 5; i++)
         {
-            if (i == randCor)
+            int randCor = Random.Range(0, 4);
+            for (int y = 0; y < 5; y++)
             {
-                Answers[i].GetComponent<TextMeshPro>().text = correctAnswer.ToString();
-            }
-            else
-            {
-                int toAdd = Random.Range(0, 10);
-                Answers[i].GetComponent<TextMeshPro>().text = (correctAnswer + toAdd).ToString();
+                if (randCor == y)
+                {
+                    int[] correct = myDic[correctAnswer];
+                    platforms[i][y].GetComponent<S4PlatformScript>().intValue = correct[i].ToString();
+                    platforms[i][y].GetComponent<S4PlatformScript>().updateUi();
+                    platforms[i][y].GetComponent<S4PlatformScript>().isCorrect = true;
+                }
+                else
+                {
+                    int[] correct = myDic[correctAnswer];
+                    platforms[i][y].GetComponent<S4PlatformScript>().intValue = (correct[i] + Random.Range(1,10)).ToString();
+                    platforms[i][y].GetComponent<S4PlatformScript>().updateUi();
+                }
             }
         }
-        TVText.GetComponent<TextMeshPro>().text = tv;
     }
 
     public void spawnCheckpoint()
