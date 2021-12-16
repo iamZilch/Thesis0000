@@ -7919,6 +7919,8 @@ MonoBehaviour:
   - {fileID: 3146841325717151447}
   - {fileID: 3146841324969238605}
   - {fileID: 3146841325602502999}
+  QuizModeButton: {fileID: 3146841324475261504}
+  MultiplayerButton: {fileID: 3146841324364872645}
 --- !u!4 &651223259
 Transform:
   m_ObjectHideFlags: 0

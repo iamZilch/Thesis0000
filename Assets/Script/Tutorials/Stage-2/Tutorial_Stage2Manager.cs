@@ -38,10 +38,6 @@ public class Tutorial_Stage2Manager : MonoBehaviour
     public GameObject CorrectAnswerFirstGiven;
     public GameObject CorrectAnswer2ndGiven;
 
-
-
-
-    public GameObject prefabChar;
     public GameObject[] givenText;
 
     string givenString = "";
@@ -88,7 +84,7 @@ public class Tutorial_Stage2Manager : MonoBehaviour
     {
         given = new Dictionary<int, string>
         {
-            { 8, "((7-5) + 4) + 2)" },
+            { 8, "((7-5) + 4))" },
             { 0, "(2*3) / (2+1) % 4"}
         };
 
@@ -98,7 +94,7 @@ public class Tutorial_Stage2Manager : MonoBehaviour
 
     }
 
-    public void RemoveArithmetic()
+    /*public void RemoveArithmetic()
     {
         /// removing arithmetic
         int mercy = 0;
@@ -130,53 +126,83 @@ public class Tutorial_Stage2Manager : MonoBehaviour
 
         givenString += "=" + KeyTotalAnswer;
         //DisplayGivenText.GetComponent<TextMeshProUGUI>().text = "Complete the Expression:" + givenString;
-        displayText();
-    }
+    }*/
 
-    public void displayText()
+    public void RemoveArithmetic()
     {
-        char[] givenToChar = givenString.ToCharArray();
+        for (int i = 0; i < givenText.Length; i++)
+            givenText[i].SetActive(false);
 
-        for(int j = 0; j < givenToChar.Length; j++)
-        {
-            givenText[j].SetActive(true);
-        }
-
+        int mercy = 0;
+        string ans = "";
+        givenString = "";
+        correctOperator = new List<string>();
+        char[] givenToChar = given[KeyTotalAnswer].ToCharArray();
+        bool ranGen = false;
+        int x = 0;
         for (int i = 0; i < givenToChar.Length; i++)
         {
-            if (givenToChar[i].Equals("_"))
+            if (givenToChar[i].Equals('+') || givenToChar[i].Equals('-') || givenToChar[i].Equals('/') || givenToChar[i].Equals('*') || givenToChar[i].Equals('%'))
             {
-                givenText[i].gameObject.GetComponent<TextMeshProUGUI>().text = givenToChar[i].ToString();
-                givenText[i].gameObject.GetComponent<TextMeshProUGUI>().color = new Color32(4, 255, 29, 255); 
+                int ran = Random.Range(0, 2);
+                if (ran == 1 && !ranGen)
+                {
+                    correctOperator.Add(givenToChar[i].ToString());
+                    ans = givenToChar[i].ToString();
+                    givenString += "[]";
+                    ranGen = true;
+                    givenText[x].SetActive(true);
+                    givenText[x].GetComponentInChildren<TextMeshProUGUI>().text = "[]";
+                    givenText[x].GetComponentInChildren<TextMeshProUGUI>().color = Color.red;
+
+                }
+
+                else if (mercy < 3)
+                {
+                    mercy++;
+                    givenString += givenToChar[i].ToString();
+                    givenText[x].SetActive(true);
+                    givenText[x].GetComponentInChildren<TextMeshProUGUI>().text = givenToChar[i].ToString();
+                    givenText[x].GetComponentInChildren<TextMeshProUGUI>().color = Color.white;
+                }
+
+                else
+                {
+                    correctOperator.Add(givenToChar[i].ToString());
+                    ans = givenToChar[i].ToString();
+                    givenString += "_";
+                    ranGen = true;
+                    givenText[x].SetActive(true);
+                    givenText[x].GetComponentInChildren<TextMeshProUGUI>().text = "[]";
+                    givenText[x].GetComponentInChildren<TextMeshProUGUI>().color = Color.red;
+                }
+
             }
 
-            givenText[i].gameObject.GetComponent<TextMeshProUGUI>().text = givenToChar[i].ToString();
+            else
+            {
+                givenString += givenToChar[i].ToString();
+                givenText[x].SetActive(true);
+                givenText[x].GetComponentInChildren<TextMeshProUGUI>().text = givenToChar[i].ToString();
+                givenText[x].GetComponentInChildren<TextMeshProUGUI>().color = Color.white;
+            }
+
+            x++;
         }
+        givenString += "=" + KeyTotalAnswer;
+        givenText[x].SetActive(true);
+        givenText[x].GetComponentInChildren<TextMeshProUGUI>().text = "=";
+        x++;
+        givenText[x].SetActive(true);
+        givenText[x].GetComponentInChildren<TextMeshProUGUI>().text = KeyTotalAnswer.ToString();
+
+
+        // DisplayGivenText.GetComponent<TextMeshProUGUI>().text = "Fill the [ ] with the correct symbol\n" + givenString;
+        // DisplayGivenText.GetComponent<TextMeshProUGUI>().color = Color.red;
+
+        Debug.Log($"Given : {ans}");
     }
 
-    public void ClearChildren()
-    {
-        Debug.Log(transform.childCount);
-        int i = 0;
-
-        //Array to hold all child obj
-        GameObject[] allChildren = new GameObject[transform.childCount];
-
-        //Find all child obj and store to that array
-        foreach (Transform child in transform)
-        {
-            allChildren[i] = child.gameObject;
-            i += 1;
-        }
-
-        //Now destroy them
-        foreach (GameObject child in allChildren)
-        {
-            DestroyImmediate(child.gameObject);
-        }
-
-        Debug.Log(transform.childCount);
-    }
     public void spawnArithmetic()
     {
         List<GameObject> arithmeticSpawnPointList = new List<GameObject>();

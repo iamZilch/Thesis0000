@@ -3877,6 +3877,10 @@ MonoBehaviour:
         value: SetActive(ProceedTask1, false);
         type: 0
         typeString: 
+      - title: EventGuid
+        value: 4af2ce69-73be-47be-ae47-31193c8ed626
+        type: 0
+        typeString: 
       conversationID: 4
       isRoot: 0
       isGroup: 0
@@ -3892,7 +3896,7 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 368.43726
+        x: 354.26932
         y: 252.50146
         width: 160
         height: 30
@@ -3924,6 +3928,10 @@ MonoBehaviour:
         typeString: 
       - title: Sequence
         value: SetActive(ProceedTask1, false);
+        type: 0
+        typeString: 
+      - title: EventGuid
+        value: f58cd426-f65e-4005-a03d-fd81cf27960b
         type: 0
         typeString: 
       conversationID: 4
@@ -4549,6 +4557,10 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: 
+      - title: EventGuid
+        value: caefc702-9fb5-424c-ab40-fb152c969d45
+        type: 0
+        typeString: 
       conversationID: 4
       isRoot: 0
       isGroup: 0
@@ -4620,8 +4632,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 0, y: 0}
-    canvasZoom: 0.5200006
+    canvasScrollPosition: {x: 539.089, y: 107.27191}
+    canvasZoom: 0.55000055
   syncInfo:
     syncActors: 0
     syncItems: 0
