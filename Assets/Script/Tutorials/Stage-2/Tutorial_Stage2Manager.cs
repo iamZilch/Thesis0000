@@ -17,7 +17,7 @@ public class Tutorial_Stage2Manager : MonoBehaviour
 
 
     [Header("Player UI")]
-    [SerializeField] GameObject DisplayGivenText;
+    //[SerializeField] GameObject DisplayGivenText;
     [SerializeField] GameObject CurrentQuestionNumberText;
 
 
@@ -38,6 +38,12 @@ public class Tutorial_Stage2Manager : MonoBehaviour
     public GameObject CorrectAnswerFirstGiven;
     public GameObject CorrectAnswer2ndGiven;
 
+
+
+
+    public GameObject prefabChar;
+    public GameObject[] givenText;
+
     string givenString = "";
     int KeyTotalAnswer = 0;
     public bool onCollect = false;
@@ -50,7 +56,17 @@ public class Tutorial_Stage2Manager : MonoBehaviour
     }
 
 
-
+    public void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.K))
+        {
+            StartGame(0);
+        }
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            StartGame(1);
+        }
+    }
     public void StartGame(int given)
     {
         GameDefault();
@@ -64,7 +80,7 @@ public class Tutorial_Stage2Manager : MonoBehaviour
 
     public void GameDefault()
     {
-        DisplayGivenText.GetComponent<TextMeshProUGUI>().text = "";
+        //DisplayGivenText.GetComponent<TextMeshProUGUI>().text = "";
         CurrentQuestionNumberText.GetComponent<TextMeshProUGUI>().text = "Correct Answers: " + QuestionAnsweredCorrect + "/2";
     }
 
@@ -102,7 +118,7 @@ public class Tutorial_Stage2Manager : MonoBehaviour
                 else
                 {
                     correctOperator.Add(givenToChar[i].ToString());
-                    givenString += "☐";
+                    givenString += "_";
                 }
 
             }
@@ -113,10 +129,54 @@ public class Tutorial_Stage2Manager : MonoBehaviour
         }
 
         givenString += "=" + KeyTotalAnswer;
-        DisplayGivenText.GetComponent<TextMeshProUGUI>().text = "Complete the Expression:" + givenString;
-
+        //DisplayGivenText.GetComponent<TextMeshProUGUI>().text = "Complete the Expression:" + givenString;
+        displayText();
     }
 
+    public void displayText()
+    {
+        char[] givenToChar = givenString.ToCharArray();
+
+        for(int j = 0; j < givenToChar.Length; j++)
+        {
+            givenText[j].SetActive(true);
+        }
+
+        for (int i = 0; i < givenToChar.Length; i++)
+        {
+            if (givenToChar[i].Equals("_"))
+            {
+                givenText[i].gameObject.GetComponent<TextMeshProUGUI>().text = givenToChar[i].ToString();
+                givenText[i].gameObject.GetComponent<TextMeshProUGUI>().color = new Color32(4, 255, 29, 255); 
+            }
+
+            givenText[i].gameObject.GetComponent<TextMeshProUGUI>().text = givenToChar[i].ToString();
+        }
+    }
+
+    public void ClearChildren()
+    {
+        Debug.Log(transform.childCount);
+        int i = 0;
+
+        //Array to hold all child obj
+        GameObject[] allChildren = new GameObject[transform.childCount];
+
+        //Find all child obj and store to that array
+        foreach (Transform child in transform)
+        {
+            allChildren[i] = child.gameObject;
+            i += 1;
+        }
+
+        //Now destroy them
+        foreach (GameObject child in allChildren)
+        {
+            DestroyImmediate(child.gameObject);
+        }
+
+        Debug.Log(transform.childCount);
+    }
     public void spawnArithmetic()
     {
         List<GameObject> arithmeticSpawnPointList = new List<GameObject>();
@@ -155,7 +215,7 @@ public class Tutorial_Stage2Manager : MonoBehaviour
             }
         }
         givenString = newGiven;
-        DisplayGivenText.GetComponent<TextMeshProUGUI>().text = "Complete the Expression: " + givenString;
+       // DisplayGivenText.GetComponent<TextMeshProUGUI>().text = "Complete the Expression: " + givenString;
         playerOperator.Add(arithmetic);
 
 
@@ -195,7 +255,7 @@ public class Tutorial_Stage2Manager : MonoBehaviour
 
                     ///congrats to tutoorial
                     CorrectAnswer2ndGiven.SetActive(true);
-                    DisplayGivenText.GetComponent<TextMeshProUGUI>().text = "Cross the finish line!";
+                    //DisplayGivenText.GetComponent<TextMeshProUGUI>().text = "Cross the finish line!";
                     Debug.Log("Tama ang sagot mo 2 sa proceed tayo sa FINISH LINE");
 
                 }

@@ -11,12 +11,40 @@ public class TutorialStage1Platform : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag.Equals("Player") && value.Equals(script.GetComponent<TutorialStage1Script>().correctAnswer))
+       /* if (other.gameObject.tag.Equals("Player") && value.Equals(script.GetComponent<TutorialStage1Script>().correctAnswer))
         {
-            script.GetComponent<TutorialStage1Script>().DisableWrongAnswer();
+            //script.GetComponent<TutorialStage1Script>().DisableWrongAnswer();
 
+        }*/
+
+        if (other.gameObject.tag.Equals("Player"))
+        {
+            script.GetComponent<TutorialStage1Script>().chooseButton.SetActive(true);
+            script.GetComponent<TutorialStage1Script>().platformValue = this.value;
+        }
+
+    }
+
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.gameObject.tag.Equals("Player"))
+        {
+            script.GetComponent<TutorialStage1Script>().chooseButton.SetActive(true);
+            script.GetComponent<TutorialStage1Script>().platformValue = this.value;
         }
     }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.tag.Equals("Player"))
+        {
+            script.GetComponent<TutorialStage1Script>().chooseButton.SetActive(false);
+            script.GetComponent<TutorialStage1Script>().platformValue = "";
+        }
+    }
+
+
+
 
 
 }

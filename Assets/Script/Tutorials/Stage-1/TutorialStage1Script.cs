@@ -28,9 +28,14 @@ public class TutorialStage1Script : MonoBehaviour
     [SerializeField] GameObject[] enableOnCorrect;
     [SerializeField] GameObject successDisplay;
     [SerializeField] GameObject CongratulationDisplay;
-    [SerializeField] GameObject controls;
+    [SerializeField] public GameObject controls;
     [SerializeField] GameObject myCamera;
     [SerializeField] GameObject mazeChar;
+
+    public GameObject chooseButton;
+
+    public string platformValue= "";
+
 
     public void SetGive(int givenType)
     {
@@ -47,7 +52,7 @@ public class TutorialStage1Script : MonoBehaviour
     {
         for (int i = 0; i < QuestionText.Length; i++)
         {
-            QuestionText[i].GetComponent<TextMeshPro>().text = "SUCESS YOU UNDERSTAND IT WELL!";
+            QuestionText[i].GetComponent<TextMeshPro>().text = "SUCCESS YOU UNDERSTAND IT WELL!";
         }
         successDisplay.SetActive(true);
     }
@@ -92,12 +97,21 @@ public class TutorialStage1Script : MonoBehaviour
                 Platforms[i].SetActive(false);
             }
         }
+    }
 
-        setSucessMessage();
-        controls.SetActive(false);
-        StartCoroutine(sucessCountdown());
-
-
+    public void chooseAnswer()
+    {
+        if (platformValue.Equals(correctAnswer))
+        {
+            DisableWrongAnswer();
+            setSucessMessage();
+            controls.SetActive(false);
+            StartCoroutine(sucessCountdown());
+        }
+        else if (!platformValue.Equals(correctAnswer))
+        {
+            DisableWrongAnswer();
+        }
     }
 
     IEnumerator sucessCountdown()
