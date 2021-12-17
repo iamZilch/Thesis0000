@@ -667,7 +667,7 @@ MonoBehaviour:
         height: 30
     entryGroups: []
     canvasScrollPosition: {x: 0, y: 0}
-    canvasZoom: 0.33999994
+    canvasZoom: 0.21999994
   - id: 2
     fields:
     - title: Title
@@ -772,11 +772,11 @@ MonoBehaviour:
       - title: Title
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Description
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Actor
         value: 2
         type: 5
@@ -788,11 +788,11 @@ MonoBehaviour:
       - title: Menu Text
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Dialogue Text
         value: And it is referred to as an example of a Conditional loop.
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Sequence
         value: 'SetActive(Back, false);
 
@@ -801,11 +801,11 @@ MonoBehaviour:
 
           SetActive(Robot will stop, false);'
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: EventGuid
         value: abd7ae01-bb50-4ed2-b963-917023c763c5
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       conversationID: 2
       isRoot: 0
       isGroup: 0
@@ -1566,8 +1566,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 102.11327, y: 73.8041}
-    canvasZoom: 0.58000034
+    canvasScrollPosition: {x: 0, y: 0}
+    canvasZoom: 0.3400004
   - id: 3
     fields:
     - title: Title
@@ -2131,7 +2131,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 26
-        y: 154.49255
+        y: 158.57419
         width: 160
         height: 30
     - id: 3
@@ -2273,7 +2273,7 @@ MonoBehaviour:
         typeString: 
       - title: Dialogue Text
         value: The game's goal is to trace the output of specific sequences (loops)
-          on the left corner of your screen.
+          on the left corner of your screen for every iteration
         type: 0
         typeString: 
       - title: Sequence
@@ -2304,7 +2304,7 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 19.802193
+        x: 23.88382
         y: 332
         width: 160
         height: 30
@@ -2331,8 +2331,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: It would be best if you stood below the text of the correct output
-          of the loop to finish the game.
+        value: Cross the finish line to end the game!
         type: 0
         typeString: 
       - title: Sequence
@@ -2365,8 +2364,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 20.74208
-        y: 395.16513
+        x: 243.19089
+        y: 401.28757
         width: 160
         height: 30
     - id: 7
@@ -2392,7 +2391,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: Wrong output tracing will result in consequences.
+        value: Wrong output tracing per iteration will result in consequences.
         type: 0
         typeString: 
       - title: Sequence
@@ -2420,7 +2419,7 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 16.55645
+        x: 12.474823
         y: 444.57556
         width: 160
         height: 30
@@ -2447,8 +2446,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: But, you may need to follow repetitive steps to go to the finishing
-          platform.
+        value: You may need to trace the output every iteration of the given loop.
         type: 0
         typeString: 
       - title: Sequence
@@ -2469,7 +2467,7 @@ MonoBehaviour:
       - originConversationID: 4
         originDialogueID: 8
         destinationConversationID: 4
-        destinationDialogueID: 9
+        destinationDialogueID: 10
         isConnector: 0
         priority: 2
       conditionsString: 
@@ -2481,66 +2479,6 @@ MonoBehaviour:
         serializedVersion: 2
         x: 16.349007
         y: 497.91748
-        width: 160
-        height: 30
-    - id: 9
-      fields:
-      - title: Title
-        value: 
-        type: 0
-        typeString: 
-      - title: Description
-        value: 
-        type: 0
-        typeString: 
-      - title: Actor
-        value: 2
-        type: 5
-        typeString: CustomFieldType_Actor
-      - title: Conversant
-        value: 1
-        type: 5
-        typeString: CustomFieldType_Actor
-      - title: Menu Text
-        value: 
-        type: 0
-        typeString: 
-      - title: Dialogue Text
-        value: As you can see, on the right corner of the screen, it has instructions
-          on what color of the platform you must stand with several times. (a number
-          is indicated)
-        type: 0
-        typeString: 
-      - title: Sequence
-        value: 'SetActive(HighlightPanel, true);
-
-          SetActive(Right Corner
-          of Screen, true);'
-        type: 0
-        typeString: 
-      conversationID: 4
-      isRoot: 0
-      isGroup: 0
-      nodeColor: 
-      delaySimStatus: 0
-      falseConditionAction: Block
-      conditionPriority: 2
-      outgoingLinks:
-      - originConversationID: 4
-        originDialogueID: 9
-        destinationConversationID: 4
-        destinationDialogueID: 10
-        isConnector: 0
-        priority: 2
-      conditionsString: 
-      userScript: 
-      onExecute:
-        m_PersistentCalls:
-          m_Calls: []
-      canvasRect:
-        serializedVersion: 2
-        x: 23.23619
-        y: 548.83484
         width: 160
         height: 30
     - id: 10
@@ -2566,9 +2504,9 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: 'Every platform changes its color within 3 seconds. You must be careful
-          in choosing the platforms, as the platforms will disappear if you go to
-          the wrong color. '
+        value: 'Every platform changes its value within span of time. You must be
+          careful in choosing the platforms, as the platforms will disappear if you
+          go to the wrong value of. '
         type: 0
         typeString: 
       - title: Sequence
@@ -2628,9 +2566,8 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: If you stand on the right color, the indicator of changing colors
-          will stop its countdown. As you move to the next platform, the previous
-          platform will begin again to change its color.
+        value: If you stand on the right value, the indicator of changing value will
+          stop its countdown.
         type: 0
         typeString: 
       - title: Sequence
@@ -2773,8 +2710,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 0, y: 0}
-    canvasZoom: 0.31000036
+    canvasScrollPosition: {x: 31.31826, y: 27.323301}
+    canvasZoom: 0.52000034
   - id: 5
     fields:
     - title: Title
