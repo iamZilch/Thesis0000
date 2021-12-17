@@ -43,7 +43,7 @@ public class ManageScene : MonoBehaviour
     }
     public void TutorialModeStageFour()
     {
-        SceneManager.LoadScene("Stage4_Tutorial");
+        SceneManager.LoadScene("Stage4_Tutorial_1");
     }
 
     public void TutorialModeStageFive()

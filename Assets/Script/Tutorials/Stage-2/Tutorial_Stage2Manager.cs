@@ -230,7 +230,7 @@ public class Tutorial_Stage2Manager : MonoBehaviour
         char[] given = givenString.ToCharArray();
         for (int i = 0; i < given.Length; i++)
         {
-            if (given[i].ToString().Equals("☐") && isAdded == false)
+            if (given[i].ToString().Equals("[]") && isAdded == false)
             {
                 isAdded = true;
                 newGiven += arithmetic;
