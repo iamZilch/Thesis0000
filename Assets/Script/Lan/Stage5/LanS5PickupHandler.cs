@@ -8,6 +8,8 @@ using UnityEngine.UI;
 public class LanS5PickupHandler : NetworkBehaviour
 {
     [SerializeField] public GameObject[] buttons;
+    [SerializeField] public GameObject[] indexButton;
+    [SerializeField] public GameObject clearBtn;
 
     public int[] buttonsValue = { 0, 0, 0, 0, 0};
     public int selectedButton = 0;
@@ -15,6 +17,48 @@ public class LanS5PickupHandler : NetworkBehaviour
     public bool canPick = false;
     public int index = 0;
     public bool init = false;
+    public int keyListIndex = 0;
+
+    public void Start()
+    {
+        for(int i = 1; i < buttons.Length; i++)
+        {
+            buttons[i].GetComponent<Button>().interactable = false;
+        }
+        for(int i = 0; i < indexButton.Length; i++)
+        {
+            indexButton[i].GetComponent<Button>().interactable = false;
+        }
+    }
+
+    public void enableAllButton()
+    {
+        for (int i = 0; i < buttons.Length; i++)
+        {
+            buttons[i].GetComponent<Button>().interactable = true;
+        }
+        
+    }
+
+    public void clearBtnSetActive(bool status)
+    {
+        clearBtn.SetActive(status);
+    }
+
+    public void SetEnableButton(int index)
+    {
+        for (int i = 0; i < buttons.Length; i++)
+        {
+            if(i == index)
+            {
+                buttons[i].GetComponent<Button>().interactable = true;
+            }
+            else
+            {
+                buttons[i].GetComponent<Button>().interactable = false;
+            }
+        }
+    }
 
     public void InvokeButton(int buttonIndex)
     {
@@ -109,7 +153,19 @@ public class LanS5PickupHandler : NetworkBehaviour
 //    [ClientRpc(includeOwner = false)]
     public void RpcButtonValue(int value)
     {
+        int va = GameObject.Find("Stage5Handler").GetComponent<LanStage5Handler>().correctKeyList[keyListIndex];
         buttonsValue[selectedButton] += value;
+        if(buttonsValue[selectedButton] == GameObject.Find("Stage5Handler").GetComponent<LanStage5Handler>().correctArrangement[va])
+        {
+            indexButton[keyListIndex].GetComponent<Image>().color = Color.green;
+            keyListIndex++;
+            SetEnableButton(keyListIndex);
+        }
+        else if (buttonsValue[selectedButton] > GameObject.Find("Stage5Handler").GetComponent<LanStage5Handler>().correctArrangement[va])
+        {
+            indexButton[keyListIndex].GetComponent<Image>().color = Color.red;
+        }
+        Debug.Log($"BtnValue: {buttonsValue[selectedButton]} Compared to: {GameObject.Find("Stage5Handler").GetComponent<LanStage5Handler>().correctArrangement[va]} Eval: {buttonsValue[selectedButton] == GameObject.Find("Stage5Handler").GetComponent<LanStage5Handler>().correctArrangement[va]}");
         UpdateButtonUi();
     }
 

@@ -13,6 +13,8 @@ public class LanS5LastCollider : NetworkBehaviour
             {
                 GameObject.Find("Stage5Handler").GetComponent<LanStage5Handler>().pickUP.GetComponent<LanS5PickupHandler>().EnterSubmit();
                 GameObject.Find("Stage5Handler").GetComponent<LanStage5Handler>().pickUP.GetComponent<LanS5PickupHandler>().isSubmitting = true;
+                GameObject.Find("Stage5Handler").GetComponent<LanStage5Handler>().pickUP.GetComponent<LanS5PickupHandler>().enableAllButton();
+                GameObject.Find("Stage5Handler").GetComponent<LanStage5Handler>().pickUP.GetComponent<LanS5PickupHandler>().clearBtnSetActive(false);
             }
         }
     }
@@ -25,6 +27,8 @@ public class LanS5LastCollider : NetworkBehaviour
             {
                 GameObject.Find("Stage5Handler").GetComponent<LanStage5Handler>().pickUP.GetComponent<LanS5PickupHandler>().ExitingSubmit();
                 GameObject.Find("Stage5Handler").GetComponent<LanStage5Handler>().pickUP.GetComponent<LanS5PickupHandler>().isSubmitting = false;
+                GameObject.Find("Stage5Handler").GetComponent<LanStage5Handler>().pickUP.GetComponent<LanS5PickupHandler>().SetEnableButton(-1);
+                GameObject.Find("Stage5Handler").GetComponent<LanStage5Handler>().pickUP.GetComponent<LanS5PickupHandler>().clearBtnSetActive(true);
             }
         }
 

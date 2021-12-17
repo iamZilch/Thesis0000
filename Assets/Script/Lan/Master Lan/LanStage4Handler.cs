@@ -172,12 +172,10 @@ public class LanStage4Handler : NetworkBehaviour
             for (int y = 0; y < platforms[i].Length; y++)
             {
                 int[] correct = myDic[correctAnswer];
-                /*platforms[i][y].GetComponent<S4LanPlatformScript>().CmdChangeCorrectAnswer(correct[i]);
-                platforms[i][y].GetComponent<S4LanPlatformScript>().CmdStartGeneration();*/
-                CmdUpdatePlatform(platforms[i][y], correct[i]);
+                platforms[i][y].GetComponent<S4LanPlatformScript>().CmdChangeCorrectAnswer(correct[i]);
+                //CmdUpdatePlatform(platforms[i][y], correct[i]);
             }
         }
-        Debug.Log("");
         //RpcSetTv(tv);
     }
 
@@ -227,7 +225,7 @@ public class LanStage4Handler : NetworkBehaviour
     {
         ReadyTimerGo.SetActive(!status);
         GivenGo.SetActive(status);
-        PathGo.SetActive(status);
+        //PathGo.SetActive(status);
     }
 
     public void GetAllUi()
@@ -306,7 +304,7 @@ public class LanStage4Handler : NetworkBehaviour
     {
         if (isServer)
         {
-            int correctPosition = UnityEngine.Random.Range(0, Answers.Length);
+            /*int correctPosition = UnityEngine.Random.Range(0, Answers.Length);
             int[] val = { 0,0,0};
             for(int i = 0; i < val.Length; i++)
             {
@@ -319,16 +317,16 @@ public class LanStage4Handler : NetworkBehaviour
                     val[i] = correctAnswer + UnityEngine.Random.Range(1, 10);
                 }
             }
-            RpcSetAnswers(val);
+            RpcSetAnswers(val);*/
         }
     }
 
     [ClientRpc]
     public void RpcSetAnswers(int[] val)
     {
-        for (int i = 0; i < Answers.Length; i++)
+        /*for (int i = 0; i < Answers.Length; i++)
         {
             Answers[i].GetComponent<TextMeshPro>().text = val[i].ToString();
-        }
+        }*/
     }
 }

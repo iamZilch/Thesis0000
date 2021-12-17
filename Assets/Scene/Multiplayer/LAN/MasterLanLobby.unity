@@ -271,7 +271,7 @@ GameObject:
   - component: {fileID: 28750744}
   - component: {fileID: 28750743}
   m_Layer: 5
-  m_Name: Btn (1)
+  m_Name: index0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -290,7 +290,7 @@ RectTransform:
   m_Children:
   - {fileID: 965695621}
   m_Father: {fileID: 552536220}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
@@ -340,19 +340,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 28750745}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 552536221}
-        m_TargetAssemblyTypeName: LanS5PickupHandler, Assembly-CSharp
-        m_MethodName: InvokeButton
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &28750744
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1596,7 +1584,7 @@ GameObject:
   - component: {fileID: 273376204}
   - component: {fileID: 273376203}
   m_Layer: 5
-  m_Name: Btn (3)
+  m_Name: index2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1615,7 +1603,7 @@ RectTransform:
   m_Children:
   - {fileID: 1917109552}
   m_Father: {fileID: 552536220}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
@@ -1665,19 +1653,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 273376205}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 552536221}
-        m_TargetAssemblyTypeName: LanS5PickupHandler, Assembly-CSharp
-        m_MethodName: InvokeButton
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 2
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &273376204
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2736,10 +2712,10 @@ RectTransform:
   - {fileID: 2118691318}
   - {fileID: 1794656268}
   - {fileID: 311583343}
-  - {fileID: 1367676350}
   - {fileID: 28750742}
   - {fileID: 587360790}
   - {fileID: 273376202}
+  - {fileID: 1367676350}
   - {fileID: 680236371}
   m_Father: {fileID: 969679286}
   m_RootOrder: 2
@@ -2769,12 +2745,20 @@ MonoBehaviour:
   - {fileID: 2118691317}
   - {fileID: 1794656267}
   - {fileID: 311583342}
+  indexButton:
+  - {fileID: 28750741}
+  - {fileID: 587360789}
+  - {fileID: 273376201}
+  - {fileID: 1367676349}
+  - {fileID: 680236370}
+  clearBtn: {fileID: 929031369}
   buttonsValue: 0000000000000000000000000000000000000000
   selectedButton: 0
   isSubmitting: 0
   canPick: 0
   index: 0
   init: 0
+  keyListIndex: 0
 --- !u!114 &552536222
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3108,7 +3092,7 @@ GameObject:
   - component: {fileID: 587360792}
   - component: {fileID: 587360791}
   m_Layer: 5
-  m_Name: Btn (2)
+  m_Name: index1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3127,7 +3111,7 @@ RectTransform:
   m_Children:
   - {fileID: 2118935428}
   m_Father: {fileID: 552536220}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
@@ -3177,19 +3161,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 587360793}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 552536221}
-        m_TargetAssemblyTypeName: LanS5PickupHandler, Assembly-CSharp
-        m_MethodName: InvokeButton
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 1
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &587360792
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3963,7 +3935,7 @@ GameObject:
   - component: {fileID: 680236373}
   - component: {fileID: 680236372}
   m_Layer: 5
-  m_Name: Btn (5)
+  m_Name: index4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4032,19 +4004,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 680236374}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 552536221}
-        m_TargetAssemblyTypeName: LanS5PickupHandler, Assembly-CSharp
-        m_MethodName: InvokeButton
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 4
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &680236373
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6916,6 +6876,11 @@ MonoBehaviour:
   PathGo: {fileID: 0}
   Answers: []
   TVText: {fileID: 0}
+  loopFirst: []
+  loopSecond: []
+  loopThird: []
+  loopFourth: []
+  loopFifth: []
   Player: {fileID: 0}
   PowerUpsGo: []
   ReadyTimerInt: 4
@@ -7188,7 +7153,7 @@ GameObject:
   - component: {fileID: 1367676352}
   - component: {fileID: 1367676351}
   m_Layer: 5
-  m_Name: Btn (4)
+  m_Name: index3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7207,7 +7172,7 @@ RectTransform:
   m_Children:
   - {fileID: 1970547748}
   m_Father: {fileID: 552536220}
-  m_RootOrder: 5
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
@@ -7257,19 +7222,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1367676353}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 552536221}
-        m_TargetAssemblyTypeName: LanS5PickupHandler, Assembly-CSharp
-        m_MethodName: InvokeButton
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 3
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &1367676352
 MonoBehaviour:
   m_ObjectHideFlags: 0

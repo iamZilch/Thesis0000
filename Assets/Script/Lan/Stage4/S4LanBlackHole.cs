@@ -9,7 +9,7 @@ public class S4LanBlackHole : MonoBehaviour
     {
         if (collision.gameObject.tag.Equals("Maze") || collision.gameObject.tag.Equals("Trix") || collision.gameObject.tag.Equals("Zilch"))
         {
-            collision.gameObject.transform.position = deadSpawnPoint.transform.position;
+            collision.gameObject.transform.position = deadSpawnPoint.GetComponent<PositionHandler>().CheckPointGo.transform.position;
         }
     }
 }

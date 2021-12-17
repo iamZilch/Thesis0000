@@ -17,10 +17,8 @@ public class S4LanPlatformScript : NetworkBehaviour
     private void Start()
     {
         originalPos = new Vector3(gameObject.transform.position.x, gameObject.transform.position.y, gameObject.transform.position.z);
-        if (isServer)
-        {
-            CmdChangeValueGeneration();
-        }
+        CmdChangeValueGeneration();
+        CmdChangeSomeone(false);
     }
 
     private void OnTriggerStay(Collider collision)
@@ -41,7 +39,6 @@ public class S4LanPlatformScript : NetworkBehaviour
             {
                 CmdChangeSomeone(true);
             }
-            
         }
     }
 
@@ -50,13 +47,13 @@ public class S4LanPlatformScript : NetworkBehaviour
     {
         if (isServer)
         {
-            changingCor();
+            StartCoroutine(changingCor());
         }
     }
 
     IEnumerator changingCor()
     {
-        while (true)
+        while (!someone)
         {
             CmdStartGeneration();
             yield return new WaitForSeconds(Random.Range(3, 5));
@@ -92,7 +89,7 @@ public class S4LanPlatformScript : NetworkBehaviour
             else
             {
                 isCorrect = false;
-                RpcChangePlatformProperty(isCorrect, correctAnswer);
+                RpcChangePlatformProperty(isCorrect, correctAnswer + Random.Range(1, 10));
             }
         }
     }
@@ -114,7 +111,7 @@ public class S4LanPlatformScript : NetworkBehaviour
         if (collision.gameObject.tag.Equals("Maze") || collision.gameObject.tag.Equals("Zilch") || collision.gameObject.tag.Equals("Trix"))
         {
             CmdChangeSomeone(false);
-
+            ResetPlatform();
         }
     }
 
