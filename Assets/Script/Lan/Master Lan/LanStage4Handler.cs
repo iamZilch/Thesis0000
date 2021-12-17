@@ -14,6 +14,12 @@ public class LanStage4Handler : NetworkBehaviour
     [SerializeField] GameObject[] Answers;
     [SerializeField] GameObject TVText;
 
+    [SerializeField] GameObject[] loopFirst;
+    [SerializeField] GameObject[] loopSecond;
+    [SerializeField] GameObject[] loopThird;
+    [SerializeField] GameObject[] loopFourth;
+    [SerializeField] GameObject[] loopFifth;
+
     [SerializeField] public GameObject Player;
     [SerializeField] public List<GameObject> PowerUpsGo;
 
@@ -112,7 +118,7 @@ public class LanStage4Handler : NetworkBehaviour
         ReadyTimerGo.GetComponent<TextMeshProUGUI>().text = ReadyTimerInt.ToString();
     }
 
-    [Command(requiresAuthority =false)]
+    [Command(requiresAuthority = false)]
     public void CmdDecTimer()
     {
         ReadyTimerInt--;
@@ -141,16 +147,55 @@ public class LanStage4Handler : NetworkBehaviour
     {
         Dictionary<int, string> given = new Dictionary<int, string>
         {
-            { 10, "If n = 0\nand you repeat \nn = n + 2, 5 times" },
-            { 16, "If n = 2\nand you repeat \nn = n * 2, 4 times." },
-            { 8, "If n = 1\nand you repeat \nn = n + n, 3 times. " }
+            { 0, "If n = 0\n\tand you repeat \n\tn = n + 2, 5 times" },
+            { 1, "If n = 2\n\tand you repeat \n\tn = n * 2, 5 times." },
+            { 2, "If n = 1\n\tand you repeat \n\tn = n + n, 5 times. " },
+            { 3, "If n = 10\n\tand you repeat \n\tn = n - 2, 5 times. " },
+            { 4, "If n = 1\n\tand you repeat \n\tn = (n * 2) - n, 5 times. " }
         };
 
-        int[] keys = { 10, 16, 8 };
+        Dictionary<int, int[]> myDic = new Dictionary<int, int[]>();
+        myDic.Add(0, new int[] { 2, 4, 6, 8, 10 });
+        myDic.Add(1, new int[] { 4, 8, 16, 32, 64 });
+        myDic.Add(2, new int[] { 2, 4, 8, 16, 32 });
+        myDic.Add(3, new int[] { 8, 6, 4, 2, 0 });
+        myDic.Add(4, new int[] { 1, 1, 1, 1, 1 });
+
+        int[] keys = { 0, 1, 2, 3, 4 };
         int givenRan = UnityEngine.Random.Range(0, keys.Length);
         CmdSetGivenAndAnswer(keys[givenRan], given[keys[givenRan]]);
         string tv = given[keys[givenRan]];
+
+        GameObject[][] platforms = { loopFirst, loopSecond, loopThird, loopFourth, loopFifth };
+        for (int i = 0; i < 5; i++)
+        {
+            for (int y = 0; y < platforms[i].Length; y++)
+            {
+                int[] correct = myDic[correctAnswer];
+                /*platforms[i][y].GetComponent<S4LanPlatformScript>().CmdChangeCorrectAnswer(correct[i]);
+                platforms[i][y].GetComponent<S4LanPlatformScript>().CmdStartGeneration();*/
+                CmdUpdatePlatform(platforms[i][y], correct[i]);
+            }
+        }
+        Debug.Log("");
         //RpcSetTv(tv);
+    }
+
+    [Command(requiresAuthority = false)]
+    public void CmdUpdatePlatform(GameObject platform, int correct)
+    {
+        if (isServer)
+        {
+            RpcUpdatePlatform(platform, correct);
+        }
+    }
+
+    [ClientRpc]
+    public void RpcUpdatePlatform(GameObject platform, int correct)
+    {
+        Debug.Log("Im in");
+        platform.GetComponent<S4LanPlatformScript>().CmdChangeCorrectAnswer(correct);
+        platform.GetComponent<S4LanPlatformScript>().CmdChangeValueGeneration();
     }
 
     [Command(requiresAuthority = false)]
@@ -193,6 +238,12 @@ public class LanStage4Handler : NetworkBehaviour
         PathGo = Lan4SceneStore.PathGo;
         Answers = Lan4SceneStore.Answers;
         TVText = Lan4SceneStore.TVText;
+
+        loopFirst = Lan4SceneStore.loopFirst;
+        loopSecond = Lan4SceneStore.loopSecond;
+        loopThird = Lan4SceneStore.loopThird;
+        loopFourth = Lan4SceneStore.loopFourth;
+        loopFifth = Lan4SceneStore.loopFifth;
     }
 
     [Command(requiresAuthority = false)]

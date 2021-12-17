@@ -12,6 +12,12 @@ public class S4GoStoreScript : MonoBehaviour
     [SerializeField] public GameObject[] Answers;
     [SerializeField] public GameObject TVText;
 
+    [SerializeField] public GameObject[] loopFirst;
+    [SerializeField] public GameObject[] loopThird;
+    [SerializeField] public GameObject[] loopSecond;
+    [SerializeField] public GameObject[] loopFourth;
+    [SerializeField] public GameObject[] loopFifth;
+
     [SerializeField] public GameObject player;
 
     public bool findPlayer = false;

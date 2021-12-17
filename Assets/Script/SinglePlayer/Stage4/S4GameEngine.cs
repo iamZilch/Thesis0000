@@ -115,22 +115,11 @@ public class S4GameEngine : MonoBehaviour
         GameObject[][] platforms = { loopFirst, loopSecond, loopThird, loopFourth, loopFifth };
         for (int i = 0; i < 5; i++)
         {
-            int randCor = Random.Range(0, 4);
             for (int y = 0; y < 5; y++)
             {
-                if (randCor == y)
-                {
-                    int[] correct = myDic[correctAnswer];
-                    platforms[i][y].GetComponent<S4PlatformScript>().intValue = correct[i].ToString();
-                    platforms[i][y].GetComponent<S4PlatformScript>().updateUi();
-                    platforms[i][y].GetComponent<S4PlatformScript>().isCorrect = true;
-                }
-                else
-                {
-                    int[] correct = myDic[correctAnswer];
-                    platforms[i][y].GetComponent<S4PlatformScript>().intValue = (correct[i] + Random.Range(1,10)).ToString();
-                    platforms[i][y].GetComponent<S4PlatformScript>().updateUi();
-                }
+                int[] correct = myDic[correctAnswer];
+                platforms[i][y].GetComponent<S4PlatformScript>().correctAnswer = correct[i];
+                platforms[i][y].GetComponent<S4PlatformScript>().StartCor();
             }
         }
     }

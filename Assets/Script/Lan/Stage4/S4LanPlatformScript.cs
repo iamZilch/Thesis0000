@@ -8,8 +8,10 @@ public class S4LanPlatformScript : NetworkBehaviour
 {
     [SerializeField] public GameObject Value;
 
-    public string colorValue = "";
     public bool someone = false;
+    public string intValue = "";
+    public bool isCorrect = false;
+    public int correctAnswer = 0;
     public Vector3 originalPos;
 
     private void Start()
@@ -17,8 +19,7 @@ public class S4LanPlatformScript : NetworkBehaviour
         originalPos = new Vector3(gameObject.transform.position.x, gameObject.transform.position.y, gameObject.transform.position.z);
         if (isServer)
         {
-            Value.GetComponent<TextMeshPro>().text = "4";
-            StartCoroutine(changeColor(int.Parse(Value.GetComponent<TextMeshPro>().text)));
+            CmdChangeValueGeneration();
         }
     }
 
@@ -31,21 +32,76 @@ public class S4LanPlatformScript : NetworkBehaviour
             {
                 return;
             }
-            S4PlayerData playerData = collision.gameObject.GetComponent<PlayerLanExtension>().S4LanPlayerData;
-            if ((playerData.colorToStep.Equals(colorValue)))
+            if (!isCorrect)
             {
-                playerData.MasterPlayerData(gameObject);
-                playerData.stepped = true;
+                gameObject.transform.position = new Vector3(gameObject.transform.position.x, gameObject.transform.position.y - 1000, gameObject.transform.position.z);
+                //StartCoroutine(respawnPlatform());
+            }
+            if (isCorrect)
+            {
+                CmdChangeSomeone(true);
+            }
+            
+        }
+    }
+
+    [Command(requiresAuthority = false)]
+    public void CmdChangeValueGeneration()
+    {
+        if (isServer)
+        {
+            changingCor();
+        }
+    }
+
+    IEnumerator changingCor()
+    {
+        while (true)
+        {
+            CmdStartGeneration();
+            yield return new WaitForSeconds(Random.Range(3, 5));
+        }
+    }
+
+    [Command(requiresAuthority = false)]
+    public void CmdChangeCorrectAnswer(int ans)
+    {
+        if (isServer)
+        {
+            RpcChangeCorrectAnswer(ans);
+        }
+    }
+
+    [ClientRpc]
+    public void RpcChangeCorrectAnswer(int ans)
+    {
+        correctAnswer = ans;
+    }
+
+    [Command(requiresAuthority = false)]
+    public void CmdStartGeneration()
+    {
+        if (isServer)
+        {
+            int chance = Random.Range(0, 5);
+            if (chance == 0)
+            {
+                isCorrect = true;
+                RpcChangePlatformProperty(isCorrect, correctAnswer);
             }
             else
             {
-                if (!playerData.stepped)
-                {
-                    CmdSetActivePlatform(false);
-                }
+                isCorrect = false;
+                RpcChangePlatformProperty(isCorrect, correctAnswer);
             }
-            CmdChangeSomeone(true);
         }
+    }
+
+    [ClientRpc]
+    public void RpcChangePlatformProperty(bool status, int value)
+    {
+        isCorrect = status;
+        Value.GetComponent<TextMeshPro>().text = value.ToString();
     }
 
     private void OnTriggerExit(Collider collision)
@@ -55,50 +111,15 @@ public class S4LanPlatformScript : NetworkBehaviour
             return;
         }
 
-        S4PlayerData playerData = collision.gameObject.GetComponent<PlayerLanExtension>().S4LanPlayerData;
         if (collision.gameObject.tag.Equals("Maze") || collision.gameObject.tag.Equals("Zilch") || collision.gameObject.tag.Equals("Trix"))
         {
             CmdChangeSomeone(false);
-            playerData.stepped = false;
-            CmdStartCor(int.Parse(Value.GetComponent<TextMeshPro>().text));
+
         }
     }
 
-    [Command(requiresAuthority = false)]
-    public void CmdStartCor(int curValue)
-    {
-        if (isServer)
-        {
-            RpcStartCor(curValue);
-        }
-    }
 
-    [ClientRpc]
-    public void RpcStartCor(int curValue)
-    {
-        if (isServer)
-        {
-            StartCoroutine(changeColor(curValue));
-        }
-    }
 
-    IEnumerator changeColor(int curValue)
-    {
-        CmdChangeTimer(curValue.ToString());
-        while (!someone)
-        {
-            int ti = int.Parse(Value.GetComponent<TextMeshPro>().text);
-            if (ti <= 1)
-            {
-                CmdChangeTimer("4");
-                CmdChangeColorValue();
-            }
-            int co = int.Parse(Value.GetComponent<TextMeshPro>().text);
-            co--;
-            CmdChangeTimer(co.ToString());
-            yield return new WaitForSeconds(1f);
-        }
-    }
 
     [Command(requiresAuthority = false)]
     public void CmdSetActivePlatform(bool status)
@@ -157,34 +178,6 @@ public class S4LanPlatformScript : NetworkBehaviour
         Value.GetComponent<TextMeshPro>().text = value;
     }
 
-    [Command(requiresAuthority = false)]
-    public void CmdChangeColorValue()
-    {
-        if (isServer)
-        {
-            Value.GetComponent<TextMeshPro>().text = "4";
-            Color[] colors = { Color.green, Color.red, Color.blue };
-            string[] colorsStr = { "green", "red", "blue" };
-            int rand = Random.Range(0, colors.Length);
-            colorValue = colorsStr[rand];
-            RpcChangeColorValue(rand);
-        }
-    }
-
-    [ClientRpc(includeOwner = false)]
-    public void RpcChangeColorValue(int rand)
-    {
-        Color[] colors = { Color.green, Color.red, Color.blue };
-        string[] colorsStr = { "green", "red", "blue" };
-        ChangeColorValue(colorsStr[rand]);
-        var goRenderer = GetComponent<Renderer>();
-        goRenderer.material.SetColor("_Color", colors[rand]);
-    }
-
-    public void ChangeColorValue(string color)
-    {
-        colorValue = color;
-    }
 
     [Command(requiresAuthority = false)]
     public void CmdChangeSomeone(bool status)

@@ -42,8 +42,8 @@ public class MasterLanScript : NetworkManager
     {
         base.Start();
         //Get the current player that is selected by the user. For now lez just do predefine value
-        singleton.playerPrefab = GameObject.Find("MyPlayerPrefabs").GetComponent<PlayerPrefab>().getPrefab(GameObject.Find("Opening_Game_Script").GetComponent<Database>().UsedCharacter);
-        // singleton.playerPrefab = SelectedPlayer;
+        //singleton.playerPrefab = GameObject.Find("MyPlayerPrefabs").GetComponent<PlayerPrefab>().getPrefab(GameObject.Find("Opening_Game_Script").GetComponent<Database>().UsedCharacter);
+        singleton.playerPrefab = SelectedPlayer;
         RunDefaultUi();
     }
 

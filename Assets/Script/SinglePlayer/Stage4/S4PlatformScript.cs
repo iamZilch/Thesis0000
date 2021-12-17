@@ -9,6 +9,8 @@ public class S4PlatformScript : MonoBehaviour
 
     public string intValue = "";
     public bool isCorrect = false;
+    public int correctAnswer = 0;
+    public bool isStep = false;
 
     private void Start()
     {
@@ -26,8 +28,13 @@ public class S4PlatformScript : MonoBehaviour
                 gameObject.transform.position = new Vector3(gameObject.transform.position.x, gameObject.transform.position.y - 1000, gameObject.transform.position.z);
                 StartCoroutine(respawnPlatform());
             }
+            if (isCorrect)
+            {
+                isStep = true;
+            }
         }
     }
+
 
     IEnumerator respawnPlatform()
     {
@@ -35,9 +42,47 @@ public class S4PlatformScript : MonoBehaviour
         gameObject.transform.position = new Vector3(gameObject.transform.position.x, gameObject.transform.position.y + 1000, gameObject.transform.position.z);
     }
 
-    public void updateUi()
+    public void StartGeneration()
     {
-        Value.GetComponent<TextMeshPro>().text = intValue;
+        int chance = Random.Range(0, 5);
+        if(chance == 0)
+        {
+            isCorrect = true;
+            updateUi(correctAnswer);
+        }
+        else
+        {
+            isCorrect = false;
+            updateUi(correctAnswer + Random.Range(1, 10));
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if ((other.gameObject.tag.Equals("Maze") || other.gameObject.tag.Equals("Zilch") || other.gameObject.tag.Equals("Trix")))
+        {
+            isStep = false;
+            StartCor();
+        }
+    }
+
+    public void StartCor()
+    {
+        StartCoroutine(changeMe());
+    }
+
+    IEnumerator changeMe()
+    {
+        while (!isStep)
+        {
+            StartGeneration();
+            yield return new WaitForSeconds(Random.Range(3, 5));
+        }
+    }
+
+    public void updateUi(int value)
+    {
+        Value.GetComponent<TextMeshPro>().text = value.ToString();
     }
 
 
